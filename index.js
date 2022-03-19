@@ -1,6 +1,8 @@
 const cool = require("cool-ascii-faces");
 const express = require("express");
 
+const BASE_API_URL = "/api/v1";
+
 const app=express();
 const port = process.env.PORT || 8080;
 
