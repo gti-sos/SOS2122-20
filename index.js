@@ -49,3 +49,34 @@ app.post(BASE_API_URL+ "/fertilizers",(req,res)=>{
     fertilizers.push(req.body);
     res.sendStatus(201,"CREATED"); 
 }); 
+
+
+//Daniel Puche
+
+var landusage = [
+    {
+        country : "Spain",
+        code : "SPA",
+        year : 2015,
+        "built-area" :10 ,
+        "grazing-area" :10 ,
+        "cropland-area" : 10,
+    },
+    {
+        country : "Spain",
+        code : "SPA",
+        year : 2016,
+        "built-area" :10 ,
+        "grazing-area" :10 ,
+        "cropland-area" : 10,
+    }
+]
+
+app.get(BASE_API_URL+ "/landusage-stats",(req,res)=>{
+    res.send(JSON.stringify(landusage,null,2)); 
+});
+
+app.post(BASE_API_URL+ "/landusage-stats",(req,res)=>{
+    landusage.push(req.body);
+    res.sendStatus(201,"CREATED"); 
+}); 
