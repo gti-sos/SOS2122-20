@@ -106,11 +106,11 @@ var agriculturalproduction = [
 
 ];
 
-app.get(BASE_API_URL+ "/landusage-stats",(req,res)=>{
-    res.send(JSON.stringify(landusage,null,2)); 
+app.get(BASE_API_URL+ "/agriculturalproduction-stats",(req,res)=>{
+    res.send(JSON.stringify(agriculturalproduction,null,2)); 
 });
 
-app.post(BASE_API_URL+ "/landusage-stats",(req,res)=>{
-    landusage.push(req.body);
+app.post(BASE_API_URL+ "/agriculturalproduction-stats",(req,res)=>{
+    agriculturalproduction.push(req.body);
     res.sendStatus(201,"CREATED"); 
 }); 
