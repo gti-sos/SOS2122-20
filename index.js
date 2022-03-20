@@ -85,3 +85,32 @@ app.post(BASE_API_URL+ "/landusage-stats",(req,res)=>{
     landusage.push(req.body);
     res.sendStatus(201,"CREATED"); 
 }); 
+
+//Javier
+
+var agriculturalproduction = [
+    {
+        country:"Afghanistan",
+        year: 2018,
+        production:4.02,
+        absolute_change:434.520,
+        relative_changes:"12%"
+    },
+    {
+        country:"África",
+        year: 2018,
+        production:191.56,
+        absolute_change:146.68,
+        relative_changes:"327%"
+    }
+
+];
+
+app.get(BASE_API_URL+ "/landusage-stats",(req,res)=>{
+    res.send(JSON.stringify(landusage,null,2)); 
+});
+
+app.post(BASE_API_URL+ "/landusage-stats",(req,res)=>{
+    landusage.push(req.body);
+    res.sendStatus(201,"CREATED"); 
+}); 
