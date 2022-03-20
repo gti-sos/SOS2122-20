@@ -30,13 +30,18 @@ var fertilizers =[
     {
         country:"afghanistan",
         year:2017,
-        quantity:17.80
+        quantity:17.80,
+        absolute_change:14.64,
+        relative_change:4.63
+
 
     },
     {
         country:"africa",
         year:2017,
-        quantity:15.09
+        quantity:15.09,
+        absolute_change:3.18,
+        relative_change:0.27
     }
 ];
 app.get(BASE_API_URL+ "/fertilizers",(req,res)=>{
