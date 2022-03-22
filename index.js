@@ -55,6 +55,58 @@ app.post(BASE_API_URL+ "/fertilizers",(req,res)=>{
     res.sendStatus(201,"CREATED"); 
 }); 
 
+var fertilizers=[];
+app.get(BASE_API_URL+"/fertilizers", (req,res)=>{
+    res.send(JSON.stringify(fertilizers,null,2));
+})
+
+app.get(BASE_API_URL+"/fertilizers/loadInitialData",(req,res)=>{
+    var iniData=[
+        {
+        country:"afghanistan",
+        year:2017,
+        quantity:17.80,
+        absolute_change:14.64,
+        relative_change:463,
+    },
+    {  
+         country:"africa",
+        year:2017,
+        quantity:15.09,
+        absolute_change:3.18,
+        relative_change:27,
+    },
+    {  
+         country:"albania",
+        year:2017,
+        quantity:56.70,
+        absolute_change:2.03,
+        relative_change:4,
+    },
+    {  
+         country:"algeria",
+        year:2017,
+        quantity:8.27,
+        absolute_change:4.85,
+        relative_change:142,
+    },
+    {  
+         country:"americas",
+        year:2017,
+        quantity:65.85,
+        absolute_change:17.96,
+        relative_change:38,
+    }
+];
+iniData.forEach((a)=>{
+    fertilizers.push(a);
+});
+res.send(JSON.stringify(fertilizers,null,2));
+})
+
+    
+
+
 
 //Daniel Puche
 
