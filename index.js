@@ -102,7 +102,16 @@ iniData.forEach((a)=>{
     fertilizers.push(a);
 });
 res.send(JSON.stringify(fertilizers,null,2));
-})
+});
+
+app.put(BASE_API_URL+"/fertilizers-stats", (req,res)=>{
+    res.sendStatus(405,"METHOD NOT ALLOWED");
+});
+
+app.delete(BASE_API_URL+"/fertilizers-stats",(req,res)=>{
+    fertilizers.splice(req.body);
+    res.sendStatus(200, "OK");
+});
 
     
 
