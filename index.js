@@ -44,23 +44,23 @@ var fertilizers =[
         relative_change:0.27
     }
 ];
-app.get(BASE_API_URL+ "/fertilizers",(req,res)=>{
+app.get(BASE_API_URL+ "/fertilizers-stats",(req,res)=>{
     res.send(JSON.stringify(fertilizers,null,2)); 
 
 });
 
 
-app.post(BASE_API_URL+ "/fertilizers",(req,res)=>{
+app.post(BASE_API_URL+ "/fertilizers-stats",(req,res)=>{
     fertilizers.push(req.body);
     res.sendStatus(201,"CREATED"); 
 }); 
 
 var fertilizers=[];
-app.get(BASE_API_URL+"/fertilizers", (req,res)=>{
+app.get(BASE_API_URL+"/fertilizers-stats", (req,res)=>{
     res.send(JSON.stringify(fertilizers,null,2));
 })
 
-app.get(BASE_API_URL+"/fertilizers/loadInitialData",(req,res)=>{
+app.get(BASE_API_URL+"/fertilizers-stats/loadInitialData",(req,res)=>{
     var iniData=[
         {
         country:"afghanistan",
