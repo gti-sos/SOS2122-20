@@ -219,7 +219,7 @@ app.get(BASE_API_URL+"/agriculturalproduction-stats", (req,res)=>{
 });
 
 app.get(BASE_API_URL+"/agriculturalproduction-stats/loadInitialData",(req,res)=>{
-    var iniData=[
+    var v=[
         {
             country:"Afghanistan",
             year: 2018,
@@ -257,7 +257,7 @@ app.get(BASE_API_URL+"/agriculturalproduction-stats/loadInitialData",(req,res)=>
         }
     ];
 
-    iniData.forEach((a)=>{
+    v.forEach((a)=>{
         productions.push(a);
     });
 
