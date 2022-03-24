@@ -44,12 +44,13 @@ var fertilizers =[
         relative_change:0.27
     }
 ];
+// Get recurso
 app.get(BASE_API_URL+ "/fertilizers-stats",(req,res)=>{
     res.send(JSON.stringify(fertilizers,null,2)); 
 
 });
 
-
+// Post recurso
 app.post(BASE_API_URL+ "/fertilizers-stats",(req,res)=>{
     fertilizers.push(req.body);
     res.sendStatus(201,"CREATED"); 
@@ -104,13 +105,49 @@ iniData.forEach((a)=>{
 res.send(JSON.stringify(fertilizers,null,2));
 });
 
+// Put recurso -> error
 app.put(BASE_API_URL+"/fertilizers-stats", (req,res)=>{
     res.sendStatus(405,"METHOD NOT ALLOWED");
 });
-
+// Borrar recurso -> Array vacío
 app.delete(BASE_API_URL+"/fertilizers-stats",(req,res)=>{
     fertilizers.splice(req.body);
     res.sendStatus(200, "OK");
+});
+
+// Post recurso concreto -> Error
+app.post(BASE_API_URL+"/fertilizers-stats/:country",(req,res)=>{
+    res.sendStatus(405,"METHOD NOT FOUND"); 
+});
+
+// Get recurso concreto
+app.get(BASE_API_URL+ "/fertilizers-stats/:country",(req,res)=>{
+
+    var fertilizersCountry = req.params.country;
+    filteredCountry = fertilizers.filter((e)=>{
+        return (e.country == fertilizersCountry);
+    });
+
+    if(filteredCountry==0){
+        res.sendStatus(404, "NOT FOUND");
+    }else{
+        res.send(JSON.stringify(filteredCountry[0],null,2));
+    }
+});
+
+// Actualización recurso concreto
+app.put(BASE_API_URL+"/fertilizers-stats/:country",(req,res)=>{
+    var fertilizersCountry= req.params.country;
+
+});
+
+// Borrado recurso concreto
+app.delete(BASE_API_URL+"/fertilizers-stats/:country",(req,res)=>{
+    var fertilizersCountry= req.params.country;
+    fertilizers= fertilizers.filter((e)=>{
+       return (e.country != fertilizersCountry);
+    });
+    res.sendStatus(200,"OK"); 
 });
 
     
