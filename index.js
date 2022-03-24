@@ -58,7 +58,7 @@ app.post(BASE_API_URL+ "/fertilizers-stats",(req,res)=>{
 var fertilizers=[];
 app.get(BASE_API_URL+"/fertilizers-stats", (req,res)=>{
     res.send(JSON.stringify(fertilizers,null,2));
-})
+});
 
 app.get(BASE_API_URL+"/fertilizers-stats/loadInitialData",(req,res)=>{
     var iniData=[
@@ -175,3 +175,63 @@ app.post(BASE_API_URL+ "/agriculturalproduction-stats",(req,res)=>{
     agriculturalproduction.push(req.body);
     res.sendStatus(201,"CREATED"); 
 }); 
+
+var productions=[];
+app.get(BASE_API_URL+"/agriculturalproduction-stats", (req,res)=>{
+    res.send(JSON.stringify(productions,null,2));
+});
+
+app.get(BASE_API_URL+"/agriculturalproduction-stats/loadInitialData",(req,res)=>{
+    var iniData=[
+        {
+            country:"Afghanistan",
+            year: 2018,
+            production:4.02,
+            absolute_change:434.520,
+            relative_changes:"12%"
+        },
+        {
+            country:"África",
+            year: 2018,
+            production:191.56,
+            absolute_change:146.68,
+            relative_changes:"327%"
+        },
+        {
+            country:"Albania",
+            year: 2018,
+            production:678.196,
+            absolute_change:385.797,
+            relative_changes:"132%"
+        },
+        {
+            country:"Argeria",
+            year: 2018,
+            production:6.06,
+            absolute_change:5.13,
+            relative_changes:"549%"
+        },
+        {
+            country:"Americas",
+            year: 2018,
+            production:763.59,
+            absolute_change:539.36,
+            relative_changes:"241%"
+        }
+    ];
+
+    iniData.forEach((a)=>{
+        productions.push(a);
+    });
+
+    res.send(JSON.stringify(productions,null,2));
+    });
+
+    app.put(BASE_API_URL+"/agriculturalproductions-stats", (req,res)=>{
+        res.sendStatus(405,"METHOD NOT ALLOWED");
+    });
+    
+    app.delete(BASE_API_URL+"/agriculturalproductions-stats",(req,res)=>{
+        productions.splice(req.body);
+        res.sendStatus(200, "OK");
+    });
