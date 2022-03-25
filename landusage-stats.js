@@ -7,7 +7,6 @@ module.exports.register = (app) => {
 
 const OWN_API_URL = "/landusage-stats";
 const path = require("path");
-const request = require("request");
 const bodyParser = require("body-parser");
 app.use(bodyParser.json());
 
