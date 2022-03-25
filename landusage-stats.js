@@ -5,7 +5,6 @@ Landusage statistics V1
 */
 module.exports.register = (app) => {
 
-const BASE_API_URL = "/api/v1";
 const OWN_API_URL = "/landusage-stats";
 const path = require("path");
 const request = require("request");
