@@ -9,8 +9,8 @@ app.use(bodyParser.json());
 const port = process.env.PORT || 8081;
 
 //API DANIEL PUCHE JIMENEZ
-//var landusage_statsV1 = require("./landusage-stats.js");
-//landusage_statsV1.register(app);
+var landusage_statsV1 = require("./landusage-stats.js");
+landusage_statsV1.register(app);
 
 app.use("/", express.static('public'));
 

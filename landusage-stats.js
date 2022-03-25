@@ -7,7 +7,7 @@ Landusage statistics V1
 
 module.exports.register = (app) => {
 
-
+const BASE_API_URL = "/api/v1";
 const OWN_API_URL = "/landusage-stats";
 const path = require("path");
 const request = require("request");
@@ -20,41 +20,41 @@ var landusage_stats_initial = [
     country:"Africa",
     code : "",
     year:2016,
-    built_area:6235010,
-    grazing_area:888088030,
-    cropland_area:296972060,
+    "built-area":6235010,
+    "grazing-area":888088030,
+    "cropland-area":296972060,
 },
 {  
-     country:"BRAZIL",
-     code:"BRA",
+    country:"BRAZIL",
+    code:"BRA",
     year:2016,
-    built_area:3358012,
-    grazing_area:196006800,
-    cropland_area:82297200,
+    "built-area":3358012,
+    "grazing-area":196006800,
+    "cropland-area":82297200,
 },
 {  
-     country:"BRAZIL",
-     code : "BRA",
+    country:"BRAZIL",
+    code : "BRA",
     year:2015,
-    built_area:3289368,
-    grazing_area:196005400,
-    cropland_area:81855260,
+    "built-area":3289368,
+    "grazing-area":196005400,
+    "cropland-area":81855260,
 },
 {  
-     country:"CANADA",
-     code: "CAN",
+    country:"CANADA",
+    code: "CAN",
     year:2016,
-    built_area:435730,
-    grazing_area:14030090,
-    cropland_area:47912430,
+    "built-area":435730,
+    "grazing-area":14030090,
+    "cropland-area":47912430,
 },
 {  
     country:"Canada",
     code : "CAN",
     year:2014,
-    built_area:421859,
-    grazing_area:14300740,
-    cropland_area:47771180,
+    "built-area":421859,
+    "grazing-area":14300740,
+    "cropland-area":47771180,
 }
 ];
 
