@@ -150,7 +150,34 @@ app.delete(BASE_API_URL+"/fertilizers-stats/:country",(req,res)=>{
     res.sendStatus(200,"OK"); 
 });
 
-    
+// Actualización recurso concreto
+app.put(BASE_API_URL+"/fertilizers-stats/:country/:year",(req,res)=>{
+    if(req.body.country == null |
+        req.body.year == null | 
+        req.body.quantity == null | 
+        req.body.absolute_change == null | 
+        req.body.relative_change == null){
+        res.sendStatus(400,"BAD REQUEST - Parametros incorrectos");
+    }else{
+        var country = req.params.country;
+        var year = req.params.year;
+        var body = req.body;
+        var index = fertilizers.findIndex((reg) =>{
+            return (reg.country == country && reg.year == year)
+        })
+        if(index == null){
+            res.sendStatus(404,"NOT FOUND");
+        }else if(country != body.country || year != body.year){
+            res.sendStatus(400,"BAD REQUEST");
+        }else{
+            var  update_fertilizers = {...body};
+            fertilizers[index] = update_fertilizers;
+
+            res.sendStatus(200,"UPDATED");
+        }
+    }
+
+})
 
 
 
