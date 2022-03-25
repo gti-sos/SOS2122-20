@@ -62,8 +62,8 @@ app.get(BASE_API_URL+"/fertilizers-stats", (req,res)=>{
     res.send(JSON.stringify(fertilizers,null,2));
 });
 
-app.get(BASE_API_URL+"/fertilizers-stats/loadInitialData",(req,res)=>{
-    var iniData=[
+
+var iniData=[
         {
         country:"afghanistan",
         year:2017,
@@ -100,10 +100,17 @@ app.get(BASE_API_URL+"/fertilizers-stats/loadInitialData",(req,res)=>{
         relative_change:38,
     }
 ];
-iniData.forEach((a)=>{
-    fertilizers.push(a);
-});
-res.send(JSON.stringify(fertilizers,null,2));
+app.get(BASE_API_URL+"/fertilizers-stats/loadInitialData",(req,res)=>{
+if(fertilizers.length<5){
+    iniData.forEach((a)=>{
+        fertilizers.push(a);
+    });
+    res.send(JSON.stringify( fertilizers,null,2));
+}
+else{
+    res.send(JSON.stringify( fertilizers,null,2));
+}
+
 });
 
 // Put recurso -> error
