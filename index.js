@@ -103,14 +103,14 @@ app.get(BASE_API_URL+"/fertilizers-stats/loadInitialData",(req,res)=>{
         relative_change:38,
     }
 ];
-if(fertilizers-stats.length<5){
+if(fertilizers.length<5){
     iniData.forEach((a)=>{
-        fertilizers-stats.push(a);
+        fertilizers.push(a);
     });
-    res.send(JSON.stringify( fertilizers-stats,null,2));
+    res.send(JSON.stringify( fertilizers,null,2));
 }
 else{
-    res.send(JSON.stringify( fertilizers-stats,null,2));
+    res.send(JSON.stringify( fertilizers,null,2));
 }
 
 });
