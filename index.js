@@ -3,7 +3,7 @@ const express = require("express");
 const bodyParser =require("body-parser");
 
 const BASE_API_URL = "/api/v1";
-
+const OWN_API_URL = "/landusage-stats";
 const app=express();
 app.use(bodyParser.json());
 const port = process.env.PORT || 8081;
