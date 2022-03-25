@@ -99,10 +99,16 @@ app.get(BASE_API_URL+"/fertilizers-stats/loadInitialData",(req,res)=>{
         relative_change:38,
     }
 ];
-iniData.forEach((a)=>{
-    fertilizers.push(a);
-});
-res.send(JSON.stringify(fertilizers,null,2));
+if(fertilizers-stats.length<5){
+    iniData.forEach((a)=>{
+        fertilizers-stats.push(a);
+    });
+    res.send(JSON.stringify( fertilizers-stats,null,2));
+}
+else{
+    res.send(JSON.stringify( fertilizers-stats,null,2));
+}
+
 });
 
 // Put recurso -> error
@@ -133,12 +139,6 @@ app.get(BASE_API_URL+ "/fertilizers-stats/:country",(req,res)=>{
     }else{
         res.send(JSON.stringify(filteredCountry[0],null,2));
     }
-});
-
-// Actualización recurso concreto
-app.put(BASE_API_URL+"/fertilizers-stats/:country",(req,res)=>{
-    var fertilizersCountry= req.params.country;
-
 });
 
 // Borrado recurso concreto
