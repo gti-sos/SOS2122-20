@@ -3,8 +3,6 @@ API Daniel Puche Jimenez
 Landusage statistics V1
 
 */
-
-
 module.exports.register = (app) => {
 
 const BASE_API_URL = "/api/v1";
