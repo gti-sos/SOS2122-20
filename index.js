@@ -57,7 +57,7 @@ app.post(BASE_API_URL+ "/fertilizers-stats",(req,res)=>{
     res.sendStatus(201,"CREATED"); 
 }); 
 
-var fertilizers=[];
+
 app.get(BASE_API_URL+"/fertilizers-stats", (req,res)=>{
     res.send(JSON.stringify(fertilizers,null,2));
 });
