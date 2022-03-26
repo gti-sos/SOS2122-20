@@ -38,10 +38,20 @@ app.get(BASE_API_URL+ "/fertilizers-stats",(req,res)=>{
 });
 
 // Post recurso
-app.post(BASE_API_URL+ "/fertilizers-stats",(req,res)=>{
-    fertilizers.push(req.body);
-    res.sendStatus(201,"CREATED"); 
-}); 
+app.post(BASE_API_URL + "/fertilizers-stats", (req,res)=>{
+    var newData = req.body;
+    var year = req.body.year;
+    var country = req.body.country;
+
+    for(let i = 0;i<fertilizers.length;i++){
+        let elem = fertilizers[i];
+        if(elem.year === year || elem.country === country){
+            res.sendStatus(409,"Conflict");
+        }
+    }
+    landusage_stats.push(req.body); 
+    res.sendStatus(201, "CREATED"); 
+});
 
 
 app.get(BASE_API_URL+"/fertilizers-stats", (req,res)=>{
