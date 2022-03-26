@@ -1,12 +1,13 @@
 const cool = require("cool-ascii-faces");
 const express = require("express");
 const bodyParser =require("body-parser");
-
+const path = require("path");
 const BASE_API_URL = "/api/v1";
-
 const app=express();
 app.use(bodyParser.json());
 const port = process.env.PORT || 8081;
+
+
 
 app.use("/", express.static('public'));
 
@@ -56,13 +57,13 @@ app.post(BASE_API_URL+ "/fertilizers-stats",(req,res)=>{
     res.sendStatus(201,"CREATED"); 
 }); 
 
-var fertilizers=[];
+
 app.get(BASE_API_URL+"/fertilizers-stats", (req,res)=>{
     res.send(JSON.stringify(fertilizers,null,2));
 });
 
-app.get(BASE_API_URL+"/fertilizers-stats/loadInitialData",(req,res)=>{
-    var iniData=[
+
+var iniData=[
         {
         country:"afghanistan",
         year:2017,
@@ -99,10 +100,17 @@ app.get(BASE_API_URL+"/fertilizers-stats/loadInitialData",(req,res)=>{
         relative_change:38,
     }
 ];
-iniData.forEach((a)=>{
-    fertilizers.push(a);
-});
-res.send(JSON.stringify(fertilizers,null,2));
+app.get(BASE_API_URL+"/fertilizers-stats/loadInitialData",(req,res)=>{
+if(fertilizers.length<5){
+    iniData.forEach((a)=>{
+        fertilizers.push(a);
+    });
+    res.send(JSON.stringify( fertilizers,null,2));
+}
+else{
+    res.send(JSON.stringify( fertilizers,null,2));
+}
+
 });
 
 // Put recurso -> error
@@ -135,12 +143,6 @@ app.get(BASE_API_URL+ "/fertilizers-stats/:country",(req,res)=>{
     }
 });
 
-// Actualización recurso concreto
-app.put(BASE_API_URL+"/fertilizers-stats/:country",(req,res)=>{
-    var fertilizersCountry= req.params.country;
-
-});
-
 // Borrado recurso concreto
 app.delete(BASE_API_URL+"/fertilizers-stats/:country",(req,res)=>{
     var fertilizersCountry= req.params.country;
@@ -150,39 +152,34 @@ app.delete(BASE_API_URL+"/fertilizers-stats/:country",(req,res)=>{
     res.sendStatus(200,"OK"); 
 });
 
-    
+// Actualización recurso concreto
+app.put(BASE_API_URL+"/fertilizers-stats/:country/:year",(req,res)=>{
+    if(req.body.country == null |
+        req.body.year == null | 
+        req.body.quantity == null | 
+        req.body.absolute_change == null | 
+        req.body.relative_change == null){
+        res.sendStatus(400,"BAD REQUEST - Parametros incorrectos");
+    }else{
+        var country = req.params.country;
+        var year = req.params.year;
+        var body = req.body;
+        var index = fertilizers.findIndex((reg) =>{
+            return (reg.country == country && reg.year == year)
+        })
+        if(index == null){
+            res.sendStatus(404,"NOT FOUND");
+        }else if(country != body.country || year != body.year){
+            res.sendStatus(400,"BAD REQUEST");
+        }else{
+            var  update_fertilizers = {...body};
+            fertilizers[index] = update_fertilizers;
 
-
-
-//Daniel Puche
-
-var landusage = [
-    {
-        country : "Spain",
-        code : "SPA",
-        year : 2015,
-        "built-area" :10 ,
-        "grazing-area" :10 ,
-        "cropland-area" : 10,
-    },
-    {
-        country : "Spain",
-        code : "SPA",
-        year : 2016,
-        "built-area" :10 ,
-        "grazing-area" :10 ,
-        "cropland-area" : 10,
+            res.sendStatus(200,"UPDATED");
+        }
     }
-]
 
-app.get(BASE_API_URL+ "/landusage-stats",(req,res)=>{
-    res.send(JSON.stringify(landusage,null,2)); 
-});
-
-app.post(BASE_API_URL+ "/landusage-stats",(req,res)=>{
-    landusage.push(req.body);
-    res.sendStatus(201,"CREATED"); 
-}); 
+})
 
 //Javier
 
@@ -272,3 +269,7 @@ app.get(BASE_API_URL+"/agriculturalproduction-stats/loadInitialData",(req,res)=>
         productions.splice(req.body);
         res.sendStatus(200, "OK");
     });
+
+    //API DANIEL PUCHE JIMENEZ
+var landusage_statsV1 = require("./landusage-stats");
+landusage_statsV1.register(app);
