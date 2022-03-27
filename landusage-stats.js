@@ -1,7 +1,7 @@
 /*
 API Daniel Puche Jimenez 
 Landusage statistics V1
-
+F06
 */
 module.exports.register = (app) => {
 const BASE_API_URL = "/api/v1";
@@ -73,17 +73,12 @@ app.get(BASE_API_URL + OWN_API_URL, (req,res)=>{
     res.send(JSON.stringify(landusage_stats, null,2)); // devuelve el conjunto 
 });
 
-<<<<<<< HEAD
-
 //DELETE CONJUNTO
 app.delete(BASE_API_URL + OWN_API_URL, (req,res)=>{ 
     landusage_stats = []; // deja vacio el conjunto
     console.log("HOLA");
     res.sendStatus(200, "OK"); // devuelve codigo correcto
 });
-
-=======
->>>>>>> 7c6cebc1a840457259792c0808d1060d59b948cf
 //GET ELEMENTO POR PAIS
 app.get(BASE_API_URL + OWN_API_URL+"/:country", (req,res)=>{
     var country = req.params.country; // guarda el pais de la peticion
@@ -91,7 +86,7 @@ app.get(BASE_API_URL + OWN_API_URL+"/:country", (req,res)=>{
     return (cont.country == country); 
     
     });
-
+ 
     if(filteredCountry == 0){ // si devuelve falso devuelve error de no encontrado
         res.sendStatus(404, "NOT FOUND");
     }else{
