@@ -13,24 +13,7 @@ module.exports.register = (app) => {
 
 
 // ALEJANDRO
-var fertilizers =[
-    {
-        country:"afghanistan",
-        year:2017,
-        quantity:17.80,
-        absolute_change:14.64,
-        relative_change:4.63
-
-
-    },
-    {
-        country:"africa",
-        year:2017,
-        quantity:15.09,
-        absolute_change:3.18,
-        relative_change:0.27
-    }
-];
+var fertilizers =[];
 // Get recurso
 app.get(BASE_API_URL+ "/fertilizers-stats",(req,res)=>{
     res.send(JSON.stringify(fertilizers,null,2)); 
@@ -52,12 +35,6 @@ app.post(BASE_API_URL + "/fertilizers-stats", (req,res)=>{
     landusage_stats.push(req.body); 
     res.sendStatus(201, "CREATED"); 
 });
-
-
-app.get(BASE_API_URL+"/fertilizers-stats", (req,res)=>{
-    res.send(JSON.stringify(fertilizers,null,2));
-});
-
 
 var iniData=[
         {
@@ -97,16 +74,16 @@ var iniData=[
     }
 ];
 app.get(BASE_API_URL+"/fertilizers-stats/loadInitialData",(req,res)=>{
-if(fertilizers.length<5){
-    iniData.forEach((a)=>{
-        fertilizers.push(a);
-    });
-    res.send(JSON.stringify( fertilizers,null,2));
-}
-else{
-    res.send(JSON.stringify( fertilizers,null,2));
-}
-
+    if(fertilizers.length===0){
+        iniData.forEach((a)=>{
+            landusage_stats.push(a);
+        });
+        res.send(JSON.stringify(fertilizers,null,2));
+    }
+    else{
+        res.send(JSON.stringify(fertilizers,null,2));
+    }
+   
 });
 
 // Put recurso -> error
