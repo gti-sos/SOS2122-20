@@ -4,11 +4,9 @@ Landusage statistics V1
 
 */
 module.exports.register = (app) => {
-
 const BASE_API_URL = "/api/v1";
 const OWN_API_URL = "/landusage-stats";
 const path = require("path");
-const request = require("request");
 const bodyParser = require("body-parser");
 app.use(bodyParser.json());
 
@@ -58,7 +56,7 @@ var landusage_stats_initial = [
 
 //GET Datos Iniciales
 app.get(BASE_API_URL + OWN_API_URL + "/loadInitialData",(req,res)=>{
-    if(landusage_stats.length<5){
+    if(landusage_stats.length===0){
         landusage_stats_initial.forEach((a)=>{
             landusage_stats.push(a);
         });
@@ -75,6 +73,7 @@ app.get(BASE_API_URL + OWN_API_URL, (req,res)=>{
     res.send(JSON.stringify(landusage_stats, null,2)); // devuelve el conjunto 
 });
 
+<<<<<<< HEAD
 
 //DELETE CONJUNTO
 app.delete(BASE_API_URL + OWN_API_URL, (req,res)=>{ 
@@ -83,6 +82,8 @@ app.delete(BASE_API_URL + OWN_API_URL, (req,res)=>{
     res.sendStatus(200, "OK"); // devuelve codigo correcto
 });
 
+=======
+>>>>>>> 7c6cebc1a840457259792c0808d1060d59b948cf
 //GET ELEMENTO POR PAIS
 app.get(BASE_API_URL + OWN_API_URL+"/:country", (req,res)=>{
     var country = req.params.country; // guarda el pais de la peticion
@@ -96,15 +97,15 @@ app.get(BASE_API_URL + OWN_API_URL+"/:country", (req,res)=>{
     }else{
         res.send(JSON.stringify(filteredCountry, null,2)); // si devuelve true devuelve los que coinciden.
     }
+    console.log(filteredCountry);
 });
 
-//GET ELEMENTO POR ANYO
+//GET ELEMENTO POR PAIS Y ANYO
 app.get(BASE_API_URL + OWN_API_URL+"/:country/:year", (req,res)=>{
     var country = req.params.country; // guarda el pais de la peticion
     var yearName = req.params.year; // guarda el anyo de la peticion
     filteredYear = landusage_stats.filter((cont) =>{ 
     return (cont.country == country) && (cont.year == yearName); // filtra los que coinciden con el anyo y el pais de la peticion 
-    
     });
 
     if(filteredYear == 0){ // si es 0(falso) devuelve error de no encontrado
@@ -114,16 +115,44 @@ app.get(BASE_API_URL + OWN_API_URL+"/:country/:year", (req,res)=>{
     }
 });
 
+//POST CONJUNTO // BIEN
+app.post(BASE_API_URL + OWN_API_URL, (req,res)=>{
+    var newData = req.body;
+    var year = req.body.year;
+    var country = req.body.country;
+
+    for(let i = 0;i<landusage_stats.length;i++){
+        let elem = landusage_stats[i];
+        if(elem.year === year || elem.country === country){
+            res.sendStatus(409,"Conflict");
+        }
+    }
+    landusage_stats.push(req.body); // anyade lo que le pasemos en el cuerpo de la peticion
+    res.sendStatus(201, "CREATED"); // devuelve codigo correcto
+});
+
+//POST RECURSO ERROR
+app.post(BASE_API_URL + OWN_API_URL+ "/:country", (req,res)=>{
+    res.sendStatus(405, "Method Not Allowed"); // devuelve codigo method not allowed
+});
+
+//DELETE CONJUNTO
+app.delete(BASE_API_URL + OWN_API_URL, (req,res)=>{ 
+    landusage_stats = []; // deja vacio el conjunto
+    res.sendStatus(200, "OK"); // devuelve codigo correcto
+});
+
 //DELETE ELEMENTO POR PAIS
 app.delete(BASE_API_URL + OWN_API_URL+"/:country", (req,res)=>{ //borrar todos los recursos
     var country = req.params.country; // pais de la peticion 
-    landusage_stats.filter((cont) =>{ // filtrar pais que coindice con la peticion
+    landusage_stats = landusage_stats.filter((cont) =>{ // filtrar pais que coindice con la peticion
         return (cont.country != country); 
     });
+    res.send(JSON.stringify(landusage_stats, null,2));
     res.sendStatus(200, "OK");
 });
 
-// DELETE ELEMENTO POR ANYO
+// DELETE ELEMENTO POR PAIS Y ANYO
 app.delete(BASE_API_URL + OWN_API_URL+"/:country/:year", (req,res)=>{ //borrar todos los recursos
     var country = req.params.country; //pais de la peticion
     var yearName = req.params.year; //anyo de la peticion
@@ -131,6 +160,10 @@ app.delete(BASE_API_URL + OWN_API_URL+"/:country/:year", (req,res)=>{ //borrar t
         return (cont.country != country) && (cont.year != yearName); //comprobar que el pais y el anyo de la peticion coindice mediante filtrado
     });
     res.sendStatus(200, "OK"); // devolver codigo de ok 
+});
+
+app.put(BASE_API_URL + OWN_API_URL, (req,res)=>{ //borrar todos los recursos
+    res.sendStatus(400, "Bad Request"); // devolver codigo de ok 
 });
 
 // Actualización recurso concreto
