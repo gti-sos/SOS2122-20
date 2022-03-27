@@ -76,7 +76,7 @@ var iniData=[
 app.get(BASE_API_URL+"/fertilizers-stats/loadInitialData",(req,res)=>{
     if(fertilizers.length===0){
         iniData.forEach((a)=>{
-            landusage_stats.push(a);
+            fertilizers.push(a);
         });
         res.send(JSON.stringify(fertilizers,null,2));
     }
