@@ -68,6 +68,10 @@ app.get(BASE_API_URL + OWN_API_URL + "/loadInitialData",(req,res)=>{
    
 });
 
+app.get(BASE_API_URL + OWN_API_URL + "/docs",(req,res)=>{
+    res.redirect("https://documenter.getpostman.com/view/19481666/UVyn2eVt");
+})
+
 //GET CONJUNTO
 app.get(BASE_API_URL + OWN_API_URL, (req,res)=>{ 
     res.send(JSON.stringify(landusage_stats, null,2)); // devuelve el conjunto 
