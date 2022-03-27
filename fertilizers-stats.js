@@ -32,7 +32,7 @@ app.post(BASE_API_URL + "/fertilizers-stats", (req,res)=>{
             res.sendStatus(409,"Conflict");
         }
     }
-    landusage_stats.push(req.body); 
+    fertilizers.push(req.body); 
     res.sendStatus(201, "CREATED"); 
 });
 
