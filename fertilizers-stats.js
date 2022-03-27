@@ -15,13 +15,18 @@ module.exports.register = (app) => {
 // ALEJANDRO
 var fertilizers =[];
 // Get recurso
-app.get(BASE_API_URL+ "/fertilizers-stats",(req,res)=>{
+app.get(BASE_API_URL+ OWN_API_URL ,(req,res)=>{
     res.send(JSON.stringify(fertilizers,null,2)); 
 
 });
 
+// Docuentación
+app.get(BASE_API_URL + OWN_API_URL + "/docs",(req,res)=>{
+    res.redirect("https://documenter.getpostman.com/view/20091974/UVyn2eVu");
+})
+
 // Post recurso
-app.post(BASE_API_URL + "/fertilizers-stats", (req,res)=>{
+app.post(BASE_API_URL + OWN_API_URL , (req,res)=>{
     var newData = req.body;
     var year = req.body.year;
     var country = req.body.country;
@@ -73,7 +78,7 @@ var iniData=[
         relative_change:38,
     }
 ];
-app.get(BASE_API_URL+"/fertilizers-stats/loadInitialData",(req,res)=>{
+app.get(BASE_API_URL+OWN_API_URL +"/loadInitialData",(req,res)=>{
     if(fertilizers.length===0){
         iniData.forEach((a)=>{
             fertilizers.push(a);
@@ -87,23 +92,23 @@ app.get(BASE_API_URL+"/fertilizers-stats/loadInitialData",(req,res)=>{
 });
 
 // Put recurso -> error
-app.put(BASE_API_URL+"/fertilizers-stats", (req,res)=>{
+app.put(BASE_API_URL+OWN_API_URL , (req,res)=>{
     res.sendStatus(405,"METHOD NOT ALLOWED");
 });
 // Borrar recurso -> Array vacío
-app.delete(BASE_API_URL+"/fertilizers-stats",(req,res)=>{
+app.delete(BASE_API_URL+OWN_API_URL ,(req,res)=>{
     fertilizers.splice(req.body);
     res.sendStatus(200, "OK");
 });
 
 // Post recurso concreto -> Error
-app.post(BASE_API_URL+"/fertilizers-stats/:country",(req,res)=>{
+app.post(BASE_API_URL+OWN_API_URL +"/:country",(req,res)=>{
     var fertilizersCountry = req.params.country;
     res.sendStatus(405,"METHOD NOT FOUND"); 
 });
 
 // Get recurso concreto
-app.get(BASE_API_URL+ "/fertilizers-stats/:country",(req,res)=>{
+app.get(BASE_API_URL+ OWN_API_URL +"/:country",(req,res)=>{
 
     var fertilizersCountry = req.params.country;
     filteredCountry = fertilizers.filter((e)=>{
@@ -118,7 +123,7 @@ app.get(BASE_API_URL+ "/fertilizers-stats/:country",(req,res)=>{
 });
 
 // Borrado recurso concreto
-app.delete(BASE_API_URL+"/fertilizers-stats/:country",(req,res)=>{
+app.delete(BASE_API_URL+OWN_API_URL +"/:country",(req,res)=>{
     var fertilizersCountry= req.params.country;
     fertilizers= fertilizers.filter((e)=>{
        return (e.country != fertilizersCountry);
@@ -127,7 +132,7 @@ app.delete(BASE_API_URL+"/fertilizers-stats/:country",(req,res)=>{
 });
 
 // Actualización recurso concreto
-app.put(BASE_API_URL+"/fertilizers-stats/:country/:year",(req,res)=>{
+app.put(BASE_API_URL+OWN_API_URL +"/:country/:year",(req,res)=>{
     if(req.body.country == null |
         req.body.year == null | 
         req.body.quantity == null | 
