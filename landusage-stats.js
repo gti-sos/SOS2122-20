@@ -3,8 +3,6 @@ API Daniel Puche Jimenez
 Landusage statistics V1
 
 */
-
-
 module.exports.register = (app) => {
 
 const BASE_API_URL = "/api/v1";
@@ -77,15 +75,11 @@ app.get(BASE_API_URL + OWN_API_URL, (req,res)=>{
     res.send(JSON.stringify(landusage_stats, null,2)); // devuelve el conjunto 
 });
 
-//POST CONJUNTO
-app.post(BASE_API_URL + OWN_API_URL, (req,res)=>{
-    landusage_stats.push(req.body); // anyade lo que le pasemos en el cuerpo de la peticion
-    res.sendStatus(201, "CREATED"); // devuelve codigo correcto
-});
 
 //DELETE CONJUNTO
 app.delete(BASE_API_URL + OWN_API_URL, (req,res)=>{ 
     landusage_stats = []; // deja vacio el conjunto
+    console.log("HOLA");
     res.sendStatus(200, "OK"); // devuelve codigo correcto
 });
 
@@ -166,6 +160,34 @@ app.put(BASE_API_URL+OWN_API_URL+"/:country/:year",(req,res)=>{
         }
     }
 
+});
+
+//POST CONJUNTO
+app.post(BASE_API_URL + OWN_API_URL, (req,res)=>{
+    var newData = req.body;
+    var year = req.body.year;
+    var country = req.body.country;
+
+    if(!newData.year ||
+        !newData.country ||
+        !newData.code ||
+        !newData.built-area||
+        !newData.grazing-area||
+        !newData.cropland-area){
+            res.sendStatus(400,"Bad Request");
+        }
+    else{
+        for(let i = 0;i<landusage_stats.length;i++){
+            let elem = landusage_stats[i];
+            if(elem.year === year && elem.country === country){
+                res.sendStatus(409,"Conflict");
+            }
+        }
+        landusage_stats.push(req.body); // anyade lo que le pasemos en el cuerpo de la peticion
+        res.sendStatus(201, "CREATED"); // devuelve codigo correcto
+    }
+
+    
 });
 
 }
