@@ -31,6 +31,10 @@ app.listen(port, () => {
 //Javier
 var agriculturalP=[];
 
+app.get(BASE_API_URL +"/agriculturalproduction-stats/docs",(req,res)=>{
+    res.redirect("https://documenter.getpostman.com/view/20091971/UVyn2z48");
+})
+
 var agriculturalproduction_stats=[
     {
         country:"Afghanistan",

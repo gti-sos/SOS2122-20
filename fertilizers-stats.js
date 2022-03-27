@@ -20,7 +20,7 @@ app.get(BASE_API_URL+ OWN_API_URL ,(req,res)=>{
 
 });
 
-// Docuentación
+// Documentación
 app.get(BASE_API_URL + OWN_API_URL + "/docs",(req,res)=>{
     res.redirect("https://documenter.getpostman.com/view/20091974/UVyn2eVu");
 })
