@@ -70,7 +70,7 @@ var agriculturalproduction_stats=[
     ];
 
 //GET para los datos iniciales:
-app.get(BASE_API_URL+"/agriculturalproductions-stats/loadInitialData",(req,res)=>{
+app.get(BASE_API_URL+"/agriculturalproduction-stats/loadInitialData",(req,res)=>{
     if(agriculturalP.length<5){
         agriculturalproduction_stats.forEach((a)=>{
             agriculturalP.push(a);
@@ -89,10 +89,31 @@ app.get(BASE_API_URL+ "/agriculturalproduction-stats",(req,res)=>{
 });
 
 //POST al conjunto:
-app.post(BASE_API_URL+ "/agriculturalproduction-stats",(req,res)=>{
-    agriculturalP.push(req.body);
-    res.sendStatus(201,"CREATED"); 
-}); 
+app.post(BASE_API_URL + "/agriculturalproduction-stats", (req,res)=>{
+    var newData = req.body;
+    var year = req.body.year;
+    var country = req.body.country;
+
+    if(!newData.country ||
+        !newData.year ||
+        !newData.production ||
+        !newData.absolute_change||
+        !newData.relative_change){
+        res.sendStatus(400,"Bad Request");
+        }
+    else{
+        for(let i = 0;i<agriculturalP.length;i++){
+            let elem = agriculturalP[i];
+            if(elem.year === year && elem.country === country){
+                res.sendStatus(409,"Conflict");
+            }
+        }
+        agriculturalP.push(req.body); 
+        res.sendStatus(201, "CREATED"); 
+    }
+
+    
+});
 
 //DELETE al conjunto:
 app.delete(BASE_API_URL+"/agriculturalproduction-stats",(req,res)=>{
@@ -137,7 +158,7 @@ app.put(BASE_API_URL+"/agriculturalproduction-stats/:country/:year",(req,res)=>{
 //DELETE a un recurso concreto:
 app.delete(BASE_API_URL +"/agriculturalproduction-stats/:country", (req,res)=>{ //borrar todos los recursos
     var country = req.params.country; 
-    agriculturalP.filter((cont) =>{ 
+    agriculturalP=agriculturalP.filter((cont) =>{ 
         return (cont.country != country); 
     });
     res.sendStatus(200, "OK");
