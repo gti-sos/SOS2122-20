@@ -169,9 +169,11 @@ app.put(BASE_API_URL + OWN_API_URL, (req,res)=>{ //borrar todos los recursos
 app.put(BASE_API_URL+OWN_API_URL+"/:country/:year",(req,res)=>{
     if(req.body.country == null |
         req.body.year == null | 
-        req.body.quantity == null | 
-        req.body.absolute_change == null | 
-        req.body.relative_change == null){
+        req.body.code == null | 
+        req.body.grazing-area == null | 
+        req.body.cropland-area == null
+        |
+        req.body.built-area == null){
         res.sendStatus(400,"BAD REQUEST - Parametros incorrectos");
     }else{
         var country = req.params.country;
