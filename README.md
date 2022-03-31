@@ -2,7 +2,7 @@
   - [Daniel Puche Jiménez](https://github.com/danpucjim)
   - [Alejandro Jorge Poyuelo](https://github.com/alexjorge-04)
   - [Javier Lara Parrilla](https://github.com/javierlara47)
-- **Project description**: Análisis de la variación del uso de tierras(edificadas,cultivo,pasto),abono y producción del cereal a escala global.
+- **Project description**: Análisis de la variación del uso de tierras(edificadas,cultivo,pasto),abono, y producción del cereal a escala global.
 - **Repository**: [gti-sos/SOS2122-20](https://github.com/gti-sos/SOS2122-20)
 - **URL**: [ https://sos2122-20.herokuapp.com/](http://sos2122-20.herokuapp.com)
 -  **APIs**:

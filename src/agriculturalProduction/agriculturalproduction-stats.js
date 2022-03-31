@@ -1,4 +1,5 @@
 module.exports.register = (app) => {
+const BASE_API_URL = "/api/v1";
 const path = require("path");
 const bodyParser = require("body-parser");
 app.use(bodyParser.json());
