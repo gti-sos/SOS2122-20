@@ -122,69 +122,6 @@ app.get(BASE_API_URL+ OWN_API_URL +"/:country",(req,res)=>{
     }
 });
 
-// Get recurso concreto -> AÑO
-app.get(BASE_API_URL+ OWN_API_URL +"?:year",(req,res)=>{
-
-    var fertilizersYear = req.params.year;
-    filteredYear = fertilizers.filter((e)=>{
-        return (e.year == fertilizersYear);
-    });
-
-    if(filteredYear==0){
-        res.sendStatus(404, "NOT FOUND");
-    }else{
-        res.send(JSON.stringify(filteredYear[0],null,2));
-    }
-});
-
-// Get recurso concreto -> CANTIDAD
-app.get(BASE_API_URL+ OWN_API_URL +"?:quantity",(req,res)=>{
-
-    var fertilizersQuantity = req.params.quantity;
-    filteredQuantity = fertilizers.filter((e)=>{//GET CONJUNTO
-        app.get(BASE_API_URL + OWN_API_URL, (req,res)=>{ 
-            var query = req.query;
-            var landusage_stats_copy = landusage_stats;
-            console.log(landusage_stats_copy);
-            console.log("Peticion GET");
-            console.log(query);
-            var limit = query.limit;
-            var offset = query.offset;
-        
-            for(q in query){
-                if(q == 'year'){
-                    query[q] = parseInt(query[q]);
-                }
-                if(q == 'grazing-area'){
-                    query[q] = parseFloat(query[q]);
-                }
-                if(q=='built-area'){
-                    query[q] = parseFloat(query[q]);
-                }
-                if(q=='cropland-area'){
-                    query[q] = parseFloat(query[q]);
-                }
-            }
-            delete query.offset;
-            delete query.limit;
-            if(!(query.length==0)){
-                console.log("Hola");
-                landusage_stats_copy = landusage_stats.filter((a) => {
-                return (a['year'] == query['year']);})
-                //res.send(JSON.stringify(landusage_stats_copy,null,2));
-            }
-            res.send(JSON.stringify(landusage_stats_copy, null,2)); // devuelve el conjunto 
-        });
-        return (e.quantity == fertilizersQuantity);
-    });
-
-    if(filteredQuantity==0){
-        res.sendStatus(404, "NOT FOUND");
-    }else{
-        res.send(JSON.stringify(filteredQuantity[0],null,2));
-    }
-});
-
 // Borrado recurso concreto
 app.delete(BASE_API_URL+OWN_API_URL +"/:country",(req,res)=>{
     var fertilizersCountry= req.params.country;
