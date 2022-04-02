@@ -141,7 +141,40 @@ app.get(BASE_API_URL+ OWN_API_URL +"?:year",(req,res)=>{
 app.get(BASE_API_URL+ OWN_API_URL +"?:quantity",(req,res)=>{
 
     var fertilizersQuantity = req.params.quantity;
-    filteredQuantity = fertilizers.filter((e)=>{
+    filteredQuantity = fertilizers.filter((e)=>{//GET CONJUNTO
+        app.get(BASE_API_URL + OWN_API_URL, (req,res)=>{ 
+            var query = req.query;
+            var landusage_stats_copy = landusage_stats;
+            console.log(landusage_stats_copy);
+            console.log("Peticion GET");
+            console.log(query);
+            var limit = query.limit;
+            var offset = query.offset;
+        
+            for(q in query){
+                if(q == 'year'){
+                    query[q] = parseInt(query[q]);
+                }
+                if(q == 'grazing-area'){
+                    query[q] = parseFloat(query[q]);
+                }
+                if(q=='built-area'){
+                    query[q] = parseFloat(query[q]);
+                }
+                if(q=='cropland-area'){
+                    query[q] = parseFloat(query[q]);
+                }
+            }
+            delete query.offset;
+            delete query.limit;
+            if(!(query.length==0)){
+                console.log("Hola");
+                landusage_stats_copy = landusage_stats.filter((a) => {
+                return (a['year'] == query['year']);})
+                //res.send(JSON.stringify(landusage_stats_copy,null,2));
+            }
+            res.send(JSON.stringify(landusage_stats_copy, null,2)); // devuelve el conjunto 
+        });
         return (e.quantity == fertilizersQuantity);
     });
 
