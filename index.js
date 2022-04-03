@@ -26,8 +26,8 @@ app.listen(port, () => {
 
 
     //API DANIEL PUCHE JIMENEZ
-var landusage_statsV1 = require("./src/backend/danpucjimAPI/landusage-stats.js");
-landusage_statsV1.register(app);
+    var landusage_statsV1 = require("./src/backend/danpucjimAPI/landusage-stats.js");
+    landusage_statsV1.register(app);
 
     //API ALEJANDRO JORGE POYUELO
     var fertilizers_statsV1 = require("./src/backend/alejorpoyAPI/fertilizers-stats.js");

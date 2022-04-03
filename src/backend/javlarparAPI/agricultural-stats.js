@@ -1,219 +1,227 @@
+var BASE_API_URL = "/api/v1";
+var Datastore = require("nedb");
+var path = require('path');
 
+var dbFile = path.join(__dirname, 'agriculturalproduction-stats.db');
+var db = new Datastore({filename: dbFile, autoload: true });
 
-
-
-
-module.exports.register = (app) => {
-    const BASE_API_URL = "/api/v1";
-    const OWN_API_URL = "/agriculturalproduction-stats";
-    const path = require("path");
-    const bodyParser = require("body-parser");
-    app.use(bodyParser.json());
-
-
-
-
+//Variable
 var agriculturalP=[];
 
-app.get(BASE_API_URL +"/agriculturalproduction-stats/docs",(req,res)=>{
-    res.redirect("https://documenter.getpostman.com/view/20091971/UVyn2z48");
-})
+module.exports.register = (app) => {
+        var agriculturalproduction_stats=[
+            {
+                country:"Afghanistan",
+                year: 2018,
+                production: 4.02,
+                absolute_change:434.520,
+                relative_change:"12%"
+            },
+            {
+                country:"Africa",
+                year: 2018,
+                production: 191.56,
+                absolute_change:146.68,
+                relative_change:"327%"
+            },
+            {
+                country:"Albania",
+                year: 2018,
+                production: 678.196,
+                absolute_change:385.797,
+                relative_change:"132%"
+            },
+            {
+                country:"Argeria",
+                year: 2018,
+                production: 6.06,
+                absolute_change:5.13,
+                relative_change:"549%"
+            },
+            {
+                country:"Americas",
+                year: 2018,
+                production: 763.59,
+                absolute_change:539.36,
+                relative_change:"241%"
+            }
+        ];
 
-var agriculturalproduction_stats=[
-    {
-        country:"Afghanistan",
-        year: 2018,
-        production: 4.02,
-        absolute_change:434.520,
-        relative_change:"12%"
-    },
-    {
-        country:"Africa",
-        year: 2018,
-        production: 191.56,
-        absolute_change:146.68,
-        relative_change:"327%"
-    },
-    {
-        country:"Albania",
-        year: 2018,
-        production: 678.196,
-        absolute_change:385.797,
-        relative_change:"132%"
-    },
-    {
-        country:"Argeria",
-        year: 2018,
-        production: 6.06,
-        absolute_change:5.13,
-        relative_change:"549%"
-    },
-    {
-        country:"Americas",
-        year: 2018,
-        production: 763.59,
-        absolute_change:539.36,
-        relative_change:"241%"
-    }
-    ];
-
-//GET para los datos iniciales:
-app.get(BASE_API_URL+"/agriculturalproduction-stats/loadInitialData",(req,res)=>{
-    if(agriculturalP.length<5){
-        agriculturalproduction_stats.forEach((a)=>{
-            agriculturalP.push(a);
+        //GET para los datos iniciales:
+        app.get(BASE_API_URL + "/agriculturalproduction-stats/loadInitialData",(req,res)=>{
+            db.find({},function(err,docs){
+                if(docs.length==0){
+                    db.insert(agriculturalproduction_stats);
+                    console.log(`Datos iniciales : ${db}`);
+                    return res.send(JSON.stringify(agriculturalproduction_stats,null,2));
+                }
+                else{ 
+                    return res.sendStatus(200);
+                }
+            })
+        
         });
-            res.send(JSON.stringify(agriculturalP,null,2));
-    }else{
-            res.send(JSON.stringify(agriculturalP,null,2));
-    }   
-    
+
+        app.get(BASE_API_URL +"/agriculturalproduction-stats/docs",(req,res)=>{
+            res.redirect("https://documenter.getpostman.com/view/20091971/UVysxbUP");
+        })
+
+    app.get(BASE_API_URL + "/agriculturalproduction-stats", (req, res) => {
+        var query = req.query;
+        if(query.hasOwnProperty("country")){
+            query.country = query.country;
+        }
+        if(query.hasOwnProperty("year")){
+            query.year = parseInt(query.year);
+        }
+        if(query.hasOwnProperty("production")){
+            query.production = parseFloat(query.production);
+        }
+        if(query.hasOwnProperty("absolute_change")){
+            query.absolute_change = parseFloat(query.absolute_change);
+        }
+        if(query.hasOwnProperty("relative_change")){
+            query.relative_change = parseFloat(query.relative_change);
+        }
+        if (query.offset) { 
+            var offset = parseInt(query.offset);
+            delete req.query.offset;
+        }
+        if (query.limit) { 
+            var limit = parseInt(req.query.limit);
+            delete query.limit;
+        }
+        console.log(`new query ${JSON.stringify(query, null,2)} with offset ${offset} and limit ${limit}` );
+        db.find(query).skip(offset).limit(limit).exec((err, dataInDB) => {
+            if(err){
+                console.error("ERROR accesing DB in GET");
+                res.sendStatus(500);
+            }
+            else{
+                if(dataInDB == 0){
+                    console.error("No data found");
+                    res.sendStatus(404);
+                }
+                else{
+                    dataInDB.forEach( (data) =>{ delete data._id; });
+                    res.status(200).send(JSON.stringify(dataInDB, null, 2));
+                    console.log("GET resource:"+JSON.stringify(dataInDB, null, 2));
+                }
+            }
+        });
     });
 
-//GET al conjunto:
-app.get(BASE_API_URL+ "/agriculturalproduction-stats",(req,res)=>{
-    res.send(JSON.stringify(agriculturalP,null,2)); 
-
-});
-
-//POST al conjunto:
-app.post(BASE_API_URL + "/agriculturalproduction-stats", (req,res)=>{
-    var newData = req.body;
-    var year = req.body.year;
-    var country = req.body.country;
-
-    if(!newData.country ||
-        !newData.year ||
-        !newData.production ||
-        !newData.absolute_change||
-        !newData.relative_change){
-        res.sendStatus(400,"Bad Request");
-        }
-    else{
-        for(let i = 0;i<agriculturalP.length;i++){
-            let elem = agriculturalP[i];
-            if(elem.year === year && elem.country === country){
-                res.sendStatus(409,"Conflict");
+    //GET por país y año
+app.get(BASE_API_URL +"/agriculturalproduction-stats/:country/:year", (req,res)=>{
+    var data = req.params; //parametro solicitado
+    db.find({country: data.country, year: parseInt(data.year)}, (err, docs) => {
+        if (err) {
+            res.sendStatus(500);
+        } else {
+            if (docs == 0) {
+                res.sendStatus(404);
+            } else {
+                delete docs[0]._id;
+                res.status(200).send(JSON.stringify(docs[0], null, 2));
             }
         }
-        agriculturalP.push(req.body); 
-        res.sendStatus(201, "CREATED"); 
-    }
-
-    
+    });
 });
 
-//DELETE al conjunto:
-app.delete(BASE_API_URL+"/agriculturalproduction-stats",(req,res)=>{
-    agriculturalP.splice(req.body);
-    res.sendStatus(200, "OK");
-});
-
-//PUT al conjunto(nos devuelve error):
-app.put(BASE_API_URL+"/agriculturalproduction-stats", (req,res)=>{
-    res.sendStatus(405,"METHOD NOT ALLOWED");
-});
-
-//PUT a un recurso concreto(pais y año):
-app.put(BASE_API_URL+"/agriculturalproduction-stats/:country/:year",(req,res)=>{
-    if(req.body.country == null |
-        req.body.year == null | 
-        req.body.production == null | 
-        req.body.absolute_change == null | 
-        req.body.relative_change == null){
-        res.sendStatus(400,"BAD REQUEST - Parametros incorrectos");
-    }else{
-        var country = req.params.country;
-        var year = req.params.year;
-        var body = req.body;
-        var index = agriculturalP.findIndex((reg) =>{
-            return (reg.country == country && reg.year == year)
+    //DELETE CONJUNTO bien
+    app.delete(BASE_API_URL + "/agriculturalproduction-stats", (req,res)=>{ 
+        db.remove({},{multi:true},function (err,docs){
+            if(err){
+                res.sendStatus(500);
+            }
+            else{
+                if(docs==0){
+                    res.sendStatus(404);
+                }
+                else{
+                    res.sendStatus(200);
+                }
+            }
         })
-        if(index == null){
-            res.sendStatus(404,"NOT FOUND");
-        }else if(country != body.country || year != body.year){
-            res.sendStatus(400,"BAD REQUEST");
-        }else{
-            var  update_productions = {...body};
-            agriculturalP[index] = update_productions;
+    });
 
-            res.sendStatus(200,"UPDATED");
+    app.delete(BASE_API_URL +"/agriculturalproduction-stats/:country/:year", (req,res)=>{
+        var data = req.params;
+        db.remove({country:data.country,year:parseInt(data.year)},{multi:true},(err,docs) =>{
+            if(err){
+                res.sendStatus(500);
+            }
+            else{
+                if(docs == 0){
+                    res.sendStatus(404);
+                }
+                else{
+                    res.sendStatus(200);
+                }
+            }
+        })
+    });
+
+    app.post(BASE_API_URL+"/agriculturalproduction-stats/:country",(req,res)=>{
+        res.sendStatus(405,"METHOD NOT FOUND"); 
+    });
+
+   //POST CONJUNTO bien
+app.post(BASE_API_URL + "/agriculturalproduction-stats", (req,res)=>{
+    var newData = req.body;
+    console.log(newData.country);
+    var Dyear = req.body.year;
+    var Dcountry = req.body.country;
+    
+    db.find({country:Dcountry,year:Dyear},function(err,data){
+        if(err){
+            return res.sendStatus(500);
         }
-    }
-
-});
-
-//DELETE a un recurso concreto:
-app.delete(BASE_API_URL +"/agriculturalproduction-stats/:country", (req,res)=>{ //borrar todos los recursos
-    var country = req.params.country; 
-    agriculturalP=agriculturalP.filter((cont) =>{ 
-        return (cont.country != country); 
-    });
-    res.sendStatus(200, "OK");
-});
-  
-//POST a un recurso concreto(nos devuelve error):
-app.post(BASE_API_URL+"/agriculturalproduction-stats/:country",(req,res)=>{
-    res.sendStatus(405,"METHOD NOT FOUND"); 
-});
-
-//GET a un recurso concreto:
-app.get(BASE_API_URL +"/agriculturalproduction-stats/:country", (req,res)=>{
-    var country = req.params.country; 
-    filteredCountry = agriculturalproduction_stats.filter((cont) =>{ 
-        return (cont.country == country); 
-    });
-    if(filteredCountry == 0){
-        res.sendStatus(404, "NOT FOUND");
-    }else{
-        res.send(JSON.stringify(filteredCountry, null,2));
-    }
-});
-
-//GET por país y año
-app.get(BASE_API_URL+"/agriculturalproduction-stats/:country/:year", (req, res)=>{
-    var country = req.params.country;
-    var year = req.params.year;
-    filter = agriculturalP.filter((c)=>{
-        return(c.country == country && c.year == year);
+        else{
+            if(data.length==0){
+                if(!newData.country || !newData.year || !newData.production || !newData.absolute_change || !newData.relative_change){
+                    return res.sendStatus(400);
+                }
+                else{
+                    db.insert(newData);
+                    return res.sendStatus(201);
+                }
+            }
+            else{
+                return res.sendStatus(409);
+            } 
+        }
     })
-    if(filter == 0){
-        res.sendStatus(404,"NOT FOUND");
-    }else{
-        res.send(JSON.stringify(filter[0],null,2));
-    }
-    res.sendStatus(200,"OK");
 });
-
-//GET por año
-app.get(BASE_API_URL+"/agriculturalproduction-stats?:year", (req, res)=>{
-    var year = req.params.year;
-    filterYear = agriculturalP.filter((c)=>{
-        return (c.year == year);
+    app.put(BASE_API_URL +"/agriculturalproduction-stats", (req,res)=>{ 
+        res.sendStatus(400, "Bad Request"); 
     });
-    
-    if(filterYear == 0){
-        res.sendStatus(404,"NOT FOUND");
-    }else{
-        res.status(200);
-        res.send(JSON.stringify(filterYear,null,2)); 
-    
+
+
+app.put(BASE_API_URL+"/agriculturalproduction-stats/:country/:year",(req,res)=>{
+    var data = req.params;
+    var newData = req.body;    
+    if(!newData.country || !newData.year || !newData.production || !newData.relative_change || !newData.absolute_change){
+        return sendStatus(400);
     }
-    });
-
-//GET por produccion
-app.get(BASE_API_URL+"/agriculturalproduction-stats?:production", (req, res)=>{
-    var produc = req.params;
-    filterProduction = agriculturalP.filter((c)=>{
-        return (c.production == produc);
-    });
-
-    if(filterProduction == 0){
-        res.sendStatus(404, "NOT FOUND");
-    }else{
-        res.status(200);
-        res.send(JSON.stringify(filterProduction[0],null,2)); 
-
-    }
+    else{
+        db.update({country:data.country,year:parseInt(data.year)},newData,(err,docs) => {
+            console.log(docs);
+            if(err){
+                console.log("prueba2");
+                return res.sendStatus(500);
+            }
+            else{
+                if(docs==0){
+                    console.log("prueba");
+                    return res.sendStatus(404);
+                }
+                else{
+                    return res.sendStatus(200);
+                }
+            }
+        });
+    }   
 });
-}
+    }
+
