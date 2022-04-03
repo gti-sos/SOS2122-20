@@ -3,11 +3,13 @@ API Daniel Puche Jimenez
 Landusage statistics V1
 F06
 */
-module.exports.register = (app) => {
+
 const BASE_API_URL = "/api/v1";
 const OWN_API_URL = "/landusage-stats";
 const path = require("path");
 const bodyParser = require("body-parser");
+
+module.exports.register = (app) => {
 app.use(bodyParser.json());
 
 var landusage_stats = [];
