@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node index.js",
     "test": " npx newman run ./tests/alejorpoy/backend.json -e ./tests/alejorpoy/env/local.json",
-    "test_danpucjim" : "npx newman run ./tests/danpucjim/backend.json -e ./tests/danpucjim/env/local.json"
+    "test_danpucjim": "npx newman run ./tests/danpucjim/backend.json -e ./tests/danpucjim/env/local.json"
   },
   "author": "danpucjim",
   "license": "ISC",
