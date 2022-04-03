@@ -56,7 +56,7 @@ var fertilizers_initial=[
         db.insert(fertilizers_initial);
         res.send(JSON.stringify(fertilizers, null, 2));
     });
-
+/*
     app.get(BASE_API_URL + "/fertilizers-stats",(req, res)=>{
     
         var year = req.query.year;
@@ -395,7 +395,8 @@ app.get(BASE_API_URL+ OWN_API_URL +"/:country/:year",(req, res)=>{
                 }
             });
         })
-    })
+    }) */
+
 };
 
 
