@@ -1,3 +1,5 @@
+const { query } = require("express");
+
 /*
 API Daniel Puche Jimenez 
 Landusage statistics V1
@@ -21,7 +23,7 @@ var landusage_stats_initial = [
     "cropland-area":296972060,
 },
 {  
-    country:"BRAZIL",
+    country:"Brazil",
     code:"BRA",
     year:2016,
     "built-area":3358012,
@@ -29,7 +31,7 @@ var landusage_stats_initial = [
     "cropland-area":82297200,
 },
 {  
-    country:"BRAZIL",
+    country:"Brazil",
     code : "BRA",
     year:2015,
     "built-area":3289368,
@@ -37,7 +39,7 @@ var landusage_stats_initial = [
     "cropland-area":81855260,
 },
 {  
-    country:"CANADA",
+    country:"Canada",
     code: "CAN",
     year:2016,
     "built-area":435730,
@@ -74,7 +76,37 @@ app.get(BASE_API_URL + OWN_API_URL + "/docs",(req,res)=>{
 
 //GET CONJUNTO
 app.get(BASE_API_URL + OWN_API_URL, (req,res)=>{ 
-    res.send(JSON.stringify(landusage_stats, null,2)); // devuelve el conjunto 
+    var query = req.query;
+    var landusage_stats_copy = landusage_stats;
+    console.log(landusage_stats_copy);
+    console.log("Peticion GET");
+    console.log(query);
+    var limit = query.limit;
+    var offset = query.offset;
+
+    for(q in query){
+        if(q == 'year'){
+            query[q] = parseInt(query[q]);
+        }
+        if(q == 'grazing-area'){
+            query[q] = parseFloat(query[q]);
+        }
+        if(q=='built-area'){
+            query[q] = parseFloat(query[q]);
+        }
+        if(q=='cropland-area'){
+            query[q] = parseFloat(query[q]);
+        }
+    }
+    delete query.offset;
+    delete query.limit;
+    if(!(query.length==0)){
+        console.log("Hola");
+        landusage_stats_copy = landusage_stats.filter((a) => {
+        return (a['year'] == query['year']);})
+        //res.send(JSON.stringify(landusage_stats_copy,null,2));
+    }
+    res.send(JSON.stringify(landusage_stats_copy, null,2)); // devuelve el conjunto 
 });
 
 //DELETE CONJUNTO
@@ -184,7 +216,7 @@ app.put(BASE_API_URL+OWN_API_URL+"/:country/:year",(req,res)=>{
         })
         if(index == null){
             res.sendStatus(404,"NOT FOUND");
-        }else if(country != body.country || year != body.year){
+        }else if(country != body.country | year != body.year){
             res.sendStatus(400,"BAD REQUEST");
         }else{
             var  update_landusage = {...body};
@@ -223,5 +255,9 @@ app.post(BASE_API_URL + OWN_API_URL, (req,res)=>{
 
     
 });
+
+
+
+//F05
 
 }

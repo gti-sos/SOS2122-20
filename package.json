@@ -5,13 +5,15 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "test": " npx newman run ./tests/alejorpoy/backend.json -e ./tests/alejorpoy/env/local.json"
+    "test": " npx newman run ./tests/alejorpoy/backend.json -e ./tests/alejorpoy/env/local.json",
+    "test_danpucjim" : "npx newman run ./tests/danpucjim/backend.json -e ./tests/danpucjim/env/local.json"
   },
   "author": "danpucjim",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.19.2",
     "cool-ascii-faces": "^1.3.4",
-    "express": "^4.17.3"
+    "express": "^4.17.3",
+    "nedb": "^1.8.0"
   }
 }
