@@ -1,0 +1,21 @@
+{
+	"id": "a8a388a9-b637-49d6-b44a-737bee83adb1",
+	"name": "Local",
+	"values": [
+		{
+			"key": "HOST",
+			"value": "localhost",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "PORT",
+			"value": "8081",
+			"type": "default",
+			"enabled": true
+		}
+	],
+	"_postman_variable_scope": "environment",
+	"_postman_exported_at": "2022-04-03T17:29:11.614Z",
+	"_postman_exported_using": "Postman/9.15.10"
+}

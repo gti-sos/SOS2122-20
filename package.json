@@ -5,8 +5,11 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "test": " npx newman run ./tests/alejorpoy/backend.json -e ./tests/alejorpoy/env/local.json",
-    "test_danpucjim": "npx newman run ./tests/danpucjim/backend.json -e ./tests/danpucjim/env/local.json"
+    "test_alejorpoy": " npx newman run ./tests/alejorpoy/backend.json -e ./tests/alejorpoy/env/local.json",
+    "test_danpucjim": "npx newman run ./tests/danpucjim/backend.json -e ./tests/danpucjim/env/local.json",
+    "test_javlarpar": "npx newman run ./tests/javlarpar/backend-APS.json -e ./tests/javlarpar/env/localAPS.json",
+    "test": "test_alejorpoy && test_danpucjim"
+
   },
   "author": "danpucjim",
   "license": "ISC",
