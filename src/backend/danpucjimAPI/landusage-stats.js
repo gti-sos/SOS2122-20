@@ -1,3 +1,4 @@
+
 /*
 API Daniel Puche Jimenez 
 Landusage statistics V1
@@ -8,6 +9,9 @@ const BASE_API_URL = "/api/v1";
 const OWN_API_URL = "/landusage-stats";
 const path = require("path");
 const bodyParser = require("body-parser");
+var dbFile = path.join(__dirname,'landusage-stats.db');
+const Datastore = require('nedb');
+db = new Datastore({filename:dbFile,autoload:true});
 app.use(bodyParser.json());
 
 var landusage_stats = [];
@@ -16,210 +20,236 @@ var landusage_stats_initial = [
     country:"Africa",
     code : "",
     year:2016,
-    "built-area":6235010,
-    "grazing-area":888088030,
-    "cropland-area":296972060,
+    built_area:6235010,
+    grazing_area:888088030,
+    cropland_area:296972060,
 },
 {  
-    country:"BRAZIL",
+    country:"Brazil",
     code:"BRA",
     year:2016,
-    "built-area":3358012,
-    "grazing-area":196006800,
-    "cropland-area":82297200,
+    built_area:3358012,
+    grazing_area:196006800,
+    cropland_area:82297200,
 },
 {  
-    country:"BRAZIL",
+    country:"Brazil",
     code : "BRA",
     year:2015,
-    "built-area":3289368,
-    "grazing-area":196005400,
-    "cropland-area":81855260,
+    built_area:3289368,
+    grazing_area:196005400,
+    cropland_area:81855260,
 },
 {  
-    country:"CANADA",
+    country:"Canada",
     code: "CAN",
     year:2016,
-    "built-area":435730,
-    "grazing-area":14030090,
-    "cropland-area":47912430,
+    built_area:435730,
+    grazing_area:14030090,
+    cropland_area:47912430,
 },
 {  
     country:"Canada",
     code : "CAN",
     year:2014,
-    "built-area":421859,
-    "grazing-area":14300740,
-    "cropland-area":47771180,
+    built_area:421859,
+    grazing_area:14300740,
+    cropland_area:47771180,
 }
 ];
 
-//GET Datos Iniciales
+//GET Datos Iniciales bien
 app.get(BASE_API_URL + OWN_API_URL + "/loadInitialData",(req,res)=>{
-    if(landusage_stats.length===0){
-        landusage_stats_initial.forEach((a)=>{
-            landusage_stats.push(a);
-        });
-        res.send(JSON.stringify(landusage_stats,null,2));
-    }
-    else{
-        res.send(JSON.stringify(landusage_stats,null,2));
-    }
-   
+    db.find({},function(err,docs){
+        if(docs.length==0){
+            db.insert(landusage_stats_initial);
+            console.log(`Datos iniciales : ${db}`);
+            return res.send(JSON.stringify(landusage_stats_initial,null,2));
+        }
+        else{ 
+            return res.sendStatus(200);   
+        }
+    })
+    
 });
 
 app.get(BASE_API_URL + OWN_API_URL + "/docs",(req,res)=>{
     res.redirect("https://documenter.getpostman.com/view/19481666/UVyn2eVt");
 })
 
-//GET CONJUNTO
+//GET CONJUNTO bien
 app.get(BASE_API_URL + OWN_API_URL, (req,res)=>{ 
-    res.send(JSON.stringify(landusage_stats, null,2)); // devuelve el conjunto 
-});
-
-//DELETE CONJUNTO
-app.delete(BASE_API_URL + OWN_API_URL, (req,res)=>{ 
-    landusage_stats = []; // deja vacio el conjunto
-    console.log("HOLA");
-    res.sendStatus(200, "OK"); // devuelve codigo correcto
-});
-//GET ELEMENTO POR PAIS
-app.get(BASE_API_URL + OWN_API_URL+"/:country", (req,res)=>{
-    var country = req.params.country; // guarda el pais de la peticion
-    filteredCountry = landusage_stats.filter((cont) =>{ // filtra por el pais 
-    return (cont.country == country); 
+    var query = req.query;
+    dbquery = {};
+    console.log("Peticion GET");
+    console.log(query.year);
+    var limit = Number.MAX_SAFE_INTEGER;
+    var offset = 0;
+    if(query.offset){
+        offset = parseInt(query.offset);
+        console.log(offset);
+        delete query.offset;
+    }
+    if(query.limit){
+        limit = parseInt(query.limit);
+        delete query.limit;
+    }
+    if(query.year){
+        dbquery['year'] = parseInt(query.year);
+        console.log(offset);
+    }
+    if(query.cropland_area){
+        dbquery['cropland_area'] = parseFloat(query.cropland_area);
+    }
+    if(query.grazing_area){
+        dbquery['grazing_area'] = parseFloat(query.grazing_area);
+    }
+    if(query.built_area){
+        dbquery['built_area'] = parseFloat(query.built_area);
+    }
     
-    });
- 
-    if(filteredCountry == 0){ // si devuelve falso devuelve error de no encontrado
-        res.sendStatus(404, "NOT FOUND");
-    }else{
-        res.send(JSON.stringify(filteredCountry, null,2)); // si devuelve true devuelve los que coinciden.
-    }
-    console.log(filteredCountry);
-});
-
-//GET ELEMENTO POR PAIS Y ANYO
-app.get(BASE_API_URL + OWN_API_URL+"/:country/:year", (req,res)=>{
-    var country = req.params.country; // guarda el pais de la peticion
-    var yearName = req.params.year; // guarda el anyo de la peticion
-    filteredYear = landusage_stats.filter((cont) =>{ 
-    return (cont.country == country) && (cont.year == yearName); // filtra los que coinciden con el anyo y el pais de la peticion 
-    });
-
-    if(filteredYear == 0){ // si es 0(falso) devuelve error de no encontrado
-        res.sendStatus(404, "NOT FOUND");
-    }else{
-        res.send(JSON.stringify(filteredYear, null,2)); // si es verdadero devuelve los valores que coinciden con el filtrado.
-    }
-});
-
-//POST CONJUNTO // BIEN
-app.post(BASE_API_URL + OWN_API_URL, (req,res)=>{
-    var newData = req.body;
-    var year = req.body.year;
-    var country = req.body.country;
-
-    for(let i = 0;i<landusage_stats.length;i++){
-        let elem = landusage_stats[i];
-        if(elem.year === year || elem.country === country){
-            res.sendStatus(409,"Conflict");
+    console.log(dbquery);
+    db.find(dbquery).skip(offset).limit(limit).exec((err,docs) =>{
+        console.log(docs);
+        if(err){
+            res.sendStatus(500);
         }
-    }
-    landusage_stats.push(req.body); // anyade lo que le pasemos en el cuerpo de la peticion
-    res.sendStatus(201, "CREATED"); // devuelve codigo correcto
+        else{
+            if(docs == 0){
+                res.sendStatus(404);
+            }
+            else{
+                docs.forEach((data) => {
+                    delete data._id;
+                });
+                res.status(200).send(JSON.stringify(docs,null,2));
+            }
+        }
+    })
+    //res.send(JSON.stringify(landusage_stats_copy, null,2)); // devuelve el conjunto 
 });
 
-//POST RECURSO ERROR
+//DELETE CONJUNTO bien
+app.delete(BASE_API_URL + OWN_API_URL, (req,res)=>{ 
+    db.remove({},{multi:true},function (err,docs){
+        if(err){
+            res.sendStatus(500);
+        }
+        else{
+            if(docs==0){
+                res.sendStatus(404);
+            }
+            else{
+                res.sendStatus(200);
+            }
+        }
+    })
+});
+
+//GET ELEMENTO POR PAIS Y ANYO bien
+app.get(BASE_API_URL + OWN_API_URL+"/:country/:year", (req,res)=>{
+    var data = req.params; //parametro solicitado
+        
+    db.find({country: data.country, year: parseInt(data.year)}, (err, docs) => {
+        if (err) {
+            res.sendStatus(500);
+        } else {
+            if (docs == 0) {
+                res.sendStatus(404);
+            } else {
+                delete docs[0]._id;
+                res.status(200).send(JSON.stringify(docs[0], null, 2));
+            }
+        }
+    });
+});
+
+//POST RECURSO ERROR bien
 app.post(BASE_API_URL + OWN_API_URL+ "/:country", (req,res)=>{
     res.sendStatus(405, "Method Not Allowed"); // devuelve codigo method not allowed
 });
 
-//DELETE CONJUNTO
-app.delete(BASE_API_URL + OWN_API_URL, (req,res)=>{ 
-    landusage_stats = []; // deja vacio el conjunto
-    res.sendStatus(200, "OK"); // devuelve codigo correcto
+app.delete(BASE_API_URL + OWN_API_URL+"/:country/:year", (req,res)=>{ //borrar todos los recursos bien
+    var data = req.params;
+
+    db.remove({country:data.country,year:parseInt(data.year)},{multi:true},(err,docs) =>{
+        if(err){
+            res.sendStatus(500);
+        }
+        else{
+            if(docs == 0){
+                res.sendStatus(404);
+            }
+            else{
+                res.sendStatus(200);
+            }
+        }
+    })
 });
 
-//DELETE ELEMENTO POR PAIS
-app.delete(BASE_API_URL + OWN_API_URL+"/:country", (req,res)=>{ //borrar todos los recursos
-    var country = req.params.country; // pais de la peticion 
-    landusage_stats = landusage_stats.filter((cont) =>{ // filtrar pais que coindice con la peticion
-        return (cont.country != country); 
-    });
-    res.send(JSON.stringify(landusage_stats, null,2));
-    res.sendStatus(200, "OK");
-});
-
-// DELETE ELEMENTO POR PAIS Y ANYO
-app.delete(BASE_API_URL + OWN_API_URL+"/:country/:year", (req,res)=>{ //borrar todos los recursos
-    var country = req.params.country; //pais de la peticion
-    var yearName = req.params.year; //anyo de la peticion
-    landusage_stats.filter((cont) =>{
-        return (cont.country != country) && (cont.year != yearName); //comprobar que el pais y el anyo de la peticion coindice mediante filtrado
-    });
-    res.sendStatus(200, "OK"); // devolver codigo de ok 
-});
-
-app.put(BASE_API_URL + OWN_API_URL, (req,res)=>{ //borrar todos los recursos
-    res.sendStatus(400, "Bad Request"); // devolver codigo de ok 
+app.put(BASE_API_URL + OWN_API_URL, (req,res)=>{ //bien
+    res.sendStatus(400, "Bad Request"); 
 });
 
 // Actualización recurso concreto
 app.put(BASE_API_URL+OWN_API_URL+"/:country/:year",(req,res)=>{
-    if(req.body.country == null |
-        req.body.year == null | 
-        req.body.quantity == null | 
-        req.body.absolute_change == null | 
-        req.body.relative_change == null){
-        res.sendStatus(400,"BAD REQUEST - Parametros incorrectos");
-    }else{
-        var country = req.params.country;
-        var year = req.params.year;
-        var body = req.body;
-        var index = landusage_stats.findIndex((reg) =>{
-            return (reg.country == country && reg.year == year)
-        })
-        if(index == null){
-            res.sendStatus(404,"NOT FOUND");
-        }else if(country != body.country || year != body.year){
-            res.sendStatus(400,"BAD REQUEST");
-        }else{
-            var  update_landusage = {...body};
-            landusage_stats[index] = update_landusage;
-
-            res.sendStatus(200,"UPDATED");
-        }
+    var data = req.params;
+    var newData = req.body;
+    //console.log(`Parametros ${data.year} Cuerpo ${newData.year}`);
+    
+    if(!newData.country || !newData.year || !newData.cropland_area || !newData.grazing_area || !newData.built_area){
+        return sendStatus(400);
     }
-
+    else{
+        db.update({country:data.country,year:parseInt(data.year)},newData,(err,docs) => {
+            console.log(docs);
+            if(err){
+                console.log("prueba2");
+                return res.sendStatus(500);
+            }
+            else{
+                if(docs==0){
+                    console.log("prueba");
+                    return res.sendStatus(404);
+                }
+                else{
+                    return res.sendStatus(200);
+                }
+            }
+        });
+    }   
 });
 
-//POST CONJUNTO
+//POST CONJUNTO bien
 app.post(BASE_API_URL + OWN_API_URL, (req,res)=>{
     var newData = req.body;
-    var year = req.body.year;
-    var country = req.body.country;
-
-    if(!newData.year ||
-        !newData.country ||
-        !newData.code ||
-        !newData.built-area||
-        !newData.grazing-area||
-        !newData.cropland-area){
-            res.sendStatus(400,"Bad Request");
-        }
-    else{
-        for(let i = 0;i<landusage_stats.length;i++){
-            let elem = landusage_stats[i];
-            if(elem.year === year && elem.country === country){
-                res.sendStatus(409,"Conflict");
-            }
-        }
-        landusage_stats.push(req.body); // anyade lo que le pasemos en el cuerpo de la peticion
-        res.sendStatus(201, "CREATED"); // devuelve codigo correcto
-    }
-
+    console.log(newData.country);
+    var Dyear = req.body.year;
+    var Dcountry = req.body.country;
     
+    db.find({country:Dcountry,year:Dyear},function(err,data){
+        if(err){
+            return res.sendStatus(500);
+        }
+        else{
+            if(data.length==0){
+                if(!newData.country || !newData.year || !newData.built_area || !newData.grazing_area || !newData.cropland_area){
+                    return res.sendStatus(400);
+                }
+                else{
+                    db.insert(newData);
+                    return res.sendStatus(201);
+                }
+            }
+            else{
+                return res.sendStatus(409);
+            } 
+        }
+    })
 });
+
+
+
+//F05
 
 }
