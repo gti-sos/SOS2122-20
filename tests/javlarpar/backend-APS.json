@@ -123,11 +123,8 @@
 					}
 				}
 			],
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
 			"request": {
-				"method": "GET",
+				"method": "POST",
 				"header": [],
 				"body": {
 					"mode": "raw",
@@ -139,7 +136,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://{{HOST}}:{{PORT}}/api/v1/agriculturalproduction-stats?:4.02",
+					"raw": "http://{{HOST}}:{{PORT}}/api/v1/agriculturalproduction-stats",
 					"protocol": "http",
 					"host": [
 						"{{HOST}}"
@@ -149,12 +146,6 @@
 						"api",
 						"v1",
 						"agriculturalproduction-stats"
-					],
-					"query": [
-						{
-							"key": ":4.02",
-							"value": null
-						}
 					]
 				}
 			},

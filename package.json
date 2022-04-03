@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "test": " npx newman run ./tests/alejorpoy/backend.json -e ./tests/alejorpoy/env/local.json"
+    "test:agriculturalproduction-stats": " npx newman run ./tests/javlarpar/backend-APS.json -e ./tests/javlarpar/env/localAPS.json"
   },
   "author": "danpucjim",
   "license": "ISC",
