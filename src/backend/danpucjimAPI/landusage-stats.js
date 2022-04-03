@@ -202,7 +202,7 @@ app.put(BASE_API_URL+OWN_API_URL+"/:country/:year",(req,res)=>{
     }
     else{
         db.update({country:data.country,year:parseInt(data.year)},newData,(err,docs) => {
-            console.log(docs);
+            console.log(docs); 
             if(err){
                 console.log("prueba2");
                 return res.sendStatus(500);
