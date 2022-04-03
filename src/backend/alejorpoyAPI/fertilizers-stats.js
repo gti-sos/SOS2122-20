@@ -122,36 +122,6 @@ app.get(BASE_API_URL+ OWN_API_URL +"/:country",(req,res)=>{
     }
 });
 
-// Get recurso concreto -> AÑO
-app.get(BASE_API_URL+ OWN_API_URL +"?:year",(req,res)=>{
-
-    var fertilizersYear = req.params.year;
-    filteredYear = fertilizers.filter((e)=>{
-        return (e.year == fertilizersYear);
-    });
-
-    if(filteredYear==0){
-        res.sendStatus(404, "NOT FOUND");
-    }else{
-        res.send(JSON.stringify(filteredYear[0],null,2));
-    }
-});
-
-// Get recurso concreto -> CANTIDAD
-app.get(BASE_API_URL+ OWN_API_URL +"?:quantity",(req,res)=>{
-
-    var fertilizersQuantity = req.params.quantity;
-    filteredQuantity = fertilizers.filter((e)=>{
-        return (e.quantity == fertilizersQuantity);
-    });
-
-    if(filteredQuantity==0){
-        res.sendStatus(404, "NOT FOUND");
-    }else{
-        res.send(JSON.stringify(filteredQuantity[0],null,2));
-    }
-});
-
 // Borrado recurso concreto
 app.delete(BASE_API_URL+OWN_API_URL +"/:country",(req,res)=>{
     var fertilizersCountry= req.params.country;

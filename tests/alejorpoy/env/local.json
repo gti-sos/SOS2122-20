@@ -1,0 +1,21 @@
+{
+	"id": "71d7405b-dab8-44b9-930b-33470d624c1f",
+	"name": "SOS2122-20",
+	"values": [
+		{
+			"key": "HOST",
+			"value": "localhost",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "PORT",
+			"value": "8081",
+			"type": "default",
+			"enabled": true
+		}
+	],
+	"_postman_variable_scope": "environment",
+	"_postman_exported_at": "2022-04-02T18:36:09.040Z",
+	"_postman_exported_using": "Postman/9.15.10"
+}
