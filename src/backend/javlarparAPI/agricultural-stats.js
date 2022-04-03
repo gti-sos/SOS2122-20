@@ -13,7 +13,7 @@ module.exports.register = (app) => {
 
 
 
-    var agriculturalP=[];
+var agriculturalP=[];
 
 app.get(BASE_API_URL +"/agriculturalproduction-stats/docs",(req,res)=>{
     res.redirect("https://documenter.getpostman.com/view/20091971/UVyn2z48");
@@ -23,35 +23,35 @@ var agriculturalproduction_stats=[
     {
         country:"Afghanistan",
         year: 2018,
-        production:4.02,
+        production: 4.02,
         absolute_change:434.520,
         relative_change:"12%"
     },
     {
-        country:"África",
+        country:"Africa",
         year: 2018,
-        production:191.56,
+        production: 191.56,
         absolute_change:146.68,
         relative_change:"327%"
     },
     {
         country:"Albania",
         year: 2018,
-        production:678.196,
+        production: 678.196,
         absolute_change:385.797,
         relative_change:"132%"
     },
     {
         country:"Argeria",
         year: 2018,
-        production:6.06,
+        production: 6.06,
         absolute_change:5.13,
         relative_change:"549%"
     },
     {
         country:"Americas",
         year: 2018,
-        production:763.59,
+        production: 763.59,
         absolute_change:539.36,
         relative_change:"241%"
     }
@@ -167,6 +167,53 @@ app.get(BASE_API_URL +"/agriculturalproduction-stats/:country", (req,res)=>{
         res.sendStatus(404, "NOT FOUND");
     }else{
         res.send(JSON.stringify(filteredCountry, null,2));
+    }
+});
+
+//GET por país y año
+app.get(BASE_API_URL+"/agriculturalproduction-stats/:country/:year", (req, res)=>{
+    var country = req.params.country;
+    var year = req.params.year;
+    filter = agriculturalP.filter((c)=>{
+        return(c.country == country && c.year == year);
+    })
+    if(filter == 0){
+        res.sendStatus(404,"NOT FOUND");
+    }else{
+        res.send(JSON.stringify(filter[0],null,2));
+    }
+    res.sendStatus(200,"OK");
+});
+
+//GET por año
+app.get(BASE_API_URL+"/agriculturalproduction-stats?:year", (req, res)=>{
+    var year = req.params.year;
+    filterYear = agriculturalP.filter((c)=>{
+        return (c.year == year);
+    });
+    
+    if(filterYear == 0){
+        res.sendStatus(404,"NOT FOUND");
+    }else{
+        res.status(200);
+        res.send(JSON.stringify(filterYear,null,2)); 
+    
+    }
+    });
+
+//GET por produccion
+app.get(BASE_API_URL+"/agriculturalproduction-stats?:production", (req, res)=>{
+    var produc = req.params.production;
+    filterProduction = agriculturalP.filter((c)=>{
+        return (c.production == produc);
+    });
+
+    if(filterProduction == 0){
+        res.sendStatus(404, "NOT FOUND");
+    }else{
+        res.status(200);
+        res.send(JSON.stringify(filterProduction[0],null,2)); 
+
     }
 });
 }

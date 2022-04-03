@@ -1,8 +1,6 @@
 const cool = require("cool-ascii-faces");
 const express = require("express");
 const bodyParser =require("body-parser");
-const path = require("path");
-const BASE_API_URL = "/api/v1";
 const app=express();
 app.use(bodyParser.json());
 const port = process.env.PORT || 8081;
