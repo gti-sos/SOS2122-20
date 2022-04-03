@@ -1,5 +1,6 @@
-const cool = require("cool-ascii-faces");
 const express = require("express");
+const Datastore = require("nedb");
+
 const bodyParser =require("body-parser");
 const path = require("path");
 const BASE_API_URL = "/api/v1";
@@ -32,7 +33,7 @@ var landusage_statsV1 = require("./src/backend/danpucjimAPI/landusage-stats.js")
 landusage_statsV1.register(app);
 
     //API ALEJANDRO JORGE POYUELO
-    var fertilizers_statsV1 = require("./src/backend/alejorpoyAPI/fertilizers-stats.js");
+    var fertilizers_statsV1 = require("./src/backend/alejorpoyAPI/fertilizers-statsdb.js");
     fertilizers_statsV1.register(app);
 
     //API JAVIER LARA PARRILLA
