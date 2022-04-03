@@ -16,7 +16,7 @@ module.exports.register = (app) => {
 var agriculturalP=[];
 
 app.get(BASE_API_URL +"/agriculturalproduction-stats/docs",(req,res)=>{
-    res.redirect("https://documenter.getpostman.com/view/20091971/UVyn2z48");
+    res.redirect("https://documenter.getpostman.com/view/20091971/UVysxbUP");
 })
 
 var agriculturalproduction_stats=[
