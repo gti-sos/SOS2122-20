@@ -1,7 +1,7 @@
 {
 	"info": {
-		"_postman_id": "90d6b744-db07-4cd4-ae83-36c62bfe7d41",
-		"name": "F05",
+		"_postman_id": "79e3101a-4653-4896-8af8-a47722d8adad",
+		"name": "sos2122-F06",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
@@ -41,7 +41,75 @@
 			"response": []
 		},
 		{
-			"name": "GET/agriculturalproductions-stats",
+			"name": "PUT/agriculturalproduction-stats/Albania/2018",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"country\":\"Albania\",\r\n    \"year\": 2018,\r\n    \"production\": 3.15,\r\n    \"absolute_change\":8.23,\r\n    \"relative_change\":\"132%\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://{{HOST}}:{{PORT}}/api/v1/agriculturalproduction-stats/Albania/2018",
+					"protocol": "http",
+					"host": [
+						"{{HOST}}"
+					],
+					"port": "{{PORT}}",
+					"path": [
+						"api",
+						"v1",
+						"agriculturalproduction-stats",
+						"Albania",
+						"2018"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET/agriculturalproduction-stats/Albania/2018",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{HOST}}:{{PORT}}/api/v1/agriculturalproduction-stats/Albania/2018",
+					"protocol": "http",
+					"host": [
+						"{{HOST}}"
+					],
+					"port": "{{PORT}}",
+					"path": [
+						"api",
+						"v1",
+						"agriculturalproduction-stats",
+						"Albania",
+						"2018"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET/agriculturalproduction-stats/Africa/2018",
 			"event": [
 				{
 					"listen": "test",
@@ -75,14 +143,94 @@
 			"response": []
 		},
 		{
-			"name": "PUT/agriculturalproductions-stats",
+			"name": "GET/agriculturalproduction-stats?country=Africa",
 			"event": [
 				{
 					"listen": "test",
 					"script": {
 						"exec": [
-							"pm.test(\"Status code is 405\", function () {\r",
-							"    pm.response.to.have.status(405);\r",
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{HOST}}:{{PORT}}/api/v1/agriculturalproduction-stats?country=Africa",
+					"protocol": "http",
+					"host": [
+						"{{HOST}}"
+					],
+					"port": "{{PORT}}",
+					"path": [
+						"api",
+						"v1",
+						"agriculturalproduction-stats"
+					],
+					"query": [
+						{
+							"key": "country",
+							"value": "Africa"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET/agriculturalproduction-stats?production=4.02",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{HOST}}:{{PORT}}/api/v1/agriculturalproduction-stats?production=4.02",
+					"protocol": "http",
+					"host": [
+						"{{HOST}}"
+					],
+					"port": "{{PORT}}",
+					"path": [
+						"api",
+						"v1",
+						"agriculturalproduction-stats"
+					],
+					"query": [
+						{
+							"key": "production",
+							"value": "4.02"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PUT/agriculturalproduction-stats",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 400\", function () {\r",
+							"    pm.response.to.have.status(400);\r",
 							"});"
 						],
 						"type": "text/javascript"
@@ -91,6 +239,61 @@
 			],
 			"request": {
 				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "http://{{HOST}}:{{PORT}}/api/v1/agriculturalproduction-stats",
+					"protocol": "http",
+					"host": [
+						"{{HOST}}"
+					],
+					"port": "{{PORT}}",
+					"path": [
+						"api",
+						"v1",
+						"agriculturalproduction-stats"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE/agriculturalproduction-stats",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://{{HOST}}:{{PORT}}/api/v1/agriculturalproduction-stats",
+					"protocol": "http",
+					"host": [
+						"{{HOST}}"
+					],
+					"port": "{{PORT}}",
+					"path": [
+						"api",
+						"v1",
+						"agriculturalproduction-stats"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET/agriculturalproduction-stats",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 404\", function () {\r",
+							"    pm.response.to.have.status(404);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
 				"header": [],
 				"url": {
 					"raw": "http://{{HOST}}:{{PORT}}/api/v1/agriculturalproduction-stats",
@@ -128,7 +331,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"country\":\"Spain\",\r\n    \"year\": 2020,\r\n    \"production\":45.98,\r\n    \"absolute_change\":91.546,\r\n    \"relative_change\":\"32%\"\r\n    }",
+					"raw": "{\r\n    \"country\":\"Spain\",\r\n    \"year\": 2018,\r\n    \"production\": 763.59,\r\n    \"absolute_change\":539.36,\r\n    \"relative_change\":\"241%\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -152,7 +355,7 @@
 			"response": []
 		},
 		{
-			"name": "GET/agriculturalproduction-stats(para el POST anterior)",
+			"name": "GET/agriculturalproduction-stats",
 			"event": [
 				{
 					"listen": "test",
@@ -186,103 +389,16 @@
 			"response": []
 		},
 		{
-			"name": "DELETE/agriculturalproduction-stats",
-			"event": [
-				{
-					"listen": "test",
-					"script": {
-						"exec": [
-							"pm.test(\"Status code is 200\", function () {\r",
-							"    pm.response.to.have.status(200);\r",
-							"});"
-						],
-						"type": "text/javascript"
-					}
-				}
-			],
-			"request": {
-				"method": "DELETE",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "http://{{HOST}}:{{PORT}}/api/v1/agriculturalproduction-stats",
-					"protocol": "http",
-					"host": [
-						"{{HOST}}"
-					],
-					"port": "{{PORT}}",
-					"path": [
-						"api",
-						"v1",
-						"agriculturalproduction-stats"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "DELETE/agriculturalproduction-stats/Africa",
-			"event": [
-				{
-					"listen": "test",
-					"script": {
-						"exec": [
-							"pm.test(\"Status code is 200\", function () {\r",
-							"    pm.response.to.have.status(200);\r",
-							"});"
-						],
-						"type": "text/javascript"
-					}
-				}
-			],
-			"request": {
-				"method": "DELETE",
-				"header": [],
-				"url": {
-					"raw": "http://{{HOST}}:{{PORT}}/api/v1/agriculturalproduction-stats/Afghanistan",
-					"protocol": "http",
-					"host": [
-						"{{HOST}}"
-					],
-					"port": "{{PORT}}",
-					"path": [
-						"api",
-						"v1",
-						"agriculturalproduction-stats",
-						"Afghanistan"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "POST/agriculturalproduction-stats/Afghanistan(devuelve error)",
-			"event": [
-				{
-					"listen": "test",
-					"script": {
-						"exec": [
-							"pm.test(\"Status code is 405\", function () {\r",
-							"    pm.response.to.have.status(405);\r",
-							"});"
-						],
-						"type": "text/javascript"
-					}
-				}
-			],
+			"name": "POST/agriculturalproduction-stats/Africa",
 			"request": {
 				"method": "POST",
 				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "pm.test(\"Status code is 405\", function () {\r\n    pm.response.to.have.status(405);\r\n});"
+				},
 				"url": {
-					"raw": "http://{{HOST}}:{{PORT}}/api/v1/agriculturalproduction-stats/Afghanistan",
+					"raw": "http://{{HOST}}:{{PORT}}/api/v1/agriculturalproduction-stats/Africa",
 					"protocol": "http",
 					"host": [
 						"{{HOST}}"
@@ -292,41 +408,19 @@
 						"api",
 						"v1",
 						"agriculturalproduction-stats",
-						"Afghanistan"
+						"Africa"
 					]
 				}
 			},
 			"response": []
 		},
 		{
-			"name": "PUT/agriculturalproduction-stats/Africa/2018",
-			"event": [
-				{
-					"listen": "test",
-					"script": {
-						"exec": [
-							"pm.test(\"Status code is 200\", function () {\r",
-							"    pm.response.to.have.status(200);\r",
-							"});"
-						],
-						"type": "text/javascript"
-					}
-				}
-			],
+			"name": "DELETE/agriculturalproduction-stats/Africa/2018",
 			"request": {
-				"method": "PUT",
+				"method": "DELETE",
 				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n        \"country\":\"Africa\",\r\n        \"year\": 2018,\r\n        \"production\":5.6,\r\n        \"absolute_change\":9.8,\r\n        \"relative_change\":\"241%\"\r\n    }",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
 				"url": {
-					"raw": "http://{{HOST}}:{{PORT}}/api/v1/agriculturalproduction-stats/Africa/2018",
+					"raw": "http://{{HOST}}:{{PORT}}/api/v1/agriculturalproduction-stats/Spain/2018",
 					"protocol": "http",
 					"host": [
 						"{{HOST}}"
@@ -336,7 +430,7 @@
 						"api",
 						"v1",
 						"agriculturalproduction-stats",
-						"Africa",
+						"Spain",
 						"2018"
 					]
 				}
@@ -344,12 +438,23 @@
 			"response": []
 		},
 		{
-			"name": "GET/agriculturalproduction-stats/Argeria",
+			"name": "GET/agriculturalproduction-stats",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"request": {
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://{{HOST}}:{{PORT}}/api/v1/agriculturalproduction-stats/Argeria",
+					"raw": "http://{{HOST}}:{{PORT}}/api/v1/agriculturalproduction-stats/Spain/2018",
 					"protocol": "http",
 					"host": [
 						"{{HOST}}"
@@ -359,7 +464,8 @@
 						"api",
 						"v1",
 						"agriculturalproduction-stats",
-						"Argeria"
+						"Spain",
+						"2018"
 					]
 				}
 			},
