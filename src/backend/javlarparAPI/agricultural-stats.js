@@ -203,7 +203,7 @@ app.get(BASE_API_URL+"/agriculturalproduction-stats?:year", (req, res)=>{
 
 //GET por produccion
 app.get(BASE_API_URL+"/agriculturalproduction-stats?:production", (req, res)=>{
-    var produc = req.params.production;
+    var produc = req.params;
     filterProduction = agriculturalP.filter((c)=>{
         return (c.production == produc);
     });
