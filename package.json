@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "test-fertilizers-stats": " npx newman run ./tests/alejorpoy/backend.json -e ./tests/alejorpoy/env/local.json"
+    "test": " npx newman run ./tests/alejorpoy/backend.json -e ./tests/alejorpoy/env/local.json"
   },
   "author": "danpucjim",
   "license": "ISC",

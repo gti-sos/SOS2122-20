@@ -161,6 +161,10 @@ app.put(BASE_API_URL+OWN_API_URL +"/:country/:year",(req,res)=>{
 });
 
 
+app.get(BASE_API_URL + OWN_API_URL + "/docs",(req,res)=>{
+    res.redirect("https://documenter.getpostman.com/view/20091974/UVyn2eVu");
+})
+
 
 
 }
