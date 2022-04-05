@@ -198,7 +198,7 @@ app.put(BASE_API_URL+OWN_API_URL+"/:country/:year",(req,res)=>{
     //console.log(`Parametros ${data.year} Cuerpo ${newData.year}`);
     
     if(!newData.country || !newData.year || !newData.cropland_area || !newData.grazing_area || !newData.built_area){
-        return sendStatus(400);
+        return res.sendStatus(400);
     }
     else{
         db.update({country:data.country,year:parseInt(data.year)},newData,(err,docs) => {
