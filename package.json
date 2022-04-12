@@ -4,12 +4,13 @@
   "description": "My first module",
   "main": "index.js",
   "scripts": {
+    "build": "rollup -c",
+    "dev": "rollup -c -w",
     "start": "node index.js",
     "test_alejorpoy": "npx newman run ./tests/alejorpoy/backend.json -e ./tests/alejorpoy/env/local.json",
     "test_danpucjim": "npx newman run ./tests/danpucjim/backend.json -e ./tests/danpucjim/env/local.json",
     "test_javlarpar": "npx newman run ./tests/javlarpar/backend-APS.json -e ./tests/javlarpar/env/localAPS.json",
     "test": "npm run test_alejorpoy && npm run test_danpucjim && npm run test_javlarpar"
-
   },
   "author": "danpucjim",
   "license": "ISC",
@@ -17,6 +18,18 @@
     "body-parser": "^1.19.2",
     "cool-ascii-faces": "^1.3.4",
     "express": "^4.17.3",
-    "nedb": "^1.8.0"
+    "nedb": "^1.8.0",
+    "svelte-spa-router": "^3.2.0",
+    "sveltestrap": "^5.9.0"
+  },
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^17.0.0",
+    "@rollup/plugin-node-resolve": "^11.0.0",
+    "rollup": "^2.3.4",
+    "rollup-plugin-css-only": "^3.1.0",
+    "rollup-plugin-livereload": "^2.0.0",
+    "rollup-plugin-svelte": "^7.0.0",
+    "rollup-plugin-terser": "^7.0.0",
+    "svelte": "^3.46.6"
   }
 }
