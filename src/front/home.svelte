@@ -1,18 +1,55 @@
-<script>
-    import {
-        Nav,
-        NavLink,
-        NavItem,
-        Card,
-        CardBody,
-        CardFooter
-    } from 'sveltestrap';
-</script>
-
 <main>
-    <Nav>
-        <NavItem>
-            <NavLink disabled id="nav_home" href="/">Página Principal</NavLink>
-          </NavItem>
-    </Nav>
+    <h2>SOS2122-20</h2>
+    <ul>
+      <li><h5>Team</h5></li>  
+      <ul>
+          <li><a href="https://github.com/danpucjim">Daniel Puche Jiménez</a></li>
+          <li><a href="https://github.com/alexjorge-04">Alejandro Jorge Poyuelo</a></li>
+          <li><a href="https://github.com/javlarpar">Javier Lara Parrilla</a></li>
+      </ul>
+    </ul>
+
+    <ul>
+        <li><h5>Project description:</h5> Análisis de la variación del uso de tierras(edificadas,cultivo,pasto),abono, y producción del cereal a escala global.</li>
+    </ul>
+
+    <ul>
+        <li>
+            <h5>Repository: </h5>
+            <a href="https://github.com/gti-sos/SOS2122-20">gti-sos/SOS2122-20</a>
+        </li>
+    </ul>
+
+    <ul>
+        <li>
+            <h5>URL: </h5>
+            <a href="http://sos2122-20.herokuapp.com"> http://sos2122-20.herokuapp.com
+            </a>
+        </li>
+    </ul>
+
+    <ul>
+        <li>
+            <h5>APIs: </h5>
+            <ul>
+                <li><a href="https://sos2122-20.herokuapp.com/api/v1/landusage-stats/docs">https://sos2122-20.herokuapp.com/api/v1/landusage-stats/docs (developed by Daniel Puche Jiménez)</a></li>
+                <li><a href="https://sos2122-20.herokuapp.com/api/v1/fertilizers-stats/docs ">https://sos2122-20.herokuapp.com/api/v1/fertilizers-stats/docs  (developed by Alejandro Jorge Poyuelo)</a></li>
+                <li><a href="https://sos2122-20.herokuapp.com/api/v1/agriculturalproduction-stats/docs">https://sos2122-20.herokuapp.com/api/v1/agriculturalproduction-stats/docs (developed by Javier Lara Parrilla)</a></li>
+            </ul>
+        </li>
+    </ul>
+
+    <ul>
+        <li>
+            <h5>Frontends: </h5>
+            <ul>
+                <li><a ></a></li>
+                <li><a ></a></li>
+                <li><a ></a></li>
+                
+                
+            </ul>
+        </li>
+    </ul>
+
 </main>
