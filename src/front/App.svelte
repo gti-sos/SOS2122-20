@@ -1,8 +1,8 @@
 <script>
 	import Router from 'svelte-spa-router';
-	import ContactsTable from './landusageTables.svelte';
+	import ContactsTable from './front/danpucjimFront/landusageTables.svelte';
 	import Home from './home.svelte';
-import LandusageTables from './landusageTables.svelte';
+import LandusageTables from './front/danpucjimFront/landusageTables.svelte';
 	console.log("HOLA");
 	export let name;
 	const routes = {
