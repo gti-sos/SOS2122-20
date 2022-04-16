@@ -1,13 +1,18 @@
 <script>
 	import Router from 'svelte-spa-router';
-	import ContactsTable from './front/danpucjimFront/landusageTables.svelte';
-	import Home from './home.svelte';
-import LandusageTables from './front/danpucjimFront/landusageTables.svelte';
-	console.log("HOLA");
-	export let name;
+	import Home from './Home.svelte';
+
+	//import ContactsTable from './front/danpucjimFront/landusageTables.svelte';
+	import Fertilizers from './front/alejorpoyFront/fertilizers.svelte';
+	import LandusageTables from './front/danpucjimFront/landusageTables.svelte';
+
+
+	/*console.log("HOLA");
+	export let name; */
 	const routes = {
-	'/':LandusageTables,
-	'/test': LandusageTables
+	'/':Home,
+	'/landusage-stats': LandusageTables,
+	'/fertilizers-stats': Fertilizers
 };
 
 </script>

@@ -2,7 +2,7 @@
     import {onMount} from 'svelte';
 	let contacts = [];
 	let p1;
-	//let loading = true;
+	let loading = true;
 	onMount(getContacts);
 	async function getContacts(){
 		console.log("Fetching Contacts ... ");
