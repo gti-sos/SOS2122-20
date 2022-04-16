@@ -3,8 +3,8 @@
 	import Home from './Home.svelte';
 
 	//import ContactsTable from './front/danpucjimFront/landusageTables.svelte';
-	import Fertilizers from './front/alejorpoyFront/fertilizers.svelte';
-	import LandusageTables from './front/danpucjimFront/landusageTables.svelte';
+	import Fertilizers from './alejorpoyFront/fertilizers.svelte';
+	import LandusageTables from './danpucjimFront/landusageTables.svelte';
 
 
 	/*console.log("HOLA");

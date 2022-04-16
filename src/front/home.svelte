@@ -43,9 +43,9 @@
         <li>
             <h5>Frontends: </h5>
             <ul>
-                <li><a ></a></li>
-                <li><a ></a></li>
-                <li><a ></a></li>
+                <li></li>
+                <li></li>
+                <li></li>
                 
                 
             </ul>
