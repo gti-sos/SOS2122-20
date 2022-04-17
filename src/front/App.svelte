@@ -5,6 +5,7 @@
 	//import ContactsTable from './front/danpucjimFront/landusageTables.svelte';
 	import Fertilizers from './alejorpoyFront/fertilizers.svelte';
 	import LandusageTables from './danpucjimFront/landusageTables.svelte';
+	import ProductionTables from './javlarparFront/productionTable.svelte';
 
 
 	/*console.log("HOLA");
@@ -12,7 +13,8 @@
 	const routes = {
 	'/':Home,
 	'/landusage-stats': LandusageTables,
-	'/fertilizers-stats': Fertilizers
+	'/fertilizers-stats': Fertilizers,
+	'/agriculturalproduction-stats': ProductionTables
 };
 
 </script>
