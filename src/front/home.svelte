@@ -43,7 +43,7 @@
         <li>
             <h5>Frontends: </h5>
             <ul>
-                <li></li>
+                <li><a href="https://sos2122-20.herokuapp.com/#/landusage-stats">landusage-stats (developed by Daniel Puche Jiménez)</a></li>
                 <li></li>
                 <li></li>
                 
