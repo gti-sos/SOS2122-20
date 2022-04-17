@@ -7,7 +7,6 @@ var db = new Datastore({filename: dbFile, autoload: true });
 
 //Variable
 var agriculturalP=[];
-sdvfb
 module.exports.register = (app) => {
         var agriculturalproduction_stats=[
             {
