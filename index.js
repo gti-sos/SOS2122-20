@@ -30,11 +30,9 @@ var landusage_statsV1 = require("./src/backend/danpucjimAPI/landusage-stats.js")
 landusage_statsV1.register(app);
 
     //API ALEJANDRO JORGE POYUELO
-    var fertilizers_statsV1 = require("./src/backend/alejorpoyAPI/fertilizers-stats.js");
+    var fertilizers_statsV1 = require("./src/backend/alejorpoyAPI/fertilizers-statsdb.js");
     fertilizers_statsV1.register(app);
 
     //API JAVIER LARA PARRILLA
     var fertilizers_statsV1 = require("./src/backend/javlarparAPI/agricultural-stats.js");
     fertilizers_statsV1.register(app);
-
-    

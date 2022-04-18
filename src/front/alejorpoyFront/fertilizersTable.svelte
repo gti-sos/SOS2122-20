@@ -48,16 +48,16 @@
 					{contact.country}
 				</td>
 				<td>
-					{contact.code}
-				</td>
-				<td>
 					{contact.year}
 				</td>
 				<td>
-					{contact.built_area}
+					{contact.quantity}
 				</td>
 				<td>
-					{contact.grazing_area}
+					{contact.absolute_change}
+				</td>
+				<td>
+					{contact.relative_change}
 				</td>
 			</tr>
 			{/each}

@@ -3,7 +3,7 @@
 	import Home from './Home.svelte';
 
 	//import ContactsTable from './front/danpucjimFront/landusageTables.svelte';
-	import Fertilizers from './alejorpoyFront/fertilizers.svelte';
+	import FertilizersTables from './alejorpoyFront/fertilizersTable.svelte';
 	import LandusageTables from './danpucjimFront/landusageTables.svelte';
 	import ProductionTables from './javlarparFront/productionTable.svelte';
 
@@ -13,7 +13,7 @@
 	const routes = {
 	'/':Home,
 	'/landusage-stats': LandusageTables,
-	'/fertilizers-stats': Fertilizers,
+	'/fertilizers-stats': FertilizersTables,
 	'/agriculturalproduction-stats': ProductionTables
 };
 

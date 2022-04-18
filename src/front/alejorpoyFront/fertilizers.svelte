@@ -1,9 +1,9 @@
 <script>
-	import FertilizersTables from './fertilizersTable.svelte';
+	import FertilizersTables from './fertilizersTables.svelte';
 </script>
 
 <main>
-	<h1>Fertilizers</h1>
+	      <h1>Fertilizers</h1>
 	 
     <FertilizersTables />
   </main>
