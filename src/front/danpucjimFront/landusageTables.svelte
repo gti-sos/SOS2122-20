@@ -11,7 +11,6 @@
 		cropland_area:"",
 		grazing_area:""
 	};
-	let p1;
 	let loading = true;
 	onMount(getContacts);
 	async function getContacts(){
@@ -20,7 +19,6 @@
 		if(res.ok){
 		const data =await res.json();
 		contacts = data;
-		p1 = contacts[0];
 		console.log("Received Contacts" + JSON.stringify(contacts,null,2));
 		}
 		
@@ -39,11 +37,40 @@
 		});
 		console.log("done");
 	}
+
+	async function deleteContacts(){
+		console.log("Deleting contacts... ");
+		const res = await fetch("/api/v1/landusage-stats",
+		{
+			method:"DELETE"
+		}).then(function(res){
+			console.log("CAGADA");
+			getContacts();
+		})
+	}
+
+	async function deleteContact(countryDelete,yearDelete){
+		console.log("Deleting single contact... ");
+		const res = await fetch("/api/v1/landusage-stats/" + countryDelete + "/"+ yearDelete,{
+			method:"DELETE"
+		}).then(function(res){
+			getContacts();
+		})
+	}
+
+	async function iniData(){
+		console.log("Cargando Datos iniciales... "+ JSON.stringify(newContact));
+		const res = await fetch("api/v1/landusage-stats/loadInitialData").then(function(res){
+			getContacts();
+		});
+
+	}
 </script>
 <main>
     {#await contacts}
 	loading	
 	{:then contacts} 
+	<h1>Uso de Tierras Listado</h1>
 	<Table bordered>
 		<thead>
 			<tr>
@@ -98,15 +125,17 @@
 				<td>
 					{contact.cropland_area}
 				</td>
+				<td><Button color="danger" on:click="{deleteContact(contact.country,contact.year)}">Borrar</Button></td>
+				<td><Button color="warning" on:click={function(){
+					window.location.href = `/#/landusage-stats/${contact.country}/${contact.year}`;
+				}}>Editar</Button></td>
 			</tr>
 			{/each}
 		</tbody>
 	</Table>
 	{/await}
-</main>
-
-
-<main>
+	<Button color="danger" on:click="{deleteContacts}">Eliminar Todo</Button>
+	<Button color ="success" on:click="{iniData}">InitialData</Button>
 
 </main>
 

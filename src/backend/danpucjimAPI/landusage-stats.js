@@ -116,7 +116,11 @@ app.get(BASE_API_URL + OWN_API_URL, (req,res)=>{
         }
         else{
             if(docs == 0){
-                res.sendStatus(404);
+                docs.forEach((data) => {
+                    delete data._id;
+                });
+                res.status(200).send(JSON.stringify(docs,null,2));
+                //res.sendStatus(404);
             }
             else{
                 docs.forEach((data) => {
