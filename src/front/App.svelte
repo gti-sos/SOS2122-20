@@ -6,6 +6,7 @@
 	import FertilizersTables from './alejorpoyFront/fertilizersTable.svelte';
 	import LandusageTables from './danpucjimFront/landusageTables.svelte';
 	import ProductionTables from './javlarparFront/productionTable.svelte';
+	import EditLandusageStats from './danpucjimFront/EditLandusageStats.svelte';
 
 
 	/*console.log("HOLA");
