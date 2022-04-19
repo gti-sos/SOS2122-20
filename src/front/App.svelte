@@ -1,6 +1,6 @@
 <script>
 	import Router from 'svelte-spa-router';
-	import Home from './Home.svelte';
+	import Home from './home.svelte';
 
 	//import ContactsTable from './front/danpucjimFront/landusageTables.svelte';
 	import FertilizersTables from './alejorpoyFront/fertilizersTable.svelte';

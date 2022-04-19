@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "My first module",
   "main": "index.js",
+  "engines": {
+    "node": "16.x"
+  },
   "scripts": {
     "build": "rollup -c",
     "dev": "rollup -c -w",
