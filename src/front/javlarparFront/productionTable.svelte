@@ -24,20 +24,20 @@
 		<thead>
 			<tr>
 				<th>
-					Country
+					País
 				</th>
 
 				<th>
-					year
+					Anyo
 				</th>
 				<th>
-					production
+					Producción
 				</th>
 				<th>
-					absolute_change
+					Diferencia_absoluta
 				</th>
 				<th>
-					relative_change
+					Diferencia_relativa
 				</th>
 			</tr>
 		</thead>
