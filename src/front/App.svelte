@@ -7,6 +7,7 @@
 	import LandusageTables from './danpucjimFront/landusageTables.svelte';
 	import ProductionTables from './javlarparFront/productionTable.svelte';
 	import EditLandusageStats from './danpucjimFront/EditLandusageStats.svelte';
+	import Info from './Info.svelte';
 
 
 	/*console.log("HOLA");
@@ -15,7 +16,8 @@
 	'/':Home,
 	'/landusage-stats': LandusageTables,
 	'/fertilizers-stats': FertilizersTables,
-	'/agriculturalproduction-stats': ProductionTables
+	'/agriculturalproduction-stats': ProductionTables,
+	'/info':Info
 };
 
 </script>
