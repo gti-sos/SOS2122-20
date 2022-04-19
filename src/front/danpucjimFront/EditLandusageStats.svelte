@@ -19,25 +19,54 @@ onMount(getLands);
 
 async function getLands(){
     console.log("Fetching data...");
-        const res = await fetch(API + "/" + params.country + "/" + params.date);
+        const res = await fetch(API + "/" + params.country + "/" + params.year);
         if(res.ok){
             console.log("Ok:");
             const json = await res.json();
-            lifeStat = json;
-            updatedCountry = lifeStat.country;
-            updatedDate = lifeStat.date;
-            updatedQuality = lifeStat['quality_life_index'];
-            updatedPurchasing = lifeStat['purchasing_power_index'];
-            updatedSafety = lifeStat['safety_index'];
+            landStat = json;
+            updCountry = landStat.country;
+            updYear = landStat.year;
+            updCode = landStat.code;
+            updBuilt = landStat['built_area'];
+            updCrop = landStat['cropland_area'];
+            updGrazing = landStat['grazing_area'];
             console.log("Received data.");
         }else if(res.status ==404){
-            errorMsg = "No se encuentra el dato a editar.";
-            console.log("ERROR. " + errorMsg);
+            console.log("ERROR. ");
         }else {   //res.status ===500)
             errorMsg = "No se ha podido acceder a la base de datos";
-            console.log("ERROR. " + errorMsg);
+            console.log("ERROR. ");
         }        
     }
+
+async function updateLand(){
+    console.log("Updating..." + params.country + " " + params.year );
+    const res = await fetch(API + "/" + params.country + "/"+params.year,
+    {
+        method: "PUT",
+        body : JSON.stringify({
+            country:params.country,
+            code : params.code,
+            year : parseInt(params.year),
+            cropland_area : updCrop,
+            grazing_area : updGrazing,
+            built_area:updBuilt
+        }),
+        headers:{
+            "Content-Type": "application/json"
+        }
+    }).then(function(res){
+        if(res.ok){
+            console.log("Ok");
+            getLands();
+        }
+        else{
+            alert("ERROR");
+        }
+    })
+}
+
+
 </script>
 
 <main>
@@ -92,6 +121,10 @@ async function getLands(){
                 </td>
                 <td>
                     <input type="number" placeholder="0.00" min="0" bind:value = "{updGrazing}">
+                </td>
+
+                <td>
+                    <Button color="primary" on:click="{()=>updateLand()}">Actualizar</Button>
                 </td>
             </tr>
         </tbody>

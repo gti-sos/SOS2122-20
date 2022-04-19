@@ -1,7 +1,9 @@
 <script>
 	import Table from "sveltestrap/src/Table.svelte";
-	import Button from "sveltestrap/src/Button.svelte";
     import {onMount} from 'svelte';
+	import{
+        Button,NavLink,NavItem,Nav
+    } from 'sveltestrap';
 	let contacts = [];
 	let newContact ={
 		country:"",
@@ -67,10 +69,47 @@
 	}
 </script>
 <main>
+	<Nav class = "bg-light">
+        <NavItem>
+            <NavLink id="nav-home" href="/" style="text-decoration:none">Home</NavLink>
+        </NavItem>
+        <NavItem>
+            <NavLink id="nav-info" href="/#/info" style="text-decoration:none">Info</NavLink>
+        </NavItem>
+    </Nav>
     {#await contacts}
 	loading	
 	{:then contacts} 
 	<h1 class="text-center">Uso de Tierras Listado</h1>
+
+	<div>
+		<h2 class="text-center mt-5">
+			Busqueda
+		</h2>
+		<Table bordered class="w-50 text-center mx-auto">
+			<thead>
+				<tr class="bg-light">
+					<th>
+						Pais
+					</th>
+					<th>
+						Anyo
+					</th>
+				</tr>
+				<tr>
+					<td>
+						<input bind:value="{newContact.country}">
+					</td>
+					<td>
+						<input bind:value="{newContact.country}">
+					</td>
+					<td>
+						<Button outline color="primary" on:click="{insertContact}">Buscar</Button>
+					</td>
+				</tr>
+			</thead>
+		</Table>
+	</div>
 	<Table bordered>
 		<thead>
 			<tr>
