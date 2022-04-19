@@ -15,7 +15,8 @@
             - (danpucjim)
         </h4>
         <h4>
-            <a href="https://www.github.com/aljorpoy"> Alejandro Jorge Poyuelo</a>
+            <a href="https://www.github.com/alexjorge-04"> Alejandro Jorge Poyuelo</a>
+            - (ale)
         </h4>
         <h4>
             <a href="https://www.github.com/javlarpar">Javier Lara Parrilla</a>
@@ -47,6 +48,32 @@
                 }}">APIV1</Button>
                 <Button color="primary" on:click="{function(){
                     window.location.href = "/#/landusage-stats";
+                }}">APIV2</Button>
+            </CardFooter>
+        
+    </Card>
+    <Card class="w-50 mx-auto">
+        <CardHeader>
+            <CardTitle class="text-center">
+                fertilizers-stats - (danpucjim)
+            </CardTitle>
+        </CardHeader>
+            <CardBody class="text-center">
+                Analisis de la evolucion del uso de nitrógeno como fertilizante.
+                
+            </CardBody>
+            <CardFooter class="text-center">
+                <Button color="primary" on:click="{function(){
+                    window.location.href = "/#/fertilizers-stats";
+                }}">Tabla</Button>
+                <Button color="primary" on:click="{function(){
+                    window.location.href = "/#/fertilizers-stats";
+                }}">Documentacion</Button>
+                <Button color="primary" on:click="{function(){
+                    window.location.href = "/#/fertilizers-stats";
+                }}">APIV1</Button>
+                <Button color="primary" on:click="{function(){
+                    window.location.href = "/#/fertilizers-stats";
                 }}">APIV2</Button>
             </CardFooter>
         
