@@ -70,7 +70,7 @@
     {#await contacts}
 	loading	
 	{:then contacts} 
-	<h1>Uso de Tierras Listado</h1>
+	<h1 class="text-center">Uso de Tierras Listado</h1>
 	<Table bordered>
 		<thead>
 			<tr>

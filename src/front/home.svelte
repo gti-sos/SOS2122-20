@@ -1,5 +1,18 @@
+<script>
+    import{
+        Button,NavLink,NavItem,Nav
+    } from 'sveltestrap';
+</script>
 <main>
-    <h2>SOS2122-20</h2>
+    <Nav class = "bg-light">
+        <NavItem>
+            <NavLink disabled id="nav-home" href="/">Home</NavLink>
+        </NavItem>
+        <NavItem>
+            <NavLink id="nav-info" href="/#/info" style="text-decoration:none">Info</NavLink>
+        </NavItem>
+    </Nav>
+    <h1>SOS2122-20</h1>
     <ul>
       <li><h5>Team</h5></li>  
       <ul>

@@ -17,7 +17,13 @@
 	'/landusage-stats': LandusageTables,
 	'/fertilizers-stats': FertilizersTables,
 	'/agriculturalproduction-stats': ProductionTables,
-	'/info':Info
+	'/info':Info,
+
+	//DANPUCJIM ROUTES
+	'/landusage-stats/:country/:year':EditLandusageStats
+	//ALJORPOY ROUTES
+
+	//JAVLARPAR ROUTES
 };
 
 </script>
