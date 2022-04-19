@@ -4,7 +4,6 @@
 	import{
         Button,NavLink,NavItem,Nav,Pagination,PaginationItem,PaginationLink
     } from 'sveltestrap';
-	import {range} from "./range.js"
 
 	let pais,anyo; // pais y anyo de la busqueda
 	let contacts = []; // lista de todos los contactos
@@ -276,12 +275,6 @@
 			href="#/landusage-stats"
 			on:click={()=> changePage(current_page-1,offset-10)}/>
 		</PaginationItem>
-
-		{#each range(last_page,1) as page}
-		<PaginationItem class={current_page === page ? "active": ""}>
-			
-		</PaginationItem>
-		{/each}
 	</Pagination>
 	<Button color="danger" on:click="{deleteContacts}">Eliminar Todo</Button>
 	<Button color ="success" on:click="{iniData}">InitialData</Button>
