@@ -25,11 +25,30 @@
 	let loading = true; // esta carganado
 	let search = false; // se ha buscado
 	let busqueda = {}; // objeto tras la busqueda
-
-
-
 	
 	onMount(getContacts);
+
+	// Paginación
+
+	async function antPag(){
+		if(offset>=10){
+			offset = offset-limit;
+		}
+		getContacts();
+	}
+
+	async function sigPag(){
+		if(offset+limit > contacts.length){
+
+		}
+		else{
+			offset = offset+limit;
+			getContacts();
+		}
+		
+	}
+
+	// Funciones
 	async function getContacts(){
 		console.log("Fetching Contacts ... ");
 		const res =  await fetch("/api/v1/fertilizers-stats");
@@ -37,6 +56,9 @@
 		const data =await res.json();
 		contacts = data;
 		console.log("Received Contacts" + JSON.stringify(contacts,null,2));
+		}
+		else{
+			alert("Hubo un error al mostrar los contactos");
 		}
 		
 	}
@@ -50,12 +72,19 @@
 			headers:{"Content-Type":"application/json"
 		}
 		}).then(function(res){
+			if(res.ok){
+				alert("Dato insertado con exito");
+			}
+			else{
+				alert("No se pudo insertar el dato, comprueba que los datos son correctos o que no se repita");
+			}
 			getContacts();
 		});
 		console.log("done");
 	}
 
 	async function deleteContacts(){
+		search=false;
 		console.log("Deleting contacts... ");
 		const res = await fetch("/api/v1/fertilizers-stats",
 		{
@@ -67,13 +96,21 @@
 	}
 
 	async function deleteContact(countryDelete,yearDelete){
+		search=false;
 		console.log("Deleting single contact... ");
 		const res = await fetch("/api/v1/fertilizers-stats/" + countryDelete + "/"+ yearDelete,{
 			method:"DELETE"
 		}).then(function(res){
-			console.log("AAAAA");
+			if(res.ok){
+			alert("Eliminado con exito");
+		}
+		else{
+			alert("No se pudo eliminar");
+		}
 			getContacts();
-		})
+		}
+		);
+		
 	}
 
 	async function iniData(){
@@ -95,34 +132,26 @@
 			busqueda = json;
 			console.log(busqueda);
 			console.log(search);
+			alert("Mostrando la búsqueda");
 		}
 
 	}
 
-	function changePage(page,offset){
-		console.log("Change page");
-		console.log("Page" + page + "offset" + offset);
-		last_page = Math.ceil(total/10);
-		if(page !== current_page){
-			current_offset = offset;
-			current_page = page;
-		}
-		getContacts();
-	}
+	
 </script>
 <main>
 	<Nav class = "bg-light">
-		<NavItem>
+        <NavItem>
             <NavLink id="nav-home" href="/" style="text-decoration:none">Home</NavLink>
         </NavItem>
         <NavItem>
             <NavLink id="nav-info" href="/#/info" style="text-decoration:none">Info</NavLink>
         </NavItem>
 		<NavItem>
-            <NavLink id="nav-info" href="/#/info" style="text-decoration:none">Eliminar Todo</NavLink>
+            <NavLink id="nav-info" href="#" style="text-decoration:none" on:click={deleteContacts}>Eliminar Todo</NavLink>
         </NavItem>
 		<NavItem>
-            <NavLink id="nav-info" href="/#/info" style="text-decoration:none" class="text-succcess">Iniciar Datos</NavLink>
+            <NavLink id="nav-info" href="#" style="text-decoration:none" class="text-succcess" on:click={iniData}>Iniciar Datos</NavLink>
         </NavItem>
     </Nav>
     {#await contacts}
@@ -252,22 +281,13 @@
 			{/each}
 		</tbody>
 	</Table>
-	<Pagination>
-		<PaginationItem class = {current_page ===1 ? "disabled" : ""}>
-			<PaginationLink
-			previous
-			id = "pagination-back"
-			href="#/fertilizers-stats"
-			on:click={()=> changePage(current_page-1,offset-10)}/>
-		</PaginationItem>
-	</Pagination>
-	<Button color="danger" on:click="{deleteContacts}">Eliminar Todo</Button>
-	<Button color ="success" on:click="{iniData}">InitialData</Button>
+	<Button on:click={antPag}>
+		Anterior
+	</Button>
+	<Button on:click={sigPag}>
+		Siguiente
+	</Button>
 	{/await}
-
-	
-
-
 </main>
 
 <style>
