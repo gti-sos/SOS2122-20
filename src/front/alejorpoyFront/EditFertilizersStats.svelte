@@ -16,7 +16,7 @@
     
     onMount(getLands);
     
-    async function getLands(){
+    async function getFerts(){
         console.log("Fetching data...");
             const res = await fetch(API + "/" + params.country + "/" + params.year);
             if(res.ok){
@@ -37,7 +37,7 @@
             }        
         }
     
-    async function updateLand(){
+    async function updateFerts(){
         console.log("Updating..." + params.country + " " + params.year );
         const res = await fetch(API + "/" + params.country + "/"+params.year,
         {
@@ -55,7 +55,7 @@
         }).then(function(res){
             if(res.ok){
                 console.log("Ok");
-                getLands();
+                getFerts();
             }
             else{
                 alert("ERROR");
@@ -115,7 +115,7 @@
                     </td>
     
                     <td>
-                        <Button color="primary" on:click="{()=>updateLand()}">Actualizar</Button>
+                        <Button color="primary" on:click="{()=>updateFerts()}">Actualizar</Button>
                     </td>
                 </tr>
             </tbody>
