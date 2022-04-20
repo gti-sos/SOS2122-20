@@ -2,8 +2,10 @@
 	import Table from "sveltestrap/src/Table.svelte";
     import {onMount} from 'svelte';
 	import{
-        Button,NavLink,NavItem,Nav
+        Button,NavLink,NavItem,Nav,Pagination,PaginationItem,PaginationLink
     } from 'sveltestrap';
+
+	let pais,anyo;
 	let contacts = [];
 	let newContact ={
 		country:"",
@@ -12,7 +14,21 @@
 		absolute_change:"",
 		relative_change:""
 	};
-	let loading = true;
+
+	let current_page = 1; // pagina actual
+	let last_page = 1;
+	let limit = 10; // limite de visualizacion
+	let offset = 0; // offset actual
+	let numDataPag = 0; // 
+	let maxpag = false; // pagina maxima alcanzada
+
+	let loading = true; // esta carganado
+	let search = false; // se ha buscado
+	let busqueda = {}; // objeto tras la busqueda
+
+
+
+	
 	onMount(getContacts);
 	async function getContacts(){
 		console.log("Fetching Contacts ... ");
@@ -45,7 +61,7 @@
 		{
 			method:"DELETE"
 		}).then(function(res){
-			console.log("CAGADA");
+			console.log("CAGADA"); 
 			getContacts();
 		})
 	}
@@ -55,6 +71,7 @@
 		const res = await fetch("/api/v1/fertilizers-stats/" + countryDelete + "/"+ yearDelete,{
 			method:"DELETE"
 		}).then(function(res){
+			console.log("AAAAA");
 			getContacts();
 		})
 	}
@@ -66,20 +83,52 @@
 		});
 
 	}
+
+	async function searchContact(country,year){
+		offset = 0;
+		const res = await fetch("api/v1/fertilizers-stats"+"/" + country + "/" + year);
+
+		if(res.ok){
+			console.log("Buscando data... ");
+			search = true;
+			const json =  await res.json();
+			busqueda = json;
+			console.log(busqueda);
+			console.log(search);
+		}
+
+	}
+
+	function changePage(page,offset){
+		console.log("Change page");
+		console.log("Page" + page + "offset" + offset);
+		last_page = Math.ceil(total/10);
+		if(page !== current_page){
+			current_offset = offset;
+			current_page = page;
+		}
+		getContacts();
+	}
 </script>
 <main>
 	<Nav class = "bg-light">
-        <NavItem>
+		<NavItem>
             <NavLink id="nav-home" href="/" style="text-decoration:none">Home</NavLink>
         </NavItem>
         <NavItem>
             <NavLink id="nav-info" href="/#/info" style="text-decoration:none">Info</NavLink>
         </NavItem>
+		<NavItem>
+            <NavLink id="nav-info" href="/#/info" style="text-decoration:none">Eliminar Todo</NavLink>
+        </NavItem>
+		<NavItem>
+            <NavLink id="nav-info" href="/#/info" style="text-decoration:none" class="text-succcess">Iniciar Datos</NavLink>
+        </NavItem>
     </Nav>
     {#await contacts}
 	loading	
 	{:then contacts} 
-	<h1 class="text-center">Uso de Tierras Listado</h1>
+	<h1 class="text-center">Uso de Fertilizantes Listado</h1>
 
 	<div>
 		<h2 class="text-center mt-5">
@@ -97,17 +146,57 @@
 				</tr>
 				<tr>
 					<td>
-						<input bind:value="{newContact.country}">
+						<input bind:value="{pais}">
 					</td>
 					<td>
-						<input bind:value="{newContact.country}">
+						<input bind:value="{anyo}">
 					</td>
 					<td>
-						<Button outline color="primary" on:click="{insertContact}">Buscar</Button>
+						<Button outline color="primary" on:click="{searchContact(pais,anyo)}">Buscar</Button>
 					</td>
 				</tr>
 			</thead>
 		</Table>
+		{#if search}
+				<Table bordered class = "w-50 mx-auto">
+					<tr>
+						<th>
+							Pais
+						</th>
+						<th>
+							Anyo
+						</th>
+						<th>
+							Cantidad
+						</th>
+						<th>
+							Diferencia absoluta
+						</th>
+						<th>
+							Diferencia relativa
+						</th>
+					</tr>
+					<tr>
+						<td>
+							{busqueda.country}
+						</td>
+						<td>
+							{busqueda.year}
+						</td>
+						<td>
+							{busqueda.quantity}
+						</td>
+						<td>
+							{busqueda.absolute_change}
+						</td>
+						<td>
+							{busqueda.relative_change}
+						</td>
+
+					</tr>
+				</Table>
+					
+					{/if}
 	</div>
 	<Table bordered>
 		<thead>
@@ -115,7 +204,6 @@
 				<th>
 					Pais
 				</th>
-
 				<th>
 					Anyo
 				</th>
@@ -164,9 +252,21 @@
 			{/each}
 		</tbody>
 	</Table>
-	{/await}
+	<Pagination>
+		<PaginationItem class = {current_page ===1 ? "disabled" : ""}>
+			<PaginationLink
+			previous
+			id = "pagination-back"
+			href="#/fertilizers-stats"
+			on:click={()=> changePage(current_page-1,offset-10)}/>
+		</PaginationItem>
+	</Pagination>
 	<Button color="danger" on:click="{deleteContacts}">Eliminar Todo</Button>
 	<Button color ="success" on:click="{iniData}">InitialData</Button>
+	{/await}
+
+	
+
 
 </main>
 

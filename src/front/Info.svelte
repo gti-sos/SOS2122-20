@@ -55,7 +55,7 @@
     <Card class="w-50 mx-auto">
         <CardHeader>
             <CardTitle class="text-center">
-                fertilizers-stats - (danpucjim)
+                fertilizers-stats - (alexjorge-04)
             </CardTitle>
         </CardHeader>
             <CardBody class="text-center">
