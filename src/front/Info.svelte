@@ -16,10 +16,11 @@
         </h4>
         <h4>
             <a href="https://www.github.com/alexjorge-04"> Alejandro Jorge Poyuelo</a>
-            - (ale)
+            - (alexjorge-04)
         </h4>
         <h4>
             <a href="https://www.github.com/javlarpar">Javier Lara Parrilla</a>
+            -(javlarpar)
         </h4>
 
         <h4 class="mt-4 mb-4">
@@ -74,6 +75,32 @@
                 }}">APIV1</Button>
                 <Button color="primary" on:click="{function(){
                     window.location.href = "/#/fertilizers-stats";
+                }}">APIV2</Button>
+            </CardFooter>
+        
+    </Card>
+    <Card class="w-50 mx-auto">
+        <CardHeader>
+            <CardTitle class="text-center">
+                agriculturalproduction-stats - (javlarpar)
+            </CardTitle>
+        </CardHeader>
+            <CardBody class="text-center">
+                Analisis de la evolucion de la produccion de cultivos en todo el mundo.
+                
+            </CardBody>
+            <CardFooter class="text-center">
+                <Button color="primary" on:click="{function(){
+                    window.location.href = "/#/agriculturalproduction-stats";
+                }}">Tabla</Button>
+                <Button color="primary" on:click="{function(){
+                    window.location.href = "/#/agriculturalproduction-stats";
+                }}">Documentacion</Button>
+                <Button color="primary" on:click="{function(){
+                    window.location.href = "/#/agriculturalproduction-stats";
+                }}">APIV1</Button>
+                <Button color="primary" on:click="{function(){
+                    window.location.href = "/#/agriculturalproduction-stats";
                 }}">APIV2</Button>
             </CardFooter>
         
