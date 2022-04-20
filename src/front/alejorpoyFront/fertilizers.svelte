@@ -1,5 +1,5 @@
 <script>
-	import FertilizersTables from './fertilizersTables.svelte';
+	import FertilizersTables from './fertilizersTable.svelte';
 </script>
 
 <main>
