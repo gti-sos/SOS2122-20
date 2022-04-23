@@ -1,5 +1,5 @@
 
-(function(l, r) { if (!l || l.getElementById('livereloadscript')) return; r = l.createElement('script'); r.async = 1; r.src = '//' + (self.location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1'; r.id = 'livereloadscript'; l.getElementsByTagName('head')[0].appendChild(r) })(self.document);
+(function(l, r) { if (!l || l.getElementById('livereloadscript')) return; r = l.createElement('script'); r.async = 1; r.src = '//' + (self.location.host || 'localhost').split(':')[0] + ':35731/livereload.js?snipver=1'; r.id = 'livereloadscript'; l.getElementsByTagName('head')[0].appendChild(r) })(self.document);
 var app = (function () {
     'use strict';
 
@@ -8009,10 +8009,10 @@ var app = (function () {
     			t7 = space();
     			create_component(button1.$$.fragment);
     			attr_dev(h1, "class", "text-center");
-    			add_location(h1, file$7, 159, 1, 3883);
+    			add_location(h1, file$7, 159, 1, 3918);
     			attr_dev(h2, "class", "text-center mt-5");
-    			add_location(h2, file$7, 162, 2, 3954);
-    			add_location(div, file$7, 161, 1, 3945);
+    			add_location(h2, file$7, 162, 2, 3989);
+    			add_location(div, file$7, 161, 1, 3980);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, h1, anchor);
@@ -8209,17 +8209,17 @@ var app = (function () {
     			t5 = space();
     			td2 = element("td");
     			create_component(button.$$.fragment);
-    			add_location(th0, file$7, 168, 5, 4104);
-    			add_location(th1, file$7, 171, 5, 4139);
+    			add_location(th0, file$7, 168, 5, 4139);
+    			add_location(th1, file$7, 171, 5, 4174);
     			attr_dev(tr0, "class", "bg-light");
-    			add_location(tr0, file$7, 167, 4, 4076);
-    			add_location(input0, file$7, 177, 6, 4207);
-    			add_location(td0, file$7, 176, 5, 4195);
-    			add_location(input1, file$7, 180, 6, 4265);
-    			add_location(td1, file$7, 179, 5, 4253);
-    			add_location(td2, file$7, 182, 5, 4311);
-    			add_location(tr1, file$7, 175, 4, 4184);
-    			add_location(thead, file$7, 166, 3, 4063);
+    			add_location(tr0, file$7, 167, 4, 4111);
+    			add_location(input0, file$7, 177, 6, 4242);
+    			add_location(td0, file$7, 176, 5, 4230);
+    			add_location(input1, file$7, 180, 6, 4300);
+    			add_location(td1, file$7, 179, 5, 4288);
+    			add_location(td2, file$7, 182, 5, 4346);
+    			add_location(tr1, file$7, 175, 4, 4219);
+    			add_location(thead, file$7, 166, 3, 4098);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, thead, anchor);
@@ -8421,18 +8421,18 @@ var app = (function () {
     			t17 = space();
     			td4 = element("td");
     			t18 = text(t18_value);
-    			add_location(th0, file$7, 191, 6, 4536);
-    			add_location(th1, file$7, 194, 6, 4574);
-    			add_location(th2, file$7, 197, 6, 4612);
-    			add_location(th3, file$7, 200, 6, 4654);
-    			add_location(th4, file$7, 203, 6, 4707);
-    			add_location(tr0, file$7, 190, 5, 4524);
-    			add_location(td0, file$7, 208, 6, 4783);
-    			add_location(td1, file$7, 211, 6, 4835);
-    			add_location(td2, file$7, 214, 6, 4884);
-    			add_location(td3, file$7, 217, 6, 4937);
-    			add_location(td4, file$7, 220, 6, 4997);
-    			add_location(tr1, file$7, 207, 5, 4771);
+    			add_location(th0, file$7, 191, 6, 4571);
+    			add_location(th1, file$7, 194, 6, 4609);
+    			add_location(th2, file$7, 197, 6, 4647);
+    			add_location(th3, file$7, 200, 6, 4689);
+    			add_location(th4, file$7, 203, 6, 4742);
+    			add_location(tr0, file$7, 190, 5, 4559);
+    			add_location(td0, file$7, 208, 6, 4818);
+    			add_location(td1, file$7, 211, 6, 4870);
+    			add_location(td2, file$7, 214, 6, 4919);
+    			add_location(td3, file$7, 217, 6, 4972);
+    			add_location(td4, file$7, 220, 6, 5032);
+    			add_location(tr1, file$7, 207, 5, 4806);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, tr0, anchor);
@@ -8651,14 +8651,14 @@ var app = (function () {
     			td6 = element("td");
     			create_component(button1.$$.fragment);
     			t11 = space();
-    			add_location(td0, file$7, 260, 4, 5822);
-    			add_location(td1, file$7, 263, 4, 5867);
-    			add_location(td2, file$7, 266, 4, 5909);
-    			add_location(td3, file$7, 269, 4, 5955);
-    			add_location(td4, file$7, 272, 4, 6008);
-    			add_location(td5, file$7, 275, 4, 6061);
-    			add_location(td6, file$7, 276, 4, 6171);
-    			add_location(tr, file$7, 259, 3, 5812);
+    			add_location(td0, file$7, 260, 4, 5857);
+    			add_location(td1, file$7, 263, 4, 5902);
+    			add_location(td2, file$7, 266, 4, 5944);
+    			add_location(td3, file$7, 269, 4, 5990);
+    			add_location(td4, file$7, 272, 4, 6043);
+    			add_location(td5, file$7, 275, 4, 6096);
+    			add_location(td6, file$7, 276, 4, 6206);
+    			add_location(tr, file$7, 259, 3, 5847);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, tr, anchor);
@@ -8841,26 +8841,26 @@ var app = (function () {
     				each_blocks[i].c();
     			}
 
-    			add_location(th0, file$7, 232, 4, 5150);
-    			add_location(th1, file$7, 235, 4, 5182);
-    			add_location(th2, file$7, 238, 4, 5214);
-    			add_location(th3, file$7, 241, 4, 5250);
-    			add_location(th4, file$7, 244, 4, 5297);
-    			add_location(tr0, file$7, 231, 3, 5140);
-    			add_location(thead, file$7, 230, 2, 5128);
-    			add_location(input0, file$7, 251, 8, 5390);
-    			add_location(td0, file$7, 251, 4, 5386);
-    			add_location(input1, file$7, 252, 8, 5446);
-    			add_location(td1, file$7, 252, 4, 5442);
-    			add_location(input2, file$7, 253, 8, 5499);
-    			add_location(td2, file$7, 253, 4, 5495);
-    			add_location(input3, file$7, 254, 8, 5556);
-    			add_location(td3, file$7, 254, 4, 5552);
-    			add_location(input4, file$7, 255, 8, 5620);
-    			add_location(td4, file$7, 255, 4, 5616);
-    			add_location(td5, file$7, 256, 4, 5680);
-    			add_location(tr1, file$7, 250, 3, 5376);
-    			add_location(tbody, file$7, 249, 2, 5364);
+    			add_location(th0, file$7, 232, 4, 5185);
+    			add_location(th1, file$7, 235, 4, 5217);
+    			add_location(th2, file$7, 238, 4, 5249);
+    			add_location(th3, file$7, 241, 4, 5285);
+    			add_location(th4, file$7, 244, 4, 5332);
+    			add_location(tr0, file$7, 231, 3, 5175);
+    			add_location(thead, file$7, 230, 2, 5163);
+    			add_location(input0, file$7, 251, 8, 5425);
+    			add_location(td0, file$7, 251, 4, 5421);
+    			add_location(input1, file$7, 252, 8, 5481);
+    			add_location(td1, file$7, 252, 4, 5477);
+    			add_location(input2, file$7, 253, 8, 5534);
+    			add_location(td2, file$7, 253, 4, 5530);
+    			add_location(input3, file$7, 254, 8, 5591);
+    			add_location(td3, file$7, 254, 4, 5587);
+    			add_location(input4, file$7, 255, 8, 5655);
+    			add_location(td4, file$7, 255, 4, 5651);
+    			add_location(td5, file$7, 256, 4, 5715);
+    			add_location(tr1, file$7, 250, 3, 5411);
+    			add_location(tbody, file$7, 249, 2, 5399);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, thead, anchor);
@@ -9138,7 +9138,7 @@ var app = (function () {
     			create_component(nav.$$.fragment);
     			t = space();
     			info.block.c();
-    			add_location(main, file$7, 141, 0, 3190);
+    			add_location(main, file$7, 141, 0, 3225);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -9247,7 +9247,7 @@ var app = (function () {
     	// Funciones
     	async function getContacts() {
     		console.log("Fetching Contacts ... ");
-    		const res = await fetch("/api/v1/fertilizers-stats");
+    		const res = await fetch("/api/v1/fertilizers-stats" + "?limit=" + limit + "&offset=" + offset);
 
     		if (res.ok) {
     			const data = await res.json();

@@ -51,7 +51,7 @@
 	// Funciones
 	async function getContacts(){
 		console.log("Fetching Contacts ... ");
-		const res =  await fetch("/api/v1/fertilizers-stats");
+		const res =  await fetch("/api/v1/fertilizers-stats"+ "?limit="+limit+"&offset="+offset);
 		if(res.ok){
 		const data =await res.json();
 		contacts = data;
