@@ -34,5 +34,5 @@ landusage_statsV1.register(app);
     fertilizers_statsV1.register(app);
 
     //API JAVIER LARA PARRILLA
-    var fertilizers_statsV1 = require("./src/backend/javlarparAPI/agricultural-stats_v2.js");
+    var fertilizers_statsV1 = require("./src/backend/javlarparAPI/agricultural-stats.js");
     fertilizers_statsV1.register(app);

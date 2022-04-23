@@ -1,0 +1,418 @@
+{
+	"id": "fa1a6a96-d015-46fb-a228-be8e42405681",
+	"name": "SOS2122-20",
+	"timestamp": "2022-04-23T09:32:02.591Z",
+	"collection_id": "20091971-8d003b63-11ab-42a5-a46b-08e59fc62e36",
+	"folder_id": 0,
+	"environment_id": "20091971-a8a388a9-b637-49d6-b44a-737bee83adb1",
+	"totalPass": 13,
+	"totalFail": 0,
+	"results": [
+		{
+			"id": "d4666ccf-7a44-4e73-8ef1-912b55185019",
+			"name": "GET/loadInitialData",
+			"url": "http://localhost:8085/api/v1/agriculturalproduction-stats/loadInitialData",
+			"time": 8,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				8
+			],
+			"allTests": [
+				{
+					"Status code is 200": true
+				}
+			]
+		},
+		{
+			"id": "b4787d88-c343-4e88-8e51-94b677198570",
+			"name": "GET",
+			"url": "http://localhost:8085/api/v1/agriculturalproduction-stats",
+			"time": 4,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Array check": true
+			},
+			"testPassFailCounts": {
+				"Array check": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				4
+			],
+			"allTests": [
+				{
+					"Array check": true
+				}
+			]
+		},
+		{
+			"id": "32455690-d680-4f6f-9b56-98583c1f33cc",
+			"name": "POST/conjuntoBase",
+			"url": "http://localhost:8085/api/v1/agriculturalproduction-stats",
+			"time": 4,
+			"responseCode": {
+				"code": 201,
+				"name": "Created"
+			},
+			"tests": {
+				"Status code is 201": true
+			},
+			"testPassFailCounts": {
+				"Status code is 201": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				4
+			],
+			"allTests": [
+				{
+					"Status code is 201": true
+				}
+			]
+		},
+		{
+			"id": "f1d8e473-26df-4b22-a516-3ae7c013ae6b",
+			"name": "POST/ConjuntoBase 409",
+			"url": "http://localhost:8085/api/v1/agriculturalproduction-stats",
+			"time": 4,
+			"responseCode": {
+				"code": 409,
+				"name": "Conflict"
+			},
+			"tests": {
+				"Status code is 409": true
+			},
+			"testPassFailCounts": {
+				"Status code is 409": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				4
+			],
+			"allTests": [
+				{
+					"Status code is 409": true
+				}
+			]
+		},
+		{
+			"id": "0dcc1cfc-58e6-4074-9fcc-f908b46000f7",
+			"name": "POST/Error 405",
+			"url": "http://localhost:8085/api/v1/agriculturalproduction-stats/Africa",
+			"time": 4,
+			"responseCode": {
+				"code": 405,
+				"name": "Method Not Allowed"
+			},
+			"tests": {
+				"Status code is 405": true
+			},
+			"testPassFailCounts": {
+				"Status code is 405": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				4
+			],
+			"allTests": [
+				{
+					"Status code is 405": true
+				}
+			]
+		},
+		{
+			"id": "daf0e393-af33-4dd5-827a-7b1d8582e6a3",
+			"name": "GET/conjunto",
+			"url": "http://localhost:8085/api/v1/agriculturalproduction-stats",
+			"time": 4,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				4
+			],
+			"allTests": [
+				{
+					"Status code is 200": true
+				}
+			]
+		},
+		{
+			"id": "6036b061-2d51-4561-9f91-961a197552af",
+			"name": "GET/absolute_change",
+			"url": "http://localhost:8085/api/v1/agriculturalproduction-stats?absolute_change=434.52",
+			"time": 5,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				5
+			],
+			"allTests": [
+				{
+					"Status code is 200": true
+				}
+			]
+		},
+		{
+			"id": "6a10282f-52bb-4651-8b30-19da7ae8ffd4",
+			"name": "GET/Error",
+			"url": "http://localhost:8085/api/v1/agriculturalproduction-stats/Albania/2017",
+			"time": 4,
+			"responseCode": {
+				"code": 404,
+				"name": "Not Found"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				4
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "926de2b9-bc72-4568-a84f-1d4315e73064",
+			"name": "GET/Pais",
+			"url": "http://localhost:8085/api/v1/agriculturalproduction-stats/Africa/2018",
+			"time": 6,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Array check": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Array check": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				6
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Array check": true
+				}
+			]
+		},
+		{
+			"id": "c4fe4892-ad0f-4b36-9dfa-6bbbdc71a868",
+			"name": "DELETE/Pais",
+			"url": "http://localhost:8085/api/v1/agriculturalproduction-stats/Espa%C3%B1a/2018",
+			"time": 4,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				4
+			],
+			"allTests": [
+				{
+					"Status code is 200": true
+				}
+			]
+		},
+		{
+			"id": "4012d0b8-38ae-486c-b4eb-0b73319d7043",
+			"name": "PUT/Error",
+			"url": "http://localhost:8085/api/v1/agriculturalproduction-stats",
+			"time": 3,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Status code is 400": true
+			},
+			"testPassFailCounts": {
+				"Status code is 400": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				3
+			],
+			"allTests": [
+				{
+					"Status code is 400": true
+				}
+			]
+		},
+		{
+			"id": "a1cf60a9-b0a7-44bb-b210-f3a1dbfde9e4",
+			"name": "PUT/Pais",
+			"url": "http://localhost:8085/api/v1/agriculturalproduction-stats/Albania/2018",
+			"time": 7,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				7
+			],
+			"allTests": [
+				{
+					"Status code is 200": true
+				}
+			]
+		},
+		{
+			"id": "fdd00165-4a15-4a30-998a-9eba122f2ce6",
+			"name": "DELETE/Conjunto",
+			"url": "http://localhost:8085/api/v1/agriculturalproduction-stats",
+			"time": 4,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				4
+			],
+			"allTests": [
+				{
+					"Status code is 200": true
+				}
+			]
+		}
+	],
+	"count": 1,
+	"totalTime": 61,
+	"collection": {
+		"requests": [
+			{
+				"id": "d4666ccf-7a44-4e73-8ef1-912b55185019",
+				"method": "GET"
+			},
+			{
+				"id": "b4787d88-c343-4e88-8e51-94b677198570",
+				"method": "GET"
+			},
+			{
+				"id": "32455690-d680-4f6f-9b56-98583c1f33cc",
+				"method": "POST"
+			},
+			{
+				"id": "f1d8e473-26df-4b22-a516-3ae7c013ae6b",
+				"method": "POST"
+			},
+			{
+				"id": "0dcc1cfc-58e6-4074-9fcc-f908b46000f7",
+				"method": "POST"
+			},
+			{
+				"id": "daf0e393-af33-4dd5-827a-7b1d8582e6a3",
+				"method": "GET"
+			},
+			{
+				"id": "6036b061-2d51-4561-9f91-961a197552af",
+				"method": "GET"
+			},
+			{
+				"id": "6a10282f-52bb-4651-8b30-19da7ae8ffd4",
+				"method": "GET"
+			},
+			{
+				"id": "926de2b9-bc72-4568-a84f-1d4315e73064",
+				"method": "GET"
+			},
+			{
+				"id": "c4fe4892-ad0f-4b36-9dfa-6bbbdc71a868",
+				"method": "DELETE"
+			},
+			{
+				"id": "4012d0b8-38ae-486c-b4eb-0b73319d7043",
+				"method": "PUT"
+			},
+			{
+				"id": "a1cf60a9-b0a7-44bb-b210-f3a1dbfde9e4",
+				"method": "PUT"
+			},
+			{
+				"id": "fdd00165-4a15-4a30-998a-9eba122f2ce6",
+				"method": "DELETE"
+			}
+		]
+	}
+}
