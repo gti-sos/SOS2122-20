@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 {"country":"s","year":"272","quantity":"5","absolute_change":"5","relative_change":"7","_id":"24xwVVnMNPyKdGGD"}
 {"country":"Americas","year":2017,"quantity":20.3,"absolute_change":6.41,"relative_change":9,"_id":"8Nd8vSH87OtjW2L5"}
 {"country":"Africa","year":2017,"quantity":6.8,"absolute_change":14.64,"relative_change":50,"_id":"NICr7E1UhvdcxQqp"}
@@ -41,3 +42,10 @@
 {"country":"Albania","year":2017,"quantity":9.6,"absolute_change":17.8,"relative_change":463,"_id":"tSUm5yigd5NkcPUu"}
 {"country":"Algeria","year":2017,"quantity":45.1,"absolute_change":2.3,"relative_change":27,"_id":"crwS5T8u2xvBQPBW"}
 {"country":"Americas","year":2017,"quantity":20.3,"absolute_change":6.41,"relative_change":9,"_id":"forBAAejL0YYzAPT"}
+=======
+{"country":"Albania","year":2017,"quantity":9.6,"absolute_change":17.8,"relative_change":463,"_id":"3IvoG2DDMxDumRmK"}
+{"country":"Afghanistan","year":2017,"quantity":3.14,"absolute_change":888088030,"relative_change":296972060,"_id":"4yDhV3vhz7Ub0QuK"}
+{"country":"Americas","year":2017,"quantity":20.3,"absolute_change":6.41,"relative_change":9,"_id":"rfZo4zZ7UGklrott"}
+{"country":"Algeria","year":2017,"quantity":45.1,"absolute_change":2.3,"relative_change":27,"_id":"sL2OD4colxf5O3AM"}
+{"country":"Africa","year":2017,"quantity":6.8,"absolute_change":14.64,"relative_change":50,"_id":"xF0E9CdovySU5au8"}
+>>>>>>> 193c08d63439360a5f3e9672022d0d168e319abb
