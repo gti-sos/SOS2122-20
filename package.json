@@ -12,7 +12,7 @@
     "start": "node index.js",
     "test_alejorpoy": "npx newman run ./tests/alejorpoy/backend.json -e ./tests/alejorpoy/env/local.json",
     "test_danpucjim": "npx newman run ./tests/danpucjim/backend.json -e ./tests/danpucjim/env/local.json",
-    "test_javlarpar": "npx newman run ./tests/javlarpar/backend-APS.json -e ./tests/javlarpar/env/localAPS.json",
+    "test_javlarpar": "npx newman run ./tests/javlarpar/backend.json -e ./tests/javlarpar/env/local.json",
     "test": "npm run test_alejorpoy && npm run test_danpucjim && npm run test_javlarpar"
   },
   "author": "danpucjim",
