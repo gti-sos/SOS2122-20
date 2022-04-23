@@ -15,7 +15,11 @@
 							"pm.test(\"Status code is 200\", function () {\r",
 							"    pm.response.to.have.status(200);\r",
 							"});\r",
-							""
+							"\r",
+							"pm.test(\"Array Check\", function () {\r",
+							" var jsonData = pm.response.json();\r",
+							" pm.expect(Array.isArray(jsonData)===true);\r",
+							"});"
 						],
 						"type": "text/javascript"
 					}
@@ -25,12 +29,11 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8081/api/v1/fertilizers-stats/loadInitialData",
-					"protocol": "http",
+					"raw": "{{HOST}}:{{PORT}}/api/v1/fertilizers-stats/loadInitialData",
 					"host": [
-						"localhost"
+						"{{HOST}}"
 					],
-					"port": "8081",
+					"port": "{{PORT}}",
 					"path": [
 						"api",
 						"v1",
@@ -42,37 +45,62 @@
 			"response": []
 		},
 		{
-			"name": "GET /fertilizers-stats",
+			"name": "GET conjunto",
 			"event": [
 				{
 					"listen": "test",
 					"script": {
 						"exec": [
-							"pm.test(\"Status code is 200\", function () {\r",
-							"    pm.response.to.have.status(200);\r",
-							"});\r",
-							"pm.test(\"Response is an array\", function () {\r",
-							"    var jsonData = pm.response.json();\r",
-							"    pm.expect(Array.isArray(jsonData)).to.eql(true);\r",
-							"});\r",
-							"pm.test(\"Response has not data \", function () {\r",
-							"     var jsonData = pm.response.json();\r",
-							"    pm.expect(Array.isArray(jsonData)===false);\r",
+							"pm.test(\"Array Check\", function () {\r",
+							" var jsonData = pm.response.json();\r",
+							" pm.expect(Array.isArray(jsonData)===true);\r",
 							"});"
 						],
 						"type": "text/javascript"
 					}
 				}
 			],
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
 			"request": {
 				"method": "GET",
 				"header": [],
+				"url": {
+					"raw": "{{HOST}}:{{PORT}}/api/v1/fertilizers-stats",
+					"host": [
+						"{{HOST}}"
+					],
+					"port": "{{PORT}}",
+					"path": [
+						"api",
+						"v1",
+						"fertilizers-stats"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST /fertilizers-stats BIEN",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 201\", function () {\r",
+							"    pm.response.to.have.status(201);\r",
+							"});\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "",
+					"raw": "{\r\n    \"country\":\"alemania\",\r\n    \"year\":2018,\r\n    \"quantity\":150000,\r\n    \"absolute_change\":6.225,\r\n    \"relative_change\":3.225\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -95,7 +123,7 @@
 			"response": []
 		},
 		{
-			"name": "POST /fertilizers-stats",
+			"name": "POST /fertilizers-stats 409",
 			"event": [
 				{
 					"listen": "test",
@@ -116,7 +144,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"country\":\"algeria\",\r\n    \"year\":2017,\r\n    \"quantity\":150000,\r\n    \"absolute_change\":6.225,\r\n    \"relative_change\":3.225\r\n}",
+					"raw": "{\r\n    \"country\":\"brasil\",\r\n    \"year\":2017,\r\n    \"quantity\":150000,\r\n    \"absolute_change\":6.225,\r\n    \"relative_change\":3.225\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -133,6 +161,51 @@
 						"api",
 						"v1",
 						"fertilizers-stats"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST /fertilizers-stats 405",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 405\", function () {\r",
+							"    pm.response.to.have.status(405);\r",
+							"});\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"country\":\"brasil\",\r\n    \"year\":2017,\r\n    \"quantity\":150000,\r\n    \"absolute_change\":6.225,\r\n    \"relative_change\":3.225\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{HOST}}:{{PORT}}/api/v1/fertilizers-stats/brasil",
+					"host": [
+						"{{HOST}}"
+					],
+					"port": "{{PORT}}",
+					"path": [
+						"api",
+						"v1",
+						"fertilizers-stats",
+						"brasil"
 					]
 				}
 			},
@@ -157,7 +230,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{HOST}}:{{PORT}}/api/v1/fertilizers-stats",
+					"raw": "{{HOST}}:{{PORT}}/api/v1/fertilizers-stats?quantity=3.14",
 					"host": [
 						"{{HOST}}"
 					],
@@ -166,13 +239,125 @@
 						"api",
 						"v1",
 						"fertilizers-stats"
+					],
+					"query": [
+						{
+							"key": "quantity",
+							"value": "3.14"
+						}
 					]
 				}
 			},
 			"response": []
 		},
 		{
-			"name": "PUT /fertilizers-stats",
+			"name": "GET /fertilizer-stats 404",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 404\", function () {\r",
+							"    pm.response.to.have.status(404);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{HOST}}:{{PORT}}/api/v1/fertilizers-stats/brasil/2002",
+					"host": [
+						"{{HOST}}"
+					],
+					"port": "{{PORT}}",
+					"path": [
+						"api",
+						"v1",
+						"fertilizers-stats",
+						"brasil",
+						"2002"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET /fertilizer-stats PAIS",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{HOST}}:{{PORT}}/api/v1/fertilizers-stats/brasil/2017",
+					"host": [
+						"{{HOST}}"
+					],
+					"port": "{{PORT}}",
+					"path": [
+						"api",
+						"v1",
+						"fertilizers-stats",
+						"brasil",
+						"2017"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE /fertilizers-stats PAIS/AÑO",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{HOST}}:{{PORT}}/api/v1/fertilizers-stats/brasil/2017",
+					"host": [
+						"{{HOST}}"
+					],
+					"port": "{{PORT}}",
+					"path": [
+						"api",
+						"v1",
+						"fertilizers-stats",
+						"brasil",
+						"2017"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PUT /fertilizers-stats ERROR",
 			"event": [
 				{
 					"listen": "test",
@@ -189,6 +374,15 @@
 			"request": {
 				"method": "PUT",
 				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"country\":\"algeria\",\r\n    \"\":2017,\r\n    \"quantity\":150000,\r\n    \"absolute_change\":6.225,\r\n    \"relative_change\":3.225\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
 				"url": {
 					"raw": "{{HOST}}:{{PORT}}/api/v1/fertilizers-stats",
 					"host": [
@@ -205,7 +399,7 @@
 			"response": []
 		},
 		{
-			"name": "PUT /fertilizers-stats/algeria/2017",
+			"name": "PUT /fertilizers-stats/Algeria/2017",
 			"event": [
 				{
 					"listen": "test",
@@ -224,7 +418,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"country\":\"algeria\",\r\n    \"year\":2017,\r\n    \"quantity\":20,\r\n    \"absolute_change\":6.2,\r\n    \"relative_change\":175\r\n}",
+					"raw": "{\r\n    \"country\":\"Algeria\",\r\n    \"year\":2017,\r\n    \"quantity\":2000,\r\n    \"absolute_change\":6.2,\r\n    \"relative_change\":175\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -232,7 +426,7 @@
 					}
 				},
 				"url": {
-					"raw": "{{HOST}}:{{PORT}}/api/v1/fertilizers-stats/algeria/2017",
+					"raw": "{{HOST}}:{{PORT}}/api/v1/fertilizers-stats/Algeria/2017",
 					"host": [
 						"{{HOST}}"
 					],
@@ -241,193 +435,8 @@
 						"api",
 						"v1",
 						"fertilizers-stats",
-						"algeria",
+						"Algeria",
 						"2017"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "GET /fertilizers-stats/algeria",
-			"event": [
-				{
-					"listen": "test",
-					"script": {
-						"exec": [
-							"pm.test(\"Status code is 200\", function () {\r",
-							"    pm.response.to.have.status(200);\r",
-							"});"
-						],
-						"type": "text/javascript"
-					}
-				}
-			],
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "{{HOST}}:{{PORT}}/api/v1/fertilizers-stats/algeria/2017",
-					"host": [
-						"{{HOST}}"
-					],
-					"port": "{{PORT}}",
-					"path": [
-						"api",
-						"v1",
-						"fertilizers-stats",
-						"algeria",
-						"2017"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "POST /fertilizers-stats/algeria",
-			"event": [
-				{
-					"listen": "test",
-					"script": {
-						"exec": [
-							"pm.test(\"Status code is 405\", function () {\r",
-							"    pm.response.to.have.status(405);\r",
-							"});\r",
-							""
-						],
-						"type": "text/javascript"
-					}
-				}
-			],
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"country\":\"algeriaaa\",\r\n    \"year\":2017,\r\n    \"quantity\":150,\r\n    \"absolute_change\":6.225,\r\n    \"relative_change\":345\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "http://localhost:8081/api/v1/fertilizers-stats/algeria",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8081",
-					"path": [
-						"api",
-						"v1",
-						"fertilizers-stats",
-						"algeria"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "DELETE /fertilizers-stats/afghanistan",
-			"event": [
-				{
-					"listen": "test",
-					"script": {
-						"exec": [
-							"pm.test(\"Status code is 200\", function () {\r",
-							"    pm.response.to.have.status(200);\r",
-							"});\r",
-							""
-						],
-						"type": "text/javascript"
-					}
-				}
-			],
-			"request": {
-				"method": "DELETE",
-				"header": [],
-				"url": {
-					"raw": "{{HOST}}:{{PORT}}/api/v1/fertilizers-stats/algeria/2017",
-					"host": [
-						"{{HOST}}"
-					],
-					"port": "{{PORT}}",
-					"path": [
-						"api",
-						"v1",
-						"fertilizers-stats",
-						"algeria",
-						"2017"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "GET /fertilizers-stats",
-			"event": [
-				{
-					"listen": "test",
-					"script": {
-						"exec": [
-							"pm.test(\"Status code is 200\", function () {\r",
-							"    pm.response.to.have.status(200);\r",
-							"});\r",
-							""
-						],
-						"type": "text/javascript"
-					}
-				}
-			],
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "{{HOST}}:{{PORT}}/api/v1/fertilizers-stats",
-					"host": [
-						"{{HOST}}"
-					],
-					"port": "{{PORT}}",
-					"path": [
-						"api",
-						"v1",
-						"fertilizers-stats"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "GET /fertilizers-stats/kualalumpur",
-			"event": [
-				{
-					"listen": "test",
-					"script": {
-						"exec": [
-							"pm.test(\"Status code is 404\", function () {\r",
-							"    pm.response.to.have.status(404);\r",
-							"});\r",
-							""
-						],
-						"type": "text/javascript"
-					}
-				}
-			],
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "{{HOST}}:{{PORT}}/api/v1/fertilizers-stats/kualalumpur",
-					"host": [
-						"{{HOST}}"
-					],
-					"port": "{{PORT}}",
-					"path": [
-						"api",
-						"v1",
-						"fertilizers-stats",
-						"kualalumpur"
 					]
 				}
 			},
@@ -469,42 +478,6 @@
 			"response": []
 		},
 		{
-			"name": "GET /fertilizers-stats/loadInitialData",
-			"event": [
-				{
-					"listen": "test",
-					"script": {
-						"exec": [
-							"pm.test(\"Status code is 200\", function () {\r",
-							"    pm.response.to.have.status(200);\r",
-							"});\r",
-							""
-						],
-						"type": "text/javascript"
-					}
-				}
-			],
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:8081/api/v1/fertilizers-stats/loadInitialData",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8081",
-					"path": [
-						"api",
-						"v1",
-						"fertilizers-stats",
-						"loadInitialData"
-					]
-				}
-			},
-			"response": []
-		},
-		{
 			"name": "GET /fertilizers-stats",
 			"event": [
 				{
@@ -514,59 +487,7 @@
 							"pm.test(\"Status code is 200\", function () {\r",
 							"    pm.response.to.have.status(200);\r",
 							"});\r",
-							"pm.test(\"Response is an array\", function () {\r",
-							"    var jsonData = pm.response.json();\r",
-							"    pm.expect(Array.isArray(jsonData)).to.eql(true);\r",
-							"});\r",
-							"pm.test(\"Response has not data \", function () {\r",
-							"     var jsonData = pm.response.json();\r",
-							"    pm.expect(Array.isArray(jsonData)===false);\r",
-							"});"
-						],
-						"type": "text/javascript"
-					}
-				}
-			],
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
-			"request": {
-				"method": "GET",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "{{HOST}}:{{PORT}}/api/v1/fertilizers-stats",
-					"host": [
-						"{{HOST}}"
-					],
-					"port": "{{PORT}}",
-					"path": [
-						"api",
-						"v1",
-						"fertilizers-stats"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "DELETE /fertilizers-stats",
-			"event": [
-				{
-					"listen": "test",
-					"script": {
-						"exec": [
-							"pm.test(\"Status code is 200\", function () {\r",
-							"    pm.response.to.have.status(200);\r",
-							"});\r",
+							"\r",
 							"\r",
 							""
 						],
@@ -575,7 +496,7 @@
 				}
 			],
 			"request": {
-				"method": "DELETE",
+				"method": "GET",
 				"header": [],
 				"url": {
 					"raw": "{{HOST}}:{{PORT}}/api/v1/fertilizers-stats",
