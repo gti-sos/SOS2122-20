@@ -57,7 +57,7 @@ async function updateLand(){
         }
     }).then(function(res){
         if(res.ok){
-            console.log("Ok");
+            alert(`Modificado correctamente, con los nuevos datos : ${updCrop},${updGrazing},${updBuilt}`)
             getLands();
         }
         else{

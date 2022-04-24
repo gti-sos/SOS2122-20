@@ -67,6 +67,11 @@
 
 	async function insertContact(){
 		search = false;
+		newContact.year = parseInt(newContact.year);
+		newContact.built_area = parseFloat(newContact.built_area);
+		newContact.cropland_area = parseFloat(newContact.cropland_area);
+		newContact.grazing_area = parseFloat(newContact.grazing_area);
+		console.log(typeof newContact.grazing_area);
 		console.log("Inserting contact: " + JSON.stringify(newContact));
 		const res = await fetch("/api/v1/landusage-stats",
 		{
@@ -93,7 +98,15 @@
 		{
 			method:"DELETE"
 		}).then(function(res){
-			console.log("CAGADA");
+			if(res.ok){
+				alert("Borrada con exito");
+			}
+			else if(res.status == 500){
+				alert("No se pudo acceder a la base de datos");
+			}
+			else if(res.status == 404){
+				alert("Base de datos esta vacia");
+			}
 			getContacts();
 		})
 	}
@@ -108,7 +121,7 @@
 			alert("Eliminado con exito");
 		}
 		else{
-			alert("No se pudo eliminar");
+			alert("No se encontro el pais");
 		}
 			getContacts();
 		}
@@ -120,7 +133,14 @@
 		search = false;
 		console.log("Cargando Datos iniciales... "+ JSON.stringify(newContact));
 		const res = await fetch("api/v1/landusage-stats/loadInitialData").then(function(res){
+			if(res.ok){
+				alert("Datos iniciados correctamente")
+			}
+			else{
+				alert("No se pudo iniciar los datos");
+			}
 			getContacts();
+
 		});
 
 	}
@@ -138,9 +158,15 @@
 			console.log(search);
 			alert("Mostrando la busqueda");
 		}
+		else {
+			alert("No se encontro el pais de la busqueda");
+		}
 
 	}
 </script>
+<svelte:head>
+	<title>Landusage</title>
+</svelte:head>
 <main>
 	<Nav class = "bg-light">
         <NavItem>
@@ -265,10 +291,10 @@
 			<tr>
 				<td><input bind:value="{newContact.country}"></td>
 				<td><input bind:value="{newContact.code}"></td>
-				<td><input bind:value="{newContact.year}"></td>
-				<td><input bind:value="{newContact.built_area}"></td>
-				<td><input bind:value="{newContact.cropland_area}"></td>
-				<td><input bind:value="{newContact.grazing_area}"></td>
+				<td><input bind:value={newContact.year}></td>
+				<td><input bind:value={newContact.built_area}></td>
+				<td><input bind:value={newContact.cropland_area}></td>
+				<td><input bind:value={newContact.grazing_area}></td>
 				<td><Button outline color="primary" on:click="{insertContact}">Insertar</Button></td>
 			</tr>
 			{#each contacts as contact}

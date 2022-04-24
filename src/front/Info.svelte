@@ -3,7 +3,11 @@
     import{NavLink,NavItem,Nav
     } from 'sveltestrap';
 </script>
-
+<svelte:head>
+	<title>Info</title>
+	<meta name="robots" content="noindex nofollow" />
+	<html lang="en" />
+</svelte:head>
     <main>
         <Nav class = "bg-light">
             <NavItem>
@@ -52,14 +56,11 @@
                         window.location.href = "/#/landusage-stats";
                     }}">Tabla</Button>
                     <Button color="primary" on:click="{function(){
-                        window.location.href = "/#/landusage-stats";
+                        window.location.href = "https://documenter.getpostman.com/view/19481666/Uyr7HyFn";
                     }}">Documentacion</Button>
                     <Button color="primary" on:click="{function(){
-                        window.location.href = "/#/landusage-stats";
+                        window.location.href = "/api/v1/landusage-stats";
                     }}">APIV1</Button>
-                    <Button color="primary" on:click="{function(){
-                        window.location.href = "/#/landusage-stats";
-                    }}">APIV2</Button>
                 </CardFooter>
             
         </Card>

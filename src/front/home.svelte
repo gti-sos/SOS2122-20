@@ -3,7 +3,13 @@
         Button,NavLink,NavItem,Nav
     } from 'sveltestrap';
 </script>
+<svelte:head>
+	<title>SOS2122-20</title>
+	<meta name="robots" content="noindex nofollow" />
+	<html lang="en" />
+</svelte:head>
 <main>
+
     <Nav class = "bg-light">
         <NavItem>
             <NavLink disabled id="nav-home" href="/">Home</NavLink>
@@ -56,9 +62,9 @@
         <li>
             <h5>Frontends: </h5>
             <ul>
-                <li><a href="https://sos2122-20.herokuapp.com/#/landusage-stats">landusage-stats(developed by Daniel Puche Jiménez)</a></li>
-                <li><a href="https://sos2122-20.herokuapp.com/#/fertilizers-stats">landusage-stats(developed by Alejandro Jorge Poyuelo)</a></li>
-                <li><a href="https://sos2122-20.herokuapp.com/#/agriculturalproduction-stats">agriculturalprodductions-stats(developed by Javier Lara Parrilla)</a></li>
+                <li><a href="/#/landusage-stats">landusage-stats(developed by Daniel Puche Jiménez)</a></li>
+                <li><a href="/#/fertilizers-stats">landusage-stats(developed by Alejandro Jorge Poyuelo)</a></li>
+                <li><a href="/#/agriculturalproduction-stats">agriculturalprodductions-stats(developed by Javier Lara Parrilla)</a></li>
                 
                 
                 
