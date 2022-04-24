@@ -7,27 +7,27 @@
     
     const API = "api/v1/agriculturalproduction-stats";
     export let params = {};
-    let landStat = {};
+    let fertStat = {};
     let updCountry = "";
     let updYear = 0;
-    let updProduction = 0.;
+    let updProd = 0.;
     let updAbs = 0.;
-    let updRel = "";
+    let updRel = 0.;
     
-    onMount(getLands);
+    onMount(getFerts);
     
-    async function getLands(){
+    async function getFerts(){
         console.log("Fetching data...");
             const res = await fetch(API + "/" + params.country + "/" + params.year);
             if(res.ok){
                 console.log("Ok:");
                 const json = await res.json();
-                landStat = json;
-                updCountry = landStat.country;
-                updYear = landStat.year;
-                updProduction = landStat.production;
-                updAbs = landStat['absolute_change'];
-                updRel = landStat['relative_change'];
+                fertStat = json;
+                updCountry = fertStat.country;
+                updYear = fertStat.year;
+                updProd = fertStat['production'];
+                updAbs = fertStat['absolute_change'];
+                updRel = fertStat['relative_change'];
                 console.log("Received data.");
             }else if(res.status ==404){
                 console.log("ERROR. ");
@@ -37,7 +37,7 @@
             }        
         }
     
-    async function updateLand(){
+    async function updateFert(){
         console.log("Updating..." + params.country + " " + params.year );
         const res = await fetch(API + "/" + params.country + "/"+params.year,
         {
@@ -45,17 +45,17 @@
             body : JSON.stringify({
                 country:params.country,
                 year : parseInt(params.year),
-                production : updProduction,
+                production : updProd,
                 absolute_change : updAbs,
-                relative_change : updRel
+                relative_change:updRel
             }),
             headers:{
                 "Content-Type": "application/json"
             }
         }).then(function(res){
             if(res.ok){
-                console.log("Ok");
-                getLands();
+                alert(`Modificado correctamente, con los nuevos datos : ${updProd},${updAbs},${updRel}`)
+                getFerts();
             }
             else{
                 alert("ERROR");
@@ -89,10 +89,10 @@
                         Produccion
                     </th>
                     <th>
-                        Diferencia Absoluta
+                        Diferencia absoluta
                     </th>
                     <th>
-                        Diferencia Relativa
+                        Diferencia relativa
                     </th>
                 </tr>
             </thead>
@@ -105,7 +105,7 @@
                         {updYear}
                     </td>
                     <td>
-                        <input type="number" placeholder="0.00" min="0" bind:value = "{updProduction}">
+                        <input type="number" placeholder="0.00" min="0" bind:value = "{updProd}">
                     </td>
                     <td>
                         <input type="number" placeholder="0.00" min="0" bind:value = "{updAbs}">
@@ -115,7 +115,7 @@
                     </td>
     
                     <td>
-                        <Button color="primary" on:click="{()=>updateLand()}">Actualizar</Button>
+                        <Button color="primary" on:click="{()=>updateFert()}">Actualizar</Button>
                     </td>
                 </tr>
             </tbody>

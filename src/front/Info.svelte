@@ -102,14 +102,11 @@
                         window.location.href = "/#/agriculturalproduction-stats";
                     }}">Tabla</Button>
                     <Button color="primary" on:click="{function(){
-                        window.location.href = "/#/agriculturalproduction-stats";
+                        window.location.href = "https://documenter.getpostman.com/view/20091971/UyrAFxGv";
                     }}">Documentacion</Button>
                     <Button color="primary" on:click="{function(){
-                        window.location.href = "/#/agriculturalproduction-stats";
+                        window.location.href = "/api/v1/agriculturalproduction-stats";
                     }}">APIV1</Button>
-                    <Button color="primary" on:click="{function(){
-                        window.location.href = "/#/agriculturalproduction-stats";
-                    }}">APIV2</Button>
                 </CardFooter>
             
         </Card>

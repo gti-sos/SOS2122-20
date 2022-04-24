@@ -5,7 +5,7 @@
         Button,NavLink,NavItem,Nav,Pagination,PaginationItem,PaginationLink
     } from 'sveltestrap';
 
-	let pais,anyo; 
+	let pais,anyo;
 	let contacts = [];
 	let newContact ={
 		country:"",
@@ -25,17 +25,40 @@
 	let loading = true; // esta carganado
 	let search = false; // se ha buscado
 	let busqueda = {}; // objeto tras la busqueda
-
+	
 	onMount(getContacts);
 
-	//Funciones 
+	// Paginación
+
+	async function antPag(){
+		if(offset>=10){
+			offset = offset-limit;
+		}
+		getContacts();
+	}
+
+	async function sigPag(){
+		if(offset+limit > contacts.length){
+
+		}
+		else{
+			offset = offset+limit;
+			getContacts();
+		}
+		
+	}
+
+	// Funciones
 	async function getContacts(){
 		console.log("Fetching Contacts ... ");
-		const res =  await fetch("/api/v1/agriculturalproduction-stats" + "?limit="+limit+"&offset="+offset);
+		const res =  await fetch("/api/v1/agriculturalproduction-stats"+ "?limit="+limit+"&offset="+offset);
 		if(res.ok){
 		const data =await res.json();
 		contacts = data;
 		console.log("Received Contacts" + JSON.stringify(contacts,null,2));
+		}
+		else{
+			alert("Hubo un error al mostrar los contactos");
 		}
 		
 	}
@@ -49,29 +72,45 @@
 			headers:{"Content-Type":"application/json"
 		}
 		}).then(function(res){
+			if(res.ok){
+				alert("Dato insertado con exito");
+			}
+			else{
+				alert("No se pudo insertar el dato, comprueba que los datos son correctos o que no se repita");
+			}
 			getContacts();
 		});
 		console.log("done");
 	}
 
 	async function deleteContacts(){
+		search=false;
 		console.log("Deleting contacts... ");
 		const res = await fetch("/api/v1/agriculturalproduction-stats",
 		{
 			method:"DELETE"
 		}).then(function(res){
-			console.log("CAGADA");
+			console.log("CAGADA"); 
 			getContacts();
 		})
 	}
 
 	async function deleteContact(countryDelete,yearDelete){
+		search=false;
 		console.log("Deleting single contact... ");
 		const res = await fetch("/api/v1/agriculturalproduction-stats/" + countryDelete + "/"+ yearDelete,{
 			method:"DELETE"
 		}).then(function(res){
+			if(res.ok){
+			alert("Eliminado con exito");
+		}
+		else{
+			alert("No se pudo eliminar");
+		}
 			getContacts();
-		})
+		}
+		);
+		
 	}
 
 	async function iniData(){
@@ -93,20 +132,12 @@
 			busqueda = json;
 			console.log(busqueda);
 			console.log(search);
+			alert("Mostrando la búsqueda");
 		}
 
 	}
 
-	function changePage(page,offset){
-		console.log("Change page");
-		console.log("Page" + page + "offset" + offset);
-		last_page = Math.ceil(total/10);
-		if(page !== current_page){
-			current_offset = offset;
-			current_page = page;
-		}
-		getContacts();
-	}
+	
 </script>
 <main>
 	<Nav class = "bg-light">
@@ -117,16 +148,16 @@
             <NavLink id="nav-info" href="/#/info" style="text-decoration:none">Info</NavLink>
         </NavItem>
 		<NavItem>
-            <NavLink id="nav-info" href="/#/info" style="text-decoration:none">Eliminar Todo</NavLink>
+            <NavLink id="nav-info" href="#" style="text-decoration:none" on:click={deleteContacts}>Eliminar Todo</NavLink>
         </NavItem>
 		<NavItem>
-            <NavLink id="nav-info" href="/#/info" style="text-decoration:none" class="text-succcess">Iniciar Datos</NavLink>
+            <NavLink id="nav-info" href="#" style="text-decoration:none" class="text-succcess" on:click={iniData}>Iniciar Datos</NavLink>
         </NavItem>
     </Nav>
     {#await contacts}
 	loading	
 	{:then contacts} 
-	<h1 class="text-center">Produccion de cultivos listado</h1>
+	<h1 class="text-center">Cantidad de Cultivos Listado</h1>
 
 	<div>
 		<h2 class="text-center mt-5">
@@ -153,7 +184,6 @@
 						<Button outline color="primary" on:click="{searchContact(pais,anyo)}">Buscar</Button>
 					</td>
 				</tr>
-				
 			</thead>
 		</Table>
 		{#if search}
@@ -162,7 +192,6 @@
 						<th>
 							Pais
 						</th>
-		
 						<th>
 							Anyo
 						</th>
@@ -170,10 +199,10 @@
 							Produccion
 						</th>
 						<th>
-							Diferencia Absoluta
+							Diferencia absoluta
 						</th>
 						<th>
-							Diferencia Relativa
+							Diferencia relativa
 						</th>
 					</tr>
 					<tr>
@@ -192,6 +221,7 @@
 						<td>
 							{busqueda.relative_change}
 						</td>
+
 					</tr>
 				</Table>
 					
@@ -203,7 +233,6 @@
 				<th>
 					Pais
 				</th>
-
 				<th>
 					Anyo
 				</th>
@@ -211,20 +240,20 @@
 					Produccion
 				</th>
 				<th>
-					Diferencia Absoluta
+					Diferencia absoluta
 				</th>
 				<th>
-					Diferencia Relativa
+					Diferencia relativa
 				</th>
 			</tr>
 		</thead>
 		<tbody>
 			<tr>
 				<td><input bind:value="{newContact.country}"></td>
-				<td><input bind:value="{newContact.year}"></td>
-				<td><input bind:value="{newContact.production}"></td>
-				<td><input bind:value="{newContact.absolute_change}"></td>
-				<td><input bind:value="{newContact.relative_change}"></td>
+				<td><input type="number" bind:value="{newContact.year}"></td>
+				<td><input type="number" bind:value="{newContact.production}"></td>
+				<td><input type="number" bind:value="{newContact.absolute_change}"></td>
+				<td><input type="number" bind:value="{newContact.relative_change}"></td>
 				<td><Button outline color="primary" on:click="{insertContact}">Insertar</Button></td>
 			</tr>
 			{#each contacts as contact}
@@ -252,22 +281,13 @@
 			{/each}
 		</tbody>
 	</Table>
-	<Pagination>
-		<PaginationItem class = {current_page ===1 ? "disabled" : ""}>
-			<PaginationLink
-			previous
-			id = "pagination-back"
-			href="#/agriculturalproduction-stats"
-			on:click={()=> changePage(current_page-1,offset-10)}/>
-		</PaginationItem>
-	</Pagination>
-	<Button color="danger" on:click="{deleteContacts}">Eliminar Todo</Button>
-	<Button color ="success" on:click="{iniData}">InitialData</Button>
+	<Button on:click={antPag}>
+		Anterior
+	</Button>
+	<Button on:click={sigPag}>
+		Siguiente
+	</Button>
 	{/await}
-
-	
-
-
 </main>
 
 <style>
