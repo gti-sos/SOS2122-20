@@ -14,7 +14,7 @@
     let updAbs = 0.;
     let updRel = 0.;
     
-    onMount(getLands);
+    onMount(getFerts);
     
     async function getFerts(){
         console.log("Fetching data...");
