@@ -250,10 +250,10 @@
 		<tbody>
 			<tr>
 				<td><input bind:value="{newContact.country}"></td>
-				<td><input bind:value="{newContact.year}"></td>
-				<td><input bind:value="{newContact.quantity}"></td>
-				<td><input bind:value="{newContact.absolute_change}"></td>
-				<td><input bind:value="{newContact.relative_change}"></td>
+				<td><input type="number" bind:value="{newContact.year}"></td>
+				<td><input type="number" bind:value="{newContact.quantity}"></td>
+				<td><input type="number" bind:value="{newContact.absolute_change}"></td>
+				<td><input type="number" bind:value="{newContact.relative_change}"></td>
 				<td><Button outline color="primary" on:click="{insertContact}">Insertar</Button></td>
 			</tr>
 			{#each contacts as contact}

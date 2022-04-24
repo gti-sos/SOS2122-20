@@ -8669,14 +8669,14 @@ var app = (function () {
     			td6 = element("td");
     			create_component(button1.$$.fragment);
     			t11 = space();
-    			add_location(td0, file$7, 260, 4, 5857);
-    			add_location(td1, file$7, 263, 4, 5902);
-    			add_location(td2, file$7, 266, 4, 5944);
-    			add_location(td3, file$7, 269, 4, 5990);
-    			add_location(td4, file$7, 272, 4, 6043);
-    			add_location(td5, file$7, 275, 4, 6096);
-    			add_location(td6, file$7, 276, 4, 6206);
-    			add_location(tr, file$7, 259, 3, 5847);
+    			add_location(td0, file$7, 260, 4, 5913);
+    			add_location(td1, file$7, 263, 4, 5958);
+    			add_location(td2, file$7, 266, 4, 6000);
+    			add_location(td3, file$7, 269, 4, 6046);
+    			add_location(td4, file$7, 272, 4, 6099);
+    			add_location(td5, file$7, 275, 4, 6152);
+    			add_location(td6, file$7, 276, 4, 6262);
+    			add_location(tr, file$7, 259, 3, 5903);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, tr, anchor);
@@ -8868,15 +8868,19 @@ var app = (function () {
     			add_location(thead, file$7, 230, 2, 5163);
     			add_location(input0, file$7, 251, 8, 5425);
     			add_location(td0, file$7, 251, 4, 5421);
+    			attr_dev(input1, "type", "number");
     			add_location(input1, file$7, 252, 8, 5481);
     			add_location(td1, file$7, 252, 4, 5477);
-    			add_location(input2, file$7, 253, 8, 5534);
-    			add_location(td2, file$7, 253, 4, 5530);
-    			add_location(input3, file$7, 254, 8, 5591);
-    			add_location(td3, file$7, 254, 4, 5587);
-    			add_location(input4, file$7, 255, 8, 5655);
-    			add_location(td4, file$7, 255, 4, 5651);
-    			add_location(td5, file$7, 256, 4, 5715);
+    			attr_dev(input2, "type", "number");
+    			add_location(input2, file$7, 253, 8, 5548);
+    			add_location(td2, file$7, 253, 4, 5544);
+    			attr_dev(input3, "type", "number");
+    			add_location(input3, file$7, 254, 8, 5619);
+    			add_location(td3, file$7, 254, 4, 5615);
+    			attr_dev(input4, "type", "number");
+    			add_location(input4, file$7, 255, 8, 5697);
+    			add_location(td4, file$7, 255, 4, 5693);
+    			add_location(td5, file$7, 256, 4, 5771);
     			add_location(tr1, file$7, 250, 3, 5411);
     			add_location(tbody, file$7, 249, 2, 5399);
     		},
@@ -8942,19 +8946,19 @@ var app = (function () {
     				set_input_value(input0, /*newContact*/ ctx[2].country);
     			}
 
-    			if (dirty[0] & /*newContact*/ 4 && input1.value !== /*newContact*/ ctx[2].year) {
+    			if (dirty[0] & /*newContact*/ 4 && to_number(input1.value) !== /*newContact*/ ctx[2].year) {
     				set_input_value(input1, /*newContact*/ ctx[2].year);
     			}
 
-    			if (dirty[0] & /*newContact*/ 4 && input2.value !== /*newContact*/ ctx[2].quantity) {
+    			if (dirty[0] & /*newContact*/ 4 && to_number(input2.value) !== /*newContact*/ ctx[2].quantity) {
     				set_input_value(input2, /*newContact*/ ctx[2].quantity);
     			}
 
-    			if (dirty[0] & /*newContact*/ 4 && input3.value !== /*newContact*/ ctx[2].absolute_change) {
+    			if (dirty[0] & /*newContact*/ 4 && to_number(input3.value) !== /*newContact*/ ctx[2].absolute_change) {
     				set_input_value(input3, /*newContact*/ ctx[2].absolute_change);
     			}
 
-    			if (dirty[0] & /*newContact*/ 4 && input4.value !== /*newContact*/ ctx[2].relative_change) {
+    			if (dirty[0] & /*newContact*/ 4 && to_number(input4.value) !== /*newContact*/ ctx[2].relative_change) {
     				set_input_value(input4, /*newContact*/ ctx[2].relative_change);
     			}
 
@@ -9366,22 +9370,22 @@ var app = (function () {
     	}
 
     	function input1_input_handler_1() {
-    		newContact.year = this.value;
+    		newContact.year = to_number(this.value);
     		$$invalidate(2, newContact);
     	}
 
     	function input2_input_handler() {
-    		newContact.quantity = this.value;
+    		newContact.quantity = to_number(this.value);
     		$$invalidate(2, newContact);
     	}
 
     	function input3_input_handler() {
-    		newContact.absolute_change = this.value;
+    		newContact.absolute_change = to_number(this.value);
     		$$invalidate(2, newContact);
     	}
 
     	function input4_input_handler() {
-    		newContact.relative_change = this.value;
+    		newContact.relative_change = to_number(this.value);
     		$$invalidate(2, newContact);
     	}
 
@@ -14849,7 +14853,7 @@ var app = (function () {
     	return block;
     }
 
-    // (118:24) <Button color="primary" on:click="{()=>updateFerts()}">
+    // (118:24) <Button color="primary" on:click="{()=>updateFert()}">
     function create_default_slot_2$2(ctx) {
     	let t;
 
@@ -14869,7 +14873,7 @@ var app = (function () {
     		block,
     		id: create_default_slot_2$2.name,
     		type: "slot",
-    		source: "(118:24) <Button color=\\\"primary\\\" on:click=\\\"{()=>updateFerts()}\\\">",
+    		source: "(118:24) <Button color=\\\"primary\\\" on:click=\\\"{()=>updateFert()}\\\">",
     		ctx
     	});
 
@@ -14962,33 +14966,33 @@ var app = (function () {
     			t16 = space();
     			td5 = element("td");
     			create_component(button.$$.fragment);
-    			add_location(th0, file$3, 81, 20, 2675);
-    			add_location(th1, file$3, 84, 20, 2758);
-    			add_location(th2, file$3, 87, 20, 2841);
-    			add_location(th3, file$3, 90, 20, 2928);
-    			add_location(th4, file$3, 93, 20, 3026);
-    			add_location(tr0, file$3, 80, 16, 2649);
-    			add_location(thead, file$3, 79, 12, 2624);
-    			add_location(td0, file$3, 100, 20, 3212);
-    			add_location(td1, file$3, 103, 20, 3303);
+    			add_location(th0, file$3, 81, 20, 2744);
+    			add_location(th1, file$3, 84, 20, 2827);
+    			add_location(th2, file$3, 87, 20, 2910);
+    			add_location(th3, file$3, 90, 20, 2997);
+    			add_location(th4, file$3, 93, 20, 3095);
+    			add_location(tr0, file$3, 80, 16, 2718);
+    			add_location(thead, file$3, 79, 12, 2693);
+    			add_location(td0, file$3, 100, 20, 3281);
+    			add_location(td1, file$3, 103, 20, 3372);
     			attr_dev(input0, "type", "number");
     			attr_dev(input0, "placeholder", "0.00");
     			attr_dev(input0, "min", "0");
-    			add_location(input0, file$3, 107, 24, 3421);
-    			add_location(td2, file$3, 106, 20, 3391);
+    			add_location(input0, file$3, 107, 24, 3490);
+    			add_location(td2, file$3, 106, 20, 3460);
     			attr_dev(input1, "type", "number");
     			attr_dev(input1, "placeholder", "0.00");
     			attr_dev(input1, "min", "0");
-    			add_location(input1, file$3, 110, 24, 3573);
-    			add_location(td3, file$3, 109, 20, 3543);
+    			add_location(input1, file$3, 110, 24, 3642);
+    			add_location(td3, file$3, 109, 20, 3612);
     			attr_dev(input2, "type", "number");
     			attr_dev(input2, "placeholder", "0.00");
     			attr_dev(input2, "min", "0");
-    			add_location(input2, file$3, 113, 24, 3724);
-    			add_location(td4, file$3, 112, 20, 3694);
-    			add_location(td5, file$3, 116, 20, 3851);
-    			add_location(tr1, file$3, 99, 16, 3186);
-    			add_location(tbody, file$3, 98, 12, 3161);
+    			add_location(input2, file$3, 113, 24, 3793);
+    			add_location(td4, file$3, 112, 20, 3763);
+    			add_location(td5, file$3, 116, 20, 3920);
+    			add_location(tr1, file$3, 99, 16, 3255);
+    			add_location(tbody, file$3, 98, 12, 3230);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, thead, anchor);
@@ -15170,8 +15174,8 @@ var app = (function () {
     			t3 = space();
     			create_component(button.$$.fragment);
     			attr_dev(h1, "class", "text-center");
-    			add_location(h1, file$3, 77, 8, 2529);
-    			add_location(main, file$3, 68, 4, 2177);
+    			add_location(h1, file$3, 77, 8, 2598);
+    			add_location(main, file$3, 68, 4, 2246);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -15248,7 +15252,7 @@ var app = (function () {
     	let { $$slots: slots = {}, $$scope } = $$props;
     	validate_slots('EditFertilizersStats', slots, []);
     	let { params = {} } = $$props;
-    	let landStat = {};
+    	let fertStat = {};
     	let updCountry = "";
     	let updYear = 0;
     	let updQuan = 0.;
@@ -15263,12 +15267,12 @@ var app = (function () {
     		if (res.ok) {
     			console.log("Ok:");
     			const json = await res.json();
-    			landStat = json;
-    			$$invalidate(0, updCountry = landStat.country);
-    			$$invalidate(1, updYear = landStat.year);
-    			$$invalidate(2, updQuan = landStat['quantity']);
-    			$$invalidate(3, updAbs = landStat['absolute_change']);
-    			$$invalidate(4, updRel = landStat['relative_change']);
+    			fertStat = json;
+    			$$invalidate(0, updCountry = fertStat.country);
+    			$$invalidate(1, updYear = fertStat.year);
+    			$$invalidate(2, updQuan = fertStat['quantity']);
+    			$$invalidate(3, updAbs = fertStat['absolute_change']);
+    			$$invalidate(4, updRel = fertStat['relative_change']);
     			console.log("Received data.");
     		} else if (res.status == 404) {
     			console.log("ERROR. ");
@@ -15280,7 +15284,7 @@ var app = (function () {
     		}
     	}
 
-    	async function updateFerts() {
+    	async function updateFert() {
     		console.log("Updating..." + params.country + " " + params.year);
 
     		await fetch(API$1 + "/" + params.country + "/" + params.year, {
@@ -15295,7 +15299,7 @@ var app = (function () {
     			headers: { "Content-Type": "application/json" }
     		}).then(function (res) {
     			if (res.ok) {
-    				console.log("Ok");
+    				alert(`Modificado correctamente, con los nuevos datos : ${updQuan},${updAbs},${updRel}`);
     				getFerts();
     			} else {
     				alert("ERROR");
@@ -15324,7 +15328,7 @@ var app = (function () {
     		$$invalidate(4, updRel);
     	}
 
-    	const click_handler = () => updateFerts();
+    	const click_handler = () => updateFert();
 
     	$$self.$$set = $$props => {
     		if ('params' in $$props) $$invalidate(6, params = $$props.params);
@@ -15340,19 +15344,19 @@ var app = (function () {
     		Nav,
     		API: API$1,
     		params,
-    		landStat,
+    		fertStat,
     		updCountry,
     		updYear,
     		updQuan,
     		updAbs,
     		updRel,
     		getFerts,
-    		updateFerts
+    		updateFert
     	});
 
     	$$self.$inject_state = $$props => {
     		if ('params' in $$props) $$invalidate(6, params = $$props.params);
-    		if ('landStat' in $$props) landStat = $$props.landStat;
+    		if ('fertStat' in $$props) fertStat = $$props.fertStat;
     		if ('updCountry' in $$props) $$invalidate(0, updCountry = $$props.updCountry);
     		if ('updYear' in $$props) $$invalidate(1, updYear = $$props.updYear);
     		if ('updQuan' in $$props) $$invalidate(2, updQuan = $$props.updQuan);
@@ -15370,7 +15374,7 @@ var app = (function () {
     		updQuan,
     		updAbs,
     		updRel,
-    		updateFerts,
+    		updateFert,
     		params,
     		input0_input_handler,
     		input1_input_handler,

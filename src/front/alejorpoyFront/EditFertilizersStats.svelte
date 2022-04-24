@@ -7,7 +7,7 @@
     
     const API = "api/v1/fertilizers-stats";
     export let params = {};
-    let landStat = {};
+    let fertStat = {};
     let updCountry = "";
     let updYear = 0;
     let updQuan = 0.;
@@ -22,12 +22,12 @@
             if(res.ok){
                 console.log("Ok:");
                 const json = await res.json();
-                landStat = json;
-                updCountry = landStat.country;
-                updYear = landStat.year;
-                updQuan = landStat['quantity'];
-                updAbs = landStat['absolute_change'];
-                updRel = landStat['relative_change'];
+                fertStat = json;
+                updCountry = fertStat.country;
+                updYear = fertStat.year;
+                updQuan = fertStat['quantity'];
+                updAbs = fertStat['absolute_change'];
+                updRel = fertStat['relative_change'];
                 console.log("Received data.");
             }else if(res.status ==404){
                 console.log("ERROR. ");
@@ -37,7 +37,7 @@
             }        
         }
     
-    async function updateFerts(){
+    async function updateFert(){
         console.log("Updating..." + params.country + " " + params.year );
         const res = await fetch(API + "/" + params.country + "/"+params.year,
         {
@@ -54,7 +54,7 @@
             }
         }).then(function(res){
             if(res.ok){
-                console.log("Ok");
+                alert(`Modificado correctamente, con los nuevos datos : ${updQuan},${updAbs},${updRel}`)
                 getFerts();
             }
             else{
@@ -115,7 +115,7 @@
                     </td>
     
                     <td>
-                        <Button color="primary" on:click="{()=>updateFerts()}">Actualizar</Button>
+                        <Button color="primary" on:click="{()=>updateFert()}">Actualizar</Button>
                     </td>
                 </tr>
             </tbody>
