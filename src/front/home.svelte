@@ -63,7 +63,7 @@
             <h5>Frontends: </h5>
             <ul>
                 <li><a href="/#/landusage-stats">landusage-stats(developed by Daniel Puche Jiménez)</a></li>
-                <li><a href="/#/fertilizers-stats">landusage-stats(developed by Alejandro Jorge Poyuelo)</a></li>
+                <li><a href="/#/fertilizers-stats">fertilizers-stats(developed by Alejandro Jorge Poyuelo)</a></li>
                 <li><a href="/#/agriculturalproduction-stats">agriculturalprodductions-stats(developed by Javier Lara Parrilla)</a></li>
                 
                 
