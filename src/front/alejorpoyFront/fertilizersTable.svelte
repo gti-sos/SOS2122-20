@@ -2,8 +2,13 @@
 	import Table from "sveltestrap/src/Table.svelte";
     import {onMount} from 'svelte';
 	import{
-        Button,NavLink,NavItem,Nav,Pagination,PaginationItem,PaginationLink
+        Button,NavLink,NavItem,Nav,Alert
     } from 'sveltestrap';
+
+
+	let checkMSG="";
+	let msgVisible=false;
+	let color="success";
 
 	let pais,anyo;
 	let contacts = [];
@@ -58,7 +63,9 @@
 		console.log("Received Contacts" + JSON.stringify(contacts,null,2));
 		}
 		else{
-			alert("Hubo un error al mostrar los contactos");
+			msgVisible = true;
+		color = "danger";
+		checkMSG = "Hubo un error al mostrar los datos";
 		}
 		
 	}
@@ -73,10 +80,14 @@
 		}
 		}).then(function(res){
 			if(res.ok){
-				alert("Dato insertado con exito");
+				msgVisible = true;
+				color = "success";
+				checkMSG = `Dato:${newContact.country}, ${newContact.year}  insertado correctamente`;
 			}
 			else{
-				alert("No se pudo insertar el dato, comprueba que los datos son correctos o que no se repita");
+				msgVisible = true;
+				color = "danger";
+				checkMSG = `No se pudo mostrar los datos comprueba que se introdujeron correctamente ${newContact.country}, ${newContact.year}`;
 			}
 			getContacts();
 		});
@@ -91,13 +102,19 @@
 			method:"DELETE"
 		}).then(function(res){
 			if(res.ok){
-				alert("Borrada con exito");
+				msgVisible = true;
+				color = "success";
+				checkMSG = "Eliminado con exito";
 			}
 			else if(res.status == 500){
-				alert("No se pudo acceder a la base de datos");
+				msgVisible = true;
+				color = "danger";
+				checkMSG = "No se pudo acceder a la base de datos";
 			}
 			else if(res.status == 404){
-				alert("Base de datos esta vacia");
+				msgVisible = true;
+				color = "danger";
+				checkMSG = "Base de datos esta vacia";
 			}
 			getContacts();
 		})
@@ -110,12 +127,17 @@
 			method:"DELETE"
 		}).then(function(res){
 			if(res.ok){
-			alert("Eliminado con exito");
+				msgVisible = true;
+				color = "success";
+				checkMSG =  `Dato ${countryDelete},${yearDelete} Eliminado con exito`;
 		}
 		else{
-			alert("No se pudo eliminar");
+				msgVisible = true;
+				color = "danger";
+				checkMSG = `Dato ${countryDelete},${yearDelete} no se pudo eliminar, comprueba si existe`;
 		}
 			getContacts();
+		
 		}
 		);
 		
@@ -126,10 +148,14 @@
 		console.log("Cargando Datos iniciales... "+ JSON.stringify(newContact));
 		const res = await fetch("api/v1/fertilizers-stats/loadInitialData").then(function(res){
 			if(res.ok){
-				alert("Datos iniciados correctamente")
+				msgVisible = true;
+				color = "success";
+				checkMSG = `Datos iniciales iniciados con exito`;
 			}
 			else{
-				alert("No se pudo iniciar los datos");
+				msgVisible = true;
+				color = "danger";
+				checkMSG = `No se pudieron cargar los datos iniciales`;
 			}
 			getContacts();
 
@@ -148,12 +174,18 @@
 			busqueda = json;
 			console.log(busqueda);
 			console.log(search);
-			alert("Mostrando la búsqueda");
-		}else {
-			alert("No se encontro el pais de la busqueda");
+			msgVisible = true;
+			color = "success";
+			checkMSG = `Busqueda realizada con exito`;
+		}
+		else {
+			msgVisible = true;
+			color = "danger";
+			checkMSG = `No se encontro el pais ${country} con los datos del anyo ${year}`;
 		}
 
 	}
+
 
 	
 </script>
@@ -176,7 +208,11 @@
 	loading	
 	{:then contacts} 
 	<h1 class="text-center">Uso de Fertilizantes Listado</h1>
-
+	<Alert color={color} isOpen={msgVisible} toggle={() => (msgVisible = false)}>
+		{#if checkMSG}
+			{checkMSG}
+		{/if}
+	</Alert>
 	<div>
 		<h2 class="text-center mt-5">
 			Busqueda
