@@ -84,13 +84,21 @@
 	}
 
 	async function deleteContacts(){
-		search=false;
+		search = false;
 		console.log("Deleting contacts... ");
 		const res = await fetch("/api/v1/fertilizers-stats",
 		{
 			method:"DELETE"
 		}).then(function(res){
-			console.log("CAGADA"); 
+			if(res.ok){
+				alert("Borrada con exito");
+			}
+			else if(res.status == 500){
+				alert("No se pudo acceder a la base de datos");
+			}
+			else if(res.status == 404){
+				alert("Base de datos esta vacia");
+			}
 			getContacts();
 		})
 	}
@@ -114,9 +122,17 @@
 	}
 
 	async function iniData(){
+		search = false;
 		console.log("Cargando Datos iniciales... "+ JSON.stringify(newContact));
 		const res = await fetch("api/v1/fertilizers-stats/loadInitialData").then(function(res){
+			if(res.ok){
+				alert("Datos iniciados correctamente")
+			}
+			else{
+				alert("No se pudo iniciar los datos");
+			}
 			getContacts();
+
 		});
 
 	}
@@ -133,6 +149,8 @@
 			console.log(busqueda);
 			console.log(search);
 			alert("Mostrando la búsqueda");
+		}else {
+			alert("No se encontro el pais de la busqueda");
 		}
 
 	}

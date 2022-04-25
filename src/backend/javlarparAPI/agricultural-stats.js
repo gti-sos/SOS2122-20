@@ -5,7 +5,7 @@ module.exports.register = (app) => {
     const bodyParser = require("body-parser");
     var dbFile = path.join(__dirname,'agriculturalproduction-stats.db');
     const Datastore = require('nedb');
-    db = new Datastore({filename:dbFile,autoload:true});
+    db2 = new Datastore({filename:dbFile,autoload:true});
     app.use(bodyParser.json());
     
     var fertilizers_stats = [];
@@ -49,10 +49,10 @@ module.exports.register = (app) => {
     
     //GET Datos Iniciales bien
     app.get(BASE_API_URL + OWN_API_URL + "/loadInitialData",(req,res)=>{
-        db.find({},function(err,docs){
+        db2.find({},function(err,docs){
             if(docs.length==0){
-                db.insert(agricultural_stats_initial);
-                console.log(`Datos iniciales : ${db}`);
+                db2.insert(agricultural_stats_initial);
+                console.log(`Datos iniciales : ${db2}`);
                 return res.send(JSON.stringify(agricultural_stats_initial,null,2));
             }
             else{ 
@@ -98,7 +98,7 @@ module.exports.register = (app) => {
         }
         
         console.log(dbquery);
-        db.find(dbquery).skip(offset).limit(limit).exec((err,docs) =>{
+        db2.find(dbquery).skip(offset).limit(limit).exec((err,docs) =>{
             console.log(docs);
             if(err){
                 res.sendStatus(500);
@@ -124,7 +124,7 @@ module.exports.register = (app) => {
     
     //DELETE CONJUNTO bien
     app.delete(BASE_API_URL + OWN_API_URL, (req,res)=>{ 
-        db.remove({},{multi:true},function (err,docs){
+        db2.remove({},{multi:true},function (err,docs){
             if(err){
                 res.sendStatus(500);
             }
@@ -143,7 +143,7 @@ module.exports.register = (app) => {
     app.get(BASE_API_URL + OWN_API_URL+"/:country/:year", (req,res)=>{
         var data = req.params; //parametro solicitado
             
-        db.find({country: data.country, year: parseInt(data.year)}, (err, docs) => {
+        db2.find({country: data.country, year: parseInt(data.year)}, (err, docs) => {
             if (err) {
                 res.sendStatus(500);
             } else {
@@ -165,7 +165,7 @@ module.exports.register = (app) => {
     app.delete(BASE_API_URL + OWN_API_URL+"/:country/:year", (req,res)=>{ //borrar todos los recursos bien
         var data = req.params;
     
-        db.remove({country:data.country,year:parseInt(data.year)},{multi:true},(err,docs) =>{
+        db2.remove({country:data.country,year:parseInt(data.year)},{multi:true},(err,docs) =>{
             if(err){
                 res.sendStatus(500);
             }
@@ -192,7 +192,7 @@ module.exports.register = (app) => {
             return res.sendStatus(400);
         }
         else{
-            db.update({country:data.country,year:parseInt(data.year)},newData,(err,docs) => {
+            db2.update({country:data.country,year:parseInt(data.year)},newData,(err,docs) => {
                 console.log(docs); 
                 if(err){
                     console.log("prueba2");
@@ -218,7 +218,7 @@ module.exports.register = (app) => {
         var Dyear = req.body.year;
         var Dcountry = req.body.country;
         
-        db.find({country:Dcountry,year:Dyear},function(err,data){
+        db2.find({country:Dcountry,year:Dyear},function(err,data){
             if(err){
                 return res.sendStatus(500);
             }
@@ -228,7 +228,7 @@ module.exports.register = (app) => {
                         return res.sendStatus(400);
                     }
                     else{
-                        db.insert(newData);
+                        db2.insert(newData);
                         return res.sendStatus(201);
                     }
                 }

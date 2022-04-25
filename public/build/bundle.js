@@ -7453,7 +7453,7 @@ var app = (function () {
     	return child_ctx;
     }
 
-    // (145:12) <NavLink id="nav-home" href="/" style="text-decoration:none">
+    // (163:12) <NavLink id="nav-home" href="/" style="text-decoration:none">
     function create_default_slot_17$3(ctx) {
     	let t;
 
@@ -7473,14 +7473,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_17$3.name,
     		type: "slot",
-    		source: "(145:12) <NavLink id=\\\"nav-home\\\" href=\\\"/\\\" style=\\\"text-decoration:none\\\">",
+    		source: "(163:12) <NavLink id=\\\"nav-home\\\" href=\\\"/\\\" style=\\\"text-decoration:none\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (144:8) <NavItem>
+    // (162:8) <NavItem>
     function create_default_slot_16$3(ctx) {
     	let navlink;
     	let current;
@@ -7531,14 +7531,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_16$3.name,
     		type: "slot",
-    		source: "(144:8) <NavItem>",
+    		source: "(162:8) <NavItem>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (148:12) <NavLink id="nav-info" href="/#/info" style="text-decoration:none">
+    // (166:12) <NavLink id="nav-info" href="/#/info" style="text-decoration:none">
     function create_default_slot_15$3(ctx) {
     	let t;
 
@@ -7558,14 +7558,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_15$3.name,
     		type: "slot",
-    		source: "(148:12) <NavLink id=\\\"nav-info\\\" href=\\\"/#/info\\\" style=\\\"text-decoration:none\\\">",
+    		source: "(166:12) <NavLink id=\\\"nav-info\\\" href=\\\"/#/info\\\" style=\\\"text-decoration:none\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (147:8) <NavItem>
+    // (165:8) <NavItem>
     function create_default_slot_14$3(ctx) {
     	let navlink;
     	let current;
@@ -7616,14 +7616,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_14$3.name,
     		type: "slot",
-    		source: "(147:8) <NavItem>",
+    		source: "(165:8) <NavItem>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (151:12) <NavLink id="nav-info" href="#" style="text-decoration:none" on:click={deleteContacts}>
+    // (169:12) <NavLink id="nav-info" href="#" style="text-decoration:none" on:click={deleteContacts}>
     function create_default_slot_13$3(ctx) {
     	let t;
 
@@ -7643,14 +7643,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_13$3.name,
     		type: "slot",
-    		source: "(151:12) <NavLink id=\\\"nav-info\\\" href=\\\"#\\\" style=\\\"text-decoration:none\\\" on:click={deleteContacts}>",
+    		source: "(169:12) <NavLink id=\\\"nav-info\\\" href=\\\"#\\\" style=\\\"text-decoration:none\\\" on:click={deleteContacts}>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (150:2) <NavItem>
+    // (168:2) <NavItem>
     function create_default_slot_12$3(ctx) {
     	let navlink;
     	let current;
@@ -7703,14 +7703,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_12$3.name,
     		type: "slot",
-    		source: "(150:2) <NavItem>",
+    		source: "(168:2) <NavItem>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (154:12) <NavLink id="nav-info" href="#" style="text-decoration:none" class="text-succcess" on:click={iniData}>
+    // (172:12) <NavLink id="nav-info" href="#" style="text-decoration:none" class="text-succcess" on:click={iniData}>
     function create_default_slot_11$3(ctx) {
     	let t;
 
@@ -7730,14 +7730,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_11$3.name,
     		type: "slot",
-    		source: "(154:12) <NavLink id=\\\"nav-info\\\" href=\\\"#\\\" style=\\\"text-decoration:none\\\" class=\\\"text-succcess\\\" on:click={iniData}>",
+    		source: "(172:12) <NavLink id=\\\"nav-info\\\" href=\\\"#\\\" style=\\\"text-decoration:none\\\" class=\\\"text-succcess\\\" on:click={iniData}>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (153:2) <NavItem>
+    // (171:2) <NavItem>
     function create_default_slot_10$3(ctx) {
     	let navlink;
     	let current;
@@ -7791,14 +7791,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_10$3.name,
     		type: "slot",
-    		source: "(153:2) <NavItem>",
+    		source: "(171:2) <NavItem>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (143:1) <Nav class = "bg-light">
+    // (161:1) <Nav class = "bg-light">
     function create_default_slot_9$3(ctx) {
     	let navitem0;
     	let t0;
@@ -7921,7 +7921,7 @@ var app = (function () {
     		block,
     		id: create_default_slot_9$3.name,
     		type: "slot",
-    		source: "(143:1) <Nav class = \\\"bg-light\\\">",
+    		source: "(161:1) <Nav class = \\\"bg-light\\\">",
     		ctx
     	});
 
@@ -7950,7 +7950,7 @@ var app = (function () {
     	return block;
     }
 
-    // (159:1) {:then contacts}
+    // (177:1) {:then contacts}
     function create_then_block$2(ctx) {
     	let h1;
     	let t1;
@@ -8027,10 +8027,10 @@ var app = (function () {
     			t7 = space();
     			create_component(button1.$$.fragment);
     			attr_dev(h1, "class", "text-center");
-    			add_location(h1, file$7, 159, 1, 3918);
+    			add_location(h1, file$7, 177, 1, 4326);
     			attr_dev(h2, "class", "text-center mt-5");
-    			add_location(h2, file$7, 162, 2, 3989);
-    			add_location(div, file$7, 161, 1, 3980);
+    			add_location(h2, file$7, 180, 2, 4397);
+    			add_location(div, file$7, 179, 1, 4388);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, h1, anchor);
@@ -8139,14 +8139,14 @@ var app = (function () {
     		block,
     		id: create_then_block$2.name,
     		type: "then",
-    		source: "(159:1) {:then contacts}",
+    		source: "(177:1) {:then contacts}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (184:6) <Button outline color="primary" on:click="{searchContact(pais,anyo)}">
+    // (202:6) <Button outline color="primary" on:click="{searchContact(pais,anyo)}">
     function create_default_slot_8$3(ctx) {
     	let t;
 
@@ -8166,14 +8166,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_8$3.name,
     		type: "slot",
-    		source: "(184:6) <Button outline color=\\\"primary\\\" on:click=\\\"{searchContact(pais,anyo)}\\\">",
+    		source: "(202:6) <Button outline color=\\\"primary\\\" on:click=\\\"{searchContact(pais,anyo)}\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (166:2) <Table bordered class="w-50 text-center mx-auto">
+    // (184:2) <Table bordered class="w-50 text-center mx-auto">
     function create_default_slot_7$6(ctx) {
     	let thead;
     	let tr0;
@@ -8227,17 +8227,17 @@ var app = (function () {
     			t5 = space();
     			td2 = element("td");
     			create_component(button.$$.fragment);
-    			add_location(th0, file$7, 168, 5, 4139);
-    			add_location(th1, file$7, 171, 5, 4174);
+    			add_location(th0, file$7, 186, 5, 4547);
+    			add_location(th1, file$7, 189, 5, 4582);
     			attr_dev(tr0, "class", "bg-light");
-    			add_location(tr0, file$7, 167, 4, 4111);
-    			add_location(input0, file$7, 177, 6, 4242);
-    			add_location(td0, file$7, 176, 5, 4230);
-    			add_location(input1, file$7, 180, 6, 4300);
-    			add_location(td1, file$7, 179, 5, 4288);
-    			add_location(td2, file$7, 182, 5, 4346);
-    			add_location(tr1, file$7, 175, 4, 4219);
-    			add_location(thead, file$7, 166, 3, 4098);
+    			add_location(tr0, file$7, 185, 4, 4519);
+    			add_location(input0, file$7, 195, 6, 4650);
+    			add_location(td0, file$7, 194, 5, 4638);
+    			add_location(input1, file$7, 198, 6, 4708);
+    			add_location(td1, file$7, 197, 5, 4696);
+    			add_location(td2, file$7, 200, 5, 4754);
+    			add_location(tr1, file$7, 193, 4, 4627);
+    			add_location(thead, file$7, 184, 3, 4506);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, thead, anchor);
@@ -8308,14 +8308,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_7$6.name,
     		type: "slot",
-    		source: "(166:2) <Table bordered class=\\\"w-50 text-center mx-auto\\\">",
+    		source: "(184:2) <Table bordered class=\\\"w-50 text-center mx-auto\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (189:2) {#if search}
+    // (207:2) {#if search}
     function create_if_block$2(ctx) {
     	let table;
     	let current;
@@ -8365,14 +8365,14 @@ var app = (function () {
     		block,
     		id: create_if_block$2.name,
     		type: "if",
-    		source: "(189:2) {#if search}",
+    		source: "(207:2) {#if search}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (190:4) <Table bordered class = "w-50 mx-auto">
+    // (208:4) <Table bordered class = "w-50 mx-auto">
     function create_default_slot_6$6(ctx) {
     	let tr0;
     	let th0;
@@ -8439,18 +8439,18 @@ var app = (function () {
     			t17 = space();
     			td4 = element("td");
     			t18 = text(t18_value);
-    			add_location(th0, file$7, 191, 6, 4571);
-    			add_location(th1, file$7, 194, 6, 4609);
-    			add_location(th2, file$7, 197, 6, 4647);
-    			add_location(th3, file$7, 200, 6, 4689);
-    			add_location(th4, file$7, 203, 6, 4742);
-    			add_location(tr0, file$7, 190, 5, 4559);
-    			add_location(td0, file$7, 208, 6, 4818);
-    			add_location(td1, file$7, 211, 6, 4870);
-    			add_location(td2, file$7, 214, 6, 4919);
-    			add_location(td3, file$7, 217, 6, 4972);
-    			add_location(td4, file$7, 220, 6, 5032);
-    			add_location(tr1, file$7, 207, 5, 4806);
+    			add_location(th0, file$7, 209, 6, 4979);
+    			add_location(th1, file$7, 212, 6, 5017);
+    			add_location(th2, file$7, 215, 6, 5055);
+    			add_location(th3, file$7, 218, 6, 5097);
+    			add_location(th4, file$7, 221, 6, 5150);
+    			add_location(tr0, file$7, 208, 5, 4967);
+    			add_location(td0, file$7, 226, 6, 5226);
+    			add_location(td1, file$7, 229, 6, 5278);
+    			add_location(td2, file$7, 232, 6, 5327);
+    			add_location(td3, file$7, 235, 6, 5380);
+    			add_location(td4, file$7, 238, 6, 5440);
+    			add_location(tr1, file$7, 225, 5, 5214);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, tr0, anchor);
@@ -8498,14 +8498,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_6$6.name,
     		type: "slot",
-    		source: "(190:4) <Table bordered class = \\\"w-50 mx-auto\\\">",
+    		source: "(208:4) <Table bordered class = \\\"w-50 mx-auto\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (257:8) <Button outline color="primary" on:click="{insertContact}">
+    // (275:8) <Button outline color="primary" on:click="{insertContact}">
     function create_default_slot_5$6(ctx) {
     	let t;
 
@@ -8525,14 +8525,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_5$6.name,
     		type: "slot",
-    		source: "(257:8) <Button outline color=\\\"primary\\\" on:click=\\\"{insertContact}\\\">",
+    		source: "(275:8) <Button outline color=\\\"primary\\\" on:click=\\\"{insertContact}\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (276:8) <Button color="danger" on:click="{deleteContact(contact.country,contact.year)}">
+    // (294:8) <Button color="danger" on:click="{deleteContact(contact.country,contact.year)}">
     function create_default_slot_4$6(ctx) {
     	let t;
 
@@ -8552,14 +8552,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_4$6.name,
     		type: "slot",
-    		source: "(276:8) <Button color=\\\"danger\\\" on:click=\\\"{deleteContact(contact.country,contact.year)}\\\">",
+    		source: "(294:8) <Button color=\\\"danger\\\" on:click=\\\"{deleteContact(contact.country,contact.year)}\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (277:8) <Button color="warning" on:click={function(){       window.location.href = `/#/fertilizers-stats/${contact.country}/${contact.year}`;      }}>
+    // (295:8) <Button color="warning" on:click={function(){       window.location.href = `/#/fertilizers-stats/${contact.country}/${contact.year}`;      }}>
     function create_default_slot_3$6(ctx) {
     	let t;
 
@@ -8579,14 +8579,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_3$6.name,
     		type: "slot",
-    		source: "(277:8) <Button color=\\\"warning\\\" on:click={function(){       window.location.href = `/#/fertilizers-stats/${contact.country}/${contact.year}`;      }}>",
+    		source: "(295:8) <Button color=\\\"warning\\\" on:click={function(){       window.location.href = `/#/fertilizers-stats/${contact.country}/${contact.year}`;      }}>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (259:3) {#each contacts as contact}
+    // (277:3) {#each contacts as contact}
     function create_each_block$2(ctx) {
     	let tr;
     	let td0;
@@ -8669,14 +8669,14 @@ var app = (function () {
     			td6 = element("td");
     			create_component(button1.$$.fragment);
     			t11 = space();
-    			add_location(td0, file$7, 260, 4, 5913);
-    			add_location(td1, file$7, 263, 4, 5958);
-    			add_location(td2, file$7, 266, 4, 6000);
-    			add_location(td3, file$7, 269, 4, 6046);
-    			add_location(td4, file$7, 272, 4, 6099);
-    			add_location(td5, file$7, 275, 4, 6152);
-    			add_location(td6, file$7, 276, 4, 6262);
-    			add_location(tr, file$7, 259, 3, 5903);
+    			add_location(td0, file$7, 278, 4, 6321);
+    			add_location(td1, file$7, 281, 4, 6366);
+    			add_location(td2, file$7, 284, 4, 6408);
+    			add_location(td3, file$7, 287, 4, 6454);
+    			add_location(td4, file$7, 290, 4, 6507);
+    			add_location(td5, file$7, 293, 4, 6560);
+    			add_location(td6, file$7, 294, 4, 6670);
+    			add_location(tr, file$7, 277, 3, 6311);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, tr, anchor);
@@ -8747,14 +8747,14 @@ var app = (function () {
     		block,
     		id: create_each_block$2.name,
     		type: "each",
-    		source: "(259:3) {#each contacts as contact}",
+    		source: "(277:3) {#each contacts as contact}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (230:1) <Table bordered>
+    // (248:1) <Table bordered>
     function create_default_slot_2$6(ctx) {
     	let thead;
     	let tr0;
@@ -8859,30 +8859,30 @@ var app = (function () {
     				each_blocks[i].c();
     			}
 
-    			add_location(th0, file$7, 232, 4, 5185);
-    			add_location(th1, file$7, 235, 4, 5217);
-    			add_location(th2, file$7, 238, 4, 5249);
-    			add_location(th3, file$7, 241, 4, 5285);
-    			add_location(th4, file$7, 244, 4, 5332);
-    			add_location(tr0, file$7, 231, 3, 5175);
-    			add_location(thead, file$7, 230, 2, 5163);
-    			add_location(input0, file$7, 251, 8, 5425);
-    			add_location(td0, file$7, 251, 4, 5421);
+    			add_location(th0, file$7, 250, 4, 5593);
+    			add_location(th1, file$7, 253, 4, 5625);
+    			add_location(th2, file$7, 256, 4, 5657);
+    			add_location(th3, file$7, 259, 4, 5693);
+    			add_location(th4, file$7, 262, 4, 5740);
+    			add_location(tr0, file$7, 249, 3, 5583);
+    			add_location(thead, file$7, 248, 2, 5571);
+    			add_location(input0, file$7, 269, 8, 5833);
+    			add_location(td0, file$7, 269, 4, 5829);
     			attr_dev(input1, "type", "number");
-    			add_location(input1, file$7, 252, 8, 5481);
-    			add_location(td1, file$7, 252, 4, 5477);
+    			add_location(input1, file$7, 270, 8, 5889);
+    			add_location(td1, file$7, 270, 4, 5885);
     			attr_dev(input2, "type", "number");
-    			add_location(input2, file$7, 253, 8, 5548);
-    			add_location(td2, file$7, 253, 4, 5544);
+    			add_location(input2, file$7, 271, 8, 5956);
+    			add_location(td2, file$7, 271, 4, 5952);
     			attr_dev(input3, "type", "number");
-    			add_location(input3, file$7, 254, 8, 5619);
-    			add_location(td3, file$7, 254, 4, 5615);
+    			add_location(input3, file$7, 272, 8, 6027);
+    			add_location(td3, file$7, 272, 4, 6023);
     			attr_dev(input4, "type", "number");
-    			add_location(input4, file$7, 255, 8, 5697);
-    			add_location(td4, file$7, 255, 4, 5693);
-    			add_location(td5, file$7, 256, 4, 5771);
-    			add_location(tr1, file$7, 250, 3, 5411);
-    			add_location(tbody, file$7, 249, 2, 5399);
+    			add_location(input4, file$7, 273, 8, 6105);
+    			add_location(td4, file$7, 273, 4, 6101);
+    			add_location(td5, file$7, 274, 4, 6179);
+    			add_location(tr1, file$7, 268, 3, 5819);
+    			add_location(tbody, file$7, 267, 2, 5807);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, thead, anchor);
@@ -9033,14 +9033,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_2$6.name,
     		type: "slot",
-    		source: "(230:1) <Table bordered>",
+    		source: "(248:1) <Table bordered>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (284:1) <Button on:click={antPag}>
+    // (302:1) <Button on:click={antPag}>
     function create_default_slot_1$6(ctx) {
     	let t;
 
@@ -9060,14 +9060,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_1$6.name,
     		type: "slot",
-    		source: "(284:1) <Button on:click={antPag}>",
+    		source: "(302:1) <Button on:click={antPag}>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (287:1) <Button on:click={sigPag}>
+    // (305:1) <Button on:click={sigPag}>
     function create_default_slot$6(ctx) {
     	let t;
 
@@ -9087,14 +9087,14 @@ var app = (function () {
     		block,
     		id: create_default_slot$6.name,
     		type: "slot",
-    		source: "(287:1) <Button on:click={sigPag}>",
+    		source: "(305:1) <Button on:click={sigPag}>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (157:21)    loading    {:then contacts}
+    // (175:21)    loading    {:then contacts}
     function create_pending_block$2(ctx) {
     	let t;
 
@@ -9117,7 +9117,7 @@ var app = (function () {
     		block,
     		id: create_pending_block$2.name,
     		type: "pending",
-    		source: "(157:21)    loading    {:then contacts}",
+    		source: "(175:21)    loading    {:then contacts}",
     		ctx
     	});
 
@@ -9160,7 +9160,7 @@ var app = (function () {
     			create_component(nav.$$.fragment);
     			t = space();
     			info.block.c();
-    			add_location(main, file$7, 141, 0, 3225);
+    			add_location(main, file$7, 159, 0, 3633);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -9305,7 +9305,14 @@ var app = (function () {
     		console.log("Deleting contacts... ");
 
     		await fetch("/api/v1/fertilizers-stats", { method: "DELETE" }).then(function (res) {
-    			console.log("CAGADA");
+    			if (res.ok) {
+    				alert("Borrada con exito");
+    			} else if (res.status == 500) {
+    				alert("No se pudo acceder a la base de datos");
+    			} else if (res.status == 404) {
+    				alert("Base de datos esta vacia");
+    			}
+
     			getContacts();
     		});
     	}
@@ -9326,9 +9333,16 @@ var app = (function () {
     	}
 
     	async function iniData() {
+    		$$invalidate(3, search = false);
     		console.log("Cargando Datos iniciales... " + JSON.stringify(newContact));
 
     		await fetch("api/v1/fertilizers-stats/loadInitialData").then(function (res) {
+    			if (res.ok) {
+    				alert("Datos iniciados correctamente");
+    			} else {
+    				alert("No se pudo iniciar los datos");
+    			}
+
     			getContacts();
     		});
     	}
@@ -9345,6 +9359,8 @@ var app = (function () {
     			console.log(busqueda);
     			console.log(search);
     			alert("Mostrando la búsqueda");
+    		} else {
+    			alert("No se encontro el pais de la busqueda");
     		}
     	}
 
