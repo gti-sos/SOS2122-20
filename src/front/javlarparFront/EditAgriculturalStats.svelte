@@ -119,6 +119,8 @@
                     </td>
                 </tr>
             </tbody>
-        </Table>
-        <Button on:click="{pop}">Volver</Button>
+            </Table>
+            <Button on:click="{pop}">
+                Volver
+            </Button>
     </main>

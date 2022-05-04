@@ -1,6 +1,7 @@
 <script>
 	import Router from 'svelte-spa-router';
 	import Home from './home.svelte';
+	import GroupGraph from './GroupGraph.svelte';
 
 	//import ContactsTable from './front/danpucjimFront/landusageTables.svelte';
 	import FertilizersTables from './alejorpoyFront/fertilizersTable.svelte';
@@ -12,6 +13,7 @@
 	import Info from './Info.svelte';
 
 
+
 	/*console.log("HOLA");
 	export let name; */
 	const routes = {
@@ -20,13 +22,14 @@
 	'/fertilizers-stats': FertilizersTables,
 	'/agriculturalproduction-stats': ProductionTables,
 	'/info':Info,
+	'/GroupGraph':GroupGraph,
 
 	//DANPUCJIM ROUTES
 	'/landusage-stats/:country/:year':EditLandusageStats,
 	//ALJORPOY ROUTES
 	'/fertilizers-stats/:country/:year': EditFertilizersStats,
 	//JAVLARPAR ROUTES
-	'/agriculturalproduction-stats/:country/:year':EditAgriculturalStats
+	'/agriculturalproduction-stats/:country/:year':EditAgriculturalStats,
 };
 
 </script>
