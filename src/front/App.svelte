@@ -1,7 +1,8 @@
 <script>
 	import Router from 'svelte-spa-router';
 	import Home from './home.svelte';
-	import GroupGraph from './GroupGraph.svelte';
+	
+	import MyGraph from './alejorpoyFront/MyGraph.svelte';
 
 	//import ContactsTable from './front/danpucjimFront/landusageTables.svelte';
 	import FertilizersTables from './alejorpoyFront/fertilizersTable.svelte';
@@ -22,7 +23,7 @@
 	'/fertilizers-stats': FertilizersTables,
 	'/agriculturalproduction-stats': ProductionTables,
 	'/info':Info,
-	'/GroupGraph':GroupGraph,
+	'/MyGraph':MyGraph,
 
 	//DANPUCJIM ROUTES
 	'/landusage-stats/:country/:year':EditLandusageStats,

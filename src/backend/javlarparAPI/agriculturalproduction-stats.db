@@ -1,15 +1,5 @@
-{"country":"Africa","year":2018,"production":191.56,"absolute_change":146.68,"relative_change":"327%","_id":"Y3x6LEdBsTka2FVO"}
-{"country":"Afghanistan","year":2018,"production":4.02,"absolute_change":434.52,"relative_change":"12%","_id":"eULl7UCeOt9YLz7l"}
-{"country":"Argeria","year":2018,"production":6.06,"absolute_change":5.13,"relative_change":"549%","_id":"qedrsioHiCEvh7VJ"}
-{"country":"Albania","year":2018,"production":678.196,"absolute_change":385.797,"relative_change":"132%","_id":"s7vfC3Vrk2x8fkkr"}
-{"country":"Americas","year":2018,"production":763.59,"absolute_change":539.36,"relative_change":"241%","_id":"sjj4MdtorGhxlWdL"}
-{"$$deleted":true,"_id":"Y3x6LEdBsTka2FVO"}
-{"$$deleted":true,"_id":"eULl7UCeOt9YLz7l"}
-{"$$deleted":true,"_id":"qedrsioHiCEvh7VJ"}
-{"$$deleted":true,"_id":"s7vfC3Vrk2x8fkkr"}
-{"$$deleted":true,"_id":"sjj4MdtorGhxlWdL"}
+{"country":"Americas","year":2018,"production":763.59,"absolute_change":539.36,"relative_change":"241%","_id":"eqYNr9xjVp7jAS11"}
 {"country":"Afghanistan","year":2018,"production":4.02,"absolute_change":434.52,"relative_change":"12%","_id":"i7FoZiiFBVgZl4vf"}
 {"country":"Africa","year":2018,"production":191.56,"absolute_change":146.68,"relative_change":"327%","_id":"mBqfYjU6wh3Qxf7p"}
-{"country":"Albania","year":2018,"production":678.196,"absolute_change":385.797,"relative_change":"132%","_id":"q4cnkNe7Fgzftqcj"}
 {"country":"Argeria","year":2018,"production":6.06,"absolute_change":5.13,"relative_change":"549%","_id":"p35GHe7gb3E7HyWZ"}
-{"country":"Americas","year":2018,"production":763.59,"absolute_change":539.36,"relative_change":"241%","_id":"eqYNr9xjVp7jAS11"}
+{"country":"Albania","year":2018,"production":678.196,"absolute_change":385.797,"relative_change":"132%","_id":"q4cnkNe7Fgzftqcj"}

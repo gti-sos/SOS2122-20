@@ -1,5 +1,5 @@
 
-(function(l, r) { if (!l || l.getElementById('livereloadscript')) return; r = l.createElement('script'); r.async = 1; r.src = '//' + (self.location.host || 'localhost').split(':')[0] + ':35730/livereload.js?snipver=1'; r.id = 'livereloadscript'; l.getElementsByTagName('head')[0].appendChild(r) })(self.document);
+(function(l, r) { if (!l || l.getElementById('livereloadscript')) return; r = l.createElement('script'); r.async = 1; r.src = '//' + (self.location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1'; r.id = 'livereloadscript'; l.getElementsByTagName('head')[0].appendChild(r) })(self.document);
 var app = (function () {
     'use strict';
 
@@ -1154,7 +1154,7 @@ var app = (function () {
     const { Error: Error_1, Object: Object_1, console: console_1$7 } = globals;
 
     // (251:0) {:else}
-    function create_else_block$6(ctx) {
+    function create_else_block$5(ctx) {
     	let switch_instance;
     	let switch_instance_anchor;
     	let current;
@@ -1239,7 +1239,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_else_block$6.name,
+    		id: create_else_block$5.name,
     		type: "else",
     		source: "(251:0) {:else}",
     		ctx
@@ -1249,7 +1249,7 @@ var app = (function () {
     }
 
     // (244:0) {#if componentParams}
-    function create_if_block$9(ctx) {
+    function create_if_block$8(ctx) {
     	let switch_instance;
     	let switch_instance_anchor;
     	let current;
@@ -1337,7 +1337,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_if_block$9.name,
+    		id: create_if_block$8.name,
     		type: "if",
     		source: "(244:0) {#if componentParams}",
     		ctx
@@ -1351,7 +1351,7 @@ var app = (function () {
     	let if_block;
     	let if_block_anchor;
     	let current;
-    	const if_block_creators = [create_if_block$9, create_else_block$6];
+    	const if_block_creators = [create_if_block$8, create_else_block$5];
     	const if_blocks = [];
 
     	function select_block_type(ctx, dirty) {
@@ -2112,7 +2112,7 @@ var app = (function () {
     const get_heading_slot_context = ctx => ({});
 
     // (26:0) {#if isOpen}
-    function create_if_block$8(ctx) {
+    function create_if_block$7(ctx) {
     	let div;
     	let t0;
     	let t1;
@@ -2122,7 +2122,7 @@ var app = (function () {
     	let current;
     	let if_block0 = (/*heading*/ ctx[3] || /*$$slots*/ ctx[10].heading) && create_if_block_3(ctx);
     	let if_block1 = /*showClose*/ ctx[5] && create_if_block_2$1(ctx);
-    	const if_block_creators = [create_if_block_1$4, create_else_block$5];
+    	const if_block_creators = [create_if_block_1$4, create_else_block$4];
     	const if_blocks = [];
 
     	function select_block_type(ctx, dirty) {
@@ -2260,7 +2260,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_if_block$8.name,
+    		id: create_if_block$7.name,
     		type: "if",
     		source: "(26:0) {#if isOpen}",
     		ctx
@@ -2401,7 +2401,7 @@ var app = (function () {
     }
 
     // (48:4) {:else}
-    function create_else_block$5(ctx) {
+    function create_else_block$4(ctx) {
     	let current;
     	const default_slot_template = /*#slots*/ ctx[18].default;
     	const default_slot = create_slot(default_slot_template, ctx, /*$$scope*/ ctx[17], null);
@@ -2449,7 +2449,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_else_block$5.name,
+    		id: create_else_block$4.name,
     		type: "else",
     		source: "(48:4) {:else}",
     		ctx
@@ -2493,7 +2493,7 @@ var app = (function () {
     function create_fragment$p(ctx) {
     	let if_block_anchor;
     	let current;
-    	let if_block = /*isOpen*/ ctx[0] && create_if_block$8(ctx);
+    	let if_block = /*isOpen*/ ctx[0] && create_if_block$7(ctx);
 
     	const block = {
     		c: function create() {
@@ -2517,7 +2517,7 @@ var app = (function () {
     						transition_in(if_block, 1);
     					}
     				} else {
-    					if_block = create_if_block$8(ctx);
+    					if_block = create_if_block$7(ctx);
     					if_block.c();
     					transition_in(if_block, 1);
     					if_block.m(if_block_anchor.parentNode, if_block_anchor);
@@ -2912,7 +2912,7 @@ var app = (function () {
     }
 
     // (37:0) {#if href}
-    function create_if_block$7(ctx) {
+    function create_if_block$6(ctx) {
     	let a;
     	let current_block_type_index;
     	let if_block;
@@ -2920,7 +2920,7 @@ var app = (function () {
     	let current;
     	let mounted;
     	let dispose;
-    	const if_block_creators = [create_if_block_1$3, create_else_block$4];
+    	const if_block_creators = [create_if_block_1$3, create_else_block$3];
     	const if_blocks = [];
 
     	function select_block_type_1(ctx, dirty) {
@@ -3022,7 +3022,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block: block_1,
-    		id: create_if_block$7.name,
+    		id: create_if_block$6.name,
     		type: "if",
     		source: "(37:0) {#if href}",
     		ctx
@@ -3202,7 +3202,7 @@ var app = (function () {
     }
 
     // (50:4) {:else}
-    function create_else_block$4(ctx) {
+    function create_else_block$3(ctx) {
     	let current;
     	const default_slot_template = /*#slots*/ ctx[19].default;
     	const default_slot = create_slot(default_slot_template, ctx, /*$$scope*/ ctx[18], null);
@@ -3250,7 +3250,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block: block_1,
-    		id: create_else_block$4.name,
+    		id: create_else_block$3.name,
     		type: "else",
     		source: "(50:4) {:else}",
     		ctx
@@ -3296,7 +3296,7 @@ var app = (function () {
     	let if_block;
     	let if_block_anchor;
     	let current;
-    	const if_block_creators = [create_if_block$7, create_else_block_1];
+    	const if_block_creators = [create_if_block$6, create_else_block_1];
     	const if_blocks = [];
 
     	function select_block_type(ctx, dirty) {
@@ -4197,7 +4197,7 @@ var app = (function () {
     const file$k = "node_modules\\sveltestrap\\src\\CardHeader.svelte";
 
     // (15:0) {:else}
-    function create_else_block$3(ctx) {
+    function create_else_block$2(ctx) {
     	let div;
     	let current;
     	let mounted;
@@ -4272,7 +4272,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_else_block$3.name,
+    		id: create_else_block$2.name,
     		type: "else",
     		source: "(15:0) {:else}",
     		ctx
@@ -4282,7 +4282,7 @@ var app = (function () {
     }
 
     // (11:0) {#if tag === 'h3'}
-    function create_if_block$6(ctx) {
+    function create_if_block$5(ctx) {
     	let h3;
     	let current;
     	let mounted;
@@ -4357,7 +4357,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_if_block$6.name,
+    		id: create_if_block$5.name,
     		type: "if",
     		source: "(11:0) {#if tag === 'h3'}",
     		ctx
@@ -4371,7 +4371,7 @@ var app = (function () {
     	let if_block;
     	let if_block_anchor;
     	let current;
-    	const if_block_creators = [create_if_block$6, create_else_block$3];
+    	const if_block_creators = [create_if_block$5, create_else_block$2];
     	const if_blocks = [];
 
     	function select_block_type(ctx, dirty) {
@@ -5580,7 +5580,7 @@ var app = (function () {
     const file$d = "node_modules\\sveltestrap\\src\\ResponsiveContainer.svelte";
 
     // (15:0) {:else}
-    function create_else_block$2(ctx) {
+    function create_else_block$1(ctx) {
     	let current;
     	const default_slot_template = /*#slots*/ ctx[3].default;
     	const default_slot = create_slot(default_slot_template, ctx, /*$$scope*/ ctx[2], null);
@@ -5628,7 +5628,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_else_block$2.name,
+    		id: create_else_block$1.name,
     		type: "else",
     		source: "(15:0) {:else}",
     		ctx
@@ -5638,7 +5638,7 @@ var app = (function () {
     }
 
     // (13:0) {#if responsive}
-    function create_if_block$5(ctx) {
+    function create_if_block$4(ctx) {
     	let div;
     	let current;
     	const default_slot_template = /*#slots*/ ctx[3].default;
@@ -5697,7 +5697,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_if_block$5.name,
+    		id: create_if_block$4.name,
     		type: "if",
     		source: "(13:0) {#if responsive}",
     		ctx
@@ -5711,7 +5711,7 @@ var app = (function () {
     	let if_block;
     	let if_block_anchor;
     	let current;
-    	const if_block_creators = [create_if_block$5, create_else_block$2];
+    	const if_block_creators = [create_if_block$4, create_else_block$1];
     	const if_blocks = [];
 
     	function select_block_type(ctx, dirty) {
@@ -6097,7 +6097,7 @@ var app = (function () {
     const get_default_slot_context = ctx => ({ row: /*row*/ ctx[13] });
 
     // (50:4) {:else}
-    function create_else_block$1(ctx) {
+    function create_else_block(ctx) {
     	let current;
     	const default_slot_template = /*#slots*/ ctx[11].default;
     	const default_slot = create_slot(default_slot_template, ctx, /*$$scope*/ ctx[12], null);
@@ -6145,7 +6145,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_else_block$1.name,
+    		id: create_else_block.name,
     		type: "else",
     		source: "(50:4) {:else}",
     		ctx
@@ -6155,7 +6155,7 @@ var app = (function () {
     }
 
     // (33:4) {#if rows}
-    function create_if_block$4(ctx) {
+    function create_if_block$3(ctx) {
     	let colgroup;
     	let t0;
     	let tableheader;
@@ -6167,7 +6167,7 @@ var app = (function () {
 
     	colgroup = new Colgroup({
     			props: {
-    				$$slots: { default: [create_default_slot_3$9] },
+    				$$slots: { default: [create_default_slot_3$8] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -6175,7 +6175,7 @@ var app = (function () {
 
     	tableheader = new TableHeader({
     			props: {
-    				$$slots: { default: [create_default_slot_2$9] },
+    				$$slots: { default: [create_default_slot_2$8] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -6195,7 +6195,7 @@ var app = (function () {
 
     	tablefooter = new TableFooter({
     			props: {
-    				$$slots: { default: [create_default_slot_1$9] },
+    				$$slots: { default: [create_default_slot_1$8] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -6322,7 +6322,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_if_block$4.name,
+    		id: create_if_block$3.name,
     		type: "if",
     		source: "(33:4) {#if rows}",
     		ctx
@@ -6332,7 +6332,7 @@ var app = (function () {
     }
 
     // (34:6) <Colgroup>
-    function create_default_slot_3$9(ctx) {
+    function create_default_slot_3$8(ctx) {
     	let current;
     	const default_slot_template = /*#slots*/ ctx[11].default;
     	const default_slot = create_slot(default_slot_template, ctx, /*$$scope*/ ctx[12], null);
@@ -6380,7 +6380,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot_3$9.name,
+    		id: create_default_slot_3$8.name,
     		type: "slot",
     		source: "(34:6) <Colgroup>",
     		ctx
@@ -6390,7 +6390,7 @@ var app = (function () {
     }
 
     // (37:6) <TableHeader>
-    function create_default_slot_2$9(ctx) {
+    function create_default_slot_2$8(ctx) {
     	let current;
     	const default_slot_template = /*#slots*/ ctx[11].default;
     	const default_slot = create_slot(default_slot_template, ctx, /*$$scope*/ ctx[12], get_default_slot_context);
@@ -6438,7 +6438,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot_2$9.name,
+    		id: create_default_slot_2$8.name,
     		type: "slot",
     		source: "(37:6) <TableHeader>",
     		ctx
@@ -6515,7 +6515,7 @@ var app = (function () {
     }
 
     // (47:6) <TableFooter>
-    function create_default_slot_1$9(ctx) {
+    function create_default_slot_1$8(ctx) {
     	let current;
     	const default_slot_template = /*#slots*/ ctx[11].default;
     	const default_slot = create_slot(default_slot_template, ctx, /*$$scope*/ ctx[12], null);
@@ -6563,7 +6563,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot_1$9.name,
+    		id: create_default_slot_1$8.name,
     		type: "slot",
     		source: "(47:6) <TableFooter>",
     		ctx
@@ -6573,12 +6573,12 @@ var app = (function () {
     }
 
     // (31:0) <ResponsiveContainer {responsive}>
-    function create_default_slot$9(ctx) {
+    function create_default_slot$8(ctx) {
     	let table;
     	let current_block_type_index;
     	let if_block;
     	let current;
-    	const if_block_creators = [create_if_block$4, create_else_block$1];
+    	const if_block_creators = [create_if_block$3, create_else_block];
     	const if_blocks = [];
 
     	function select_block_type(ctx, dirty) {
@@ -6656,7 +6656,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot$9.name,
+    		id: create_default_slot$8.name,
     		type: "slot",
     		source: "(31:0) <ResponsiveContainer {responsive}>",
     		ctx
@@ -6672,7 +6672,7 @@ var app = (function () {
     	responsivecontainer = new ResponsiveContainer({
     			props: {
     				responsive: /*responsive*/ ctx[0],
-    				$$slots: { default: [create_default_slot$9] },
+    				$$slots: { default: [create_default_slot$8] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -6918,7 +6918,7 @@ var app = (function () {
     const file$9 = "src\\front\\home.svelte";
 
     // (15:12) <NavLink disabled id="nav-home" href="/">
-    function create_default_slot_4$8(ctx) {
+    function create_default_slot_4$7(ctx) {
     	let t;
 
     	const block = {
@@ -6935,7 +6935,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot_4$8.name,
+    		id: create_default_slot_4$7.name,
     		type: "slot",
     		source: "(15:12) <NavLink disabled id=\\\"nav-home\\\" href=\\\"/\\\">",
     		ctx
@@ -6945,7 +6945,7 @@ var app = (function () {
     }
 
     // (14:8) <NavItem>
-    function create_default_slot_3$8(ctx) {
+    function create_default_slot_3$7(ctx) {
     	let navlink;
     	let current;
 
@@ -6954,7 +6954,7 @@ var app = (function () {
     				disabled: true,
     				id: "nav-home",
     				href: "/",
-    				$$slots: { default: [create_default_slot_4$8] },
+    				$$slots: { default: [create_default_slot_4$7] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -6993,7 +6993,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot_3$8.name,
+    		id: create_default_slot_3$7.name,
     		type: "slot",
     		source: "(14:8) <NavItem>",
     		ctx
@@ -7003,7 +7003,7 @@ var app = (function () {
     }
 
     // (18:12) <NavLink id="nav-info" href="/#/info" style="text-decoration:none">
-    function create_default_slot_2$8(ctx) {
+    function create_default_slot_2$7(ctx) {
     	let t;
 
     	const block = {
@@ -7020,7 +7020,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot_2$8.name,
+    		id: create_default_slot_2$7.name,
     		type: "slot",
     		source: "(18:12) <NavLink id=\\\"nav-info\\\" href=\\\"/#/info\\\" style=\\\"text-decoration:none\\\">",
     		ctx
@@ -7030,7 +7030,7 @@ var app = (function () {
     }
 
     // (17:8) <NavItem>
-    function create_default_slot_1$8(ctx) {
+    function create_default_slot_1$7(ctx) {
     	let navlink;
     	let current;
 
@@ -7039,7 +7039,7 @@ var app = (function () {
     				id: "nav-info",
     				href: "/#/info",
     				style: "text-decoration:none",
-    				$$slots: { default: [create_default_slot_2$8] },
+    				$$slots: { default: [create_default_slot_2$7] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -7078,7 +7078,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot_1$8.name,
+    		id: create_default_slot_1$7.name,
     		type: "slot",
     		source: "(17:8) <NavItem>",
     		ctx
@@ -7088,7 +7088,7 @@ var app = (function () {
     }
 
     // (13:4) <Nav class = "bg-light">
-    function create_default_slot$8(ctx) {
+    function create_default_slot$7(ctx) {
     	let navitem0;
     	let t;
     	let navitem1;
@@ -7096,7 +7096,7 @@ var app = (function () {
 
     	navitem0 = new NavItem({
     			props: {
-    				$$slots: { default: [create_default_slot_3$8] },
+    				$$slots: { default: [create_default_slot_3$7] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -7104,7 +7104,7 @@ var app = (function () {
 
     	navitem1 = new NavItem({
     			props: {
-    				$$slots: { default: [create_default_slot_1$8] },
+    				$$slots: { default: [create_default_slot_1$7] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -7158,7 +7158,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot$8.name,
+    		id: create_default_slot$7.name,
     		type: "slot",
     		source: "(13:4) <Nav class = \\\"bg-light\\\">",
     		ctx
@@ -7239,7 +7239,7 @@ var app = (function () {
     	nav = new Nav({
     			props: {
     				class: "bg-light",
-    				$$slots: { default: [create_default_slot$8] },
+    				$$slots: { default: [create_default_slot$7] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -7529,335 +7529,10 @@ var app = (function () {
     	}
     }
 
-    /* src\front\GroupGraph.svelte generated by Svelte v3.46.6 */
+    /* src\front\alejorpoyFront\MyGraph.svelte generated by Svelte v3.46.6 */
 
     const { console: console_1$6 } = globals;
-    const file$8 = "src\\front\\GroupGraph.svelte";
-
-    // (204:8) <NavLink id="nav_home" href="/">
-    function create_default_slot_4$7(ctx) {
-    	let t;
-
-    	const block = {
-    		c: function create() {
-    			t = text("Home");
-    		},
-    		m: function mount(target, anchor) {
-    			insert_dev(target, t, anchor);
-    		},
-    		d: function destroy(detaching) {
-    			if (detaching) detach_dev(t);
-    		}
-    	};
-
-    	dispatch_dev("SvelteRegisterBlock", {
-    		block,
-    		id: create_default_slot_4$7.name,
-    		type: "slot",
-    		source: "(204:8) <NavLink id=\\\"nav_home\\\" href=\\\"/\\\">",
-    		ctx
-    	});
-
-    	return block;
-    }
-
-    // (203:6) <NavItem>
-    function create_default_slot_3$7(ctx) {
-    	let navlink;
-    	let current;
-
-    	navlink = new NavLink({
-    			props: {
-    				id: "nav_home",
-    				href: "/",
-    				$$slots: { default: [create_default_slot_4$7] },
-    				$$scope: { ctx }
-    			},
-    			$$inline: true
-    		});
-
-    	const block = {
-    		c: function create() {
-    			create_component(navlink.$$.fragment);
-    		},
-    		m: function mount(target, anchor) {
-    			mount_component(navlink, target, anchor);
-    			current = true;
-    		},
-    		p: function update(ctx, dirty) {
-    			const navlink_changes = {};
-
-    			if (dirty & /*$$scope*/ 512) {
-    				navlink_changes.$$scope = { dirty, ctx };
-    			}
-
-    			navlink.$set(navlink_changes);
-    		},
-    		i: function intro(local) {
-    			if (current) return;
-    			transition_in(navlink.$$.fragment, local);
-    			current = true;
-    		},
-    		o: function outro(local) {
-    			transition_out(navlink.$$.fragment, local);
-    			current = false;
-    		},
-    		d: function destroy(detaching) {
-    			destroy_component(navlink, detaching);
-    		}
-    	};
-
-    	dispatch_dev("SvelteRegisterBlock", {
-    		block,
-    		id: create_default_slot_3$7.name,
-    		type: "slot",
-    		source: "(203:6) <NavItem>",
-    		ctx
-    	});
-
-    	return block;
-    }
-
-    // (207:8) <NavLink id="nav_info" href="/#/info">
-    function create_default_slot_2$7(ctx) {
-    	let t;
-
-    	const block = {
-    		c: function create() {
-    			t = text("Info");
-    		},
-    		m: function mount(target, anchor) {
-    			insert_dev(target, t, anchor);
-    		},
-    		d: function destroy(detaching) {
-    			if (detaching) detach_dev(t);
-    		}
-    	};
-
-    	dispatch_dev("SvelteRegisterBlock", {
-    		block,
-    		id: create_default_slot_2$7.name,
-    		type: "slot",
-    		source: "(207:8) <NavLink id=\\\"nav_info\\\" href=\\\"/#/info\\\">",
-    		ctx
-    	});
-
-    	return block;
-    }
-
-    // (206:6) <NavItem>
-    function create_default_slot_1$7(ctx) {
-    	let navlink;
-    	let current;
-
-    	navlink = new NavLink({
-    			props: {
-    				id: "nav_info",
-    				href: "/#/info",
-    				$$slots: { default: [create_default_slot_2$7] },
-    				$$scope: { ctx }
-    			},
-    			$$inline: true
-    		});
-
-    	const block = {
-    		c: function create() {
-    			create_component(navlink.$$.fragment);
-    		},
-    		m: function mount(target, anchor) {
-    			mount_component(navlink, target, anchor);
-    			current = true;
-    		},
-    		p: function update(ctx, dirty) {
-    			const navlink_changes = {};
-
-    			if (dirty & /*$$scope*/ 512) {
-    				navlink_changes.$$scope = { dirty, ctx };
-    			}
-
-    			navlink.$set(navlink_changes);
-    		},
-    		i: function intro(local) {
-    			if (current) return;
-    			transition_in(navlink.$$.fragment, local);
-    			current = true;
-    		},
-    		o: function outro(local) {
-    			transition_out(navlink.$$.fragment, local);
-    			current = false;
-    		},
-    		d: function destroy(detaching) {
-    			destroy_component(navlink, detaching);
-    		}
-    	};
-
-    	dispatch_dev("SvelteRegisterBlock", {
-    		block,
-    		id: create_default_slot_1$7.name,
-    		type: "slot",
-    		source: "(206:6) <NavItem>",
-    		ctx
-    	});
-
-    	return block;
-    }
-
-    // (202:4) <Nav>
-    function create_default_slot$7(ctx) {
-    	let navitem0;
-    	let t;
-    	let navitem1;
-    	let current;
-
-    	navitem0 = new NavItem({
-    			props: {
-    				$$slots: { default: [create_default_slot_3$7] },
-    				$$scope: { ctx }
-    			},
-    			$$inline: true
-    		});
-
-    	navitem1 = new NavItem({
-    			props: {
-    				$$slots: { default: [create_default_slot_1$7] },
-    				$$scope: { ctx }
-    			},
-    			$$inline: true
-    		});
-
-    	const block = {
-    		c: function create() {
-    			create_component(navitem0.$$.fragment);
-    			t = space();
-    			create_component(navitem1.$$.fragment);
-    		},
-    		m: function mount(target, anchor) {
-    			mount_component(navitem0, target, anchor);
-    			insert_dev(target, t, anchor);
-    			mount_component(navitem1, target, anchor);
-    			current = true;
-    		},
-    		p: function update(ctx, dirty) {
-    			const navitem0_changes = {};
-
-    			if (dirty & /*$$scope*/ 512) {
-    				navitem0_changes.$$scope = { dirty, ctx };
-    			}
-
-    			navitem0.$set(navitem0_changes);
-    			const navitem1_changes = {};
-
-    			if (dirty & /*$$scope*/ 512) {
-    				navitem1_changes.$$scope = { dirty, ctx };
-    			}
-
-    			navitem1.$set(navitem1_changes);
-    		},
-    		i: function intro(local) {
-    			if (current) return;
-    			transition_in(navitem0.$$.fragment, local);
-    			transition_in(navitem1.$$.fragment, local);
-    			current = true;
-    		},
-    		o: function outro(local) {
-    			transition_out(navitem0.$$.fragment, local);
-    			transition_out(navitem1.$$.fragment, local);
-    			current = false;
-    		},
-    		d: function destroy(detaching) {
-    			destroy_component(navitem0, detaching);
-    			if (detaching) detach_dev(t);
-    			destroy_component(navitem1, detaching);
-    		}
-    	};
-
-    	dispatch_dev("SvelteRegisterBlock", {
-    		block,
-    		id: create_default_slot$7.name,
-    		type: "slot",
-    		source: "(202:4) <Nav>",
-    		ctx
-    	});
-
-    	return block;
-    }
-
-    // (217:4) {:else}
-    function create_else_block(ctx) {
-    	let figure;
-    	let div;
-    	let t;
-    	let p;
-
-    	const block = {
-    		c: function create() {
-    			figure = element("figure");
-    			div = element("div");
-    			t = space();
-    			p = element("p");
-    			attr_dev(div, "id", "container");
-    			add_location(div, file$8, 218, 8, 6950);
-    			attr_dev(p, "class", "highcharts-description");
-    			add_location(p, file$8, 219, 8, 6982);
-    			attr_dev(figure, "class", "highcharts-figure svelte-vxe83w");
-    			add_location(figure, file$8, 217, 6, 6906);
-    		},
-    		m: function mount(target, anchor) {
-    			insert_dev(target, figure, anchor);
-    			append_dev(figure, div);
-    			append_dev(figure, t);
-    			append_dev(figure, p);
-    		},
-    		p: noop,
-    		d: function destroy(detaching) {
-    			if (detaching) detach_dev(figure);
-    		}
-    	};
-
-    	dispatch_dev("SvelteRegisterBlock", {
-    		block,
-    		id: create_else_block.name,
-    		type: "else",
-    		source: "(217:4) {:else}",
-    		ctx
-    	});
-
-    	return block;
-    }
-
-    // (215:4) {#if msg}
-    function create_if_block$3(ctx) {
-    	let p;
-    	let t;
-
-    	const block = {
-    		c: function create() {
-    			p = element("p");
-    			t = text(/*msg*/ ctx[0]);
-    			add_location(p, file$8, 215, 6, 6873);
-    		},
-    		m: function mount(target, anchor) {
-    			insert_dev(target, p, anchor);
-    			append_dev(p, t);
-    		},
-    		p: function update(ctx, dirty) {
-    			if (dirty & /*msg*/ 1) set_data_dev(t, /*msg*/ ctx[0]);
-    		},
-    		d: function destroy(detaching) {
-    			if (detaching) detach_dev(p);
-    		}
-    	};
-
-    	dispatch_dev("SvelteRegisterBlock", {
-    		block,
-    		id: create_if_block$3.name,
-    		type: "if",
-    		source: "(215:4) {#if msg}",
-    		ctx
-    	});
-
-    	return block;
-    }
+    const file$8 = "src\\front\\alejorpoyFront\\MyGraph.svelte";
 
     function create_fragment$8(ctx) {
     	let script0;
@@ -7868,34 +7543,14 @@ var app = (function () {
     	let script2_src_value;
     	let script3;
     	let script3_src_value;
-    	let script4;
-    	let script4_src_value;
     	let t0;
     	let main;
-    	let nav;
-    	let t1;
+    	let figure;
     	let div;
-    	let h1;
-    	let t3;
-    	let current;
+    	let t1;
+    	let p;
     	let mounted;
     	let dispose;
-
-    	nav = new Nav({
-    			props: {
-    				$$slots: { default: [create_default_slot$7] },
-    				$$scope: { ctx }
-    			},
-    			$$inline: true
-    		});
-
-    	function select_block_type(ctx, dirty) {
-    		if (/*msg*/ ctx[0]) return create_if_block$3;
-    		return create_else_block;
-    	}
-
-    	let current_block_type = select_block_type(ctx);
-    	let if_block = current_block_type(ctx);
 
     	const block = {
     		c: function create() {
@@ -7903,31 +7558,28 @@ var app = (function () {
     			script1 = element("script");
     			script2 = element("script");
     			script3 = element("script");
-    			script4 = element("script");
     			t0 = space();
     			main = element("main");
-    			create_component(nav.$$.fragment);
-    			t1 = space();
+    			figure = element("figure");
     			div = element("div");
-    			h1 = element("h1");
-    			h1.textContent = "Gráfico";
-    			t3 = space();
-    			if_block.c();
+    			t1 = space();
+    			p = element("p");
+    			p.textContent = "Los gráficos de tipo column son gráficos que muestarn barras rectangulares de forma horizontal. Este gráfico se encuentra invertido,\r\n            invertir el gráfico significa que el eje X se coloca como el eje vertical y el eje Y se coloca como el eje horizontal. \r\n            Esto puede ser más intuitivo para ciertos conjuntos de datos, como en este gráfico donde el eje X representa la cantidad total.";
     			if (!src_url_equal(script0.src, script0_src_value = "https://code.highcharts.com/highcharts.js")) attr_dev(script0, "src", script0_src_value);
-    			add_location(script0, file$8, 191, 4, 6132);
-    			if (!src_url_equal(script1.src, script1_src_value = "https://code.highcharts.com/modules/series-label.js")) attr_dev(script1, "src", script1_src_value);
-    			add_location(script1, file$8, 192, 4, 6203);
-    			if (!src_url_equal(script2.src, script2_src_value = "https://code.highcharts.com/modules/exporting.js")) attr_dev(script2, "src", script2_src_value);
-    			add_location(script2, file$8, 193, 4, 6284);
-    			if (!src_url_equal(script3.src, script3_src_value = "https://code.highcharts.com/modules/export-data.js")) attr_dev(script3, "src", script3_src_value);
-    			add_location(script3, file$8, 194, 4, 6362);
-    			if (!src_url_equal(script4.src, script4_src_value = "https://code.highcharts.com/modules/accessibility.js")) attr_dev(script4, "src", script4_src_value);
-    			add_location(script4, file$8, 195, 4, 6442);
-    			attr_dev(h1, "class", "svelte-vxe83w");
-    			add_location(h1, file$8, 211, 6, 6818);
-    			add_location(div, file$8, 210, 4, 6805);
-    			attr_dev(main, "class", "svelte-vxe83w");
-    			add_location(main, file$8, 200, 2, 6578);
+    			add_location(script0, file$8, 102, 4, 2359);
+    			if (!src_url_equal(script1.src, script1_src_value = "https://code.highcharts.com/modules/exporting.js")) attr_dev(script1, "src", script1_src_value);
+    			add_location(script1, file$8, 103, 4, 2430);
+    			if (!src_url_equal(script2.src, script2_src_value = "https://code.highcharts.com/modules/export-data.js")) attr_dev(script2, "src", script2_src_value);
+    			add_location(script2, file$8, 104, 4, 2508);
+    			if (!src_url_equal(script3.src, script3_src_value = "https://code.highcharts.com/modules/accessibility.js")) attr_dev(script3, "src", script3_src_value);
+    			add_location(script3, file$8, 105, 4, 2588);
+    			attr_dev(div, "id", "container");
+    			add_location(div, file$8, 112, 8, 2766);
+    			attr_dev(p, "class", "highcharts-description");
+    			add_location(p, file$8, 113, 8, 2802);
+    			attr_dev(figure, "class", "highcharts-figure");
+    			add_location(figure, file$8, 111, 4, 2722);
+    			add_location(main, file$8, 110, 0, 2710);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -7937,62 +7589,28 @@ var app = (function () {
     			append_dev(document.head, script1);
     			append_dev(document.head, script2);
     			append_dev(document.head, script3);
-    			append_dev(document.head, script4);
     			insert_dev(target, t0, anchor);
     			insert_dev(target, main, anchor);
-    			mount_component(nav, main, null);
-    			append_dev(main, t1);
-    			append_dev(main, div);
-    			append_dev(div, h1);
-    			append_dev(main, t3);
-    			if_block.m(main, null);
-    			current = true;
+    			append_dev(main, figure);
+    			append_dev(figure, div);
+    			append_dev(figure, t1);
+    			append_dev(figure, p);
 
     			if (!mounted) {
-    				dispose = listen_dev(script4, "load", /*loadChart*/ ctx[1], false, false, false);
+    				dispose = listen_dev(script3, "load", /*loadGraph*/ ctx[0], false, false, false);
     				mounted = true;
     			}
     		},
-    		p: function update(ctx, [dirty]) {
-    			const nav_changes = {};
-
-    			if (dirty & /*$$scope*/ 512) {
-    				nav_changes.$$scope = { dirty, ctx };
-    			}
-
-    			nav.$set(nav_changes);
-
-    			if (current_block_type === (current_block_type = select_block_type(ctx)) && if_block) {
-    				if_block.p(ctx, dirty);
-    			} else {
-    				if_block.d(1);
-    				if_block = current_block_type(ctx);
-
-    				if (if_block) {
-    					if_block.c();
-    					if_block.m(main, null);
-    				}
-    			}
-    		},
-    		i: function intro(local) {
-    			if (current) return;
-    			transition_in(nav.$$.fragment, local);
-    			current = true;
-    		},
-    		o: function outro(local) {
-    			transition_out(nav.$$.fragment, local);
-    			current = false;
-    		},
+    		p: noop,
+    		i: noop,
+    		o: noop,
     		d: function destroy(detaching) {
     			detach_dev(script0);
     			detach_dev(script1);
     			detach_dev(script2);
     			detach_dev(script3);
-    			detach_dev(script4);
     			if (detaching) detach_dev(t0);
     			if (detaching) detach_dev(main);
-    			destroy_component(nav);
-    			if_block.d();
     			mounted = false;
     			dispose();
     		}
@@ -8009,245 +7627,131 @@ var app = (function () {
     	return block;
     }
 
-    const BASE_CONTACT_API_PATH_v2 = "/api/v1";
-
-    /**
-     * Obtenemos una propiedad JSON sin repetidos
-     * @param MYJSON
-     * @param prop
-     */
-    function distinctRecords(MYJSON, prop) {
-    	return MYJSON.filter((obj, pos, arr) => {
-    		return arr.map(mapObj => mapObj[prop]).indexOf(obj[prop]) === pos;
-    	});
-    }
-
     function instance$8($$self, $$props, $$invalidate) {
     	let { $$slots: slots = {}, $$scope } = $$props;
-    	validate_slots('GroupGraph', slots, []);
-    	let quantityData = [];
-    	let quantityChartData = [];
-    	let builtAData = [];
-    	let builtAChartData = [];
-    	let productionData = [];
-    	let productionChartData = [];
-    	var dates = [];
-    	let msg = "";
+    	validate_slots('MyGraph', slots, []);
+    	let apiData = {};
+    	const delay = ms => new Promise(res => setTimeout(res, ms));
+    	let stats = [];
+    	let country = [];
+    	let year = [];
+    	let quantity = [];
+    	let absolute_change = [];
+    	let relative_change = [];
 
-    	async function loadChart() {
-    		console.log("Fetching data...");
+    	async function getPEStats() {
+    		console.log("Fetching stats....");
+    		const res = await fetch("/api/v1/fertilizers-stats");
 
-    		//Cargamos los datos de las APIs
-    		await fetch(BASE_CONTACT_API_PATH_v2 + "/fertilizers-stats/loadInitialData");
+    		if (res.ok) {
+    			const data = await res.json();
+    			stats = data;
+    			console.log("Estadísticas recibidas: " + stats.length);
 
-    		await fetch(BASE_CONTACT_API_PATH_v2 + "/landusage-stats/loadInitialData");
-    		await fetch(BASE_CONTACT_API_PATH_v2 + "/agriculturalproduction-stats/loadInitialData");
-
-    		//Obtenemos los datos de las APIs
-    		const res = await fetch(BASE_CONTACT_API_PATH_v2 + "/fertilizers-stats");
-
-    		const res1 = await fetch(BASE_CONTACT_API_PATH_v2 + "/landusage-stats");
-    		const res2 = await fetch(BASE_CONTACT_API_PATH_v2 + "/agriculturalproduction-stats");
-
-    		if (res.ok && res1.ok && res2.ok) {
-    			console.log("procesing landusage data....");
-
-    			if (res1.ok) {
-    				builtAData = await res1.json();
-    				console.log("RES OK");
-
-    				//Quitamos fechas repetidas 
-    				var distinctDates1 = distinctRecords(builtAData, "year");
-
-    				//y las ordenamos
-    				distinctDates1.sort(function (a, b) {
-    					return a.year - b.year;
-    				});
-
-    				//guardamos las fechas para la grafica
-    				distinctDates1.forEach(element => {
-    					dates.push(element.year);
-    				});
-
-    				//Sumamos los valores para las fechas iguales
-    				dates.forEach(e => {
-    					var yAxis = builtAData.filter(d => d.year === e).map(dr => dr["built-area"]).reduce((acc, dr) => dr + acc);
-    					builtAChartData.push(Math.round(yAxis));
-    				});
-
-    				$$invalidate(0, msg = "");
-    			}
-
-    			console.log("procesing fertilizers data....");
-
-    			if (res.ok) {
-    				quantityData = await res.json();
-    				console.log("RES OK");
-
-    				//Quitamos fechas repetidas 
-    				var distinctDates = distinctRecords(quantityData, "year");
-
-    				//y las ordenamos
-    				distinctDates.sort(function (a, b) {
-    					return a.year - b.year;
-    				});
-
-    				//Añadimos las fechas que no existen
-    				distinctDates.forEach(element => {
-    					if (!dates.includes(element.year)) {
-    						dates.push(element.year);
-    					}
-    				});
-
-    				//Sumamos los valores para las fechas iguales
-    				dates.forEach(e => {
-    					var yAxis = quantityData.filter(d => d.year === e).map(nr => nr["quantity"]).reduce((acc, nr) => nr + acc, 0);
-    					quantityChartData.push(Math.round(yAxis));
-    				});
-
-    				$$invalidate(0, msg = "");
-    			}
-
-    			console.log("procesing Agricultural Production data....");
-
-    			if (res2.ok) {
-    				productionData = await res2.json();
-    				console.log("RES2 OK");
-
-    				//Quitamos fechas repetidas 
-    				var distinctDates = distinctRecords(productionData, "year");
-
-    				//y las ordenamos
-    				distinctDates.sort(function (a, b) {
-    					return a.year - b.year;
-    				});
-
-    				//Añadimos las fechas que no existen
-    				distinctDates.forEach(element => {
-    					if (!dates.includes(element.year)) {
-    						dates.push(element.year);
-    					}
-    				});
-
-    				//Sumamos los valores para las fechas iguales
-    				dates.forEach(e => {
-    					var yAxis = productionData.filter(d => d.year === e).map(qli => qli["production"]).reduce((acc, qli) => qli + acc, 0);
-    					productionChartData.push(Math.round(yAxis));
-    				});
-
-    				$$invalidate(0, msg = "");
-    			}
+    			//inicializamos los arrays para mostrar los datos
+    			stats.forEach(stat => {
+    				country.push(stat.country + "-" + stat.year);
+    				year.push(stat.year);
+    				quantity.push(stat.quantity);
+    				absolute_change.push(stat.absolute_change);
+    				relative_change.push(stat.relative_change);
+    			});
     		} else {
-    			console.log("ERROR " + msg);
-    			$$invalidate(0, msg = "Por favor primero cargue los datos en todas las APIs");
+    			console.log("Error cargando los datos");
     		}
+    	}
 
-    		//Creamos la grafica
-    		Highcharts.chart("container", {
-    			chart: { type: "bar" },
-    			title: { text: "Integración de grupo" },
-    			yAxis: { title: { text: "Cantidad" } },
+    	async function getData() {
+    		const res = await fetch("/api/v1/fertilizers-stats");
+
+    		if (res.ok) {
+    			const json = await res.json();
+    			apiData = json;
+    			loadGraph();
+    		} else {
+    			console.log("Error in request");
+    		}
+    	}
+
+    	async function loadGraph() {
+    		Highcharts.chart('container', {
+    			chart: { type: 'column', inverted: true },
+    			title: { text: 'Fertilizantes por paises' },
     			xAxis: {
-    				title: { text: "Años" },
-    				categories: dates
+    				title: { text: "País-Año" },
+    				categories: country
     			},
-    			legend: {
-    				layout: "vertical",
-    				align: "right",
-    				verticalAlign: "middle"
+    			yAxis: { title: { text: 'kilos' } },
+    			legend: { enabled: false },
+    			tooltip: {
+    				headerFormat: '<b>{series.name}</b><br/>',
+    				pointFormat: '{point.y}kilos'
     			},
-    			annotations: [
-    				{
-    					labels: [
-    						{ point: "year", text: "" },
-    						{
-    							point: "min",
-    							text: "Min",
-    							backgroundColor: "white"
-    						}
-    					]
-    				}
-    			],
+    			plotOptions: { spline: { marker: { enable: false } } },
     			series: [
     				{
-    					name: "Area Construida",
-    					data: builtAChartData
+    					name: 'Cantidad de fertilizante',
+    					data: quantity
     				},
     				{
-    					name: "Cantidad de fertilizante",
-    					data: quantityChartData
+    					name: 'Cambio absoluto',
+    					data: absolute_change
     				},
     				{
-    					name: "Produccion de cereal",
-    					data: productionChartData
+    					name: 'Cambio relativo',
+    					data: relative_change
     				}
-    			],
-    			responsive: {
-    				rules: [
-    					{
-    						condition: { maxWidth: 500 },
-    						chartOptions: {
-    							legend: {
-    								layout: "horizontal",
-    								align: "center",
-    								verticalAlign: "bottom"
-    							}
-    						}
-    					}
-    				]
-    			}
+    			]
     		});
     	}
 
+    	onMount(getPEStats);
     	const writable_props = [];
 
     	Object.keys($$props).forEach(key => {
-    		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== '$$' && key !== 'slot') console_1$6.warn(`<GroupGraph> was created with unknown prop '${key}'`);
+    		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== '$$' && key !== 'slot') console_1$6.warn(`<MyGraph> was created with unknown prop '${key}'`);
     	});
 
     	$$self.$capture_state = () => ({
-    		Nav,
-    		NavItem,
-    		NavLink,
-    		BASE_CONTACT_API_PATH_v2,
-    		quantityData,
-    		quantityChartData,
-    		builtAData,
-    		builtAChartData,
-    		productionData,
-    		productionChartData,
-    		dates,
-    		msg,
-    		distinctRecords,
-    		loadChart
+    		onMount,
+    		apiData,
+    		delay,
+    		stats,
+    		country,
+    		year,
+    		quantity,
+    		absolute_change,
+    		relative_change,
+    		getPEStats,
+    		getData,
+    		loadGraph
     	});
 
     	$$self.$inject_state = $$props => {
-    		if ('quantityData' in $$props) quantityData = $$props.quantityData;
-    		if ('quantityChartData' in $$props) quantityChartData = $$props.quantityChartData;
-    		if ('builtAData' in $$props) builtAData = $$props.builtAData;
-    		if ('builtAChartData' in $$props) builtAChartData = $$props.builtAChartData;
-    		if ('productionData' in $$props) productionData = $$props.productionData;
-    		if ('productionChartData' in $$props) productionChartData = $$props.productionChartData;
-    		if ('dates' in $$props) dates = $$props.dates;
-    		if ('msg' in $$props) $$invalidate(0, msg = $$props.msg);
+    		if ('apiData' in $$props) apiData = $$props.apiData;
+    		if ('stats' in $$props) stats = $$props.stats;
+    		if ('country' in $$props) country = $$props.country;
+    		if ('year' in $$props) year = $$props.year;
+    		if ('quantity' in $$props) quantity = $$props.quantity;
+    		if ('absolute_change' in $$props) absolute_change = $$props.absolute_change;
+    		if ('relative_change' in $$props) relative_change = $$props.relative_change;
     	};
 
     	if ($$props && "$$inject" in $$props) {
     		$$self.$inject_state($$props.$$inject);
     	}
 
-    	return [msg, loadChart];
+    	return [loadGraph];
     }
 
-    class GroupGraph extends SvelteComponentDev {
+    class MyGraph extends SvelteComponentDev {
     	constructor(options) {
     		super(options);
     		init(this, options, instance$8, create_fragment$8, safe_not_equal, {});
 
     		dispatch_dev("SvelteRegisterComponent", {
     			component: this,
-    			tagName: "GroupGraph",
+    			tagName: "MyGraph",
     			options,
     			id: create_fragment$8.name
     		});
@@ -15773,7 +15277,7 @@ var app = (function () {
     const { console: console_1$1 } = globals;
     const file$3 = "src\\front\\alejorpoyFront\\EditFertilizersStats.svelte";
 
-    // (72:16) <NavLink id="nav-home" href="/" style="text-decoration:none">
+    // (78:16) <NavLink id="nav-home" href="/" style="text-decoration:none">
     function create_default_slot_7$2(ctx) {
     	let t;
 
@@ -15793,14 +15297,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_7$2.name,
     		type: "slot",
-    		source: "(72:16) <NavLink id=\\\"nav-home\\\" href=\\\"/\\\" style=\\\"text-decoration:none\\\">",
+    		source: "(78:16) <NavLink id=\\\"nav-home\\\" href=\\\"/\\\" style=\\\"text-decoration:none\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (71:12) <NavItem>
+    // (77:12) <NavItem>
     function create_default_slot_6$2(ctx) {
     	let navlink;
     	let current;
@@ -15827,7 +15331,7 @@ var app = (function () {
     		p: function update(ctx, dirty) {
     			const navlink_changes = {};
 
-    			if (dirty & /*$$scope*/ 8192) {
+    			if (dirty & /*$$scope*/ 131072) {
     				navlink_changes.$$scope = { dirty, ctx };
     			}
 
@@ -15851,14 +15355,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_6$2.name,
     		type: "slot",
-    		source: "(71:12) <NavItem>",
+    		source: "(77:12) <NavItem>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (75:16) <NavLink id="nav-info" href="/#/info" style="text-decoration:none">
+    // (81:16) <NavLink id="nav-info" href="/#/info" style="text-decoration:none">
     function create_default_slot_5$2(ctx) {
     	let t;
 
@@ -15878,14 +15382,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_5$2.name,
     		type: "slot",
-    		source: "(75:16) <NavLink id=\\\"nav-info\\\" href=\\\"/#/info\\\" style=\\\"text-decoration:none\\\">",
+    		source: "(81:16) <NavLink id=\\\"nav-info\\\" href=\\\"/#/info\\\" style=\\\"text-decoration:none\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (74:12) <NavItem>
+    // (80:12) <NavItem>
     function create_default_slot_4$2(ctx) {
     	let navlink;
     	let current;
@@ -15912,7 +15416,7 @@ var app = (function () {
     		p: function update(ctx, dirty) {
     			const navlink_changes = {};
 
-    			if (dirty & /*$$scope*/ 8192) {
+    			if (dirty & /*$$scope*/ 131072) {
     				navlink_changes.$$scope = { dirty, ctx };
     			}
 
@@ -15936,14 +15440,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_4$2.name,
     		type: "slot",
-    		source: "(74:12) <NavItem>",
+    		source: "(80:12) <NavItem>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (70:8) <Nav class = "bg-light">
+    // (76:8) <Nav class = "bg-light">
     function create_default_slot_3$2(ctx) {
     	let navitem0;
     	let t;
@@ -15981,14 +15485,14 @@ var app = (function () {
     		p: function update(ctx, dirty) {
     			const navitem0_changes = {};
 
-    			if (dirty & /*$$scope*/ 8192) {
+    			if (dirty & /*$$scope*/ 131072) {
     				navitem0_changes.$$scope = { dirty, ctx };
     			}
 
     			navitem0.$set(navitem0_changes);
     			const navitem1_changes = {};
 
-    			if (dirty & /*$$scope*/ 8192) {
+    			if (dirty & /*$$scope*/ 131072) {
     				navitem1_changes.$$scope = { dirty, ctx };
     			}
 
@@ -16016,14 +15520,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_3$2.name,
     		type: "slot",
-    		source: "(70:8) <Nav class = \\\"bg-light\\\">",
+    		source: "(76:8) <Nav class = \\\"bg-light\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (118:24) <Button color="primary" on:click="{()=>updateFert()}">
+    // (124:24) <Button color="primary" on:click="{()=>updateFert()}">
     function create_default_slot_2$2(ctx) {
     	let t;
 
@@ -16043,14 +15547,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_2$2.name,
     		type: "slot",
-    		source: "(118:24) <Button color=\\\"primary\\\" on:click=\\\"{()=>updateFert()}\\\">",
+    		source: "(124:24) <Button color=\\\"primary\\\" on:click=\\\"{()=>updateFert()}\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (79:8) <Table bordered class="text-center">
+    // (85:8) <Table bordered class="text-center">
     function create_default_slot_1$2(ctx) {
     	let thead;
     	let tr0;
@@ -16136,33 +15640,33 @@ var app = (function () {
     			t16 = space();
     			td5 = element("td");
     			create_component(button.$$.fragment);
-    			add_location(th0, file$3, 81, 20, 2744);
-    			add_location(th1, file$3, 84, 20, 2827);
-    			add_location(th2, file$3, 87, 20, 2910);
-    			add_location(th3, file$3, 90, 20, 2997);
-    			add_location(th4, file$3, 93, 20, 3095);
-    			add_location(tr0, file$3, 80, 16, 2718);
-    			add_location(thead, file$3, 79, 12, 2693);
-    			add_location(td0, file$3, 100, 20, 3281);
-    			add_location(td1, file$3, 103, 20, 3372);
+    			add_location(th0, file$3, 87, 20, 2852);
+    			add_location(th1, file$3, 90, 20, 2935);
+    			add_location(th2, file$3, 93, 20, 3018);
+    			add_location(th3, file$3, 96, 20, 3105);
+    			add_location(th4, file$3, 99, 20, 3203);
+    			add_location(tr0, file$3, 86, 16, 2826);
+    			add_location(thead, file$3, 85, 12, 2801);
+    			add_location(td0, file$3, 106, 20, 3389);
+    			add_location(td1, file$3, 109, 20, 3480);
     			attr_dev(input0, "type", "number");
     			attr_dev(input0, "placeholder", "0.00");
     			attr_dev(input0, "min", "0");
-    			add_location(input0, file$3, 107, 24, 3490);
-    			add_location(td2, file$3, 106, 20, 3460);
+    			add_location(input0, file$3, 113, 24, 3598);
+    			add_location(td2, file$3, 112, 20, 3568);
     			attr_dev(input1, "type", "number");
     			attr_dev(input1, "placeholder", "0.00");
     			attr_dev(input1, "min", "0");
-    			add_location(input1, file$3, 110, 24, 3642);
-    			add_location(td3, file$3, 109, 20, 3612);
+    			add_location(input1, file$3, 116, 24, 3750);
+    			add_location(td3, file$3, 115, 20, 3720);
     			attr_dev(input2, "type", "number");
     			attr_dev(input2, "placeholder", "0.00");
     			attr_dev(input2, "min", "0");
-    			add_location(input2, file$3, 113, 24, 3793);
-    			add_location(td4, file$3, 112, 20, 3763);
-    			add_location(td5, file$3, 116, 20, 3920);
-    			add_location(tr1, file$3, 99, 16, 3255);
-    			add_location(tbody, file$3, 98, 12, 3230);
+    			add_location(input2, file$3, 119, 24, 3901);
+    			add_location(td4, file$3, 118, 20, 3871);
+    			add_location(td5, file$3, 122, 20, 4028);
+    			add_location(tr1, file$3, 105, 16, 3363);
+    			add_location(tbody, file$3, 104, 12, 3338);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, thead, anchor);
@@ -16229,7 +15733,7 @@ var app = (function () {
 
     			const button_changes = {};
 
-    			if (dirty & /*$$scope*/ 8192) {
+    			if (dirty & /*$$scope*/ 131072) {
     				button_changes.$$scope = { dirty, ctx };
     			}
 
@@ -16258,14 +15762,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_1$2.name,
     		type: "slot",
-    		source: "(79:8) <Table bordered class=\\\"text-center\\\">",
+    		source: "(85:8) <Table bordered class=\\\"text-center\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (123:8) <Button on:click="{pop}">
+    // (129:8) <Button on:click="{pop}">
     function create_default_slot$2(ctx) {
     	let t;
 
@@ -16285,7 +15789,7 @@ var app = (function () {
     		block,
     		id: create_default_slot$2.name,
     		type: "slot",
-    		source: "(123:8) <Button on:click=\\\"{pop}\\\">",
+    		source: "(129:8) <Button on:click=\\\"{pop}\\\">",
     		ctx
     	});
 
@@ -16344,8 +15848,8 @@ var app = (function () {
     			t3 = space();
     			create_component(button.$$.fragment);
     			attr_dev(h1, "class", "text-center");
-    			add_location(h1, file$3, 77, 8, 2598);
-    			add_location(main, file$3, 68, 4, 2246);
+    			add_location(h1, file$3, 83, 8, 2706);
+    			add_location(main, file$3, 74, 4, 2354);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -16364,21 +15868,21 @@ var app = (function () {
     		p: function update(ctx, [dirty]) {
     			const nav_changes = {};
 
-    			if (dirty & /*$$scope*/ 8192) {
+    			if (dirty & /*$$scope*/ 131072) {
     				nav_changes.$$scope = { dirty, ctx };
     			}
 
     			nav.$set(nav_changes);
     			const table_changes = {};
 
-    			if (dirty & /*$$scope, updRel, updAbs, updQuan, updYear, updCountry*/ 8223) {
+    			if (dirty & /*$$scope, updRel, updAbs, updQuan, updYear, updCountry*/ 131103) {
     				table_changes.$$scope = { dirty, ctx };
     			}
 
     			table.$set(table_changes);
     			const button_changes = {};
 
-    			if (dirty & /*$$scope*/ 8192) {
+    			if (dirty & /*$$scope*/ 131072) {
     				button_changes.$$scope = { dirty, ctx };
     			}
 
@@ -16428,6 +15932,10 @@ var app = (function () {
     	let updQuan = 0.;
     	let updAbs = 0.;
     	let updRel = 0.;
+    	let visibleError = false;
+    	let visibleMsg = false;
+    	let errorMsg = "";
+    	let msg = "";
     	onMount(getFerts);
 
     	async function getFerts() {
@@ -16512,6 +16020,7 @@ var app = (function () {
     		NavLink,
     		NavItem,
     		Nav,
+    		Alert,
     		API: API$1,
     		params,
     		fertStat,
@@ -16520,6 +16029,10 @@ var app = (function () {
     		updQuan,
     		updAbs,
     		updRel,
+    		visibleError,
+    		visibleMsg,
+    		errorMsg,
+    		msg,
     		getFerts,
     		updateFert
     	});
@@ -16532,6 +16045,10 @@ var app = (function () {
     		if ('updQuan' in $$props) $$invalidate(2, updQuan = $$props.updQuan);
     		if ('updAbs' in $$props) $$invalidate(3, updAbs = $$props.updAbs);
     		if ('updRel' in $$props) $$invalidate(4, updRel = $$props.updRel);
+    		if ('visibleError' in $$props) visibleError = $$props.visibleError;
+    		if ('visibleMsg' in $$props) visibleMsg = $$props.visibleMsg;
+    		if ('errorMsg' in $$props) errorMsg = $$props.errorMsg;
+    		if ('msg' in $$props) msg = $$props.msg;
     	};
 
     	if ($$props && "$$inject" in $$props) {
@@ -19239,7 +18756,7 @@ var app = (function () {
     		c: function create() {
     			main = element("main");
     			create_component(router.$$.fragment);
-    			add_location(main, file, 67, 0, 1735);
+    			add_location(main, file, 68, 0, 1741);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -19286,7 +18803,7 @@ var app = (function () {
     		'/fertilizers-stats': FertilizersTable,
     		'/agriculturalproduction-stats': ProductionTable,
     		'/info': Info,
-    		'/GroupGraph': GroupGraph,
+    		'/MyGraph': MyGraph,
     		//DANPUCJIM ROUTES
     		'/landusage-stats/:country/:year': EditLandusageStats,
     		//ALJORPOY ROUTES
@@ -19304,7 +18821,7 @@ var app = (function () {
     	$$self.$capture_state = () => ({
     		Router,
     		Home,
-    		GroupGraph,
+    		MyGraph,
     		FertilizersTables: FertilizersTable,
     		LandusageTables,
     		ProductionTables: ProductionTable,

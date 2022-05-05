@@ -15,8 +15,8 @@ module.exports.register = (app) => {
         country:"Afghanistan",
         year:2017,
         quantity:3.14,
-        absolute_change:888030,
-        relative_change:296972060,
+        absolute_change:8.30,
+        relative_change:296,
     },
     {  
         country:"Africa",
@@ -42,7 +42,7 @@ module.exports.register = (app) => {
     {  
         country:"brasil",
         year:2017,
-        quantity:150000,
+        quantity:15.7,
         absolute_change:6.225,
         relative_change:3.225,
     },

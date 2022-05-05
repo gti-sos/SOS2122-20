@@ -2,7 +2,7 @@
     import{onMount} from 'svelte';
     import {pop} from 'svelte-spa-router';
     import {Table,Button} from 'sveltestrap';
-    import{NavLink,NavItem,Nav
+    import{NavLink,NavItem,Nav,Alert
         } from 'sveltestrap';
     
     const API = "api/v1/fertilizers-stats";
@@ -13,6 +13,12 @@
     let updQuan = 0.;
     let updAbs = 0.;
     let updRel = 0.;
+
+    
+    let visibleError = false;
+	let visibleMsg = false;
+	let errorMsg = "";
+	let msg = "";
     
     onMount(getFerts);
     
