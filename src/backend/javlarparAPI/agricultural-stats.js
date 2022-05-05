@@ -12,28 +12,28 @@ module.exports.register = (app) => {
     var agricultural_stats_initial = [
         {
             country:"Afghanistan",
-            year: 2018,
+            year: 2016,
             production: 4.02,
             absolute_change:434.520,
             relative_change:"12%"
         },
         {
             country:"Africa",
-            year: 2018,
+            year: 2014,
             production: 191.56,
             absolute_change:146.68,
             relative_change:"327%"
         },
         {
             country:"Albania",
-            year: 2018,
+            year: 2016,
             production: 678.196,
             absolute_change:385.797,
             relative_change:"132%"
         },
         {
             country:"Argeria",
-            year: 2018,
+            year: 2014,
             production: 6.06,
             absolute_change:5.13,
             relative_change:"549%"

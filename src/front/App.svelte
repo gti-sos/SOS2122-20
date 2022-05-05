@@ -3,6 +3,7 @@
 	import Home from './home.svelte';
 	
 	import MyGraph from './alejorpoyFront/MyGraph.svelte';
+	import GroupGraph from './GroupGraph.svelte';
 
 	//import ContactsTable from './front/danpucjimFront/landusageTables.svelte';
 	import FertilizersTables from './alejorpoyFront/fertilizersTable.svelte';
@@ -24,6 +25,7 @@
 	'/agriculturalproduction-stats': ProductionTables,
 	'/info':Info,
 	'/MyGraph':MyGraph,
+	'/GroupGraph':GroupGraph,
 
 	//DANPUCJIM ROUTES
 	'/landusage-stats/:country/:year':EditLandusageStats,

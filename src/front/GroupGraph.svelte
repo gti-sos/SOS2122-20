@@ -50,7 +50,7 @@
         dates.forEach((e) => {
           var yAxis = builtAData
             .filter((d) => d.year === e)
-            .map((dr) => dr["built-area"])
+            .map((dr) => dr["built_area"])
             .reduce((acc, dr) => dr + acc);
           
           builtAChartData.push(Math.round(yAxis));
@@ -118,7 +118,7 @@
     //Creamos la grafica
     Highcharts.chart("container", {
       chart: {
-        type: "bar",
+        type: "line",
       },
       title: {
         text: "Integración de grupo",

@@ -13,14 +13,14 @@ module.exports.register = (app) => {
     var fertilizers_stats_initial = [
         {
         country:"Afghanistan",
-        year:2017,
+        year:2018,
         quantity:3.14,
         absolute_change:8.30,
         relative_change:296,
     },
     {  
         country:"Africa",
-        year:2017,
+        year:2014,
         quantity:6.80,
         absolute_change:14.64,
         relative_change:50,
@@ -48,7 +48,7 @@ module.exports.register = (app) => {
     },
     {  
         country:"Americas",
-        year:2017,
+        year:2014,
         quantity:20.3,
         absolute_change:6.41,
         relative_change:9,
