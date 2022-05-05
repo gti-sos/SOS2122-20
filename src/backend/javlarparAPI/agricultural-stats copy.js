@@ -25,35 +25,35 @@ var agriculturalproduction_stats=[
         year: 2018,
         production: 4.02,
         absolute_change:434.520,
-        relative_change:"12%"
+        relative_change:12
     },
     {
         country:"Africa",
         year: 2018,
         production: 191.56,
         absolute_change:146.68,
-        relative_change:"327%"
+        relative_change:327
     },
     {
         country:"Albania",
         year: 2018,
         production: 678.196,
         absolute_change:385.797,
-        relative_change:"132%"
+        relative_change:132
     },
     {
-        country:"Argeria",
+        country:"Argelia",
         year: 2018,
         production: 6.06,
         absolute_change:5.13,
-        relative_change:"549%"
+        relative_change:549
     },
     {
         country:"Americas",
         year: 2018,
         production: 763.59,
         absolute_change:539.36,
-        relative_change:"241%"
+        relative_change:241
     }
     ];
 

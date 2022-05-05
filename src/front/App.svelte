@@ -4,6 +4,7 @@
 	
 	import MyGraph from './alejorpoyFront/MyGraph.svelte';
 	import GroupGraph from './GroupGraph.svelte';
+	import MyGraph_javlarpar from './javlarparFront/MyGraph_javlarpar.svelte';
 
 	//import ContactsTable from './front/danpucjimFront/landusageTables.svelte';
 	import FertilizersTables from './alejorpoyFront/fertilizersTable.svelte';
@@ -26,6 +27,7 @@
 	'/info':Info,
 	'/MyGraph':MyGraph,
 	'/GroupGraph':GroupGraph,
+	'/MyGraph_javlarpar':MyGraph_javlarpar,
 
 	//DANPUCJIM ROUTES
 	'/landusage-stats/:country/:year':EditLandusageStats,
