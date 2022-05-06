@@ -8503,22 +8503,22 @@ var app = (function () {
     			div = element("div");
     			t1 = space();
     			p = element("p");
-    			p.textContent = "Los gráficos de spline son gráficos de líneas suavizadas y este ejemplo\r\n                 muestra un gráfico de spline invertido. Invertir el gráfico significa que el eje X se coloca como el eje vertical y el eje Y se coloca como el eje horizontal. \r\n                 Esto puede ser más intuitivo para ciertos conjuntos de datos, como en este gráfico donde el eje X representa la altitud vertical.";
+    			p.textContent = "Los gráficos de spline son gráficos de líneas suavizadas y este ejemplo\r\n                muestra un gráfico de spline invertido. Invertir el gráfico significa que el eje X se coloca como el eje vertical y el eje Y se coloca como el eje horizontal. \r\n                Esto puede ser más intuitivo para ciertos conjuntos de datos, como en este gráfico donde el eje X representa la altitud vertical.";
     			if (!src_url_equal(script0.src, script0_src_value = "https://code.highcharts.com/highcharts.js")) attr_dev(script0, "src", script0_src_value);
-    			add_location(script0, file$9, 101, 8, 2777);
+    			add_location(script0, file$9, 83, 8, 2239);
     			if (!src_url_equal(script1.src, script1_src_value = "https://code.highcharts.com/modules/exporting.js")) attr_dev(script1, "src", script1_src_value);
-    			add_location(script1, file$9, 102, 8, 2852);
+    			add_location(script1, file$9, 84, 8, 2314);
     			if (!src_url_equal(script2.src, script2_src_value = "https://code.highcharts.com/modules/export-data.js")) attr_dev(script2, "src", script2_src_value);
-    			add_location(script2, file$9, 103, 8, 2934);
+    			add_location(script2, file$9, 85, 8, 2396);
     			if (!src_url_equal(script3.src, script3_src_value = "https://code.highcharts.com/modules/accessibility.js")) attr_dev(script3, "src", script3_src_value);
-    			add_location(script3, file$9, 104, 8, 3018);
+    			add_location(script3, file$9, 86, 8, 2480);
     			attr_dev(div, "id", "container");
-    			add_location(div, file$9, 111, 12, 3224);
+    			add_location(div, file$9, 93, 12, 2686);
     			attr_dev(p, "class", "highcharts-description");
-    			add_location(p, file$9, 112, 12, 3264);
+    			add_location(p, file$9, 94, 12, 2726);
     			attr_dev(figure, "class", "highcharts-figure");
-    			add_location(figure, file$9, 110, 8, 3176);
-    			add_location(main, file$9, 109, 4, 3160);
+    			add_location(figure, file$9, 92, 8, 2638);
+    			add_location(main, file$9, 91, 4, 2622);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -8578,7 +8578,7 @@ var app = (function () {
     	let absolute_change = [];
     	let relative_change = [];
 
-    	async function getPEStats() {
+    	async function loadGraph() {
     		console.log("Fetching stats....");
     		const res = await fetch("/api/v1/agriculturalproduction-stats");
 
@@ -8598,21 +8598,9 @@ var app = (function () {
     		} else {
     			console.log("Error cargando los datos");
     		}
-    	}
 
-    	async function getData() {
-    		const res = await fetch("/api/v1/agriculturalproduction-stats");
+    		console.log("Comprobando");
 
-    		if (res.ok) {
-    			const json = await res.json();
-    			apiData = json;
-    			loadGraph();
-    		} else {
-    			console.log("Error in request");
-    		}
-    	}
-
-    	async function loadGraph() {
     		Highcharts.chart('container', {
     			chart: { type: 'spline', inverted: true },
     			title: { text: 'Produccion de cereales' },
@@ -8641,7 +8629,6 @@ var app = (function () {
     		});
     	}
 
-    	onMount(getPEStats);
     	const writable_props = [];
 
     	Object.keys($$props).forEach(key => {
@@ -8658,8 +8645,6 @@ var app = (function () {
     		production,
     		absolute_change,
     		relative_change,
-    		getPEStats,
-    		getData,
     		loadGraph
     	});
 
