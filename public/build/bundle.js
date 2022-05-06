@@ -8746,20 +8746,20 @@ var app = (function () {
     			p = element("p");
     			p.textContent = "Los gráficos de tipo column son gráficos que muestarn barras rectangulares de forma horizontal. Este gráfico se encuentra invertido,\r\n                invertir el gráfico significa que el eje X se coloca como el eje vertical y el eje Y se coloca como el eje horizontal. \r\n                Esto puede ser más intuitivo para ciertos conjuntos de datos, como en este gráfico donde el eje X representa la cantidad total.";
     			if (!src_url_equal(script0.src, script0_src_value = "https://code.highcharts.com/highcharts.js")) attr_dev(script0, "src", script0_src_value);
-    			add_location(script0, file$8, 102, 8, 2654);
+    			add_location(script0, file$8, 101, 8, 2646);
     			if (!src_url_equal(script1.src, script1_src_value = "https://code.highcharts.com/modules/exporting.js")) attr_dev(script1, "src", script1_src_value);
-    			add_location(script1, file$8, 103, 8, 2729);
+    			add_location(script1, file$8, 102, 8, 2721);
     			if (!src_url_equal(script2.src, script2_src_value = "https://code.highcharts.com/modules/export-data.js")) attr_dev(script2, "src", script2_src_value);
-    			add_location(script2, file$8, 104, 8, 2811);
+    			add_location(script2, file$8, 103, 8, 2803);
     			if (!src_url_equal(script3.src, script3_src_value = "https://code.highcharts.com/modules/accessibility.js")) attr_dev(script3, "src", script3_src_value);
-    			add_location(script3, file$8, 105, 8, 2895);
+    			add_location(script3, file$8, 104, 8, 2887);
     			attr_dev(div, "id", "container");
-    			add_location(div, file$8, 112, 12, 3101);
+    			add_location(div, file$8, 111, 12, 3093);
     			attr_dev(p, "class", "highcharts-description");
-    			add_location(p, file$8, 113, 12, 3141);
+    			add_location(p, file$8, 112, 12, 3133);
     			attr_dev(figure, "class", "highcharts-figure");
-    			add_location(figure, file$8, 111, 8, 3053);
-    			add_location(main, file$8, 110, 4, 3037);
+    			add_location(figure, file$8, 110, 8, 3045);
+    			add_location(main, file$8, 109, 4, 3029);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -8819,7 +8819,7 @@ var app = (function () {
     	let built_area = [];
     	let cropland_area = [];
 
-    	async function getStats() {
+    	async function loadGraph() {
     		console.log("Fetching stats....");
     		const res = await fetch("/api/v1/landusage-stats");
 
@@ -8839,9 +8839,9 @@ var app = (function () {
     		} else {
     			console.log("Error cargando los datos");
     		}
-    	}
 
-    	async function loadGraph() {
+    		console.log("Comprobando");
+
     		Highcharts.chart('container', {
     			chart: { type: 'bar' },
     			title: { text: 'LandUsage Stats' },
@@ -8860,7 +8860,7 @@ var app = (function () {
     				},
     				labels: { overflow: 'justify' }
     			},
-    			tooltip: { valueSuffix: ' millions' },
+    			tooltip: { valueSuffix: ' million km2' },
     			plotOptions: { bar: { dataLabels: { enabled: true } } },
     			legend: {
     				layout: 'vertical',
@@ -8880,18 +8880,17 @@ var app = (function () {
     					data: built_area
     				},
     				{
-    					name: 'Area de cultivo',
+    					name: 'Area de pasto',
     					data: grazing_area
     				},
     				{
-    					name: 'Area de pasto',
+    					name: 'Area de cultivo',
     					data: cropland_area
     				}
     			]
     		});
     	}
 
-    	onMount(getStats);
     	const writable_props = [];
 
     	Object.keys($$props).forEach(key => {
@@ -8908,7 +8907,6 @@ var app = (function () {
     		grazing_area,
     		built_area,
     		cropland_area,
-    		getStats,
     		loadGraph
     	});
 

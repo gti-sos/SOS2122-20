@@ -12,8 +12,9 @@
         let grazing_area = [];
         let built_area = [];
         let cropland_area = []; 
-        async function getStats(){
-            console.log("Fetching stats....");
+    
+    async function loadGraph(){
+        console.log("Fetching stats....");
             const res = await fetch("/api/v1/landusage-stats");
             if(res.ok){
                 const data = await res.json();
@@ -30,9 +31,7 @@
             }else{
                 console.log("Error cargando los datos");
             }
-        }
-    
-    async function loadGraph(){
+        console.log("Comprobando");
         Highcharts.chart('container', {
     chart: {
         type: 'bar'
@@ -60,7 +59,7 @@
         }
     },
     tooltip: {
-        valueSuffix: ' millions'
+        valueSuffix: ' million km2'
     },
     plotOptions: {
         bar: {
@@ -88,14 +87,14 @@
         name: 'Area construida',
         data: built_area 
     }, {
-        name: 'Area de cultivo',
+        name: 'Area de pasto',
         data: grazing_area
     }, {
-        name: 'Area de pasto',
+        name: 'Area de cultivo',
         data: cropland_area
     }]});
     }
-    onMount(getStats);
+    //onMount(loadGraph);
     </script>
     <svelte:head>
     
