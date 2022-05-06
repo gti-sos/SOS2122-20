@@ -12,7 +12,7 @@ const delay = ms => new Promise(res => setTimeout(res,ms));
     let quantity = [];
     let absolute_change = [];
     let relative_change = []; 
-    async function getPEStats(){
+    async function loadGraph(){
         console.log("Fetching stats....");
         const res = await fetch("/api/v1/fertilizers-stats");
         if(res.ok){
@@ -30,24 +30,8 @@ const delay = ms => new Promise(res => setTimeout(res,ms));
         }else{
             console.log("Error cargando los datos");
 		}
-    }
-
-async function getData(){
-    const res= await fetch("/api/v1/fertilizers-stats");
-    if(res.ok){
-        const json = await res.json();
-        apiData = json;
-        loadGraph();
-
-    }else{
-        console.log("Error in request");
-    }
-}
-
-async function loadGraph(){
-
-
-Highcharts.chart('container', {
+        console.log("Comprobando");
+        Highcharts.chart('container', {
     chart: {
         type: 'column',
         inverted: true
@@ -95,7 +79,8 @@ Highcharts.chart('container', {
     ]
 });
 }
-onMount(getPEStats);
+   
+//onMount(getPEStats);
 </script>
 <svelte:head>
 

@@ -27,7 +27,7 @@
 	'/fertilizers-stats': FertilizersTables,
 	'/agriculturalproduction-stats': ProductionTables,
 	'/info':Info,
-	'/MyGraph':MyGraph,
+	'/fertilizers-stats/chart':MyGraph,
 	'/GroupGraph':GroupGraph,
 	'/MyGraph_javlarpar':MyGraph_javlarpar,
 

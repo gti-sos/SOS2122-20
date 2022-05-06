@@ -7566,20 +7566,20 @@ var app = (function () {
     			p = element("p");
     			p.textContent = "Los gráficos de tipo column son gráficos que muestarn barras rectangulares de forma horizontal. Este gráfico se encuentra invertido,\r\n            invertir el gráfico significa que el eje X se coloca como el eje vertical y el eje Y se coloca como el eje horizontal. \r\n            Esto puede ser más intuitivo para ciertos conjuntos de datos, como en este gráfico donde el eje X representa la cantidad total.";
     			if (!src_url_equal(script0.src, script0_src_value = "https://code.highcharts.com/highcharts.js")) attr_dev(script0, "src", script0_src_value);
-    			add_location(script0, file$b, 102, 4, 2359);
+    			add_location(script0, file$b, 87, 4, 2111);
     			if (!src_url_equal(script1.src, script1_src_value = "https://code.highcharts.com/modules/exporting.js")) attr_dev(script1, "src", script1_src_value);
-    			add_location(script1, file$b, 103, 4, 2430);
+    			add_location(script1, file$b, 88, 4, 2182);
     			if (!src_url_equal(script2.src, script2_src_value = "https://code.highcharts.com/modules/export-data.js")) attr_dev(script2, "src", script2_src_value);
-    			add_location(script2, file$b, 104, 4, 2508);
+    			add_location(script2, file$b, 89, 4, 2260);
     			if (!src_url_equal(script3.src, script3_src_value = "https://code.highcharts.com/modules/accessibility.js")) attr_dev(script3, "src", script3_src_value);
-    			add_location(script3, file$b, 105, 4, 2588);
+    			add_location(script3, file$b, 90, 4, 2340);
     			attr_dev(div, "id", "container");
-    			add_location(div, file$b, 112, 8, 2766);
+    			add_location(div, file$b, 97, 8, 2518);
     			attr_dev(p, "class", "highcharts-description");
-    			add_location(p, file$b, 113, 8, 2802);
+    			add_location(p, file$b, 98, 8, 2554);
     			attr_dev(figure, "class", "highcharts-figure");
-    			add_location(figure, file$b, 111, 4, 2722);
-    			add_location(main, file$b, 110, 0, 2710);
+    			add_location(figure, file$b, 96, 4, 2474);
+    			add_location(main, file$b, 95, 0, 2462);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -7639,7 +7639,7 @@ var app = (function () {
     	let absolute_change = [];
     	let relative_change = [];
 
-    	async function getPEStats() {
+    	async function loadGraph() {
     		console.log("Fetching stats....");
     		const res = await fetch("/api/v1/fertilizers-stats");
 
@@ -7659,21 +7659,9 @@ var app = (function () {
     		} else {
     			console.log("Error cargando los datos");
     		}
-    	}
 
-    	async function getData() {
-    		const res = await fetch("/api/v1/fertilizers-stats");
+    		console.log("Comprobando");
 
-    		if (res.ok) {
-    			const json = await res.json();
-    			apiData = json;
-    			loadGraph();
-    		} else {
-    			console.log("Error in request");
-    		}
-    	}
-
-    	async function loadGraph() {
     		Highcharts.chart('container', {
     			chart: { type: 'column', inverted: true },
     			title: { text: 'Fertilizantes por paises' },
@@ -7705,7 +7693,6 @@ var app = (function () {
     		});
     	}
 
-    	onMount(getPEStats);
     	const writable_props = [];
 
     	Object.keys($$props).forEach(key => {
@@ -7722,8 +7709,6 @@ var app = (function () {
     		quantity,
     		absolute_change,
     		relative_change,
-    		getPEStats,
-    		getData,
     		loadGraph
     	});
 
@@ -19939,7 +19924,7 @@ var app = (function () {
     		c: function create() {
     			main = element("main");
     			create_component(router.$$.fragment);
-    			add_location(main, file, 74, 0, 2056);
+    			add_location(main, file, 74, 0, 2072);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -19987,7 +19972,7 @@ var app = (function () {
     		'/fertilizers-stats': FertilizersTable,
     		'/agriculturalproduction-stats': ProductionTable,
     		'/info': Info,
-    		'/MyGraph': MyGraph,
+    		'/fertilizers-stats/chart': MyGraph,
     		'/GroupGraph': GroupGraph,
     		'/MyGraph_javlarpar': MyGraph_javlarpar,
     		//DANPUCJIM ROUTES
