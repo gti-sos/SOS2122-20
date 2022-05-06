@@ -7,6 +7,7 @@
 	import MyGraph_javlarpar from './javlarparFront/MyGraph_javlarpar.svelte';
 
 	//import ContactsTable from './front/danpucjimFront/landusageTables.svelte';
+	import landusage_charts from './danpucjimFront/landusage_charts.svelte';
 	import FertilizersTables from './alejorpoyFront/fertilizersTable.svelte';
 	import LandusageTables from './danpucjimFront/landusageTables.svelte';
 	import ProductionTables from './javlarparFront/productionTable.svelte';
@@ -22,6 +23,7 @@
 	const routes = {
 	'/':Home,
 	'/landusage-stats': LandusageTables,
+	'/landusage-stats/chart':landusage_charts,
 	'/fertilizers-stats': FertilizersTables,
 	'/agriculturalproduction-stats': ProductionTables,
 	'/info':Info,
