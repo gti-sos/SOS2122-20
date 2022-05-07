@@ -87,6 +87,9 @@
                     <Button color="primary" on:click="{function(){
                         window.location.href = "/api/v1/landusage-stats";
                     }}">APIV1</Button>
+                    <Button color="primary" on:click="{function(){
+                        window.location.href = "/#/fertilizers-stats/chart";
+                    }}">Grafico</Button>
                 </CardFooter>
             
         </Card>
@@ -110,6 +113,9 @@
                     <Button color="primary" on:click="{function(){
                         window.location.href = "/api/v1/agriculturalproduction-stats";
                     }}">APIV1</Button>
+                    <Button color="primary" on:click="{function(){
+                        window.location.href = "/#/MyGraph_javlarpar";
+                    }}">Grafico</Button>
                 </CardFooter>
             
         </Card>

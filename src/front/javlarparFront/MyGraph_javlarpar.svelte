@@ -1,7 +1,8 @@
 <script>
 
     import { onMount } from 'svelte';
-    
+    import {Table,Button} from 'sveltestrap';
+    import {pop} from 'svelte-spa-router';
     let apiData = {};
     
     const delay = ms => new Promise(res => setTimeout(res,ms));
@@ -98,6 +99,10 @@
                 Esto puede ser más intuitivo para ciertos conjuntos de datos, como en este gráfico donde el eje X representa la altitud vertical.
             </p>
         </figure>
-        
+        <Button on:click="{pop}">
+            Volver
+        </Button>
     </main>
+
+
     
