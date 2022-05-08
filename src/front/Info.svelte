@@ -37,7 +37,7 @@
                 -(javlarpar)
             </h4>
             <h4>
-                <a href="http://localhost:8081/#/GroupGraph">Grafico de grupo</a>
+                <a href="/#/GroupGraph">Grafico de grupo</a>
             </h4>
     
             <h4 class="mt-4 mb-4">

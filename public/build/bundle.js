@@ -19978,15 +19978,15 @@ var app = (function () {
     			attr_dev(a2, "class", "svelte-121fned");
     			add_location(a2, file$1, 35, 16, 1202);
     			add_location(h42, file$1, 34, 12, 1180);
-    			attr_dev(a3, "href", "http://localhost:8081/#/GroupGraph");
+    			attr_dev(a3, "href", "/#/GroupGraph");
     			attr_dev(a3, "class", "svelte-121fned");
     			add_location(a3, file$1, 39, 16, 1354);
     			add_location(h43, file$1, 38, 12, 1332);
     			attr_dev(a4, "href", "http://github.com/gti-sos/SOS2122-20");
     			attr_dev(a4, "class", "svelte-121fned");
-    			add_location(a4, file$1, 43, 29, 1511);
+    			add_location(a4, file$1, 43, 29, 1490);
     			attr_dev(h44, "class", "mt-4 mb-4");
-    			add_location(h44, file$1, 42, 12, 1458);
+    			add_location(h44, file$1, 42, 12, 1437);
     			attr_dev(div, "class", "text-center");
     			add_location(div, file$1, 19, 8, 666);
     			add_location(main, file$1, 10, 4, 305);
