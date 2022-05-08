@@ -8842,7 +8842,7 @@ var app = (function () {
     			div = element("div");
     			t1 = space();
     			p = element("p");
-    			p.textContent = "Los gráficos de tipo column son gráficos que muestarn barras rectangulares de forma horizontal. Este gráfico se encuentra invertido,\r\n                invertir el gráfico significa que el eje X se coloca como el eje vertical y el eje Y se coloca como el eje horizontal. \r\n                Esto puede ser más intuitivo para ciertos conjuntos de datos, como en este gráfico donde el eje X representa la cantidad total.";
+    			p.textContent = "Grafico Tipo Bar";
     			if (!src_url_equal(script0.src, script0_src_value = "https://code.highcharts.com/highcharts.js")) attr_dev(script0, "src", script0_src_value);
     			add_location(script0, file$8, 101, 8, 2646);
     			if (!src_url_equal(script1.src, script1_src_value = "https://code.highcharts.com/modules/exporting.js")) attr_dev(script1, "src", script1_src_value);
@@ -8853,7 +8853,7 @@ var app = (function () {
     			add_location(script3, file$8, 104, 8, 2887);
     			attr_dev(div, "id", "container");
     			add_location(div, file$8, 111, 12, 3093);
-    			attr_dev(p, "class", "highcharts-description");
+    			attr_dev(p, "class", "highcharts-description mx-auto");
     			add_location(p, file$8, 112, 12, 3133);
     			attr_dev(figure, "class", "highcharts-figure");
     			add_location(figure, file$8, 110, 8, 3045);
@@ -18184,7 +18184,7 @@ var app = (function () {
     const file$1 = "src\\front\\Info.svelte";
 
     // (14:16) <NavLink id="nav-home" href="/" sytle="text-decoration:none">
-    function create_default_slot_30(ctx) {
+    function create_default_slot_31(ctx) {
     	let t;
 
     	const block = {
@@ -18201,7 +18201,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot_30.name,
+    		id: create_default_slot_31.name,
     		type: "slot",
     		source: "(14:16) <NavLink id=\\\"nav-home\\\" href=\\\"/\\\" sytle=\\\"text-decoration:none\\\">",
     		ctx
@@ -18211,7 +18211,7 @@ var app = (function () {
     }
 
     // (13:12) <NavItem>
-    function create_default_slot_29(ctx) {
+    function create_default_slot_30(ctx) {
     	let navlink;
     	let current;
 
@@ -18220,7 +18220,7 @@ var app = (function () {
     				id: "nav-home",
     				href: "/",
     				sytle: "text-decoration:none",
-    				$$slots: { default: [create_default_slot_30] },
+    				$$slots: { default: [create_default_slot_31] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -18237,7 +18237,7 @@ var app = (function () {
     		p: function update(ctx, dirty) {
     			const navlink_changes = {};
 
-    			if (dirty & /*$$scope*/ 2048) {
+    			if (dirty & /*$$scope*/ 4096) {
     				navlink_changes.$$scope = { dirty, ctx };
     			}
 
@@ -18259,7 +18259,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot_29.name,
+    		id: create_default_slot_30.name,
     		type: "slot",
     		source: "(13:12) <NavItem>",
     		ctx
@@ -18269,7 +18269,7 @@ var app = (function () {
     }
 
     // (17:16) <NavLink disabled id="nav-info" href="/#/info" style="text-decoration:none">
-    function create_default_slot_28(ctx) {
+    function create_default_slot_29(ctx) {
     	let t;
 
     	const block = {
@@ -18286,7 +18286,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot_28.name,
+    		id: create_default_slot_29.name,
     		type: "slot",
     		source: "(17:16) <NavLink disabled id=\\\"nav-info\\\" href=\\\"/#/info\\\" style=\\\"text-decoration:none\\\">",
     		ctx
@@ -18296,7 +18296,7 @@ var app = (function () {
     }
 
     // (16:12) <NavItem>
-    function create_default_slot_27(ctx) {
+    function create_default_slot_28(ctx) {
     	let navlink;
     	let current;
 
@@ -18306,7 +18306,7 @@ var app = (function () {
     				id: "nav-info",
     				href: "/#/info",
     				style: "text-decoration:none",
-    				$$slots: { default: [create_default_slot_28] },
+    				$$slots: { default: [create_default_slot_29] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -18323,7 +18323,7 @@ var app = (function () {
     		p: function update(ctx, dirty) {
     			const navlink_changes = {};
 
-    			if (dirty & /*$$scope*/ 2048) {
+    			if (dirty & /*$$scope*/ 4096) {
     				navlink_changes.$$scope = { dirty, ctx };
     			}
 
@@ -18345,7 +18345,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot_27.name,
+    		id: create_default_slot_28.name,
     		type: "slot",
     		source: "(16:12) <NavItem>",
     		ctx
@@ -18355,7 +18355,7 @@ var app = (function () {
     }
 
     // (12:8) <Nav class = "bg-light">
-    function create_default_slot_26(ctx) {
+    function create_default_slot_27(ctx) {
     	let navitem0;
     	let t;
     	let navitem1;
@@ -18363,7 +18363,7 @@ var app = (function () {
 
     	navitem0 = new NavItem({
     			props: {
-    				$$slots: { default: [create_default_slot_29] },
+    				$$slots: { default: [create_default_slot_30] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -18371,7 +18371,7 @@ var app = (function () {
 
     	navitem1 = new NavItem({
     			props: {
-    				$$slots: { default: [create_default_slot_27] },
+    				$$slots: { default: [create_default_slot_28] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -18392,14 +18392,14 @@ var app = (function () {
     		p: function update(ctx, dirty) {
     			const navitem0_changes = {};
 
-    			if (dirty & /*$$scope*/ 2048) {
+    			if (dirty & /*$$scope*/ 4096) {
     				navitem0_changes.$$scope = { dirty, ctx };
     			}
 
     			navitem0.$set(navitem0_changes);
     			const navitem1_changes = {};
 
-    			if (dirty & /*$$scope*/ 2048) {
+    			if (dirty & /*$$scope*/ 4096) {
     				navitem1_changes.$$scope = { dirty, ctx };
     			}
 
@@ -18425,7 +18425,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot_26.name,
+    		id: create_default_slot_27.name,
     		type: "slot",
     		source: "(12:8) <Nav class = \\\"bg-light\\\">",
     		ctx
@@ -18435,7 +18435,7 @@ var app = (function () {
     }
 
     // (49:16) <CardTitle class="text-center">
-    function create_default_slot_25(ctx) {
+    function create_default_slot_26(ctx) {
     	let t;
 
     	const block = {
@@ -18452,7 +18452,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot_25.name,
+    		id: create_default_slot_26.name,
     		type: "slot",
     		source: "(49:16) <CardTitle class=\\\"text-center\\\">",
     		ctx
@@ -18462,14 +18462,14 @@ var app = (function () {
     }
 
     // (48:12) <CardHeader>
-    function create_default_slot_24(ctx) {
+    function create_default_slot_25(ctx) {
     	let cardtitle;
     	let current;
 
     	cardtitle = new CardTitle({
     			props: {
     				class: "text-center",
-    				$$slots: { default: [create_default_slot_25] },
+    				$$slots: { default: [create_default_slot_26] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -18486,7 +18486,7 @@ var app = (function () {
     		p: function update(ctx, dirty) {
     			const cardtitle_changes = {};
 
-    			if (dirty & /*$$scope*/ 2048) {
+    			if (dirty & /*$$scope*/ 4096) {
     				cardtitle_changes.$$scope = { dirty, ctx };
     			}
 
@@ -18508,7 +18508,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot_24.name,
+    		id: create_default_slot_25.name,
     		type: "slot",
     		source: "(48:12) <CardHeader>",
     		ctx
@@ -18518,7 +18518,7 @@ var app = (function () {
     }
 
     // (53:16) <CardBody class="text-center">
-    function create_default_slot_23(ctx) {
+    function create_default_slot_24(ctx) {
     	let t;
 
     	const block = {
@@ -18535,7 +18535,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot_23.name,
+    		id: create_default_slot_24.name,
     		type: "slot",
     		source: "(53:16) <CardBody class=\\\"text-center\\\">",
     		ctx
@@ -18545,7 +18545,7 @@ var app = (function () {
     }
 
     // (58:20) <Button color="primary" on:click="{function(){                          window.location.href = "/#/landusage-stats";                      }}">
-    function create_default_slot_22(ctx) {
+    function create_default_slot_23(ctx) {
     	let t;
 
     	const block = {
@@ -18562,7 +18562,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot_22.name,
+    		id: create_default_slot_23.name,
     		type: "slot",
     		source: "(58:20) <Button color=\\\"primary\\\" on:click=\\\"{function(){                          window.location.href = \\\"/#/landusage-stats\\\";                      }}\\\">",
     		ctx
@@ -18572,7 +18572,7 @@ var app = (function () {
     }
 
     // (61:20) <Button color="primary" on:click="{function(){                          window.location.href = "https://documenter.getpostman.com/view/19481666/Uyr7HyFn";                      }}">
-    function create_default_slot_21(ctx) {
+    function create_default_slot_22(ctx) {
     	let t;
 
     	const block = {
@@ -18589,7 +18589,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot_21.name,
+    		id: create_default_slot_22.name,
     		type: "slot",
     		source: "(61:20) <Button color=\\\"primary\\\" on:click=\\\"{function(){                          window.location.href = \\\"https://documenter.getpostman.com/view/19481666/Uyr7HyFn\\\";                      }}\\\">",
     		ctx
@@ -18599,7 +18599,7 @@ var app = (function () {
     }
 
     // (64:20) <Button color="primary" on:click="{function(){                          window.location.href = "/api/v1/landusage-stats";                      }}">
-    function create_default_slot_20(ctx) {
+    function create_default_slot_21(ctx) {
     	let t;
 
     	const block = {
@@ -18616,9 +18616,36 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot_20.name,
+    		id: create_default_slot_21.name,
     		type: "slot",
     		source: "(64:20) <Button color=\\\"primary\\\" on:click=\\\"{function(){                          window.location.href = \\\"/api/v1/landusage-stats\\\";                      }}\\\">",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (67:20) <Button color="primary" on:click="{function(){                          window.location.href = "/#/landusage-stats/chart";                      }}">
+    function create_default_slot_20(ctx) {
+    	let t;
+
+    	const block = {
+    		c: function create() {
+    			t = text("Grafico");
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, t, anchor);
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(t);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_default_slot_20.name,
+    		type: "slot",
+    		source: "(67:20) <Button color=\\\"primary\\\" on:click=\\\"{function(){                          window.location.href = \\\"/#/landusage-stats/chart\\\";                      }}\\\">",
     		ctx
     	});
 
@@ -18632,12 +18659,14 @@ var app = (function () {
     	let button1;
     	let t1;
     	let button2;
+    	let t2;
+    	let button3;
     	let current;
 
     	button0 = new Button({
     			props: {
     				color: "primary",
-    				$$slots: { default: [create_default_slot_22] },
+    				$$slots: { default: [create_default_slot_23] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -18648,7 +18677,7 @@ var app = (function () {
     	button1 = new Button({
     			props: {
     				color: "primary",
-    				$$slots: { default: [create_default_slot_21] },
+    				$$slots: { default: [create_default_slot_22] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -18659,13 +18688,24 @@ var app = (function () {
     	button2 = new Button({
     			props: {
     				color: "primary",
-    				$$slots: { default: [create_default_slot_20] },
+    				$$slots: { default: [create_default_slot_21] },
     				$$scope: { ctx }
     			},
     			$$inline: true
     		});
 
     	button2.$on("click", /*click_handler_2*/ ctx[2]);
+
+    	button3 = new Button({
+    			props: {
+    				color: "primary",
+    				$$slots: { default: [create_default_slot_20] },
+    				$$scope: { ctx }
+    			},
+    			$$inline: true
+    		});
+
+    	button3.$on("click", /*click_handler_3*/ ctx[3]);
 
     	const block = {
     		c: function create() {
@@ -18674,6 +18714,8 @@ var app = (function () {
     			create_component(button1.$$.fragment);
     			t1 = space();
     			create_component(button2.$$.fragment);
+    			t2 = space();
+    			create_component(button3.$$.fragment);
     		},
     		m: function mount(target, anchor) {
     			mount_component(button0, target, anchor);
@@ -18681,42 +18723,53 @@ var app = (function () {
     			mount_component(button1, target, anchor);
     			insert_dev(target, t1, anchor);
     			mount_component(button2, target, anchor);
+    			insert_dev(target, t2, anchor);
+    			mount_component(button3, target, anchor);
     			current = true;
     		},
     		p: function update(ctx, dirty) {
     			const button0_changes = {};
 
-    			if (dirty & /*$$scope*/ 2048) {
+    			if (dirty & /*$$scope*/ 4096) {
     				button0_changes.$$scope = { dirty, ctx };
     			}
 
     			button0.$set(button0_changes);
     			const button1_changes = {};
 
-    			if (dirty & /*$$scope*/ 2048) {
+    			if (dirty & /*$$scope*/ 4096) {
     				button1_changes.$$scope = { dirty, ctx };
     			}
 
     			button1.$set(button1_changes);
     			const button2_changes = {};
 
-    			if (dirty & /*$$scope*/ 2048) {
+    			if (dirty & /*$$scope*/ 4096) {
     				button2_changes.$$scope = { dirty, ctx };
     			}
 
     			button2.$set(button2_changes);
+    			const button3_changes = {};
+
+    			if (dirty & /*$$scope*/ 4096) {
+    				button3_changes.$$scope = { dirty, ctx };
+    			}
+
+    			button3.$set(button3_changes);
     		},
     		i: function intro(local) {
     			if (current) return;
     			transition_in(button0.$$.fragment, local);
     			transition_in(button1.$$.fragment, local);
     			transition_in(button2.$$.fragment, local);
+    			transition_in(button3.$$.fragment, local);
     			current = true;
     		},
     		o: function outro(local) {
     			transition_out(button0.$$.fragment, local);
     			transition_out(button1.$$.fragment, local);
     			transition_out(button2.$$.fragment, local);
+    			transition_out(button3.$$.fragment, local);
     			current = false;
     		},
     		d: function destroy(detaching) {
@@ -18725,6 +18778,8 @@ var app = (function () {
     			destroy_component(button1, detaching);
     			if (detaching) detach_dev(t1);
     			destroy_component(button2, detaching);
+    			if (detaching) detach_dev(t2);
+    			destroy_component(button3, detaching);
     		}
     	};
 
@@ -18750,7 +18805,7 @@ var app = (function () {
 
     	cardheader = new CardHeader({
     			props: {
-    				$$slots: { default: [create_default_slot_24] },
+    				$$slots: { default: [create_default_slot_25] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -18759,7 +18814,7 @@ var app = (function () {
     	cardbody = new CardBody({
     			props: {
     				class: "text-center",
-    				$$slots: { default: [create_default_slot_23] },
+    				$$slots: { default: [create_default_slot_24] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -18793,21 +18848,21 @@ var app = (function () {
     		p: function update(ctx, dirty) {
     			const cardheader_changes = {};
 
-    			if (dirty & /*$$scope*/ 2048) {
+    			if (dirty & /*$$scope*/ 4096) {
     				cardheader_changes.$$scope = { dirty, ctx };
     			}
 
     			cardheader.$set(cardheader_changes);
     			const cardbody_changes = {};
 
-    			if (dirty & /*$$scope*/ 2048) {
+    			if (dirty & /*$$scope*/ 4096) {
     				cardbody_changes.$$scope = { dirty, ctx };
     			}
 
     			cardbody.$set(cardbody_changes);
     			const cardfooter_changes = {};
 
-    			if (dirty & /*$$scope*/ 2048) {
+    			if (dirty & /*$$scope*/ 4096) {
     				cardfooter_changes.$$scope = { dirty, ctx };
     			}
 
@@ -18846,7 +18901,7 @@ var app = (function () {
     	return block;
     }
 
-    // (72:16) <CardTitle class="text-center">
+    // (75:16) <CardTitle class="text-center">
     function create_default_slot_17(ctx) {
     	let t;
 
@@ -18866,14 +18921,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_17.name,
     		type: "slot",
-    		source: "(72:16) <CardTitle class=\\\"text-center\\\">",
+    		source: "(75:16) <CardTitle class=\\\"text-center\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (71:12) <CardHeader>
+    // (74:12) <CardHeader>
     function create_default_slot_16(ctx) {
     	let cardtitle;
     	let current;
@@ -18898,7 +18953,7 @@ var app = (function () {
     		p: function update(ctx, dirty) {
     			const cardtitle_changes = {};
 
-    			if (dirty & /*$$scope*/ 2048) {
+    			if (dirty & /*$$scope*/ 4096) {
     				cardtitle_changes.$$scope = { dirty, ctx };
     			}
 
@@ -18922,14 +18977,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_16.name,
     		type: "slot",
-    		source: "(71:12) <CardHeader>",
+    		source: "(74:12) <CardHeader>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (76:16) <CardBody class="text-center">
+    // (79:16) <CardBody class="text-center">
     function create_default_slot_15(ctx) {
     	let t;
 
@@ -18949,14 +19004,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_15.name,
     		type: "slot",
-    		source: "(76:16) <CardBody class=\\\"text-center\\\">",
+    		source: "(79:16) <CardBody class=\\\"text-center\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (81:20) <Button color="primary" on:click="{function(){                          window.location.href = "/#/fertilizers-stats";                      }}">
+    // (84:20) <Button color="primary" on:click="{function(){                          window.location.href = "/#/fertilizers-stats";                      }}">
     function create_default_slot_14(ctx) {
     	let t;
 
@@ -18976,14 +19031,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_14.name,
     		type: "slot",
-    		source: "(81:20) <Button color=\\\"primary\\\" on:click=\\\"{function(){                          window.location.href = \\\"/#/fertilizers-stats\\\";                      }}\\\">",
+    		source: "(84:20) <Button color=\\\"primary\\\" on:click=\\\"{function(){                          window.location.href = \\\"/#/fertilizers-stats\\\";                      }}\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (84:20) <Button color="primary" on:click="{function(){                          window.location.href = "https://documenter.getpostman.com/view/20091974/UVyn2eVu";                      }}">
+    // (87:20) <Button color="primary" on:click="{function(){                          window.location.href = "https://documenter.getpostman.com/view/20091974/UVyn2eVu";                      }}">
     function create_default_slot_13(ctx) {
     	let t;
 
@@ -19003,14 +19058,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_13.name,
     		type: "slot",
-    		source: "(84:20) <Button color=\\\"primary\\\" on:click=\\\"{function(){                          window.location.href = \\\"https://documenter.getpostman.com/view/20091974/UVyn2eVu\\\";                      }}\\\">",
+    		source: "(87:20) <Button color=\\\"primary\\\" on:click=\\\"{function(){                          window.location.href = \\\"https://documenter.getpostman.com/view/20091974/UVyn2eVu\\\";                      }}\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (87:20) <Button color="primary" on:click="{function(){                          window.location.href = "/api/v1/landusage-stats";                      }}">
+    // (90:20) <Button color="primary" on:click="{function(){                          window.location.href = "/api/v1/landusage-stats";                      }}">
     function create_default_slot_12(ctx) {
     	let t;
 
@@ -19030,14 +19085,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_12.name,
     		type: "slot",
-    		source: "(87:20) <Button color=\\\"primary\\\" on:click=\\\"{function(){                          window.location.href = \\\"/api/v1/landusage-stats\\\";                      }}\\\">",
+    		source: "(90:20) <Button color=\\\"primary\\\" on:click=\\\"{function(){                          window.location.href = \\\"/api/v1/landusage-stats\\\";                      }}\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (90:20) <Button color="primary" on:click="{function(){                          window.location.href = "/#/fertilizers-stats/chart";                      }}">
+    // (93:20) <Button color="primary" on:click="{function(){                          window.location.href = "/#/fertilizers-stats/chart";                      }}">
     function create_default_slot_11(ctx) {
     	let t;
 
@@ -19057,14 +19112,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_11.name,
     		type: "slot",
-    		source: "(90:20) <Button color=\\\"primary\\\" on:click=\\\"{function(){                          window.location.href = \\\"/#/fertilizers-stats/chart\\\";                      }}\\\">",
+    		source: "(93:20) <Button color=\\\"primary\\\" on:click=\\\"{function(){                          window.location.href = \\\"/#/fertilizers-stats/chart\\\";                      }}\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (80:16) <CardFooter class="text-center">
+    // (83:16) <CardFooter class="text-center">
     function create_default_slot_10(ctx) {
     	let button0;
     	let t0;
@@ -19084,7 +19139,7 @@ var app = (function () {
     			$$inline: true
     		});
 
-    	button0.$on("click", /*click_handler_3*/ ctx[3]);
+    	button0.$on("click", /*click_handler_4*/ ctx[4]);
 
     	button1 = new Button({
     			props: {
@@ -19095,7 +19150,7 @@ var app = (function () {
     			$$inline: true
     		});
 
-    	button1.$on("click", /*click_handler_4*/ ctx[4]);
+    	button1.$on("click", /*click_handler_5*/ ctx[5]);
 
     	button2 = new Button({
     			props: {
@@ -19106,7 +19161,7 @@ var app = (function () {
     			$$inline: true
     		});
 
-    	button2.$on("click", /*click_handler_5*/ ctx[5]);
+    	button2.$on("click", /*click_handler_6*/ ctx[6]);
 
     	button3 = new Button({
     			props: {
@@ -19117,7 +19172,7 @@ var app = (function () {
     			$$inline: true
     		});
 
-    	button3.$on("click", /*click_handler_6*/ ctx[6]);
+    	button3.$on("click", /*click_handler_7*/ ctx[7]);
 
     	const block = {
     		c: function create() {
@@ -19142,28 +19197,28 @@ var app = (function () {
     		p: function update(ctx, dirty) {
     			const button0_changes = {};
 
-    			if (dirty & /*$$scope*/ 2048) {
+    			if (dirty & /*$$scope*/ 4096) {
     				button0_changes.$$scope = { dirty, ctx };
     			}
 
     			button0.$set(button0_changes);
     			const button1_changes = {};
 
-    			if (dirty & /*$$scope*/ 2048) {
+    			if (dirty & /*$$scope*/ 4096) {
     				button1_changes.$$scope = { dirty, ctx };
     			}
 
     			button1.$set(button1_changes);
     			const button2_changes = {};
 
-    			if (dirty & /*$$scope*/ 2048) {
+    			if (dirty & /*$$scope*/ 4096) {
     				button2_changes.$$scope = { dirty, ctx };
     			}
 
     			button2.$set(button2_changes);
     			const button3_changes = {};
 
-    			if (dirty & /*$$scope*/ 2048) {
+    			if (dirty & /*$$scope*/ 4096) {
     				button3_changes.$$scope = { dirty, ctx };
     			}
 
@@ -19199,14 +19254,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_10.name,
     		type: "slot",
-    		source: "(80:16) <CardFooter class=\\\"text-center\\\">",
+    		source: "(83:16) <CardFooter class=\\\"text-center\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (70:8) <Card class="w-50 mx-auto mt-3" id="carta" >
+    // (73:8) <Card class="w-50 mx-auto mt-3" id="carta" >
     function create_default_slot_9(ctx) {
     	let cardheader;
     	let t0;
@@ -19260,21 +19315,21 @@ var app = (function () {
     		p: function update(ctx, dirty) {
     			const cardheader_changes = {};
 
-    			if (dirty & /*$$scope*/ 2048) {
+    			if (dirty & /*$$scope*/ 4096) {
     				cardheader_changes.$$scope = { dirty, ctx };
     			}
 
     			cardheader.$set(cardheader_changes);
     			const cardbody_changes = {};
 
-    			if (dirty & /*$$scope*/ 2048) {
+    			if (dirty & /*$$scope*/ 4096) {
     				cardbody_changes.$$scope = { dirty, ctx };
     			}
 
     			cardbody.$set(cardbody_changes);
     			const cardfooter_changes = {};
 
-    			if (dirty & /*$$scope*/ 2048) {
+    			if (dirty & /*$$scope*/ 4096) {
     				cardfooter_changes.$$scope = { dirty, ctx };
     			}
 
@@ -19306,14 +19361,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_9.name,
     		type: "slot",
-    		source: "(70:8) <Card class=\\\"w-50 mx-auto mt-3\\\" id=\\\"carta\\\" >",
+    		source: "(73:8) <Card class=\\\"w-50 mx-auto mt-3\\\" id=\\\"carta\\\" >",
     		ctx
     	});
 
     	return block;
     }
 
-    // (98:16) <CardTitle class="text-center">
+    // (101:16) <CardTitle class="text-center">
     function create_default_slot_8(ctx) {
     	let t;
 
@@ -19333,14 +19388,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_8.name,
     		type: "slot",
-    		source: "(98:16) <CardTitle class=\\\"text-center\\\">",
+    		source: "(101:16) <CardTitle class=\\\"text-center\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (97:12) <CardHeader>
+    // (100:12) <CardHeader>
     function create_default_slot_7(ctx) {
     	let cardtitle;
     	let current;
@@ -19365,7 +19420,7 @@ var app = (function () {
     		p: function update(ctx, dirty) {
     			const cardtitle_changes = {};
 
-    			if (dirty & /*$$scope*/ 2048) {
+    			if (dirty & /*$$scope*/ 4096) {
     				cardtitle_changes.$$scope = { dirty, ctx };
     			}
 
@@ -19389,14 +19444,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_7.name,
     		type: "slot",
-    		source: "(97:12) <CardHeader>",
+    		source: "(100:12) <CardHeader>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (102:16) <CardBody class="text-center">
+    // (105:16) <CardBody class="text-center">
     function create_default_slot_6(ctx) {
     	let t;
 
@@ -19416,14 +19471,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_6.name,
     		type: "slot",
-    		source: "(102:16) <CardBody class=\\\"text-center\\\">",
+    		source: "(105:16) <CardBody class=\\\"text-center\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (107:20) <Button color="primary" on:click="{function(){                          window.location.href = "/#/agriculturalproduction-stats";                      }}">
+    // (110:20) <Button color="primary" on:click="{function(){                          window.location.href = "/#/agriculturalproduction-stats";                      }}">
     function create_default_slot_5(ctx) {
     	let t;
 
@@ -19443,14 +19498,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_5.name,
     		type: "slot",
-    		source: "(107:20) <Button color=\\\"primary\\\" on:click=\\\"{function(){                          window.location.href = \\\"/#/agriculturalproduction-stats\\\";                      }}\\\">",
+    		source: "(110:20) <Button color=\\\"primary\\\" on:click=\\\"{function(){                          window.location.href = \\\"/#/agriculturalproduction-stats\\\";                      }}\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (110:20) <Button color="primary" on:click="{function(){                          window.location.href = "https://documenter.getpostman.com/view/20091971/UyrAFxGv";                      }}">
+    // (113:20) <Button color="primary" on:click="{function(){                          window.location.href = "https://documenter.getpostman.com/view/20091971/UyrAFxGv";                      }}">
     function create_default_slot_4(ctx) {
     	let t;
 
@@ -19470,14 +19525,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_4.name,
     		type: "slot",
-    		source: "(110:20) <Button color=\\\"primary\\\" on:click=\\\"{function(){                          window.location.href = \\\"https://documenter.getpostman.com/view/20091971/UyrAFxGv\\\";                      }}\\\">",
+    		source: "(113:20) <Button color=\\\"primary\\\" on:click=\\\"{function(){                          window.location.href = \\\"https://documenter.getpostman.com/view/20091971/UyrAFxGv\\\";                      }}\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (113:20) <Button color="primary" on:click="{function(){                          window.location.href = "/api/v1/agriculturalproduction-stats";                      }}">
+    // (116:20) <Button color="primary" on:click="{function(){                          window.location.href = "/api/v1/agriculturalproduction-stats";                      }}">
     function create_default_slot_3(ctx) {
     	let t;
 
@@ -19497,14 +19552,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_3.name,
     		type: "slot",
-    		source: "(113:20) <Button color=\\\"primary\\\" on:click=\\\"{function(){                          window.location.href = \\\"/api/v1/agriculturalproduction-stats\\\";                      }}\\\">",
+    		source: "(116:20) <Button color=\\\"primary\\\" on:click=\\\"{function(){                          window.location.href = \\\"/api/v1/agriculturalproduction-stats\\\";                      }}\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (116:20) <Button color="primary" on:click="{function(){                          window.location.href = "/#/MyGraph_javlarpar";                      }}">
+    // (119:20) <Button color="primary" on:click="{function(){                          window.location.href = "/#/MyGraph_javlarpar";                      }}">
     function create_default_slot_2(ctx) {
     	let t;
 
@@ -19524,14 +19579,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_2.name,
     		type: "slot",
-    		source: "(116:20) <Button color=\\\"primary\\\" on:click=\\\"{function(){                          window.location.href = \\\"/#/MyGraph_javlarpar\\\";                      }}\\\">",
+    		source: "(119:20) <Button color=\\\"primary\\\" on:click=\\\"{function(){                          window.location.href = \\\"/#/MyGraph_javlarpar\\\";                      }}\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (106:16) <CardFooter class="text-center">
+    // (109:16) <CardFooter class="text-center">
     function create_default_slot_1(ctx) {
     	let button0;
     	let t0;
@@ -19551,7 +19606,7 @@ var app = (function () {
     			$$inline: true
     		});
 
-    	button0.$on("click", /*click_handler_7*/ ctx[7]);
+    	button0.$on("click", /*click_handler_8*/ ctx[8]);
 
     	button1 = new Button({
     			props: {
@@ -19562,7 +19617,7 @@ var app = (function () {
     			$$inline: true
     		});
 
-    	button1.$on("click", /*click_handler_8*/ ctx[8]);
+    	button1.$on("click", /*click_handler_9*/ ctx[9]);
 
     	button2 = new Button({
     			props: {
@@ -19573,7 +19628,7 @@ var app = (function () {
     			$$inline: true
     		});
 
-    	button2.$on("click", /*click_handler_9*/ ctx[9]);
+    	button2.$on("click", /*click_handler_10*/ ctx[10]);
 
     	button3 = new Button({
     			props: {
@@ -19584,7 +19639,7 @@ var app = (function () {
     			$$inline: true
     		});
 
-    	button3.$on("click", /*click_handler_10*/ ctx[10]);
+    	button3.$on("click", /*click_handler_11*/ ctx[11]);
 
     	const block = {
     		c: function create() {
@@ -19609,28 +19664,28 @@ var app = (function () {
     		p: function update(ctx, dirty) {
     			const button0_changes = {};
 
-    			if (dirty & /*$$scope*/ 2048) {
+    			if (dirty & /*$$scope*/ 4096) {
     				button0_changes.$$scope = { dirty, ctx };
     			}
 
     			button0.$set(button0_changes);
     			const button1_changes = {};
 
-    			if (dirty & /*$$scope*/ 2048) {
+    			if (dirty & /*$$scope*/ 4096) {
     				button1_changes.$$scope = { dirty, ctx };
     			}
 
     			button1.$set(button1_changes);
     			const button2_changes = {};
 
-    			if (dirty & /*$$scope*/ 2048) {
+    			if (dirty & /*$$scope*/ 4096) {
     				button2_changes.$$scope = { dirty, ctx };
     			}
 
     			button2.$set(button2_changes);
     			const button3_changes = {};
 
-    			if (dirty & /*$$scope*/ 2048) {
+    			if (dirty & /*$$scope*/ 4096) {
     				button3_changes.$$scope = { dirty, ctx };
     			}
 
@@ -19666,14 +19721,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_1.name,
     		type: "slot",
-    		source: "(106:16) <CardFooter class=\\\"text-center\\\">",
+    		source: "(109:16) <CardFooter class=\\\"text-center\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (96:8) <Card class="w-50 mx-auto mt-3" id="carta">
+    // (99:8) <Card class="w-50 mx-auto mt-3" id="carta">
     function create_default_slot(ctx) {
     	let cardheader;
     	let t0;
@@ -19727,21 +19782,21 @@ var app = (function () {
     		p: function update(ctx, dirty) {
     			const cardheader_changes = {};
 
-    			if (dirty & /*$$scope*/ 2048) {
+    			if (dirty & /*$$scope*/ 4096) {
     				cardheader_changes.$$scope = { dirty, ctx };
     			}
 
     			cardheader.$set(cardheader_changes);
     			const cardbody_changes = {};
 
-    			if (dirty & /*$$scope*/ 2048) {
+    			if (dirty & /*$$scope*/ 4096) {
     				cardbody_changes.$$scope = { dirty, ctx };
     			}
 
     			cardbody.$set(cardbody_changes);
     			const cardfooter_changes = {};
 
-    			if (dirty & /*$$scope*/ 2048) {
+    			if (dirty & /*$$scope*/ 4096) {
     				cardfooter_changes.$$scope = { dirty, ctx };
     			}
 
@@ -19773,7 +19828,7 @@ var app = (function () {
     		block,
     		id: create_default_slot.name,
     		type: "slot",
-    		source: "(96:8) <Card class=\\\"w-50 mx-auto mt-3\\\" id=\\\"carta\\\">",
+    		source: "(99:8) <Card class=\\\"w-50 mx-auto mt-3\\\" id=\\\"carta\\\">",
     		ctx
     	});
 
@@ -19821,7 +19876,7 @@ var app = (function () {
     	nav = new Nav({
     			props: {
     				class: "bg-light",
-    				$$slots: { default: [create_default_slot_26] },
+    				$$slots: { default: [create_default_slot_27] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -19980,28 +20035,28 @@ var app = (function () {
     		p: function update(ctx, [dirty]) {
     			const nav_changes = {};
 
-    			if (dirty & /*$$scope*/ 2048) {
+    			if (dirty & /*$$scope*/ 4096) {
     				nav_changes.$$scope = { dirty, ctx };
     			}
 
     			nav.$set(nav_changes);
     			const card0_changes = {};
 
-    			if (dirty & /*$$scope*/ 2048) {
+    			if (dirty & /*$$scope*/ 4096) {
     				card0_changes.$$scope = { dirty, ctx };
     			}
 
     			card0.$set(card0_changes);
     			const card1_changes = {};
 
-    			if (dirty & /*$$scope*/ 2048) {
+    			if (dirty & /*$$scope*/ 4096) {
     				card1_changes.$$scope = { dirty, ctx };
     			}
 
     			card1.$set(card1_changes);
     			const card2_changes = {};
 
-    			if (dirty & /*$$scope*/ 2048) {
+    			if (dirty & /*$$scope*/ 4096) {
     				card2_changes.$$scope = { dirty, ctx };
     			}
 
@@ -20067,34 +20122,38 @@ var app = (function () {
     	};
 
     	const click_handler_3 = function () {
-    		window.location.href = "/#/fertilizers-stats";
+    		window.location.href = "/#/landusage-stats/chart";
     	};
 
     	const click_handler_4 = function () {
-    		window.location.href = "https://documenter.getpostman.com/view/20091974/UVyn2eVu";
+    		window.location.href = "/#/fertilizers-stats";
     	};
 
     	const click_handler_5 = function () {
-    		window.location.href = "/api/v1/landusage-stats";
+    		window.location.href = "https://documenter.getpostman.com/view/20091974/UVyn2eVu";
     	};
 
     	const click_handler_6 = function () {
-    		window.location.href = "/#/fertilizers-stats/chart";
+    		window.location.href = "/api/v1/landusage-stats";
     	};
 
     	const click_handler_7 = function () {
-    		window.location.href = "/#/agriculturalproduction-stats";
+    		window.location.href = "/#/fertilizers-stats/chart";
     	};
 
     	const click_handler_8 = function () {
-    		window.location.href = "https://documenter.getpostman.com/view/20091971/UyrAFxGv";
+    		window.location.href = "/#/agriculturalproduction-stats";
     	};
 
     	const click_handler_9 = function () {
-    		window.location.href = "/api/v1/agriculturalproduction-stats";
+    		window.location.href = "https://documenter.getpostman.com/view/20091971/UyrAFxGv";
     	};
 
     	const click_handler_10 = function () {
+    		window.location.href = "/api/v1/agriculturalproduction-stats";
+    	};
+
+    	const click_handler_11 = function () {
     		window.location.href = "/#/MyGraph_javlarpar";
     	};
 
@@ -20122,7 +20181,8 @@ var app = (function () {
     		click_handler_7,
     		click_handler_8,
     		click_handler_9,
-    		click_handler_10
+    		click_handler_10,
+    		click_handler_11
     	];
     }
 
