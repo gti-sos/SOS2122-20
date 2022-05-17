@@ -117,7 +117,7 @@
                         window.location.href = "/api/v1/agriculturalproduction-stats";
                     }}">APIV1</Button>
                     <Button color="primary" on:click="{function(){
-                        window.location.href = "/#/MyGraph_javlarpar";
+                        window.location.href = "/#/agriculturalproduction-stats/chart";
                     }}">Grafico</Button>
                 </CardFooter>
             

@@ -1,108 +1,105 @@
 <script>
-
-    import { onMount } from 'svelte';
-    import {Table,Button} from 'sveltestrap';
-    import {pop} from 'svelte-spa-router';
-    let apiData = {};
-    
+    import { onMount } from "svelte";
+    import Button from 'sveltestrap/src/Button.svelte';
     const delay = ms => new Promise(res => setTimeout(res,ms));
-        let stats = [];
-        let country= [];
-        let year = [];
+        let data = [];
+        let country_year= [];
         let production = [];
         let absolute_change = [];
         let relative_change = []; 
-        async function loadGraph(){
+
+
+        async function getStats(){
             console.log("Fetching stats....");
             const res = await fetch("/api/v1/agriculturalproduction-stats");
             if(res.ok){
                 const data = await res.json();
-                stats = data;
-                console.log("Estadísticas recibidas: "+stats.length);
+                console.log("Estadísticas recibidas: "+data.length);
                 //inicializamos los arrays para mostrar los datos
-                stats.forEach(stat => {
-                    country.push(stat.country+"-"+stat.year);
-                    year.push(stat.year);
-                    production.push(stat.production);
-                    absolute_change.push(stat.absolute_change);
-                    relative_change.push(stat.relative_change);            
+                data.forEach((stat) => {
+                    country_year.push(stat.country+"-"+stat.year);
+                    production.push(stat["production"]);
+                    absolute_change.push(stat["absolute_change"]);
+                    relative_change.push(stat["relative_change"]);            
                 });
+                loadGraph();
             }else{
                 console.log("Error cargando los datos");
             }
-        console.log("Comprobando");
-        Highcharts.chart('container', {
-    chart: {
-        type: 'spline',
-        inverted: true
-    },
-    title: {
-        text: 'Produccion de cereales'
-    },
-        
-    xAxis: {
-        title: {
-                    text: "País-Año",
-                },
-                categories: country,
-                
-    },
-    yAxis: {
-        title: {
-            text: 'kilos'
-        },
-           
-    },
-    legend: {
-        enabled: false
-    },
-    tooltip: {
-        headerFormat: '<b>{series.name}</b><br/>',
-        pointFormat: '{point.y}kilos'
-    },
-    plotOptions: {
-        spline: {
-            marker: {
-                enable: false
-            }
         }
-    },
-    series: [
-        {
-        name: 'Produccion',
-        data: production
-    },
-    {   name: 'Cambio absoluto',
-        data: absolute_change},
-    {   name:'Cambio relativo',
-        data: relative_change}
-    ]});
+
+        async function loadGraph(){
+            var a = document.getElementById("myGraph").getContext("2d");
+            var agri_prod = new Chart(a, {
+                type: "line",
+                data: {
+                    labels: country_year,
+                    datasets: [
+                    {
+                        label: 'Produccion',
+                        data: production,
+                        borderColor: "#0000FF",
+                        backgroundColor: "#0000FF",
+                    },
+                    {
+                        label: 'Diferencia Absoluta',
+                        data: absolute_change,
+                        borderColor: "#008000",
+                        backgroundColor: "#008000",
+                    },
+                    {
+                        label: 'Diferencia Relativa',
+                        data: relative_change,
+                        borderColor: "#ff8000",
+                        backgroundColor: "#ff8000",
+                    },
+                ],
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        position: 'top',
+                    },
+                }
+            },
+        });
+       
+       
     }
-    </script>
+    onMount(getStats);
+
+            
+
+</script>
     <svelte:head>
     
-    
-        <script src="https://code.highcharts.com/highcharts.js"></script>
-        <script src="https://code.highcharts.com/modules/exporting.js"></script>
-        <script src="https://code.highcharts.com/modules/export-data.js"></script>
-        <script src="https://code.highcharts.com/modules/accessibility.js" on:load="{loadGraph}"></script>
+        <script
+            src="https://cdn.jsdelivr.net/npm/chart.js"
+            on:load={loadGraph}></script>
     
     
     </svelte:head>
     
     <main>
-        <figure class="highcharts-figure">
-            <div id="container"></div>
-            <p class="highcharts-description">
-                Los gráficos de spline son gráficos de líneas suavizadas y este ejemplo
-                muestra un gráfico de spline invertido. Invertir el gráfico significa que el eje X se coloca como el eje vertical y el eje Y se coloca como el eje horizontal. 
-                Esto puede ser más intuitivo para ciertos conjuntos de datos, como en este gráfico donde el eje X representa la altitud vertical.
-            </p>
-        </figure>
-        <Button on:click="{pop}">
-            Volver
-        </Button>
+            <h4>Estadísticas sobre la producción de cereal</h4>
+            <div></div>
+           <canvas id="myGraph" />
+           <h8>Biblioteca:Chart.js</h8>
+           <Button color="outline-dark" on:click={function (){
+            window.location.href = `/#/agriculturalproduction-stats`
+               }}>Volver
+       </Button>
     </main>
+
+    <style>
+        h2 {
+            text-align: center;
+        }
+        h4 {
+            text-align: center;
+        }
+    </style>
 
 
     

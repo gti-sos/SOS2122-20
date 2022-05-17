@@ -39,7 +39,7 @@ module.exports.register = (app) => {
             relative_change:549
         },
         {
-            country:"Americas",
+            country:"America",
             year: 2018,
             production: 763.59,
             absolute_change:539.36,

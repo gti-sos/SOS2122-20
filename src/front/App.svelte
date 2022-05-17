@@ -29,7 +29,7 @@
 	'/info':Info,
 	'/fertilizers-stats/chart':MyGraph,
 	'/GroupGraph':GroupGraph,
-	'/MyGraph_javlarpar':MyGraph_javlarpar,
+	'/agriculturalproduction-stats/chart':MyGraph_javlarpar,
 
 	//DANPUCJIM ROUTES
 	'/landusage-stats/:country/:year':EditLandusageStats,
