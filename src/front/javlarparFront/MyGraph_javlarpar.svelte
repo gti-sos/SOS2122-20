@@ -7,8 +7,6 @@
         let production = [];
         let absolute_change = [];
         let relative_change = []; 
-
-
         async function getStats(){
             console.log("Fetching stats....");
             const res = await fetch("/api/v1/agriculturalproduction-stats");
@@ -27,7 +25,6 @@
                 console.log("Error cargando los datos");
             }
         }
-
         async function loadGraph(){
             var a = document.getElementById("myGraph").getContext("2d");
             var agri_prod = new Chart(a, {
@@ -68,9 +65,7 @@
        
     }
     onMount(getStats);
-
             
-
 </script>
     <svelte:head>
     
@@ -100,6 +95,3 @@
             text-align: center;
         }
     </style>
-
-
-    
