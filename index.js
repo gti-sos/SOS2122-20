@@ -6,6 +6,46 @@ app.use(bodyParser.json());
 const port = process.env.PORT || 8081;
 
 
+// Proxy
+const cors = require("cors"); 
+const request = require("request");
+
+
+app.use(cors());
+
+//Proxy fertilizers-stats
+var paths='/remoteAPI';
+var apiServerHost = 'https://sos2122-20.herokuapp.com/api/v1/fertilizers-stats';
+
+app.use(paths, function(req, res) {
+  var url = apiServerHost + req.url;
+  console.log('piped: ' + req.url);
+  req.pipe(request(url)).pipe(res);
+});
+
+
+//Proxy landusage-stats
+var paths='/remoteAPI1';
+var apiServerHost = 'https://sos2122-20.herokuapp.com/api/v1/landusage-stats';
+
+app.use(paths, function(req, res) {
+  var url = apiServerHost + req.url;
+  console.log('piped: ' + req.url);
+  req.pipe(request(url)).pipe(res);
+});
+
+
+//Proxy agricultural-stats
+var paths='/remoteAPI2';
+var apiServerHost = 'https://sos2122-20.herokuapp.com/api/v1/agriculturalproduction-stats';
+
+app.use(paths, function(req, res) {
+  var url = apiServerHost + req.url;
+  console.log('piped: ' + req.url);
+  req.pipe(request(url)).pipe(res);
+});
+
+
 
 app.use("/", express.static('public'));
 

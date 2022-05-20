@@ -88,7 +88,7 @@
                         window.location.href = "https://documenter.getpostman.com/view/20091974/UVyn2eVu";
                     }}">Documentacion</Button>
                     <Button color="primary" on:click="{function(){
-                        window.location.href = "/api/v1/landusage-stats";
+                        window.location.href = "/api/v1/fertilizers-stats";
                     }}">APIV1</Button>
                     <Button color="primary" on:click="{function(){
                         window.location.href = "/#/fertilizers-stats/chart";
