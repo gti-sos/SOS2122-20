@@ -17,6 +17,7 @@
 	import EditFertilizersStats from './alejorpoyFront/EditFertilizersStats.svelte';
 	import EditAgriculturalStats from './javlarparFront/EditAgriculturalStats.svelte';
 	import Info from './Info.svelte';
+import LandusageChart2 from './danpucjimFront/landusage_chart2.svelte';
 
 
 
@@ -36,6 +37,7 @@
 
 	//DANPUCJIM ROUTES
 	'/landusage-stats/:country/:year':EditLandusageStats,
+	'/landusage-stats/chart2':LandusageChart2,
 	//ALJORPOY ROUTES
 	'/fertilizers-stats/:country/:year': EditFertilizersStats,
 	//JAVLARPAR ROUTES
