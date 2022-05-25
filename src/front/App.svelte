@@ -19,6 +19,8 @@
 	import UseVehiclesStats from './javlarparFront/UseVehiclesStats.svelte';
 	import Info from './Info.svelte';
 	import LandusageChart2 from './danpucjimFront/landusage_chart2.svelte';
+import ExtApi from './danpucjimFront/extAPI.svelte';
+import ExtApi1 from './danpucjimFront/extAPI1.svelte';
 
 
 
@@ -39,6 +41,8 @@
 	//DANPUCJIM ROUTES
 	'/landusage-stats/:country/:year':EditLandusageStats,
 	'/landusage-stats/chart2':LandusageChart2,
+	'/landusage-stats/extAPI':ExtApi,
+	'/landusage-stats/extAPI1':ExtApi1,
 	//ALJORPOY ROUTES
 	'/fertilizers-stats/:country/:year': EditFertilizersStats,
 	//JAVLARPAR ROUTES
