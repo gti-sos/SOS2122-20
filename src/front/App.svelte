@@ -16,8 +16,9 @@
 	import EditLandusageStats from './danpucjimFront/EditLandusageStats.svelte';
 	import EditFertilizersStats from './alejorpoyFront/EditFertilizersStats.svelte';
 	import EditAgriculturalStats from './javlarparFront/EditAgriculturalStats.svelte';
+	import UseVehiclesStats from './javlarparFront/UseVehiclesStats.svelte';
 	import Info from './Info.svelte';
-import LandusageChart2 from './danpucjimFront/landusage_chart2.svelte';
+	import LandusageChart2 from './danpucjimFront/landusage_chart2.svelte';
 
 
 
@@ -42,6 +43,9 @@ import LandusageChart2 from './danpucjimFront/landusage_chart2.svelte';
 	'/fertilizers-stats/:country/:year': EditFertilizersStats,
 	//JAVLARPAR ROUTES
 	'/agriculturalproduction-stats/:country/:year':EditAgriculturalStats,
+
+	//JAVLARPAR INTEGRACION
+	'/integracion1':UseVehiclesStats
 };
 
 </script>
