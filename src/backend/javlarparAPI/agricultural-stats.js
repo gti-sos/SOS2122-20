@@ -8,6 +8,15 @@ module.exports.register = (app) => {
     db2 = new Datastore({filename:dbFile,autoload:true});
     app.use(bodyParser.json());
     
+    var paths2 = '/remoteAPI2';
+    var apiServerHost2 = 'https://sos2122-20.herokuapp.com/api/v1/agriculturalproduction-stats';
+
+    app.use(paths2, function (req, res) {
+        var url = apiServerHost2 + req.url;
+        console.log('piped: ' + req.url);
+        req.pipe(request(url)).pipe(res);
+    });
+
     var fertilizers_stats = [];
     var agricultural_stats_initial = [
         {

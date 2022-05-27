@@ -14,7 +14,7 @@
         async function getData(){
             console.log("Fetching stats....");
             const res = await fetch("/api/v1/agriculturalproduction-stats");
-            const res1= await fetch("https://sos2122-24.herokuapp.com/api/v2/pneumonia-stats")
+            const res1= await fetch("/remoteAPI2");
             if(res.ok&&res1.ok){
                 const data = await res.json();
                 const data1= await res1.json();

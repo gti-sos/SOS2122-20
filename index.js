@@ -37,7 +37,7 @@ app.use(paths1, function(req, res) {
 
 //Proxy agricultural-stats
 var paths2='/remoteAPI2';
-var apiServerHost2 = 'https://sos2122-20.herokuapp.com/api/v1/agriculturalproduction-stats';
+var apiServerHost2 = 'https://sos2122-24.herokuapp.com/api/v2/pneumonia-stats';
 
 app.use(paths2, function(req, res) {
   var url = apiServerHost2 + req.url;
