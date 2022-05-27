@@ -4,7 +4,7 @@ const bodyParser =require("body-parser");
 const app=express();
 app.use(bodyParser.json());
 const port = process.env.PORT || 8081;
-
+const path = require("path");
 
 // Proxy
 const cors = require("cors"); 
@@ -15,7 +15,7 @@ app.use(cors());
 
 //Proxy fertilizers-stats
 var paths='/remoteAPI';
-var apiServerHost = 'https://sos2122-20.herokuapp.com/api/v1/fertilizers-stats';
+var apiServerHost = 'https://sos2122-24.herokuapp.com/api/v1/air-pollution-stats';
 
 app.use(paths, function(req, res) {
   var url = apiServerHost + req.url;
@@ -25,22 +25,22 @@ app.use(paths, function(req, res) {
 
 
 //Proxy landusage-stats
-var paths='/remoteAPI1';
-var apiServerHost = 'https://sos2122-20.herokuapp.com/api/v1/landusage-stats';
+var paths1='/remoteAPI1';
+var apiServerHost1 = 'https://sos2122-20.herokuapp.com/api/v1/landusage-stats';
 
-app.use(paths, function(req, res) {
-  var url = apiServerHost + req.url;
+app.use(paths1, function(req, res) {
+  var url = apiServerHost1 + req.url;
   console.log('piped: ' + req.url);
   req.pipe(request(url)).pipe(res);
 });
 
 
 //Proxy agricultural-stats
-var paths='/remoteAPI2';
-var apiServerHost = 'https://sos2122-20.herokuapp.com/api/v1/agriculturalproduction-stats';
+var paths2='/remoteAPI2';
+var apiServerHost2 = 'https://sos2122-20.herokuapp.com/api/v1/agriculturalproduction-stats';
 
-app.use(paths, function(req, res) {
-  var url = apiServerHost + req.url;
+app.use(paths2, function(req, res) {
+  var url = apiServerHost2 + req.url;
   console.log('piped: ' + req.url);
   req.pipe(request(url)).pipe(res);
 });

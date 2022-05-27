@@ -9,6 +9,16 @@ module.exports.register = (app) => {
     db1 = new Datastore({filename:dbFile,autoload:true});
     app.use(bodyParser.json());
     
+
+   //Proxy
+var paths = '/remoteAPI';
+var apiServerHost = 'https://sos2122-20.herokuapp.com/api/v1/fertilizers-stats';
+
+app.use(paths, function (req, res) {
+    var url = apiServerHost + req.url;
+    console.log('piped: ' + req.url);
+    req.pipe(request(url)).pipe(res);
+});
     var fertilizers_stats = [];
     var fertilizers_stats_initial = [
         {

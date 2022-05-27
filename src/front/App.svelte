@@ -4,6 +4,8 @@
 	
 	import MyGraph from './alejorpoyFront/MyGraph.svelte';
 	import MyGraph2 from './alejorpoyFront/MyGraph2.svelte';
+	import Integrations from './alejorpoyFront/Integrations.svelte';
+	import Integrations2 from './alejorpoyFront/Integrations2.svelte';
 	
 	import GroupGraph from './GroupGraph.svelte';
 	import MyGraph_javlarpar from './javlarparFront/MyGraph_javlarpar.svelte';
@@ -36,6 +38,8 @@ import ExtApi1 from './danpucjimFront/extAPI1.svelte';
 	'/info':Info,
 	'/fertilizers-stats/chart':MyGraph,
 	'/fertilizers-stats/chart2':MyGraph2,
+	'/fertilizers-stats/integration':Integrations,
+	'/fertilizers-stats/integration2':Integrations2,
 	'/GroupGraph':GroupGraph,
 	'/agriculturalproduction-stats/chart':MyGraph_javlarpar,
 
