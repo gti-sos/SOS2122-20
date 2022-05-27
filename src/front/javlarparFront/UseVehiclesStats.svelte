@@ -76,7 +76,7 @@ import {onMount} from'svelte';
     async function loadGraph(){
         Highcharts.chart('container', {
             chart: {
-                type: 'areaspline'
+                type: 'area'
             },
             title: {
                 text: 'Integracion de los datos de registros de vehiculos y produccion de cereales'
@@ -120,7 +120,7 @@ import {onMount} from'svelte';
             },
             tooltip: {
                 shared: true,
-                valueSuffix: ' units'
+                valueSuffix: ' quantity'
             },
             credits: {
                 enabled: false
