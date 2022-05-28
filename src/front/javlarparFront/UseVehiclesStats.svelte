@@ -50,7 +50,6 @@
                 console.log("Error cargando los datos");
             }
             loadGraph();
-            console.log("Comprobando");
         }
 
 
