@@ -4,6 +4,7 @@
     const delay = ms => new Promise(res => setTimeout(res,ms));
     let stats = [];
     let stats1 = [];
+    let datafinal =[];
     let country= [];
     let year = [];
     let grazing_area = ["grazing_area"];
@@ -19,7 +20,7 @@
         
         
     async function getData(){
-        const res = await fetch("https://sos2122-20.herokuapp.com/api/v1/landusage-stats");
+        const res = await fetch("/remoteAPI1");
         const res1 = await fetch ("https://sos2122-24.herokuapp.com/remoteAPI2");
 
         if(res.ok && res1.ok){
@@ -30,56 +31,84 @@
             console.log("DATOS->",data1);
             stats.forEach(stat => {
                 country.push(stat.country);
-                year.push(year);
-                grazing_area.push(grazing_area);
-                built_area.push(built_area);
-                cropland_area.push(cropland_area);
+                year.push(stat.year);
+                grazing_area.push(stat.grazing_area);
+                built_area.push(stat.built_area);
+                cropland_area.push(stat.cropland_area);
             });
             stats1 = data1;
             stats1.forEach(stat => {
                 country1.push(stat.country);
-                year1.push(year);
-                ages_fifty_seventy.push(ages_fifty_seventy);
-                ages_seventy.push(ages_seventy);
-                ages_zero_fifty.push(ages_zero_fifty);
+                year1.push(stat.year);
+                ages_fifty_seventy.push(stat.ages_fifty_seventy);
+                ages_seventy.push(stat.ages_seventy);
+                ages_zero_fifty.push(stat.ages_zero_fifty);
             })
                 
         }
         else{
             console.log("Hubo un error cargando los datos");
         }
-        loadGraph();
+        datafinal = [year,year1];
+        console.log(datafinal);
+        await loadGraph();
         console.log("Comprobando");
     }
 
-    async function loadGraph(){
-        
+    async function loadGraph() {
+       Highcharts.chart('container', {
+    chart: {
+        type: 'pie'
+    },
+    title: {
+        text: 'Integracion de los datos de la api de uso de tierras con muerte por cancer'
+    },
+    subtitle: {
+        text: ''
+    },
+    xAxis: {
+        categories:datafinal 
+        ,
+        crosshair: true
+    },
+    yAxis: {
+        min: 0,
+        title: {
+            text: ''
+        }
+    },
+    series: [{
+        name: 'Tierrras de Pasto',
+        data: grazing_area
+    }, {
+        name: 'Tierras de cultivo',
+        data: cropland_area
     }
-
-
-    onMount(getData);
+    , {
+        name: 'Muerte cancer 50-70',
+        data: ages_fifty_seventy
+    }
+    , {
+        name: 'Muerte cancer >70',
+        data: ages_seventy
+    }]
+});
+    }
 </script>
 
 <svelte:head>
-    
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/highcharts-more.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+<script src="https://code.highcharts.com/modules/export-data.js"></script>
+<script src="https://code.highcharts.com/modules/accessibility.js" on:load="{getData}"></script>
 </svelte:head>
 
 <main>
-    <h2>Integracion de API propia y API de Laura grupo 24</h2>
-    <h4>Biblioteca: Chart.js</h4>
-    <!--<button class="btn btn-primary hBack" type="button">Volver</button>
-    <a href="/#/tennis" class="btn btn-primary hBack" role="button" >Volver</a> -->
-    <a href="/#/agriculturalproduction-stats" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Volver</a>
-
-    <canvas id="myChart" />
-
+    <figure class="highcharts-figure">
+        <div id="container"></div>
+        <p class="highcharts-description">
+            
+        </p>
+    </figure>
 </main>
-
-<style>
-    h2 {
-        text-align: center;
-    }
-    h4 {
-        text-align: center;
-    }
-</style>

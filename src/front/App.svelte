@@ -24,6 +24,7 @@
 	import LandusageChart2 from './danpucjimFront/landusage_chart2.svelte';
 import ExtApi from './danpucjimFront/extAPI.svelte';
 import ExtApi1 from './danpucjimFront/extAPI1.svelte';
+import CancerIntegration from './danpucjimFront/CancerIntegration.svelte';
 
 
 
@@ -48,6 +49,7 @@ import ExtApi1 from './danpucjimFront/extAPI1.svelte';
 	'/landusage-stats/chart2':LandusageChart2,
 	'/landusage-stats/extAPI':ExtApi,
 	'/landusage-stats/extAPI1':ExtApi1,
+	'/landusage-stats/Integration1':CancerIntegration,
 	//ALJORPOY ROUTES
 	'/fertilizers-stats/:country/:year': EditFertilizersStats,
 	//JAVLARPAR ROUTES
