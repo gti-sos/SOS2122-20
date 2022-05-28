@@ -26,7 +26,11 @@
 import ExtApi from './danpucjimFront/extAPI.svelte';
 import ExtApi1 from './danpucjimFront/extAPI1.svelte';
 import CancerIntegration from './danpucjimFront/CancerIntegration.svelte';
+<<<<<<< HEAD
 import ExternalApi1 from './javlarparFront/externalAPI1.svelte';
+=======
+import CaloryIntegration from './danpucjimFront/Integration2.svelte';
+>>>>>>> e59b28f37c1cf75f94b63ed2fa53a6d9c3b87a7e
 
 
 
@@ -52,6 +56,7 @@ import ExternalApi1 from './javlarparFront/externalAPI1.svelte';
 	'/landusage-stats/extAPI':ExtApi,
 	'/landusage-stats/extAPI1':ExtApi1,
 	'/landusage-stats/Integration1':CancerIntegration,
+	'/landusage-stats/Integration2':CaloryIntegration,
 	//ALJORPOY ROUTES
 	'/fertilizers-stats/:country/:year': EditFertilizersStats,
 	//JAVLARPAR ROUTES

@@ -13,15 +13,15 @@
 
     let country1 = [];
     let year1 = [];
-    let ages_fifty_seventy = ["ages_fifty_seventy"];
-    let ages_seventy = ["ages_seventy"];
-    let ages_zero_fifty = ["ages_zero_fifty"];
+    let caloryperperson = ["ages_fifty_seventy"];
+    let dailygram = ["ages_seventy"];
+    let dailycalory = ["ages_zero_fifty"];
 
         
         
     async function getData(){
         const res = await fetch("https://sos2122-20.herokuapp.com/api/v1/landusage-stats");
-        const res1 = await fetch ("/CancerAPI");
+        const res1 = await fetch ("/CaloryAPI");
 
         if(res.ok && res1.ok){
             const data = await res.json();
@@ -39,25 +39,27 @@
                 }
                 
             });
+            
             stats1 = data1;
             stats1.forEach(stat => {
                 if(stat.country == "brazil"){
                     //country1.push(stat.country);
                 //year1.push(stat.year);
-                ages_fifty_seventy.push(stat.ages_fifty_seventy);
-                ages_seventy.push(stat.ages_seventy);
-                ages_zero_fifty.push(stat.ages_zero_fifty);
+                dailycalory.push(stat.dailycalory);
+                dailygram.push(stat.dailygram);
+                caloryperperson.push(stat.caloryperperson);
                 }
                 
             })
+            console.log(dailycalory);
                 
         }
         else{
             console.log("Hubo un error cargando los datos");
         }
-        datafinal = [year,year1];
-        console.log(datafinal);
-        await loadGraph();
+        //datafinal = [year,year1];
+        //console.log(datafinal);
+        //await loadGraph();
         console.log("Comprobando");
     }
 
