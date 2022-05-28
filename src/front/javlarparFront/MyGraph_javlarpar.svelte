@@ -86,12 +86,3 @@
                }}>Volver
        </Button>
     </main>
-
-    <style>
-        h2 {
-            text-align: center;
-        }
-        h4 {
-            text-align: center;
-        }
-    </style>

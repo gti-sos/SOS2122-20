@@ -5,12 +5,12 @@
         let stats = [];
         let stats1=[];
         let country= [];
-        let prod = ["production"];
-        let AbsC = ["absolute_change"];
-        let RelC = ["relative_change"]; 
-        let seventy =["ages_seventy"];
-        let fifty_seventy =["ages_fifty_seventy"];
-        let zero_fifty =["ages_zero_fifty"];
+        let prod = [];
+        let AbsC = [];
+        let RelC = []; 
+        let seventy =[];
+        let fifty_seventy =[];
+        let zero_fifty =[];
         async function getData(){
             console.log("Fetching stats....");
             const res = await fetch("/api/v1/agriculturalproduction-stats");
@@ -24,9 +24,9 @@
                 stats.forEach(stat => {
                     country.push(stat.country+"-"+stat.year);
                     
-                    prod.push(stat.production);
-                    AbsC.push(stat.absolute_change);
-                    RelC.push(stat.relative_change);
+                    prod.push(stat["production"]);
+                    AbsC.push(stat["absolute_change"]);
+                    RelC.push(stat["relative_change"]);
                     seventy.push(0);
                     fifty_seventy.push(0);
                     zero_fifty.push(0);
@@ -38,9 +38,9 @@
                 stats1.forEach(stat => {
                     country.push(stat.country+"-"+stat.year);
               
-                    seventy.push(stat.ages_seventy);
-                    fifty_seventy.push(stat.ages_fifty_seventy);
-                    zero_fifty.push(stat.ages_zero_fifty); 
+                    seventy.push(stat["ages_seventy"]);
+                    fifty_seventy.push(stat["ages_fifty_seventy"]);
+                    zero_fifty.push(stat["ages_zero_fifty"]); 
                     prod.push(0);
                     AbsC.push(0);
                     RelC.push(0);
@@ -113,10 +113,7 @@
 </svelte:head>
 
 <main>
-    <h2>Integracion de API propia y API de Laura grupo 24</h2>
-    <h4>Biblioteca: Chart.js</h4>
-    <!--<button class="btn btn-primary hBack" type="button">Volver</button>
-    <a href="/#/tennis" class="btn btn-primary hBack" role="button" >Volver</a> -->
+    <h2>Integracion de API propia y API de Laura(grupo 24)</h2>
     <a href="/#/agriculturalproduction-stats" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Volver</a>
 
     <canvas id="myChart" />
@@ -125,9 +122,6 @@
 
 <style>
     h2 {
-        text-align: center;
-    }
-    h4 {
         text-align: center;
     }
 </style>

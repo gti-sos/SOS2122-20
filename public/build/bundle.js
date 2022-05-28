@@ -1,5 +1,5 @@
 
-(function(l, r) { if (!l || l.getElementById('livereloadscript')) return; r = l.createElement('script'); r.async = 1; r.src = '//' + (self.location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1'; r.id = 'livereloadscript'; l.getElementsByTagName('head')[0].appendChild(r) })(self.document);
+(function(l, r) { if (!l || l.getElementById('livereloadscript')) return; r = l.createElement('script'); r.async = 1; r.src = '//' + (self.location.host || 'localhost').split(':')[0] + ':35733/livereload.js?snipver=1'; r.id = 'livereloadscript'; l.getElementsByTagName('head')[0].appendChild(r) })(self.document);
 var app = (function () {
     'use strict';
 
@@ -39401,7 +39401,6 @@ var app = (function () {
     			create_component(button.$$.fragment);
     			if (!src_url_equal(script.src, script_src_value = "https://cdn.jsdelivr.net/npm/chart.js")) attr_dev(script, "src", script_src_value);
     			add_location(script, file$f, 71, 8, 2574);
-    			attr_dev(h4, "class", "svelte-5m1ett");
     			add_location(h4, file$f, 79, 12, 2745);
     			add_location(div, file$f, 80, 12, 2810);
     			attr_dev(canvas, "id", "myGraph");
@@ -48977,10 +48976,8 @@ var app = (function () {
     	let main;
     	let h2;
     	let t2;
-    	let h4;
-    	let t4;
     	let a;
-    	let t6;
+    	let t4;
     	let canvas;
     	let mounted;
     	let dispose;
@@ -48991,29 +48988,24 @@ var app = (function () {
     			t0 = space();
     			main = element$1("main");
     			h2 = element$1("h2");
-    			h2.textContent = "Integracion de API propia y API de Antonio grupo 21";
+    			h2.textContent = "Integracion de API propia y API de Antonio(grupo 21)";
     			t2 = space();
-    			h4 = element$1("h4");
-    			h4.textContent = "Biblioteca: Chart.js";
-    			t4 = space();
     			a = element$1("a");
     			a.textContent = "Volver";
-    			t6 = space();
+    			t4 = space();
     			canvas = element$1("canvas");
     			if (!src_url_equal(script.src, script_src_value = "https://cdn.jsdelivr.net/npm/chart.js")) attr_dev(script, "src", script_src_value);
-    			add_location(script, file$7, 109, 4, 4168);
-    			attr_dev(h2, "class", "svelte-1f1idld");
-    			add_location(h2, file$7, 115, 4, 4299);
-    			attr_dev(h4, "class", "svelte-1f1idld");
-    			add_location(h4, file$7, 116, 4, 4365);
+    			add_location(script, file$7, 117, 4, 4349);
+    			attr_dev(h2, "class", "svelte-6teu96");
+    			add_location(h2, file$7, 123, 4, 4480);
     			attr_dev(a, "href", "/#/agriculturalproduction-stats");
     			attr_dev(a, "class", "btn btn-primary btn-lg active");
     			attr_dev(a, "role", "button");
     			attr_dev(a, "aria-pressed", "true");
-    			add_location(a, file$7, 119, 4, 4562);
+    			add_location(a, file$7, 124, 4, 4547);
     			attr_dev(canvas, "id", "myChart");
-    			add_location(canvas, file$7, 121, 4, 4694);
-    			add_location(main, file$7, 114, 0, 4287);
+    			add_location(canvas, file$7, 126, 4, 4679);
+    			add_location(main, file$7, 122, 0, 4468);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -49024,10 +49016,8 @@ var app = (function () {
     			insert_dev(target, main, anchor);
     			append_dev(main, h2);
     			append_dev(main, t2);
-    			append_dev(main, h4);
-    			append_dev(main, t4);
     			append_dev(main, a);
-    			append_dev(main, t6);
+    			append_dev(main, t4);
     			append_dev(main, canvas);
 
     			if (!mounted) {
@@ -49066,12 +49056,12 @@ var app = (function () {
     	let stats = [];
     	let stats1 = [];
     	let country = [];
-    	let prod = ["production"];
-    	let AbsC = ["absolute_change"];
-    	let RelC = ["relative_change"];
-    	let use_com = ["veh_use_comm"];
-    	let use_pass = ["veh_use_pass"];
-    	let use_per_1000 = ["veh_use_per_1000"];
+    	let prod = [];
+    	let AbsC = [];
+    	let RelC = [];
+    	let use_com = [];
+    	let use_pass = [];
+    	let use_per_1000 = [];
 
     	async function getData() {
     		console.log("Fetching stats....");
@@ -49087,9 +49077,9 @@ var app = (function () {
     			//inicializamos los arrays para mostrar los datos
     			stats.forEach(stat => {
     				country.push(stat.country + "-" + stat.year);
-    				prod.push(stat.production);
-    				AbsC.push(stat.absolute_change);
-    				RelC.push(stat.relative_change);
+    				prod.push(stat["production"]);
+    				AbsC.push(stat["absolute_change"]);
+    				RelC.push(stat["relative_change"]);
     				use_com.push(0);
     				use_pass.push(0);
     				use_per_1000.push(0);
@@ -49101,9 +49091,9 @@ var app = (function () {
     			//inicializamos los arrays para mostrar los datos
     			stats1.forEach(stat => {
     				country.push(stat.country + "-" + stat.year);
-    				use_com.push(stat.veh_use_comm);
-    				use_pass.push(stat.veh_use_pass);
-    				use_per_1000.push(stat.veh_use_per_1000);
+    				use_com.push(stat["veh_use_comm"]);
+    				use_pass.push(stat["veh_use_pass"]);
+    				use_per_1000.push(stat["veh_use_per_1000"]);
     				prod.push(0);
     				AbsC.push(0);
     				RelC.push(0);
@@ -49121,26 +49111,26 @@ var app = (function () {
 
     		new Chart(ctx,
     		{
-    				type: "bar",
+    				type: "radar",
     				data: {
     					labels: country,
     					datasets: [
     						{
-    							label: "Muertes 0-50 años",
+    							label: "Vehículos comerciales en uso",
     							backgroundColor: "rgb(0, 128, 128)",
     							borderColor: "rgb(255, 255, 255)",
     							data: use_com
     						},
     						{
-    							label: "Muertes 50-70 años",
-    							backgroundColor: "rgb(255, 0 ,0)",
-    							borderColor: "rgb(255, 255, 255)",
+    							label: "Vehículos de pasajeros en uso",
+    							backgroundColor: "B695C0",
+    							borderColor: "B695C0",
     							data: use_pass
     						},
     						{
-    							label: "Muertes 70 años",
-    							backgroundColor: "rgb(255, 255, 0)",
-    							borderColor: "rgb(255, 255, 255)",
+    							label: "Vehículos en uso por 1000 habitantes",
+    							backgroundColor: "#FF0000",
+    							borderColor: "#FF0000",
     							data: use_per_1000
     						},
     						{
@@ -49163,7 +49153,10 @@ var app = (function () {
     						}
     					]
     				},
-    				options: {}
+    				options: {
+    					responsive: true,
+    					plugins: { legend: { position: 'top' } }
+    				}
     			});
     	}
 
@@ -49176,6 +49169,7 @@ var app = (function () {
 
     	$$self.$capture_state = () => ({
     		onMount,
+    		Button,
     		apiData,
     		delay,
     		stats,
@@ -49237,10 +49231,8 @@ var app = (function () {
     	let main;
     	let h2;
     	let t2;
-    	let h4;
-    	let t4;
     	let a;
-    	let t6;
+    	let t4;
     	let canvas;
     	let mounted;
     	let dispose;
@@ -49251,29 +49243,24 @@ var app = (function () {
     			t0 = space();
     			main = element$1("main");
     			h2 = element$1("h2");
-    			h2.textContent = "Integracion de API propia y API de Laura grupo 24";
+    			h2.textContent = "Integracion de API propia y API de Laura(grupo 24)";
     			t2 = space();
-    			h4 = element$1("h4");
-    			h4.textContent = "Biblioteca: Chart.js";
-    			t4 = space();
     			a = element$1("a");
     			a.textContent = "Volver";
-    			t6 = space();
+    			t4 = space();
     			canvas = element$1("canvas");
     			if (!src_url_equal(script.src, script_src_value = "https://cdn.jsdelivr.net/npm/chart.js")) attr_dev(script, "src", script_src_value);
-    			add_location(script, file$6, 109, 4, 4144);
-    			attr_dev(h2, "class", "svelte-1f1idld");
-    			add_location(h2, file$6, 115, 4, 4275);
-    			attr_dev(h4, "class", "svelte-1f1idld");
-    			add_location(h4, file$6, 116, 4, 4339);
+    			add_location(script, file$6, 109, 4, 4065);
+    			attr_dev(h2, "class", "svelte-6teu96");
+    			add_location(h2, file$6, 115, 4, 4196);
     			attr_dev(a, "href", "/#/agriculturalproduction-stats");
     			attr_dev(a, "class", "btn btn-primary btn-lg active");
     			attr_dev(a, "role", "button");
     			attr_dev(a, "aria-pressed", "true");
-    			add_location(a, file$6, 119, 4, 4536);
+    			add_location(a, file$6, 116, 4, 4261);
     			attr_dev(canvas, "id", "myChart");
-    			add_location(canvas, file$6, 121, 4, 4668);
-    			add_location(main, file$6, 114, 0, 4263);
+    			add_location(canvas, file$6, 118, 4, 4393);
+    			add_location(main, file$6, 114, 0, 4184);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -49284,10 +49271,8 @@ var app = (function () {
     			insert_dev(target, main, anchor);
     			append_dev(main, h2);
     			append_dev(main, t2);
-    			append_dev(main, h4);
-    			append_dev(main, t4);
     			append_dev(main, a);
-    			append_dev(main, t6);
+    			append_dev(main, t4);
     			append_dev(main, canvas);
 
     			if (!mounted) {
@@ -49326,12 +49311,12 @@ var app = (function () {
     	let stats = [];
     	let stats1 = [];
     	let country = [];
-    	let prod = ["production"];
-    	let AbsC = ["absolute_change"];
-    	let RelC = ["relative_change"];
-    	let seventy = ["ages_seventy"];
-    	let fifty_seventy = ["ages_fifty_seventy"];
-    	let zero_fifty = ["ages_zero_fifty"];
+    	let prod = [];
+    	let AbsC = [];
+    	let RelC = [];
+    	let seventy = [];
+    	let fifty_seventy = [];
+    	let zero_fifty = [];
 
     	async function getData() {
     		console.log("Fetching stats....");
@@ -49347,9 +49332,9 @@ var app = (function () {
     			//inicializamos los arrays para mostrar los datos
     			stats.forEach(stat => {
     				country.push(stat.country + "-" + stat.year);
-    				prod.push(stat.production);
-    				AbsC.push(stat.absolute_change);
-    				RelC.push(stat.relative_change);
+    				prod.push(stat["production"]);
+    				AbsC.push(stat["absolute_change"]);
+    				RelC.push(stat["relative_change"]);
     				seventy.push(0);
     				fifty_seventy.push(0);
     				zero_fifty.push(0);
@@ -49361,9 +49346,9 @@ var app = (function () {
     			//inicializamos los arrays para mostrar los datos
     			stats1.forEach(stat => {
     				country.push(stat.country + "-" + stat.year);
-    				seventy.push(stat.ages_seventy);
-    				fifty_seventy.push(stat.ages_fifty_seventy);
-    				zero_fifty.push(stat.ages_zero_fifty);
+    				seventy.push(stat["ages_seventy"]);
+    				fifty_seventy.push(stat["ages_fifty_seventy"]);
+    				zero_fifty.push(stat["ages_zero_fifty"]);
     				prod.push(0);
     				AbsC.push(0);
     				RelC.push(0);

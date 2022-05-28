@@ -28,7 +28,7 @@ module.exports.register = (app) => {
         },
         {
             country:"Africa",
-            year: 2014,
+            year: 2016,
             production: 191.56,
             absolute_change:146.68,
             relative_change:327
@@ -42,7 +42,7 @@ module.exports.register = (app) => {
         },
         {
             country:"Argelia",
-            year: 2014,
+            year: 2020,
             production: 6.06,
             absolute_change:5.13,
             relative_change:549

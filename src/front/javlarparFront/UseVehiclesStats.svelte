@@ -1,16 +1,17 @@
 <script>
     import { onMount } from 'svelte';
+    import Button from 'sveltestrap/src/Button.svelte';
     let apiData = {};
     const delay = ms => new Promise(res => setTimeout(res,ms));
         let stats = [];
         let stats1=[];
         let country= [];
-        let prod = ["production"];
-        let AbsC = ["absolute_change"];
-        let RelC = ["relative_change"]; 
-        let use_com = ["veh_use_comm"];
-        let use_pass = ["veh_use_pass"];
-        let use_per_1000 = ["veh_use_per_1000"];
+        let prod = [];
+        let AbsC = [];
+        let RelC = []; 
+        let use_com = [];
+        let use_pass = [];
+        let use_per_1000 = [];
         async function getData(){
             console.log("Fetching stats....");
             const res = await fetch("/api/v1/agriculturalproduction-stats");
@@ -24,9 +25,9 @@
                 stats.forEach(stat => {
                     country.push(stat.country+"-"+stat.year);
                     
-                    prod.push(stat.production);
-                    AbsC.push(stat.absolute_change);
-                    RelC.push(stat.relative_change);
+                    prod.push(stat["production"]);
+                    AbsC.push(stat["absolute_change"]);
+                    RelC.push(stat["relative_change"]);
                     use_com.push(0);
                     use_pass.push(0);
                     use_per_1000.push(0);
@@ -38,9 +39,9 @@
                 stats1.forEach(stat => {
                     country.push(stat.country+"-"+stat.year);
               
-                    use_com.push(stat.veh_use_comm);
-                    use_pass.push(stat.veh_use_pass);
-                    use_per_1000.push(stat.veh_use_per_1000); 
+                    use_com.push(stat["veh_use_comm"]);
+                    use_pass.push(stat["veh_use_pass"]);
+                    use_per_1000.push(stat["veh_use_per_1000"]); 
                     prod.push(0);
                     AbsC.push(0);
                     RelC.push(0);
@@ -56,26 +57,26 @@
     async function loadGraph() {
         var ctx = document.getElementById("myChart").getContext("2d");
         var trace_olympic_gold_medals = new Chart(ctx, {
-            type: "bar",
+            type: "radar",
             data: {
                 labels: country,
                 datasets: [
                     {
-                        label: "Muertes 0-50 años",
+                        label: "Vehículos comerciales en uso",
                         backgroundColor: "rgb(0, 128, 128)",
                         borderColor: "rgb(255, 255, 255)",
                         data: use_com,
                     },
                     {
-                        label: "Muertes 50-70 años",
-                        backgroundColor: "rgb(255, 0 ,0)",
-                        borderColor: "rgb(255, 255, 255)",
+                        label: "Vehículos de pasajeros en uso",
+                        backgroundColor: "B695C0",
+                        borderColor: "B695C0",
                         data: use_pass,
                     },
                     {
-                        label: "Muertes 70 años",
-                        backgroundColor: "rgb(255, 255, 0)",
-                        borderColor: "rgb(255, 255, 255)",
+                        label: "Vehículos en uso por 1000 habitantes",
+                        backgroundColor: "#FF0000",
+                        borderColor: "#FF0000",
                         data: use_per_1000,
                     },
                     {
@@ -98,7 +99,14 @@
                     },
                 ],
             },
-            options: {},
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        position: 'top',
+                    },
+                }
+            },
         });
        
        
@@ -113,10 +121,7 @@
 </svelte:head>
 
 <main>
-    <h2>Integracion de API propia y API de Antonio grupo 21</h2>
-    <h4>Biblioteca: Chart.js</h4>
-    <!--<button class="btn btn-primary hBack" type="button">Volver</button>
-    <a href="/#/tennis" class="btn btn-primary hBack" role="button" >Volver</a> -->
+    <h2>Integracion de API propia y API de Antonio(grupo 21)</h2>
     <a href="/#/agriculturalproduction-stats" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Volver</a>
 
     <canvas id="myChart" />
@@ -125,9 +130,6 @@
 
 <style>
     h2 {
-        text-align: center;
-    }
-    h4 {
         text-align: center;
     }
 </style>
