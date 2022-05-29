@@ -25,7 +25,7 @@
                     <p> <a href="/#/landusage-stats/chart"> Gráfica Individual(Highcharts)</a></p>
                     <p> <a href="/#/landusage-stats/chart2"> Gráfica Individual(Billboard)</a></p>
                     <p> <a href="/#/landusage-stats/Integration1"> Gráfica Integrada API (Grupo 24)</a></p>
-                    <p> <a href="/#/landusage-stats/Integration2"> Gráfica Integrada API (Grupo 31)</a></p>
+                    <p> <a href="/#/landusage-stats/Integration2"> Gráfica Integrada API (Grupo 10 2021)</a></p>
                     <p> <a href="/#/landusage-stats/extAPI"> API Textual Externa 1</a></p>
                     <p> <a href="/#/landusage-stats/extAPI1"> API Textual Externa 2</a></p>
 

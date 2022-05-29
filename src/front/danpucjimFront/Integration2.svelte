@@ -19,6 +19,7 @@
     let caloryperperson = ["ages_zero_fifty"];
     async function getData(){
         //const res = await fetch("https://sos2122-20.herokuapp.com/api/v1/landusage-stats");
+        await fetch("/CaloryAPI/loadInitialData");
         const res = await fetch("/api/v1/landusage-stats");
         const res1 = await fetch ("/CaloryAPI");
 

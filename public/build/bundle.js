@@ -39296,7 +39296,7 @@ var app = (function () {
     			t30 = space();
     			p9 = element$1("p");
     			a10 = element$1("a");
-    			a10.textContent = "Gráfica Integrada API (Grupo 31)";
+    			a10.textContent = "Gráfica Integrada API (Grupo 10 2021)";
     			t32 = space();
     			p10 = element$1("p");
     			a11 = element$1("a");
@@ -39371,28 +39371,28 @@ var app = (function () {
     			add_location(a10, file$k, 27, 24, 1515);
     			add_location(p9, file$k, 27, 20, 1511);
     			attr_dev(a11, "href", "/#/landusage-stats/extAPI");
-    			add_location(a11, file$k, 28, 24, 1624);
-    			add_location(p10, file$k, 28, 20, 1620);
+    			add_location(a11, file$k, 28, 24, 1629);
+    			add_location(p10, file$k, 28, 20, 1625);
     			attr_dev(a12, "href", "/#/landusage-stats/extAPI1");
-    			add_location(a12, file$k, 29, 24, 1716);
-    			add_location(p11, file$k, 29, 20, 1712);
+    			add_location(a12, file$k, 29, 24, 1721);
+    			add_location(p11, file$k, 29, 20, 1717);
     			attr_dev(h53, "id", "titulo");
-    			add_location(h53, file$k, 31, 20, 1807);
+    			add_location(h53, file$k, 31, 20, 1812);
     			attr_dev(a13, "href", "/#/agriculturalproduction-stats/chart");
-    			add_location(a13, file$k, 32, 24, 1885);
-    			add_location(p12, file$k, 32, 20, 1881);
+    			add_location(a13, file$k, 32, 24, 1890);
+    			add_location(p12, file$k, 32, 20, 1886);
     			attr_dev(a14, "href", "/#/agriculturalproduction-stats/integracion1");
-    			add_location(a14, file$k, 33, 24, 1996);
-    			add_location(p13, file$k, 33, 20, 1992);
+    			add_location(a14, file$k, 33, 24, 2001);
+    			add_location(p13, file$k, 33, 20, 1997);
     			attr_dev(a15, "href", "/#/agriculturalproduction-stats/integracion2");
-    			add_location(a15, file$k, 34, 24, 2118);
-    			add_location(p14, file$k, 34, 20, 2114);
+    			add_location(a15, file$k, 34, 24, 2123);
+    			add_location(p14, file$k, 34, 20, 2119);
     			attr_dev(a16, "href", "/#/agriculturalproduction-stats/externalAPI1");
-    			add_location(a16, file$k, 35, 24, 2240);
-    			add_location(p15, file$k, 35, 20, 2236);
+    			add_location(a16, file$k, 35, 24, 2245);
+    			add_location(p15, file$k, 35, 20, 2241);
     			attr_dev(a17, "href", "/#/agriculturalproduction-stats/externalAPI2");
-    			add_location(a17, file$k, 36, 24, 2361);
-    			add_location(p16, file$k, 36, 20, 2357);
+    			add_location(a17, file$k, 36, 24, 2366);
+    			add_location(p16, file$k, 36, 20, 2362);
     			attr_dev(div0, "class", "col-4");
     			add_location(div0, file$k, 14, 16, 338);
     			attr_dev(div1, "class", "row");
@@ -54727,22 +54727,22 @@ var app = (function () {
     			t1 = space();
     			p = element$1("p");
     			if (!src_url_equal(script0.src, script0_src_value = "https://code.highcharts.com/highcharts.js")) attr_dev(script0, "src", script0_src_value);
-    			add_location(script0, file$1, 121, 4, 3376);
+    			add_location(script0, file$1, 122, 4, 3428);
     			if (!src_url_equal(script1.src, script1_src_value = "https://code.highcharts.com/highcharts-more.js")) attr_dev(script1, "src", script1_src_value);
-    			add_location(script1, file$1, 122, 0, 3443);
+    			add_location(script1, file$1, 123, 0, 3495);
     			if (!src_url_equal(script2.src, script2_src_value = "https://code.highcharts.com/modules/exporting.js")) attr_dev(script2, "src", script2_src_value);
-    			add_location(script2, file$1, 123, 0, 3515);
+    			add_location(script2, file$1, 124, 0, 3567);
     			if (!src_url_equal(script3.src, script3_src_value = "https://code.highcharts.com/modules/export-data.js")) attr_dev(script3, "src", script3_src_value);
-    			add_location(script3, file$1, 124, 0, 3589);
+    			add_location(script3, file$1, 125, 0, 3641);
     			if (!src_url_equal(script4.src, script4_src_value = "https://code.highcharts.com/modules/accessibility.js")) attr_dev(script4, "src", script4_src_value);
-    			add_location(script4, file$1, 125, 0, 3665);
+    			add_location(script4, file$1, 126, 0, 3717);
     			attr_dev(div, "id", "container");
-    			add_location(div, file$1, 130, 8, 3837);
+    			add_location(div, file$1, 131, 8, 3889);
     			attr_dev(p, "class", "highcharts-description");
-    			add_location(p, file$1, 131, 8, 3873);
+    			add_location(p, file$1, 132, 8, 3925);
     			attr_dev(figure, "class", "highcharts-figure");
-    			add_location(figure, file$1, 129, 4, 3793);
-    			add_location(main, file$1, 128, 0, 3781);
+    			add_location(figure, file$1, 130, 4, 3845);
+    			add_location(main, file$1, 129, 0, 3833);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -54813,8 +54813,9 @@ var app = (function () {
 
     	async function getData() {
     		//const res = await fetch("https://sos2122-20.herokuapp.com/api/v1/landusage-stats");
-    		const res = await fetch("/api/v1/landusage-stats");
+    		await fetch("/CaloryAPI/loadInitialData");
 
+    		const res = await fetch("/api/v1/landusage-stats");
     		const res1 = await fetch("/CaloryAPI");
 
     		if (res.ok && res1.ok) {
