@@ -35,7 +35,6 @@
                 stats1 = data1;
                 console.log(stats1.data);
                 console.log("Estadísticas recibidas: "+stats1.length);
-                //inicializamos los arrays para mostrar los datos
                 stats1.forEach(stat => {
                     country.push(stat.country+"-"+stat.year);
               

@@ -1,191 +1,159 @@
 <script>
   import {onMount} from'svelte';
   import {Button} from 'sveltestrap';
-  //Belrodsal APi ----------------------------------------------------
   let data = [];
   let country_date = [];
   let q = [];
   let absC = [];
   let relC = [];
-  async function getFertilizersStats() {
-      console.log("Fetching stats....");
-      const res = await fetch("/api/v1/fertilizers-stats");
-      if (res.ok) {
-          const data = await res.json();
-          console.log("Estadísticas recibidas: " + data.length);
-          data.forEach((stat) => {
-              country_date.push(stat.country + "-" + stat.year);
-              q.push(stat["quantity"]);
-              absC.push(stat["absolute_change"]);
-              relC.push(stat["relative_change"]);             
-          });
-          //loadGraph();
-      } else {
-          console.log("Error cargando los datos");
-      }
-  }
-  
-  let country_date1= [];
   let prod = [];
   let AbsC = [];
   let RelC = [];
-  async function getProductionStats(){
-      const loaData = await fetch("/api/v1/agriculturalproduction-stats/loadInitialData");
-      if (loaData.ok) {
-          const res = await fetch("/api/v1/agriculturalproduction-stats");
-          console.log(res);
-          if (res.ok) {
-              const data = await res.json();
-              console.log("Estadísticas recibidas: " + data.length);
-              data.forEach((stat) => {
-                  country_date1.push(stat.country + " " + stat.year);
-                  prod.push(stat["production"]);
-                  AbsC.push(stat["absolute_change"]);
-                  RelC.push(stat["relative_change"]);             
-              });
-              loadGraph();
-          } else {
-              console.log("Error cargando los datos");
-          }
-      } else {
-              console.log("Error cargando los datos iniciales");
-          }
-  }
-  //-----------------------------------------
-  let country_date2= [];
   let bui = [];
   let graz = [];
   let crop = [];
-  async function getLandusageStats(){
-      const loaData = await fetch("/api/v1/landusage-stats/loadInitialData");
-      if (loaData.ok) {
-          const res = await fetch("/api/v1/landusage-stats");
-          console.log(res);
-          if (res.ok) {
-              const data = await res.json();
-              console.log("Estadísticas recibidas: " + data.length);
-              data.forEach((stat) => {
-                  country_date2.push(stat.country + " " + stat.year);
-                  bui.push(stat["built_area"]);
-                  graz.push(stat["grazing_area"]);
-                  crop.push(stat["cropland_area"]);             
-              });
-              loadGraph();
-          } else {
-              console.log("Error cargando los datos");
-          }
+  async function loadGraph() {
+      console.log("Fetching stats....");
+      const res = await fetch("/api/v1/fertilizers-stats");
+      const res1 = await fetch("/api/v1/agriculturalproduction-stats");
+      const res2 = await fetch("/api/v1/landusage-stats");
+      if (res.ok) {
+        const data = await res.json();
+        const data1= await res1.json();
+        const data2 = await res2.json();
+          console.log("Estadísticas recibidas: " + data.length);
+          data.forEach(stat => {
+              country_date.push(stat.country + "-" + stat.year);
+              q.push(stat["quantity"]);
+              absC.push(stat["absolute_change"]);
+              relC.push(stat["relative_change"]);
+              prod.push(0);
+              AbsC.push(0);
+              RelC.push(0);
+              bui.push(0);
+              graz.push(0);
+              crop.push(0);            
+          });
+          console.log("Estadísticas recibidas: "+data1.length);
+          data1.forEach(stat1=>{
+            country_date.push(stat1.country + "-" + stat1.year);
+            prod.push(stat1["production"]);
+            AbsC.push(stat1["absolute_change"]);
+            RelC.push(stat1["relative_change"]); 
+            bui.push(0);
+            graz.push(0);
+            crop.push(0); 
+            q.push(0);
+            absC.push(0);
+            relC.push(0);
+          });
+          console.log("Estadísticas recibidas: "+data2.length);
+          data2.forEach(stat2=>{
+            country_date.push(stat2.country + "-" + stat2.year);
+            bui.push(stat2["built_area"]);
+            graz.push(stat2["grazing_area"]);
+            crop.push(stat2["cropland_area"]);
+            prod.push(0);
+            AbsC.push(0);
+            RelC.push(0);
+            q.push(0);
+            absC.push(0);
+            relC.push(0);
+
+          });
       } else {
-              console.log("Error cargando los datos iniciales");
-          }
-  }
-  async function loadGraph(){
-      Highcharts.chart('container', {
-          chart:{
-              polar:'true'
-          },
-          title: {
-              text: 'Grafico grupal'
-          },
-          subtitle: {
-              text: ''
-          },
-          yAxis: {
-            min: 0
-          },
-          xAxis: {
-              accessibility: {
-                  title :{
-                      text:'año',
-                  },
-                  labels: country_date.concat(country_date1 &&country_date2)
-                  
-                  
-              
-              }
-          },
-          legend: {
-              layout: 'vertical',
-              align: 'right',
-              verticalAlign: 'middle'
-          },
-          plotOptions: {
-        series: {
-            pointStart: 0,
-            pointInterval: 45
-        },
-        column: {
-            pointPadding: 0,
-            groupPadding: 0
+          console.log("Error cargando los datos");
+      }
+
+
+  Highcharts.chart('container', {
+    chart: {
+        type: 'area'
+    },
+    title: {
+        text: 'Grafico Grupal'
+    },
+    xAxis: {
+        categories: country_date,
+        title: {
+            text: 'Pais y Año'
         }
     },
-          series: [{
-                  type:'area',
+    yAxis: {
+        min: 0,
+        title: {
+            text: 'Valores',
+            align: 'high'
+        },
+        labels: {
+            overflow: 'justify'
+        }
+    },
+   
+    plotOptions: {
+        bar: {
+            dataLabels: {
+                enabled: true
+            }
+        }
+    },
+    legend: {
+        layout: 'vertical',
+        align: 'right',
+        verticalAlign: 'top',
+        x: -70,
+        y: 90,
+        floating: true,
+        borderWidth: 1,
+        backgroundColor:
+            Highcharts.defaultOptions.legend.backgroundColor || '#FFFFFF',
+        shadow: true
+    },
+    credits: {
+        enabled: false
+    },
+    series: [{
                   name: 'Cantidad',
                   data: q
               },
               {
-                  type:'area',
                   name: 'Cambio Absoluto-fertilizers',
                   data: absC
               },
               {
-                  type:'area',
                   name: 'Cambio Relativo-fertilizers',
                   data: relC
               },
               {
-                  type:'area',
                   name: 'Produccion',
                   data: prod
               },
               {
-                  type:'area',
                   name: 'Cambio Absoluto-agricultura',
                   data: AbsC
               },
               {
-                  type:'area',
                   name: 'Cambio Relativo-agricultura',
                   data: RelC
               },
               {
-                  type:'area',
                   name: 'Built area',
                   data: bui
               },
               {
-                  type:'area',
                   name: 'grazing-area',
                   data: graz
               },
               {
-                  type:'area',
                   name:'cropland-area',
                   data: crop
-              }
-          
-          ],
-          responsive: {
-              rules: [{
-                  condition: {
-                      maxWidth: 500
-                  },
-                  chartOptions: {
-                      legend: {
-                          layout: 'horizontal',
-                          align: 'center',
-                          verticalAlign: 'bottom'
-                      }
-                  }
-              }]
-          }
-      });
-  }
-  onMount(getFertilizersStats);
-  onMount(getProductionStats);
-  onMount(getLandusageStats);
+              },
+            ],
+    });
+
+}
   
- 
+  
 </script>
 <main>
 

@@ -39526,7 +39526,7 @@ var app = (function () {
     const { console: console_1$h } = globals;
     const file$j = "src\\front\\GroupGraph.svelte";
 
-    // (197:2) <Button outline color="/#/info" href="/">
+    // (165:2) <Button outline color="/#/info" href="/">
     function create_default_slot$c(ctx) {
     	let t;
 
@@ -39546,7 +39546,7 @@ var app = (function () {
     		block,
     		id: create_default_slot$c.name,
     		type: "slot",
-    		source: "(197:2) <Button outline color=\\\"/#/info\\\" href=\\\"/\\\">",
+    		source: "(165:2) <Button outline color=\\\"/#/info\\\" href=\\\"/\\\">",
     		ctx
     	});
 
@@ -39603,22 +39603,22 @@ var app = (function () {
     			script3 = element$1("script");
     			script4 = element$1("script");
     			attr_dev(div, "id", "container");
-    			add_location(div, file$j, 192, 6, 5835);
+    			add_location(div, file$j, 160, 6, 4296);
     			attr_dev(p, "class", "highcharts-description");
-    			add_location(p, file$j, 193, 6, 5869);
+    			add_location(p, file$j, 161, 6, 4330);
     			attr_dev(figure, "class", "highcharts-figure");
-    			add_location(figure, file$j, 191, 2, 5793);
-    			add_location(main, file$j, 189, 0, 5781);
+    			add_location(figure, file$j, 159, 2, 4254);
+    			add_location(main, file$j, 157, 0, 4242);
     			if (!src_url_equal(script0.src, script0_src_value = "https://code.highcharts.com/highcharts.js")) attr_dev(script0, "src", script0_src_value);
-    			add_location(script0, file$j, 202, 2, 6022);
+    			add_location(script0, file$j, 170, 2, 4483);
     			if (!src_url_equal(script1.src, script1_src_value = "https://code.highcharts.com/modules/series-label.js")) attr_dev(script1, "src", script1_src_value);
-    			add_location(script1, file$j, 203, 2, 6091);
+    			add_location(script1, file$j, 171, 2, 4552);
     			if (!src_url_equal(script2.src, script2_src_value = "https://code.highcharts.com/modules/exporting.js")) attr_dev(script2, "src", script2_src_value);
-    			add_location(script2, file$j, 204, 2, 6170);
+    			add_location(script2, file$j, 172, 2, 4631);
     			if (!src_url_equal(script3.src, script3_src_value = "https://code.highcharts.com/modules/export-data.js")) attr_dev(script3, "src", script3_src_value);
-    			add_location(script3, file$j, 205, 2, 6246);
+    			add_location(script3, file$j, 173, 2, 4707);
     			if (!src_url_equal(script4.src, script4_src_value = "https://code.highcharts.com/modules/accessibility.js")) attr_dev(script4, "src", script4_src_value);
-    			add_location(script4, file$j, 206, 2, 6324);
+    			add_location(script4, file$j, 174, 2, 4785);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -39647,7 +39647,7 @@ var app = (function () {
     		p: function update(ctx, [dirty]) {
     			const button_changes = {};
 
-    			if (dirty & /*$$scope*/ 131072) {
+    			if (dirty & /*$$scope*/ 4096) {
     				button_changes.$$scope = { dirty, ctx };
     			}
 
@@ -39695,13 +39695,23 @@ var app = (function () {
     	let q = [];
     	let absC = [];
     	let relC = [];
+    	let prod = [];
+    	let AbsC = [];
+    	let RelC = [];
+    	let bui = [];
+    	let graz = [];
+    	let crop = [];
 
-    	async function getFertilizersStats() {
+    	async function loadGraph() {
     		console.log("Fetching stats....");
     		const res = await fetch("/api/v1/fertilizers-stats");
+    		const res1 = await fetch("/api/v1/agriculturalproduction-stats");
+    		const res2 = await fetch("/api/v1/landusage-stats");
 
     		if (res.ok) {
     			const data = await res.json();
+    			const data1 = await res1.json();
+    			const data2 = await res2.json();
     			console.log("Estadísticas recibidas: " + data.length);
 
     			data.forEach(stat => {
@@ -39709,162 +39719,98 @@ var app = (function () {
     				q.push(stat["quantity"]);
     				absC.push(stat["absolute_change"]);
     				relC.push(stat["relative_change"]);
+    				prod.push(0);
+    				AbsC.push(0);
+    				RelC.push(0);
+    				bui.push(0);
+    				graz.push(0);
+    				crop.push(0);
+    			});
+
+    			console.log("Estadísticas recibidas: " + data1.length);
+
+    			data1.forEach(stat1 => {
+    				country_date.push(stat1.country + "-" + stat1.year);
+    				prod.push(stat1["production"]);
+    				AbsC.push(stat1["absolute_change"]);
+    				RelC.push(stat1["relative_change"]);
+    				bui.push(0);
+    				graz.push(0);
+    				crop.push(0);
+    				q.push(0);
+    				absC.push(0);
+    				relC.push(0);
+    			});
+
+    			console.log("Estadísticas recibidas: " + data2.length);
+
+    			data2.forEach(stat2 => {
+    				country_date.push(stat2.country + "-" + stat2.year);
+    				bui.push(stat2["built_area"]);
+    				graz.push(stat2["grazing_area"]);
+    				crop.push(stat2["cropland_area"]);
+    				prod.push(0);
+    				AbsC.push(0);
+    				RelC.push(0);
+    				q.push(0);
+    				absC.push(0);
+    				relC.push(0);
     			});
     		} else {
-    			console.log("Error cargando los datos"); //loadGraph();
+    			console.log("Error cargando los datos");
     		}
-    	}
 
-    	let country_date1 = [];
-    	let prod = [];
-    	let AbsC = [];
-    	let RelC = [];
-
-    	async function getProductionStats() {
-    		const loaData = await fetch("/api/v1/agriculturalproduction-stats/loadInitialData");
-
-    		if (loaData.ok) {
-    			const res = await fetch("/api/v1/agriculturalproduction-stats");
-    			console.log(res);
-
-    			if (res.ok) {
-    				const data = await res.json();
-    				console.log("Estadísticas recibidas: " + data.length);
-
-    				data.forEach(stat => {
-    					country_date1.push(stat.country + " " + stat.year);
-    					prod.push(stat["production"]);
-    					AbsC.push(stat["absolute_change"]);
-    					RelC.push(stat["relative_change"]);
-    				});
-
-    				loadGraph();
-    			} else {
-    				console.log("Error cargando los datos");
-    			}
-    		} else {
-    			console.log("Error cargando los datos iniciales");
-    		}
-    	}
-
-    	//-----------------------------------------
-    	let country_date2 = [];
-
-    	let bui = [];
-    	let graz = [];
-    	let crop = [];
-
-    	async function getLandusageStats() {
-    		const loaData = await fetch("/api/v1/landusage-stats/loadInitialData");
-
-    		if (loaData.ok) {
-    			const res = await fetch("/api/v1/landusage-stats");
-    			console.log(res);
-
-    			if (res.ok) {
-    				const data = await res.json();
-    				console.log("Estadísticas recibidas: " + data.length);
-
-    				data.forEach(stat => {
-    					country_date2.push(stat.country + " " + stat.year);
-    					bui.push(stat["built_area"]);
-    					graz.push(stat["grazing_area"]);
-    					crop.push(stat["cropland_area"]);
-    				});
-
-    				loadGraph();
-    			} else {
-    				console.log("Error cargando los datos");
-    			}
-    		} else {
-    			console.log("Error cargando los datos iniciales");
-    		}
-    	}
-
-    	async function loadGraph() {
     		Highcharts.chart('container', {
-    			chart: { polar: 'true' },
-    			title: { text: 'Grafico grupal' },
-    			subtitle: { text: '' },
-    			yAxis: { min: 0 },
+    			chart: { type: 'area' },
+    			title: { text: 'Grafico Grupal' },
     			xAxis: {
-    				accessibility: {
-    					title: { text: 'año' },
-    					labels: country_date.concat(country_date1 && country_date2)
-    				}
+    				categories: country_date,
+    				title: { text: 'Pais y Año' }
     			},
+    			yAxis: {
+    				min: 0,
+    				title: { text: 'Valores', align: 'high' },
+    				labels: { overflow: 'justify' }
+    			},
+    			plotOptions: { bar: { dataLabels: { enabled: true } } },
     			legend: {
     				layout: 'vertical',
     				align: 'right',
-    				verticalAlign: 'middle'
+    				verticalAlign: 'top',
+    				x: -70,
+    				y: 90,
+    				floating: true,
+    				borderWidth: 1,
+    				backgroundColor: Highcharts.defaultOptions.legend.backgroundColor || '#FFFFFF',
+    				shadow: true
     			},
-    			plotOptions: {
-    				series: { pointStart: 0, pointInterval: 45 },
-    				column: { pointPadding: 0, groupPadding: 0 }
-    			},
+    			credits: { enabled: false },
     			series: [
-    				{ type: 'area', name: 'Cantidad', data: q },
+    				{ name: 'Cantidad', data: q },
     				{
-    					type: 'area',
     					name: 'Cambio Absoluto-fertilizers',
     					data: absC
     				},
     				{
-    					type: 'area',
     					name: 'Cambio Relativo-fertilizers',
     					data: relC
     				},
+    				{ name: 'Produccion', data: prod },
     				{
-    					type: 'area',
-    					name: 'Produccion',
-    					data: prod
-    				},
-    				{
-    					type: 'area',
     					name: 'Cambio Absoluto-agricultura',
     					data: AbsC
     				},
     				{
-    					type: 'area',
     					name: 'Cambio Relativo-agricultura',
     					data: RelC
     				},
-    				{
-    					type: 'area',
-    					name: 'Built area',
-    					data: bui
-    				},
-    				{
-    					type: 'area',
-    					name: 'grazing-area',
-    					data: graz
-    				},
-    				{
-    					type: 'area',
-    					name: 'cropland-area',
-    					data: crop
-    				}
-    			],
-    			responsive: {
-    				rules: [
-    					{
-    						condition: { maxWidth: 500 },
-    						chartOptions: {
-    							legend: {
-    								layout: 'horizontal',
-    								align: 'center',
-    								verticalAlign: 'bottom'
-    							}
-    						}
-    					}
-    				]
-    			}
+    				{ name: 'Built area', data: bui },
+    				{ name: 'grazing-area', data: graz },
+    				{ name: 'cropland-area', data: crop }
+    			]
     		});
     	}
 
-    	onMount(getFertilizersStats);
-    	onMount(getProductionStats);
-    	onMount(getLandusageStats);
     	const writable_props = [];
 
     	Object.keys($$props).forEach(key => {
@@ -39879,17 +39825,12 @@ var app = (function () {
     		q,
     		absC,
     		relC,
-    		getFertilizersStats,
-    		country_date1,
     		prod,
     		AbsC,
     		RelC,
-    		getProductionStats,
-    		country_date2,
     		bui,
     		graz,
     		crop,
-    		getLandusageStats,
     		loadGraph
     	});
 
@@ -39899,11 +39840,9 @@ var app = (function () {
     		if ('q' in $$props) q = $$props.q;
     		if ('absC' in $$props) absC = $$props.absC;
     		if ('relC' in $$props) relC = $$props.relC;
-    		if ('country_date1' in $$props) country_date1 = $$props.country_date1;
     		if ('prod' in $$props) prod = $$props.prod;
     		if ('AbsC' in $$props) AbsC = $$props.AbsC;
     		if ('RelC' in $$props) RelC = $$props.RelC;
-    		if ('country_date2' in $$props) country_date2 = $$props.country_date2;
     		if ('bui' in $$props) bui = $$props.bui;
     		if ('graz' in $$props) graz = $$props.graz;
     		if ('crop' in $$props) crop = $$props.crop;
@@ -49857,17 +49796,17 @@ var app = (function () {
     			t4 = space();
     			canvas = element$1("canvas");
     			if (!src_url_equal(script.src, script_src_value = "https://cdn.jsdelivr.net/npm/chart.js")) attr_dev(script, "src", script_src_value);
-    			add_location(script, file$9, 111, 4, 4184);
+    			add_location(script, file$9, 110, 4, 4117);
     			attr_dev(h2, "class", "svelte-6teu96");
-    			add_location(h2, file$9, 117, 4, 4315);
+    			add_location(h2, file$9, 116, 4, 4248);
     			attr_dev(a, "href", "/#/info");
     			attr_dev(a, "class", "btn btn-primary btn-lg active");
     			attr_dev(a, "role", "button");
     			attr_dev(a, "aria-pressed", "true");
-    			add_location(a, file$9, 118, 4, 4380);
+    			add_location(a, file$9, 117, 4, 4313);
     			attr_dev(canvas, "id", "myChart");
-    			add_location(canvas, file$9, 120, 4, 4488);
-    			add_location(main, file$9, 116, 0, 4303);
+    			add_location(canvas, file$9, 119, 4, 4421);
+    			add_location(main, file$9, 115, 0, 4236);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -49951,7 +49890,6 @@ var app = (function () {
     			console.log(stats1.data);
     			console.log("Estadísticas recibidas: " + stats1.length);
 
-    			//inicializamos los arrays para mostrar los datos
     			stats1.forEach(stat => {
     				country.push(stat.country + "-" + stat.year);
     				seventy.push(stat["ages_seventy"]);
