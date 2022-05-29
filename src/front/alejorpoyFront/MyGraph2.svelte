@@ -1,7 +1,7 @@
 <script>
 
     import { onMount } from 'svelte';
-    import c3 from "c3";
+    import * as c3 from "c3";
     import {Table,Button} from 'sveltestrap';
     import {pop} from 'svelte-spa-router';
     let apiData = {};
@@ -12,9 +12,10 @@
         let quantity = ["quantity"];
         let absolute_change = ["absolute_change"];
         let relative_change = ["relative_change"]; 
-        async function loadGraph(){
+        async function getData(){
             console.log("Fetching stats....");
             const res = await fetch("/api/v1/fertilizers-stats");
+         
             if(res.ok){
                 const data = await res.json();
                 stats = data;
@@ -22,16 +23,25 @@
                 //inicializamos los arrays para mostrar los datos
                 stats.forEach(stat => {
                     country.push(stat.country+"-"+stat.year);
-                    year.push(stat.year);
+                    
                     quantity.push(stat.quantity);
                     absolute_change.push(stat.absolute_change);
-                    relative_change.push(stat.relative_change);            
+                    relative_change.push(stat.relative_change);
+                    
+                              
                 });
+                
             }else{
                 console.log("Error cargando los datos");
             }
+            loadGraph();
             console.log("Comprobando");
-      
+        }
+             
+
+    async function loadGraph(){
+    
+    
             var chart= c3.generate({
                 bindto: '#chart',
     data: {
@@ -39,7 +49,9 @@
         columns: [
            quantity,
            absolute_change,
-           relative_change
+           relative_change,
+          
+           
         ],
         type: 'spline'
     },
@@ -51,26 +63,22 @@
         }
         }
 });
+    }
            
-}
+
        
-    //onMount(getPEStats);
+    onMount(getData);
     </script>
     <svelte:head>
-    
-        <!-- Load c3.css -->
         <link rel="stylesheet" href="./c3/c3.css"  >
-        <script type="text/javascript" src="./d3/dist/d3.js"  ></script>
-        <script type="text/javascript" src="./c3/c3.js" on:load="{loadGraph}"></script>
-        
-    
+
     </svelte:head>
     
     <main>
     
             <div id="chart"></div>
            <figure>
-               Gráfico spline.
+               Integración API fertilizers con API air-pollution-stats de Alicia grupo 24.
            </figure>
           
         <Button on:click="{pop}">

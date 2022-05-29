@@ -37845,7 +37845,7 @@ var app = (function () {
     const { console: console_1$m } = globals;
     const file$p = "src\\front\\alejorpoyFront\\MyGraph2.svelte";
 
-    // (76:8) <Button on:click="{pop}">
+    // (84:8) <Button on:click="{pop}">
     function create_default_slot$h(ctx) {
     	let t;
 
@@ -37865,7 +37865,7 @@ var app = (function () {
     		block,
     		id: create_default_slot$h.name,
     		type: "slot",
-    		source: "(76:8) <Button on:click=\\\"{pop}\\\">",
+    		source: "(84:8) <Button on:click=\\\"{pop}\\\">",
     		ctx
     	});
 
@@ -37874,10 +37874,6 @@ var app = (function () {
 
     function create_fragment$p(ctx) {
     	let link;
-    	let script0;
-    	let script0_src_value;
-    	let script1;
-    	let script1_src_value;
     	let t0;
     	let main;
     	let div;
@@ -37886,8 +37882,6 @@ var app = (function () {
     	let t3;
     	let button;
     	let current;
-    	let mounted;
-    	let dispose;
 
     	button = new Button({
     			props: {
@@ -37902,37 +37896,27 @@ var app = (function () {
     	const block = {
     		c: function create() {
     			link = element$1("link");
-    			script0 = element$1("script");
-    			script1 = element$1("script");
     			t0 = space();
     			main = element$1("main");
     			div = element$1("div");
     			t1 = space();
     			figure = element$1("figure");
-    			figure.textContent = "Gráfico spline.";
+    			figure.textContent = "Integración API fertilizers con API air-pollution-stats de Alicia grupo 24.";
     			t3 = space();
     			create_component(button.$$.fragment);
     			attr_dev(link, "rel", "stylesheet");
     			attr_dev(link, "href", "./c3/c3.css");
-    			add_location(link, file$p, 61, 8, 1861);
-    			attr_dev(script0, "type", "text/javascript");
-    			if (!src_url_equal(script0.src, script0_src_value = "./d3/dist/d3.js")) attr_dev(script0, "src", script0_src_value);
-    			add_location(script0, file$p, 62, 8, 1915);
-    			attr_dev(script1, "type", "text/javascript");
-    			if (!src_url_equal(script1.src, script1_src_value = "./c3/c3.js")) attr_dev(script1, "src", script1_src_value);
-    			add_location(script1, file$p, 63, 8, 1989);
+    			add_location(link, file$p, 72, 8, 1996);
     			attr_dev(div, "id", "chart");
-    			add_location(div, file$p, 70, 12, 2142);
-    			add_location(figure, file$p, 71, 11, 2177);
-    			add_location(main, file$p, 68, 4, 2116);
+    			add_location(div, file$p, 78, 12, 2100);
+    			add_location(figure, file$p, 79, 11, 2135);
+    			add_location(main, file$p, 76, 4, 2074);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
     		},
     		m: function mount(target, anchor) {
     			append_dev(document.head, link);
-    			append_dev(document.head, script0);
-    			append_dev(document.head, script1);
     			insert_dev(target, t0, anchor);
     			insert_dev(target, main, anchor);
     			append_dev(main, div);
@@ -37941,16 +37925,11 @@ var app = (function () {
     			append_dev(main, t3);
     			mount_component(button, main, null);
     			current = true;
-
-    			if (!mounted) {
-    				dispose = listen_dev(script1, "load", /*loadGraph*/ ctx[0], false, false, false);
-    				mounted = true;
-    			}
     		},
     		p: function update(ctx, [dirty]) {
     			const button_changes = {};
 
-    			if (dirty & /*$$scope*/ 512) {
+    			if (dirty & /*$$scope*/ 1024) {
     				button_changes.$$scope = { dirty, ctx };
     			}
 
@@ -37967,13 +37946,9 @@ var app = (function () {
     		},
     		d: function destroy(detaching) {
     			detach_dev(link);
-    			detach_dev(script0);
-    			detach_dev(script1);
     			if (detaching) detach_dev(t0);
     			if (detaching) detach_dev(main);
     			destroy_component(button);
-    			mounted = false;
-    			dispose();
     		}
     	};
 
@@ -38000,7 +37975,7 @@ var app = (function () {
     	let absolute_change = ["absolute_change"];
     	let relative_change = ["relative_change"];
 
-    	async function loadGraph() {
+    	async function getData() {
     		console.log("Fetching stats....");
     		const res = await fetch("/api/v1/fertilizers-stats");
 
@@ -38012,7 +37987,6 @@ var app = (function () {
     			//inicializamos los arrays para mostrar los datos
     			stats.forEach(stat => {
     				country.push(stat.country + "-" + stat.year);
-    				year.push(stat.year);
     				quantity.push(stat.quantity);
     				absolute_change.push(stat.absolute_change);
     				relative_change.push(stat.relative_change);
@@ -38021,8 +37995,11 @@ var app = (function () {
     			console.log("Error cargando los datos");
     		}
 
+    		loadGraph();
     		console.log("Comprobando");
+    	}
 
+    	async function loadGraph() {
     		c3.generate({
     			bindto: '#chart',
     			data: {
@@ -38035,6 +38012,7 @@ var app = (function () {
     		});
     	}
 
+    	onMount(getData);
     	const writable_props = [];
 
     	Object.keys($$props).forEach(key => {
@@ -38043,7 +38021,7 @@ var app = (function () {
 
     	$$self.$capture_state = () => ({
     		onMount,
-    		c3,
+    		c3: c3$1,
     		Table,
     		Button,
     		pop,
@@ -38055,6 +38033,7 @@ var app = (function () {
     		quantity,
     		absolute_change,
     		relative_change,
+    		getData,
     		loadGraph
     	});
 
@@ -38072,7 +38051,7 @@ var app = (function () {
     		$$self.$inject_state($$props.$$inject);
     	}
 
-    	return [loadGraph];
+    	return [];
     }
 
     class MyGraph2 extends SvelteComponentDev {
