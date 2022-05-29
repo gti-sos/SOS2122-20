@@ -96,21 +96,7 @@
                     <Button color="primary" on:click="{function(){
                         window.location.href = "/#/fertilizers-stats/chart";
                     }}">Grafico HC</Button>
-                     <Button color="primary" on:click="{function(){
-                         window.location.href = "/#/fertilizers-stats/chart2";
-                     }}">Grafico C3</Button>
-                     <Button color="primary" on:click="{function(){
-                         window.location.href = "/#/fertilizers-stats/integration";
-                     }}">Integracion API (con API de Alicia grupo 24)</Button>
-                     <Button color="primary" on:click="{function(){
-                         window.location.href = "/#/fertilizers-stats/integration2";
-                     }}">Integracion API (con API de Damián grupo 25)</Button>
-                     <Button color="primary" on:click="{function(){
-                         window.location.href = "/#/fertilizers-stats/integrationext";
-                     }}">Integracion API externa 1</Button>
-                      <Button color="primary" on:click="{function(){
-                        window.location.href = "/#/fertilizers-stats/integrationext2";
-                    }}">Integracion API externa 2</Button>
+                  
                 </CardFooter>
             
         </Card>
@@ -137,18 +123,7 @@
                     <Button color="primary" on:click="{function(){
                         window.location.href = "/#/agriculturalproduction-stats/chart";
                     }}">Grafico</Button>
-                    <Button color="primary" on:click="{function(){
-                        window.location.href = "/#/agriculturalproduction-stats/integracion1";
-                    }}">Integracion API (con API de Antonio grupo 21)</Button>
-                    <Button color="primary" on:click="{function(){
-                        window.location.href = "/#/agriculturalproduction-stats/integracion2";
-                    }}">Integracion API (con API de Laura grupo 24)</Button>
-                    <Button color="primary" on:click="{function(){
-                        window.location.href = "/#/agriculturalproduction-stats/externalAPI1";
-                    }}">Integracion API externa 1</Button>
-                    <Button color="primary" on:click="{function(){
-                        window.location.href = "/#/agriculturalproduction-stats/externalAPI2";
-                    }}">Integracion API externa 2</Button>
+                
                 </CardFooter>
             
         </Card>
