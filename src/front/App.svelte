@@ -6,6 +6,8 @@
 	import MyGraph2 from './alejorpoyFront/MyGraph2.svelte';
 	import Integrations from './alejorpoyFront/Integrations.svelte';
 	import Integrations2 from './alejorpoyFront/Integrations2.svelte';
+	import IntegrationsExt from './alejorpoyFront/IntegrationsExt.svelte';
+	import IntegrationsExt2 from './alejorpoyFront/IntegrationsExt2.svelte';
 	
 	import GroupGraph from './GroupGraph.svelte';
 	import MyGraph_javlarpar from './javlarparFront/MyGraph_javlarpar.svelte';
@@ -44,6 +46,8 @@ import CaloryIntegration from './danpucjimFront/Integration2.svelte';
 	'/fertilizers-stats/chart2':MyGraph2,
 	'/fertilizers-stats/integration':Integrations,
 	'/fertilizers-stats/integration2':Integrations2,
+	'/fertilizers-stats/integrationext':IntegrationsExt,
+	'/fertilizers-stats/integrationext2':IntegrationsExt2,
 	'/GroupGraph':GroupGraph,
 	'/agriculturalproduction-stats/chart':MyGraph_javlarpar,
 

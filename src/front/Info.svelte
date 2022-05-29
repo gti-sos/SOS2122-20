@@ -92,7 +92,22 @@
                     }}">APIV1</Button>
                     <Button color="primary" on:click="{function(){
                         window.location.href = "/#/fertilizers-stats/chart";
-                    }}">Grafico</Button>
+                    }}">Grafico HC</Button>
+                     <Button color="primary" on:click="{function(){
+                         window.location.href = "/#/fertilizers-stats/chart2";
+                     }}">Grafico C3</Button>
+                     <Button color="primary" on:click="{function(){
+                         window.location.href = "/#/fertilizers-stats/integration";
+                     }}">Integracion API (con API de Alicia grupo 24)</Button>
+                     <Button color="primary" on:click="{function(){
+                         window.location.href = "/#/fertilizers-stats/integration2";
+                     }}">Integracion API (con API de Damián grupo 25)</Button>
+                     <Button color="primary" on:click="{function(){
+                         window.location.href = "/#/fertilizers-stats/integrationext";
+                     }}">Integracion API externa 1</Button>
+                      <Button color="primary" on:click="{function(){
+                        window.location.href = "/#/fertilizers-stats/integrationext2";
+                    }}">Integracion API externa 2</Button>
                 </CardFooter>
             
         </Card>
