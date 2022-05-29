@@ -69,7 +69,9 @@
     <main>
     
             <div id="chart"></div>
-           
+           <figure>
+               Gráfico spline.
+           </figure>
           
         <Button on:click="{pop}">
             Volver

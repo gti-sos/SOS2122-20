@@ -98,7 +98,9 @@
     <main>
     
             <div id="chart"></div>
-           
+           <figure>
+               Integración API fertilizers con API air-pollution-stats de Alicia grupo 24.
+           </figure>
           
         <Button on:click="{pop}">
             Volver

@@ -54,7 +54,7 @@
                 type: 'spline'
             },
             title: {
-                text: 'Datos sobre el carbón'
+                text: 'Integración externa'
             },
             subtitle: {
                 text: 'Biblioteca: Highcharts'
@@ -85,10 +85,7 @@
                 name: 'homeScore',
                 data: hsc
                 },
-                {
-                name: 'quantity',
-                data: quantity
-                },
+               
             ],
             responsive: {
                 rules: [{
@@ -124,12 +121,14 @@
 <main>        
     <br>
     <br>
-    <Button id='back' outline color="secondary" onclick="window.location.href='#/coalStatsTable'">Volver</Button>
+    <Button on:click="{pop}">
+        Volver
+    </Button>
         <div style="margin:auto;"> 
         <figure class="highcharts-figure">
             <div id="container"></div>
             <p class="highcharts-description">
-              Grafico acerca de los datos del Carbón
+              Uso de api fútbol.
             </p>
         </figure>  
     </main>

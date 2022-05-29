@@ -7557,7 +7557,7 @@ var app = (function () {
     const { console: console_1$n } = globals;
     const file$q = "src\\front\\alejorpoyFront\\MyGraph.svelte";
 
-    // (106:4) <Button on:click="{pop}">
+    // (104:4) <Button on:click="{pop}">
     function create_default_slot$i(ctx) {
     	let t;
 
@@ -7577,7 +7577,7 @@ var app = (function () {
     		block,
     		id: create_default_slot$i.name,
     		type: "slot",
-    		source: "(106:4) <Button on:click=\\\"{pop}\\\">",
+    		source: "(104:4) <Button on:click=\\\"{pop}\\\">",
     		ctx
     	});
 
@@ -7627,7 +7627,7 @@ var app = (function () {
     			div = element$1("div");
     			t1 = space();
     			p = element$1("p");
-    			p.textContent = "Los gráficos de tipo column son gráficos que muestarn barras rectangulares de forma horizontal. Este gráfico se encuentra invertido,\r\n            invertir el gráfico significa que el eje X se coloca como el eje vertical y el eje Y se coloca como el eje horizontal. \r\n            Esto puede ser más intuitivo para ciertos conjuntos de datos, como en este gráfico donde el eje X representa la cantidad total.";
+    			p.textContent = "Gráfico column.";
     			t3 = space();
     			create_component(button.$$.fragment);
     			if (!src_url_equal(script0.src, script0_src_value = "https://code.highcharts.com/highcharts.js")) attr_dev(script0, "src", script0_src_value);
@@ -37845,7 +37845,7 @@ var app = (function () {
     const { console: console_1$m } = globals;
     const file$p = "src\\front\\alejorpoyFront\\MyGraph2.svelte";
 
-    // (74:8) <Button on:click="{pop}">
+    // (76:8) <Button on:click="{pop}">
     function create_default_slot$h(ctx) {
     	let t;
 
@@ -37865,7 +37865,7 @@ var app = (function () {
     		block,
     		id: create_default_slot$h.name,
     		type: "slot",
-    		source: "(74:8) <Button on:click=\\\"{pop}\\\">",
+    		source: "(76:8) <Button on:click=\\\"{pop}\\\">",
     		ctx
     	});
 
@@ -37882,6 +37882,8 @@ var app = (function () {
     	let main;
     	let div;
     	let t1;
+    	let figure;
+    	let t3;
     	let button;
     	let current;
     	let mounted;
@@ -37906,6 +37908,9 @@ var app = (function () {
     			main = element$1("main");
     			div = element$1("div");
     			t1 = space();
+    			figure = element$1("figure");
+    			figure.textContent = "Gráfico spline.";
+    			t3 = space();
     			create_component(button.$$.fragment);
     			attr_dev(link, "rel", "stylesheet");
     			attr_dev(link, "href", "./c3/c3.css");
@@ -37918,6 +37923,7 @@ var app = (function () {
     			add_location(script1, file$p, 63, 8, 1989);
     			attr_dev(div, "id", "chart");
     			add_location(div, file$p, 70, 12, 2142);
+    			add_location(figure, file$p, 71, 11, 2177);
     			add_location(main, file$p, 68, 4, 2116);
     		},
     		l: function claim(nodes) {
@@ -37931,6 +37937,8 @@ var app = (function () {
     			insert_dev(target, main, anchor);
     			append_dev(main, div);
     			append_dev(main, t1);
+    			append_dev(main, figure);
+    			append_dev(main, t3);
     			mount_component(button, main, null);
     			current = true;
 
@@ -38086,7 +38094,7 @@ var app = (function () {
     const { console: console_1$l } = globals;
     const file$o = "src\\front\\alejorpoyFront\\Integrations.svelte";
 
-    // (103:8) <Button on:click="{pop}">
+    // (105:8) <Button on:click="{pop}">
     function create_default_slot$g(ctx) {
     	let t;
 
@@ -38106,7 +38114,7 @@ var app = (function () {
     		block,
     		id: create_default_slot$g.name,
     		type: "slot",
-    		source: "(103:8) <Button on:click=\\\"{pop}\\\">",
+    		source: "(105:8) <Button on:click=\\\"{pop}\\\">",
     		ctx
     	});
 
@@ -38119,6 +38127,8 @@ var app = (function () {
     	let main;
     	let div;
     	let t1;
+    	let figure;
+    	let t3;
     	let button;
     	let current;
 
@@ -38139,12 +38149,16 @@ var app = (function () {
     			main = element$1("main");
     			div = element$1("div");
     			t1 = space();
+    			figure = element$1("figure");
+    			figure.textContent = "Integración API fertilizers con API air-pollution-stats de Alicia grupo 24.";
+    			t3 = space();
     			create_component(button.$$.fragment);
     			attr_dev(link, "rel", "stylesheet");
     			attr_dev(link, "href", "./c3/c3.css");
     			add_location(link, file$o, 93, 8, 3084);
     			attr_dev(div, "id", "chart");
     			add_location(div, file$o, 99, 12, 3188);
+    			add_location(figure, file$o, 100, 11, 3223);
     			add_location(main, file$o, 97, 4, 3162);
     		},
     		l: function claim(nodes) {
@@ -38156,6 +38170,8 @@ var app = (function () {
     			insert_dev(target, main, anchor);
     			append_dev(main, div);
     			append_dev(main, t1);
+    			append_dev(main, figure);
+    			append_dev(main, t3);
     			mount_component(button, main, null);
     			current = true;
     		},
@@ -38344,7 +38360,7 @@ var app = (function () {
     const { console: console_1$k } = globals;
     const file$n = "src\\front\\alejorpoyFront\\Integrations2.svelte";
 
-    // (103:8) <Button on:click="{pop}">
+    // (105:8) <Button on:click="{pop}">
     function create_default_slot$f(ctx) {
     	let t;
 
@@ -38364,7 +38380,7 @@ var app = (function () {
     		block,
     		id: create_default_slot$f.name,
     		type: "slot",
-    		source: "(103:8) <Button on:click=\\\"{pop}\\\">",
+    		source: "(105:8) <Button on:click=\\\"{pop}\\\">",
     		ctx
     	});
 
@@ -38377,6 +38393,8 @@ var app = (function () {
     	let main;
     	let div;
     	let t1;
+    	let figure;
+    	let t3;
     	let button;
     	let current;
 
@@ -38397,12 +38415,16 @@ var app = (function () {
     			main = element$1("main");
     			div = element$1("div");
     			t1 = space();
+    			figure = element$1("figure");
+    			figure.textContent = "Integración API fertilizers con API economies-stats de Damián grupo 25.";
+    			t3 = space();
     			create_component(button.$$.fragment);
     			attr_dev(link, "rel", "stylesheet");
     			attr_dev(link, "href", "./c3/c3.css");
     			add_location(link, file$n, 93, 8, 3032);
     			attr_dev(div, "id", "chart");
     			add_location(div, file$n, 99, 12, 3136);
+    			add_location(figure, file$n, 100, 12, 3172);
     			add_location(main, file$n, 97, 4, 3110);
     		},
     		l: function claim(nodes) {
@@ -38414,6 +38436,8 @@ var app = (function () {
     			insert_dev(target, main, anchor);
     			append_dev(main, div);
     			append_dev(main, t1);
+    			append_dev(main, figure);
+    			append_dev(main, t3);
     			mount_component(button, main, null);
     			current = true;
     		},
@@ -38835,7 +38859,7 @@ var app = (function () {
     const { console: console_1$i } = globals;
     const file$l = "src\\front\\alejorpoyFront\\IntegrationsExt2.svelte";
 
-    // (127:4) <Button id='back' outline color="secondary" onclick="window.location.href='#/coalStatsTable'">
+    // (124:4) <Button on:click="{pop}">
     function create_default_slot$d(ctx) {
     	let t;
 
@@ -38855,7 +38879,7 @@ var app = (function () {
     		block,
     		id: create_default_slot$d.name,
     		type: "slot",
-    		source: "(127:4) <Button id='back' outline color=\\\"secondary\\\" onclick=\\\"window.location.href='#/coalStatsTable'\\\">",
+    		source: "(124:4) <Button on:click=\\\"{pop}\\\">",
     		ctx
     	});
 
@@ -38892,15 +38916,13 @@ var app = (function () {
 
     	button = new Button({
     			props: {
-    				id: "back",
-    				outline: true,
-    				color: "secondary",
-    				onclick: "window.location.href='#/coalStatsTable'",
     				$$slots: { default: [create_default_slot$d] },
     				$$scope: { ctx }
     			},
     			$$inline: true
     		});
+
+    	button.$on("click", pop);
 
     	const block = {
     		c: function create() {
@@ -38922,29 +38944,29 @@ var app = (function () {
     			div0 = element$1("div");
     			t4 = space();
     			p = element$1("p");
-    			p.textContent = "Grafico acerca de los datos del Carbón";
+    			p.textContent = "Uso de api fútbol.";
     			if (!src_url_equal(script0.src, script0_src_value = "https://code.highcharts.com/highcharts.js")) attr_dev(script0, "src", script0_src_value);
-    			add_location(script0, file$l, 114, 4, 3509);
+    			add_location(script0, file$l, 111, 4, 3418);
     			if (!src_url_equal(script1.src, script1_src_value = "https://code.highcharts.com/modules/series-label.js")) attr_dev(script1, "src", script1_src_value);
-    			add_location(script1, file$l, 115, 4, 3580);
+    			add_location(script1, file$l, 112, 4, 3489);
     			if (!src_url_equal(script2.src, script2_src_value = "https://code.highcharts.com/modules/exporting.js")) attr_dev(script2, "src", script2_src_value);
-    			add_location(script2, file$l, 116, 4, 3661);
+    			add_location(script2, file$l, 113, 4, 3570);
     			if (!src_url_equal(script3.src, script3_src_value = "https://code.highcharts.com/modules/export-data.js")) attr_dev(script3, "src", script3_src_value);
-    			add_location(script3, file$l, 117, 4, 3739);
+    			add_location(script3, file$l, 114, 4, 3648);
     			if (!src_url_equal(script4.src, script4_src_value = "https://code.highcharts.com/modules/accessibility.js")) attr_dev(script4, "src", script4_src_value);
-    			add_location(script4, file$l, 118, 4, 3819);
-    			add_location(br0, file$l, 124, 4, 3969);
-    			add_location(br1, file$l, 125, 4, 3979);
+    			add_location(script4, file$l, 115, 4, 3728);
+    			add_location(br0, file$l, 121, 4, 3878);
+    			add_location(br1, file$l, 122, 4, 3888);
     			attr_dev(div0, "id", "container");
     			attr_dev(div0, "class", "svelte-1kzummw");
-    			add_location(div0, file$l, 129, 12, 4193);
+    			add_location(div0, file$l, 128, 12, 4049);
     			attr_dev(p, "class", "highcharts-description");
-    			add_location(p, file$l, 130, 12, 4233);
+    			add_location(p, file$l, 129, 12, 4089);
     			attr_dev(figure, "class", "highcharts-figure svelte-1kzummw");
-    			add_location(figure, file$l, 128, 8, 4145);
+    			add_location(figure, file$l, 127, 8, 4001);
     			set_style(div1, "margin", "auto");
-    			add_location(div1, file$l, 127, 8, 4108);
-    			add_location(main, file$l, 123, 0, 3949);
+    			add_location(div1, file$l, 126, 8, 3964);
+    			add_location(main, file$l, 120, 0, 3858);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -39071,7 +39093,7 @@ var app = (function () {
     	async function loadGraph() {
     		Highcharts.chart('container', {
     			chart: { type: 'spline' },
-    			title: { text: 'Datos sobre el carbón' },
+    			title: { text: 'Integración externa' },
     			subtitle: { text: 'Biblioteca: Highcharts' },
     			yAxis: { title: { text: 'Valor' } },
     			xAxis: { title: { text: "País" }, categories: c },
@@ -39080,11 +39102,7 @@ var app = (function () {
     				align: 'right',
     				verticalAlign: 'middle'
     			},
-    			series: [
-    				{ name: 'minutesPlayed', data: mp },
-    				{ name: 'homeScore', data: hsc },
-    				{ name: 'quantity', data: quantity }
-    			],
+    			series: [{ name: 'minutesPlayed', data: mp }, { name: 'homeScore', data: hsc }],
     			responsive: {
     				rules: [
     					{

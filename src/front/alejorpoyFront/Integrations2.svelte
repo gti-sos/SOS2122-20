@@ -98,7 +98,9 @@
     <main>
     
             <div id="chart"></div>
-           
+            <figure>
+                Integración API fertilizers con API economies-stats de Damián grupo 25.
+            </figure>
           
         <Button on:click="{pop}">
             Volver

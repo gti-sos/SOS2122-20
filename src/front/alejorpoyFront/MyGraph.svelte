@@ -98,9 +98,7 @@ const delay = ms => new Promise(res => setTimeout(res,ms));
     <figure class="highcharts-figure">
         <div id="container"></div>
         <p class="highcharts-description">
-            Los gráficos de tipo column son gráficos que muestarn barras rectangulares de forma horizontal. Este gráfico se encuentra invertido,
-            invertir el gráfico significa que el eje X se coloca como el eje vertical y el eje Y se coloca como el eje horizontal. 
-            Esto puede ser más intuitivo para ciertos conjuntos de datos, como en este gráfico donde el eje X representa la cantidad total.
+           Gráfico column.
         </p>
     </figure>
     <Button on:click="{pop}">
