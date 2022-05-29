@@ -21,16 +21,14 @@
 	import UseVehiclesStats from './javlarparFront/UseVehiclesStats.svelte';
 	import NeumoniaStats from './javlarparFront/Neumonia-stats.svelte';
 	import Info from './Info.svelte';
-	import ExternalAPI1 from './javlarparFront/externalAPI1.svelte';
+	import ExternalApi2 from './javlarparFront/externalAPI2.svelte';
 	import LandusageChart2 from './danpucjimFront/landusage_chart2.svelte';
 import ExtApi from './danpucjimFront/extAPI.svelte';
 import ExtApi1 from './danpucjimFront/extAPI1.svelte';
 import CancerIntegration from './danpucjimFront/CancerIntegration.svelte';
-<<<<<<< HEAD
 import ExternalApi1 from './javlarparFront/externalAPI1.svelte';
-=======
 import CaloryIntegration from './danpucjimFront/Integration2.svelte';
->>>>>>> e59b28f37c1cf75f94b63ed2fa53a6d9c3b87a7e
+
 
 
 
@@ -65,7 +63,8 @@ import CaloryIntegration from './danpucjimFront/Integration2.svelte';
 	//JAVLARPAR INTEGRACION
 	'/integracion1':UseVehiclesStats,
 	'/integracion2':NeumoniaStats,
-	'/externalAPI1':ExternalApi1
+	'/externalAPI1':ExternalApi1,
+	'/externalAPI2':ExternalApi2
 };
 
 </script>
