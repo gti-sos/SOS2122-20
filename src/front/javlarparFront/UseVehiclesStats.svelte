@@ -121,7 +121,7 @@
 
 <main>
     <h2>Integracion de API propia y API de Antonio(grupo 21)</h2>
-    <a href="/#/agriculturalproduction-stats" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Volver</a>
+    <a href="/#/info" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Volver</a>
 
     <canvas id="myChart" />
 

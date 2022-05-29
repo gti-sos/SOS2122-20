@@ -119,6 +119,18 @@
                     <Button color="primary" on:click="{function(){
                         window.location.href = "/#/agriculturalproduction-stats/chart";
                     }}">Grafico</Button>
+                    <Button color="primary" on:click="{function(){
+                        window.location.href = "/#/agriculturalproduction-stats/integracion1";
+                    }}">Integracion API (con API de Antonio grupo 21)</Button>
+                    <Button color="primary" on:click="{function(){
+                        window.location.href = "/#/agriculturalproduction-stats/integracion2";
+                    }}">Integracion API (con API de Laura grupo 24)</Button>
+                    <Button color="primary" on:click="{function(){
+                        window.location.href = "/#/agriculturalproduction-stats/externalAPI1";
+                    }}">Integracion API externa 1</Button>
+                    <Button color="primary" on:click="{function(){
+                        window.location.href = "/#/agriculturalproduction-stats/externalAPI2";
+                    }}">Integracion API externa 2</Button>
                 </CardFooter>
             
         </Card>

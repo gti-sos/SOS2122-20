@@ -28,10 +28,6 @@ import ExtApi1 from './danpucjimFront/extAPI1.svelte';
 import CancerIntegration from './danpucjimFront/CancerIntegration.svelte';
 import ExternalApi1 from './javlarparFront/externalAPI1.svelte';
 import CaloryIntegration from './danpucjimFront/Integration2.svelte';
-<<<<<<< HEAD
-
-=======
->>>>>>> 3c2800cbd3b9a07fd99a987a9fe0d2978c9b9c71
 
 
 
@@ -64,10 +60,10 @@ import CaloryIntegration from './danpucjimFront/Integration2.svelte';
 	'/agriculturalproduction-stats/:country/:year':EditAgriculturalStats,
 
 	//JAVLARPAR INTEGRACION
-	'/integracion1':UseVehiclesStats,
-	'/integracion2':NeumoniaStats,
-	'/externalAPI1':ExternalApi1,
-	'/externalAPI2':ExternalApi2
+	'/agriculturalproduction-stats/integracion1':UseVehiclesStats,
+	'/agriculturalproduction-stats/integracion2':NeumoniaStats,
+	'/agriculturalproduction-stats/externalAPI1':ExternalApi1,
+	'/agriculturalproduction-stats/externalAPI2':ExternalApi2
 };
 
 </script>

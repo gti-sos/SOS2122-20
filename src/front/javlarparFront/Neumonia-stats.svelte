@@ -33,6 +33,7 @@
                               
                 });
                 stats1 = data1;
+                console.log(stats1.data);
                 console.log("Estadísticas recibidas: "+stats1.length);
                 //inicializamos los arrays para mostrar los datos
                 stats1.forEach(stat => {
@@ -114,7 +115,7 @@
 
 <main>
     <h2>Integracion de API propia y API de Laura(grupo 24)</h2>
-    <a href="/#/agriculturalproduction-stats" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Volver</a>
+    <a href="/#/info" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Volver</a>
 
     <canvas id="myChart" />
 
