@@ -8,7 +8,7 @@
 	import Integrations2 from './alejorpoyFront/Integrations2.svelte';
 	import IntegrationsExt from './alejorpoyFront/IntegrationsExt.svelte';
 	import IntegrationsExt2 from './alejorpoyFront/IntegrationsExt2.svelte';
-	
+	import IntegrationsG from './Integrations.svelte';
 	import GroupGraph from './GroupGraph.svelte';
 	import MyGraph_javlarpar from './javlarparFront/MyGraph_javlarpar.svelte';
 
@@ -50,7 +50,7 @@ import CaloryIntegration from './danpucjimFront/Integration2.svelte';
 	'/fertilizers-stats/integrationext2':IntegrationsExt2,
 	'/GroupGraph':GroupGraph,
 	'/agriculturalproduction-stats/chart':MyGraph_javlarpar,
-
+	'/integrations':IntegrationsG,
 	//DANPUCJIM ROUTES
 	'/landusage-stats/:country/:year':EditLandusageStats,
 	'/landusage-stats/chart2':LandusageChart2,
