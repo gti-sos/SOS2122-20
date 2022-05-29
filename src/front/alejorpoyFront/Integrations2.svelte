@@ -74,7 +74,7 @@
            currentprices,
            
         ],
-        type: 'donut'
+        type: 'area'
     },
     axis:{
         x:{

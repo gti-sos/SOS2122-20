@@ -38400,10 +38400,10 @@ var app = (function () {
     			create_component(button.$$.fragment);
     			attr_dev(link, "rel", "stylesheet");
     			attr_dev(link, "href", "./c3/c3.css");
-    			add_location(link, file$n, 93, 8, 3033);
+    			add_location(link, file$n, 93, 8, 3032);
     			attr_dev(div, "id", "chart");
-    			add_location(div, file$n, 99, 12, 3137);
-    			add_location(main, file$n, 97, 4, 3111);
+    			add_location(div, file$n, 99, 12, 3136);
+    			add_location(main, file$n, 97, 4, 3110);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -38525,7 +38525,7 @@ var app = (function () {
     					percapita,
     					currentprices
     				],
-    				type: 'donut'
+    				type: 'area'
     			},
     			axis: {
     				x: { type: 'category', categories: country }
