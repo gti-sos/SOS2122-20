@@ -9,6 +9,6 @@
     - [https://sos2122-20.herokuapp.com/api/v1/landusage-stats/docs](https://sos2122-20.herokuapp.com/api/v1/landusage-stats/docs) (developed by [Daniel Puche Jiménez](https://github.com/danpucjim))
     - [https://sos2122-20.herokuapp.com/api/v1/fertilizers-stats/docs](https://sos2122-20.herokuapp.com/api/v1/fertilizers-stats/docs) (developed by [Alejandro Jorge Poyuelo](https://github.com/alexjorge-04))
     - [https://sos2122-20.herokuapp.com/api/v2/fertilizers-stats/docs](https://documenter.getpostman.com/view/20091974/Uz5CLxaT) (developed by [Alejandro Jorge Poyuelo](https://github.com/alexjorge-04))
-    - [[https://sos2122-20.herokuapp.com/api/v1/agriculturalproduction-stats/docs](https://documenter.getpostman.com/view/20091971/UyrAFxGv)](https://sos2122-20.herokuapp.com/api/v1/agriculturalproduction-stats/docs) (developed by [Javier Lara Parrilla](https://github.com/javierlara47))
+    - [https://sos2122-20.herokuapp.com/api/v1/agriculturalproduction-stats/docs](https://documenter.getpostman.com/view/20091971/UyrAFxGv) (developed by [Javier Lara Parrilla](https://github.com/javierlara47))
 
 
