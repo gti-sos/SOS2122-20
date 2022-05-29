@@ -11,6 +11,7 @@
 	import IntegrationsG from './Integrations.svelte';
 	import GroupGraph from './GroupGraph.svelte';
 	import MyGraph_javlarpar from './javlarparFront/MyGraph_javlarpar.svelte';
+	import Videos from './Videos.svelte';
 
 	//import ContactsTable from './front/danpucjimFront/landusageTables.svelte';
 	import landusage_charts from './danpucjimFront/landusage_charts.svelte';
@@ -42,13 +43,14 @@ import CaloryIntegration from './danpucjimFront/Integration2.svelte';
 	'/fertilizers-stats': FertilizersTables,
 	'/agriculturalproduction-stats': ProductionTables,
 	'/info':Info,
+	'/about':Videos,
 	'/fertilizers-stats/chart':MyGraph,
 	'/fertilizers-stats/chart2':MyGraph2,
 	'/fertilizers-stats/integration':Integrations,
 	'/fertilizers-stats/integration2':Integrations2,
 	'/fertilizers-stats/integrationext':IntegrationsExt,
 	'/fertilizers-stats/integrationext2':IntegrationsExt2,
-	'/GroupGraph':GroupGraph,
+	'/analytics':GroupGraph,
 	'/agriculturalproduction-stats/chart':MyGraph_javlarpar,
 	'/integrations':IntegrationsG,
 	//DANPUCJIM ROUTES

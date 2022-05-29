@@ -37,7 +37,7 @@
                 -(javlarpar)
             </h4>
             <h4>
-                <a href="/#/GroupGraph">Grafico de grupo</a>
+                <a href="/#/analytics">Grafico de grupo</a>
             </h4>
             <h4>
                 <a href="/#/integrations">Integraciones del grupo</a>
