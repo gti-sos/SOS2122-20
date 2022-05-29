@@ -8,7 +8,7 @@
     const delay = ms => new Promise(res => setTimeout(res,ms));
         let stats = [];
         let country= [];
-        let year = [];
+        let year = ["x"];
         let grazing_area = ["grazing_area"];
         let built_area = ["built_area"];
         let cropland_area = ["cropland_area"]; 
@@ -36,12 +36,13 @@
       
             var chart = bb.generate({
   data: {
-    axis: {
-    x: {
-      type: "category"
-    }
-  },
+    x:"x"
+  ,
     columns: [
+      year,
+      grazing_area,
+      cropland_area,
+      built_area
 	
     ],
    
@@ -51,7 +52,7 @@
       built_area: "area-spline" // for ESM specify as: areaSpline()
     }
   },
-  bindto: "#areaChart"
+  bindto: "#chart"
 });
     
 setTimeout(function() {
@@ -62,21 +63,6 @@ setTimeout(function() {
 	});
 }, 500);
 
-setTimeout(function() {
-	chart.load({
-		columns: [
-			cropland_area
-		]
-	});
-}, 1000);
-
-setTimeout(function() {
-	chart.load({
-		columns: [
-			built_area
-		]
-	});
-}, 1500);
 console.log(grazing_area)
 }
        

@@ -52368,7 +52368,7 @@ var app = (function () {
     const { console: console_1$5 } = globals;
     const file$6 = "src\\front\\danpucjimFront\\landusage_chart2.svelte";
 
-    // (98:8) <Button on:click="{pop}">
+    // (84:8) <Button on:click="{pop}">
     function create_default_slot$2(ctx) {
     	let t;
 
@@ -52388,7 +52388,7 @@ var app = (function () {
     		block,
     		id: create_default_slot$2.name,
     		type: "slot",
-    		source: "(98:8) <Button on:click=\\\"{pop}\\\">",
+    		source: "(84:8) <Button on:click=\\\"{pop}\\\">",
     		ctx
     	});
 
@@ -52430,14 +52430,14 @@ var app = (function () {
     			t1 = space();
     			create_component(button.$$.fragment);
     			if (!src_url_equal(script0.src, script0_src_value = "https://d3js.org/d3.v6.min.js")) attr_dev(script0, "src", script0_src_value);
-    			add_location(script0, file$6, 85, 8, 2169);
+    			add_location(script0, file$6, 71, 8, 2011);
     			if (!src_url_equal(script1.src, script1_src_value = "https://cdnjs.cloudflare.com/ajax/libs/billboard.js/3.4.1/billboard.min.js")) attr_dev(script1, "src", script1_src_value);
-    			add_location(script1, file$6, 86, 8, 2232);
+    			add_location(script1, file$6, 72, 8, 2074);
     			if (!src_url_equal(script2.src, script2_src_value = "https://cdnjs.cloudflare.com/ajax/libs/billboard.js/3.4.1/billboard.min.css")) attr_dev(script2, "src", script2_src_value);
-    			add_location(script2, file$6, 87, 8, 2340);
+    			add_location(script2, file$6, 73, 8, 2182);
     			attr_dev(div, "id", "chart");
-    			add_location(div, file$6, 94, 12, 2513);
-    			add_location(main, file$6, 92, 4, 2487);
+    			add_location(div, file$6, 80, 12, 2355);
+    			add_location(main, file$6, 78, 4, 2329);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -52499,7 +52499,7 @@ var app = (function () {
     	const delay = ms => new Promise(res => setTimeout(res, ms));
     	let stats = [];
     	let country = [];
-    	let year = [];
+    	let year = ["x"];
     	let grazing_area = ["grazing_area"];
     	let built_area = ["built_area"];
     	let cropland_area = ["cropland_area"];
@@ -52530,8 +52530,8 @@ var app = (function () {
 
     		var chart = bb.generate({
     			data: {
-    				axis: { x: { type: "category" } },
-    				columns: [],
+    				x: "x",
+    				columns: [year, grazing_area, cropland_area, built_area],
     				types: {
     					grazing_area: "area", // for ESM specify as: area()
     					cropland_area: "area-spline",
@@ -52539,7 +52539,7 @@ var app = (function () {
     					
     				}
     			},
-    			bindto: "#areaChart"
+    			bindto: "#chart"
     		});
 
     		setTimeout(
@@ -52547,20 +52547,6 @@ var app = (function () {
     				chart.load({ columns: [grazing_area] });
     			},
     			500
-    		);
-
-    		setTimeout(
-    			function () {
-    				chart.load({ columns: [cropland_area] });
-    			},
-    			1000
-    		);
-
-    		setTimeout(
-    			function () {
-    				chart.load({ columns: [built_area] });
-    			},
-    			1500
     		);
 
     		console.log(grazing_area);
@@ -54205,22 +54191,22 @@ var app = (function () {
     			t1 = space();
     			p = element$1("p");
     			if (!src_url_equal(script0.src, script0_src_value = "https://code.highcharts.com/highcharts.js")) attr_dev(script0, "src", script0_src_value);
-    			add_location(script0, file$3, 113, 4, 3053);
+    			add_location(script0, file$3, 112, 4, 2991);
     			if (!src_url_equal(script1.src, script1_src_value = "https://code.highcharts.com/highcharts-more.js")) attr_dev(script1, "src", script1_src_value);
-    			add_location(script1, file$3, 114, 0, 3120);
+    			add_location(script1, file$3, 113, 0, 3058);
     			if (!src_url_equal(script2.src, script2_src_value = "https://code.highcharts.com/modules/exporting.js")) attr_dev(script2, "src", script2_src_value);
-    			add_location(script2, file$3, 115, 0, 3192);
+    			add_location(script2, file$3, 114, 0, 3130);
     			if (!src_url_equal(script3.src, script3_src_value = "https://code.highcharts.com/modules/export-data.js")) attr_dev(script3, "src", script3_src_value);
-    			add_location(script3, file$3, 116, 0, 3266);
+    			add_location(script3, file$3, 115, 0, 3204);
     			if (!src_url_equal(script4.src, script4_src_value = "https://code.highcharts.com/modules/accessibility.js")) attr_dev(script4, "src", script4_src_value);
-    			add_location(script4, file$3, 117, 0, 3342);
+    			add_location(script4, file$3, 116, 0, 3280);
     			attr_dev(div, "id", "container");
-    			add_location(div, file$3, 122, 8, 3514);
+    			add_location(div, file$3, 121, 8, 3452);
     			attr_dev(p, "class", "highcharts-description");
-    			add_location(p, file$3, 123, 8, 3550);
+    			add_location(p, file$3, 122, 8, 3488);
     			attr_dev(figure, "class", "highcharts-figure");
-    			add_location(figure, file$3, 121, 4, 3470);
-    			add_location(main, file$3, 120, 0, 3458);
+    			add_location(figure, file$3, 120, 4, 3408);
+    			add_location(main, file$3, 119, 0, 3396);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -54290,7 +54276,7 @@ var app = (function () {
     	let ages_zero_fifty = ["ages_zero_fifty"];
 
     	async function getData() {
-    		const res = await fetch("https://sos2122-20.herokuapp.com/api/v1/landusage-stats");
+    		const res = await fetch("/remoteAPIdanpucjim");
     		const res1 = await fetch("/CancerAPI");
 
     		if (res.ok && res1.ok) {
@@ -54327,8 +54313,7 @@ var app = (function () {
     			console.log("Hubo un error cargando los datos");
     		}
 
-    		datafinal = [year, year1];
-    		console.log(datafinal);
+    		console.log(ages_fifty_seventy);
     		await loadGraph();
     		console.log("Comprobando");
     	}

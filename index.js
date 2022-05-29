@@ -25,8 +25,8 @@ app.use(paths, function(req, res) {
 
 
 //Proxy landusage-stats
-var paths1='/remoteAPI1';
-var apiServerHost1 = '/api/v1/landusage-stats';
+var paths1='/remoteAPIdanpucjim';
+var apiServerHost1 = 'https://sos2122-20.herokuapp.com/api/v1/landusage-stats';
 
 app.use(paths1, function(req, res) {
   var url = apiServerHost1 + req.url;
@@ -35,19 +35,19 @@ app.use(paths1, function(req, res) {
 });
 
 var paths1='/CancerAPI';
-var apiServerHost1 = 'https://sos2122-24.herokuapp.com/api/v1/cancerdeaths-stats';
+var apiServerHostd = 'https://sos2122-24.herokuapp.com/api/v1/cancerdeaths-stats';
 
 app.use(paths1, function(req, res) {
-  var url = apiServerHost1 + req.url;
+  var url = apiServerHostd + req.url;
   console.log('piped: ' + req.url);
   req.pipe(request(url)).pipe(res);
 });
 
 var paths1='/CaloryAPI';
-var apiServerHost1 = 'https://sos2021-10.herokuapp.com/api/v2/foodconsumption-stats';
+var apiServerHostp = 'https://sos2021-10.herokuapp.com/api/v2/foodconsumption-stats';
 
 app.use(paths1, function(req, res) {
-  var url = apiServerHost1 + req.url;
+  var url = apiServerHostp + req.url;
   console.log('piped: ' + req.url);
   req.pipe(request(url)).pipe(res);
 });
