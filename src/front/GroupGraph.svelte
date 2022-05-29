@@ -1,274 +1,224 @@
 <script>
-  import { Nav, NavItem, NavLink } from "sveltestrap";
-  const BASE_CONTACT_API_PATH_v2 = "/api/v1";
-  let quantityData = [];
-  let quantityChartData = [];
-  let builtAData = [];
-  let builtAChartData = [];
-  let productionData = [];
-  let productionChartData = [];
-  var dates = [];
-  let msg = "";
-  /**
-   * Obtenemos una propiedad JSON sin repetidos
-   * @param MYJSON
-   * @param prop
-   */
-  function distinctRecords(MYJSON, prop) {
-    return MYJSON.filter((obj, pos, arr) => {
-      return arr.map((mapObj) => mapObj[prop]).indexOf(obj[prop]) === pos;
-    });
-  }
-  async function loadChart() {
-    console.log("Fetching data...");
-    //Cargamos los datos de las APIs
-    await fetch(BASE_CONTACT_API_PATH_v2 + "/fertilizers-stats/loadInitialData");
-    await fetch(BASE_CONTACT_API_PATH_v2 + "/landusage-stats/loadInitialData");
-    await fetch(BASE_CONTACT_API_PATH_v2 + "/agriculturalproduction-stats/loadInitialData");
-    //Obtenemos los datos de las APIs
-    const res = await fetch(BASE_CONTACT_API_PATH_v2 + "/fertilizers-stats");
-    const res1 = await fetch(BASE_CONTACT_API_PATH_v2 + "/landusage-stats");
-    const res2 = await fetch(BASE_CONTACT_API_PATH_v2 + "/agriculturalproduction-stats");
-    if (res.ok && res1.ok && res2.ok) {
-      
-      console.log("procesing landusage data....");
-      if (res1.ok) {
-        builtAData = await res1.json();
-        console.log("RES OK");
-        //Quitamos fechas repetidas 
-        var distinctDates1 = distinctRecords(builtAData, "year");
-        //y las ordenamos
-        distinctDates1.sort(function (a, b) {
-          return a.year - b.year;
-        });
-        //guardamos las fechas para la grafica
-        distinctDates1.forEach((element) => {
-          dates.push(element.year);
-        });
-        
-        //Sumamos los valores para las fechas iguales
-        dates.forEach((e) => {
-          var yAxis = builtAData
-            .filter((d) => d.year === e)
-            .map((dr) => dr["built_area"])
-            .reduce((acc, dr) => dr + acc);
-          
-          builtAChartData.push(Math.round(yAxis));
-        });
-        msg = "";
-      }
-      console.log("procesing fertilizers data....");
+  import {onMount} from'svelte';
+  import {Button} from 'sveltestrap';
+  //Belrodsal APi ----------------------------------------------------
+  let data = [];
+  let country_date = [];
+  let q = [];
+  let absC = [];
+  let relC = [];
+  async function getFertilizersStats() {
+      console.log("Fetching stats....");
+      const res = await fetch("/api/v1/fertilizers-stats");
       if (res.ok) {
-        quantityData = await res.json();
-        console.log("RES OK");
-        
-        //Quitamos fechas repetidas 
-        var distinctDates = distinctRecords(quantityData, "year");
-        //y las ordenamos
-        distinctDates.sort(function (a, b) {
-          return a.year - b.year;
-        });
-        //Añadimos las fechas que no existen
-        distinctDates.forEach((element) => {
-          if (!dates.includes(element.year)) {
-            dates.push(element.year);
-          }
-        });
-        
-        //Sumamos los valores para las fechas iguales
-        dates.forEach((e) => {
-          var yAxis = quantityData
-            .filter((d) => d.year === e)
-            .map((nr) => nr["quantity"])
-            .reduce((acc, nr) => nr + acc, 0);
-          quantityChartData.push(Math.round(yAxis));
-        });
-        msg = "";
+          const data = await res.json();
+          console.log("Estadísticas recibidas: " + data.length);
+          data.forEach((stat) => {
+              country_date.push(stat.country + "-" + stat.year);
+              q.push(stat["quantity"]);
+              absC.push(stat["absolute_change"]);
+              relC.push(stat["relative_change"]);             
+          });
+          //loadGraph();
+      } else {
+          console.log("Error cargando los datos");
       }
-      console.log("procesing Agricultural Production data....");
-      if (res2.ok) {
-        productionData = await res2.json();
-        console.log("RES2 OK");
-        //Quitamos fechas repetidas 
-        var distinctDates = distinctRecords(productionData, "year");
-         //y las ordenamos
-        distinctDates.sort(function (a, b) {
-          return a.year - b.year;
-        });
-         //Añadimos las fechas que no existen
-        distinctDates.forEach((element) => {
-          if (!dates.includes(element.year)) {
-            dates.push(element.year);
-          }
-        });
-        //Sumamos los valores para las fechas iguales
-        dates.forEach((e) => {
-          var yAxis = productionData
-            .filter((d) => d.year === e)
-            .map((qli) => qli["production"])
-            .reduce((acc, qli) => qli + acc, 0);
-          productionChartData.push(Math.round(yAxis));
-        });
-        msg = "";
-      }
-    } else {
-      console.log("ERROR "+msg);
-      msg = "Por favor primero cargue los datos en todas las APIs";
-    }
-    //Creamos la grafica
-    Highcharts.chart("container", {
-      chart: {
-        type: "line",
-      },
-      title: {
-        text: "Integración de grupo",
-      },
-      yAxis: {
-        title: {
-          text: "Cantidad",
-        },
-      },
-      xAxis: {
-        title: {
-          text: "Años",
-        },
-        categories: dates,
-      },
-      legend: {
-        layout: "vertical",
-        align: "right",
-        verticalAlign: "middle",
-      },
-      annotations: [
-        {
-          labels: [
-            {
-              point: "year",
-              text: "",
-            },
-            {
-              point: "min",
-              text: "Min",
-              backgroundColor: "white",
-            },
-          ],
-        },
-      ],
-      series: [
-        {
-          name: "Area Construida",
-          data: builtAChartData,
-        },
-        {
-          name: "Cantidad de fertilizante",
-          data: quantityChartData,
-        },
-        {
-          name: "Produccion de cereal",
-          data: productionChartData,
-        },
-      ],
-      responsive: {
-        rules: [
-          {
-            condition: {
-              maxWidth: 500,
-            },
-            chartOptions: {
-              legend: {
-                layout: "horizontal",
-                align: "center",
-                verticalAlign: "bottom",
-              },
-            },
-          },
-        ],
-      },
-    });
   }
+  //marsaamar1 APi ----------------------------------------------------
+  let country_date1= [];
+  let prod = [];
+  let AbsC = [];
+  let RelC = [];
+  async function getProductionStats(){
+      const loaData = await fetch("/api/v1/agriculturalproduction-stats/loadInitialData");
+      if (loaData.ok) {
+          const res = await fetch("/api/v1/agriculturalproduction-stats");
+          console.log(res);
+          if (res.ok) {
+              const data = await res.json();
+              console.log("Estadísticas recibidas: " + data.length);
+              data.forEach((stat) => {
+                  country_date1.push(stat.country + " " + stat.year);
+                  prod.push(stat["production"]);
+                  AbsC.push(stat["absolute_change"]);
+                  RelC.push(stat["relative_change"]);             
+              });
+              loadGraph();
+          } else {
+              console.log("Error cargando los datos");
+          }
+      } else {
+              console.log("Error cargando los datos iniciales");
+          }
+  }
+  //-----------------------------------------
+  let apiData = [];
+  const delay = ms => new Promise(res => setTimeout(res, ms));
+  async function getLandusageStats(){
+      
+      const res = await fetch("/api/v1/landusage-stats");
+      if (res.ok){
+          const json = await res.json();
+          console.log("Estadisticas: "+JSON.stringify(json));
+          apiData = json;
+          guarda1(json);
+          console.log("cargando el grafo con los datos nuevos"+apiData);
+          //loadGraph();
+          await delay(1000);
+          loadGraph();
+         
+      }else{
+          console.log("Error in request");
+          await delay(1000);
+          loadGraph();
+      }
+  }
+  let b = [];
+  let ga = [];
+  let ca = [];
+  async function guarda1(json){
+      for(let i = 0; i<json.length; i++){
+              let aux = [];
+              aux.push(json[i].year);
+              aux.push(json[i].built-area);
+              b.push(aux);
+              aux = [];
+              aux.push(json[i].year);
+              aux.push(json[i].grazing-area);
+              ga.push(aux);
+              
+              aux = [];
+              aux.push(json[i].year);
+              aux.push(json[i].cropland-area);
+              ca.push(aux);
+          }
+  }
+  async function loadGraph(){
+      Highcharts.chart('container', {
+          chart:{
+              polar:'true'
+          },
+          title: {
+              text: 'Grafico grupal'
+          },
+          subtitle: {
+              text: ''
+          },
+          yAxis: {
+            min: 0
+          },
+          xAxis: {
+              accessibility: {
+                  title :{
+                      text:'año'
+                  },
+                  labels: country_date.concat(country_date1)
+                  
+                  
+              
+              }
+          },
+          legend: {
+              layout: 'vertical',
+              align: 'right',
+              verticalAlign: 'middle'
+          },
+          plotOptions: {
+        series: {
+            pointStart: 0,
+            pointInterval: 45
+        },
+        column: {
+            pointPadding: 0,
+            groupPadding: 0
+        }
+    },
+          series: [{
+                  type:'area',
+                  name: 'Cantidad',
+                  data: q
+              },
+              {
+                  type:'area',
+                  name: 'Cambio Absoluto-fertilizers',
+                  data: absC
+              },
+              {
+                  type:'area',
+                  name: 'Cambio Relativo-fertilizers',
+                  data: relC
+              },
+              {
+                  type:'area',
+                  name: 'Produccion',
+                  data: prod
+              },
+              {
+                  type:'area',
+                  name: 'Cambio Absoluto-agricultura',
+                  data: AbsC
+              },
+              {
+                  type:'area',
+                  name: 'Cambio Relativo-agricultura',
+                  data: RelC
+              },
+              {
+                  type:'area',
+                  name: 'Built area',
+                  data: b
+              },
+              {
+                  type:'area',
+                  name: 'grazing-area',
+                  data: ga
+              },
+              {
+                  type:'area',
+                  name:'cropland-area',
+                  data: ca
+              }
+          
+          ],
+          responsive: {
+              rules: [{
+                  condition: {
+                      maxWidth: 500
+                  },
+                  chartOptions: {
+                      legend: {
+                          layout: 'horizontal',
+                          align: 'center',
+                          verticalAlign: 'bottom'
+                      }
+                  }
+              }]
+          }
+      });
+  }
+  onMount(getFertilizersStats);
+  onMount(getProductionStats);
+  onMount(getLandusageStats);
+  
+ 
 </script>
+<main>
+
+  <figure class="highcharts-figure">
+      <div id="container"></div>
+      <p class="highcharts-description">
+      </p>
+  </figure>
+  <Button outline color="/#/info" href="/">Volver</Button>
+
+</main>
 
 <svelte:head>
+
   <script src="https://code.highcharts.com/highcharts.js"></script>
   <script src="https://code.highcharts.com/modules/series-label.js"></script>
   <script src="https://code.highcharts.com/modules/exporting.js"></script>
   <script src="https://code.highcharts.com/modules/export-data.js"></script>
-  <script
-    src="https://code.highcharts.com/modules/accessibility.js"
-    on:load={loadChart}></script>
+  <script src="https://code.highcharts.com/modules/accessibility.js" on:load="{loadGraph}"></script>
+
 </svelte:head>
-
-<main>
-  <Nav>
-    <NavItem>
-      <NavLink id="nav_home" href="/">Home</NavLink>
-    </NavItem>
-    <NavItem>
-      <NavLink id="nav_info" href="/#/info">Info</NavLink>
-    </NavItem>
-  </Nav>
-
-  <div>
-    <h1>Gráfico</h1>
-  </div>
-
-  {#if msg}
-    <p>{msg}</p>
-  {:else}
-    <figure class="highcharts-figure">
-      <div id="container" />
-      <p class="highcharts-description">
-      </p>
-    </figure>
-  {/if}
-</main>
-
-<style>
-  main {
-    text-align: center;
-    padding: 1em;
-    margin: 0 auto;
-  }
-  h1 {
-    color: #ff3e00;
-    text-transform: uppercase;
-    font-size: 4em;
-    font-weight: 100;
-  }
-  .highcharts-figure,
-.highcharts-data-table table {
-  min-width: 360px;
-  max-width: 800px;
-  margin: 1em auto;
-}
-.highcharts-data-table table {
-  font-family: Verdana, sans-serif;
-  border-collapse: collapse;
-  border: 1px solid #ebebeb;
-  margin: 10px auto;
-  text-align: center;
-  width: 100%;
-  max-width: 500px;
-}
-.highcharts-data-table caption {
-  padding: 1em 0;
-  font-size: 1.2em;
-  color: #555;
-}
-.highcharts-data-table th {
-  font-weight: 600;
-  padding: 0.5em;
-}
-.highcharts-data-table td,
-.highcharts-data-table th,
-.highcharts-data-table caption {
-  padding: 0.5em;
-}
-.highcharts-data-table thead tr,
-.highcharts-data-table tr:nth-child(even) {
-  background: #f8f8f8;
-}
-.highcharts-data-table tr:hover {
-  background: #f1f7ff;
-}
-</style>
