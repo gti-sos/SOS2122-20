@@ -26,11 +26,8 @@
 import ExtApi from './danpucjimFront/extAPI.svelte';
 import ExtApi1 from './danpucjimFront/extAPI1.svelte';
 import CancerIntegration from './danpucjimFront/CancerIntegration.svelte';
-<<<<<<< HEAD
 import ExternalApi1 from './javlarparFront/externalAPI1.svelte';
-=======
 import CaloryIntegration from './danpucjimFront/Integration2.svelte';
->>>>>>> e59b28f37c1cf75f94b63ed2fa53a6d9c3b87a7e
 
 
 

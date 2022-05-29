@@ -1,5 +1,6 @@
-<script>
-    import { onMount } from 'svelte';
+
+        <script>
+        import { onMount } from 'svelte';
     let apiData = {};
     const delay = ms => new Promise(res => setTimeout(res,ms));
     let stats = [];
@@ -13,14 +14,12 @@
 
     let country1 = [];
     let year1 = [];
-    let caloryperperson = ["ages_fifty_seventy"];
+    let dailycalory = ["ages_fifty_seventy"];
     let dailygram = ["ages_seventy"];
-    let dailycalory = ["ages_zero_fifty"];
-
-        
-        
+    let caloryperperson = ["ages_zero_fifty"];
     async function getData(){
-        const res = await fetch("https://sos2122-20.herokuapp.com/api/v1/landusage-stats");
+        //const res = await fetch("https://sos2122-20.herokuapp.com/api/v1/landusage-stats");
+        const res = await fetch("/api/v1/landusage-stats");
         const res1 = await fetch ("/CaloryAPI");
 
         if(res.ok && res1.ok){
@@ -30,88 +29,95 @@
             const data1 = await res1.json();
             console.log("DATOS->",data1);
             stats.forEach(stat => {
-                if(stat.country == "Brazil"){
+                if(stat.country == "Canada"){
                     //country.push(stat.country);
                 //year.push(stat.year);
                 grazing_area.push(stat.grazing_area);
-                built_area.push(stat.built_area);
-                cropland_area.push(stat.cropland_area);
-                }
-                
-            });
+            cropland_area.push(stat.cropland_area);
+            built_area.push(stat.built_area);
+        }});
             
             stats1 = data1;
             stats1.forEach(stat => {
-                if(stat.country == "brazil"){
+                if(stat.country == "United_States"){
                     //country1.push(stat.country);
+                //year1.push(stat.year);
                 //year1.push(stat.year);
                 dailycalory.push(stat.dailycalory);
                 dailygram.push(stat.dailygram);
                 caloryperperson.push(stat.caloryperperson);
                 }
                 
-            })
-            console.log(dailycalory);
-                
+            });
+            console.log(dailycalory[1]);
         }
         else{
-            console.log("Hubo un error cargando los datos");
-        }
-        //datafinal = [year,year1];
+            console.log("Hubo un error cargando los datos");}
         //console.log(datafinal);
         //await loadGraph();
         console.log("Comprobando");
+        
+        await loadGraph();
     }
 
     async function loadGraph() {
        Highcharts.chart('container', {
     chart: {
-        type: 'pie'
+        type: 'packedbubble'
     },
+    plotOptions: {
+    packedbubble: {
+      minSize: '30%',
+      maxSize: '120%',
+      zMin: 0,
+      zMax: 1000,
+      layoutAlgorithm: {
+        splitSeries: false,
+        gravitationalConstant: 0.02
+      },
+      dataLabels: {
+        enabled: true,
+        format: '{point.name}'
+      }
+    }
+  },
     title: {
-        text: 'Integracion de los datos de la api de uso de tierras con muerte por cancer'
+        text: 'Integracion de los datos de la api de uso de tierras con calorias'
     },
     subtitle: {
         text: ''
     },
-    xAxis: {
-        categories:datafinal 
-        ,
-        crosshair: true
-    },
-    yAxis: {
-        min: 0,
-        title: {
-            text: ''
-        }
-    },
     series: [{
     name: 'Integracion',
     colorByPoint: true,
+    name: 'Calorias',
     data: [{ 
-      name: '>70',
-      y: ages_seventy[1]
+      name: 'Caloria por persona',
+      value: caloryperperson[1]
     }, {
-      name: '>50<70',
-      y: ages_fifty_seventy[1]
+      name: 'Caloria diaria',
+      value: dailycalory[1]
     }, {
-      name: '<50',
-      y: ages_zero_fifty[1]
-    }, {
+      name: 'Gramos diarios',
+      value: dailygram[1]
+    }]
+  },
+{name: 'Uso de Tierras',
+    data: [{
       name: 'Area Construida',
-      y: built_area[1]
+      value: built_area[1]
     }, {
       name: 'Area de pasto',
-      y: grazing_area[1]
+      value: grazing_area[1]
     }, {
       name: 'Area de cultivo',
-      y: cropland_area[1]
+      value: cropland_area[1]
     }]
   }]
-});
+}
+);
     }
 </script>
-
 <svelte:head>
     <script src="https://code.highcharts.com/highcharts.js"></script>
 <script src="https://code.highcharts.com/highcharts-more.js"></script>
