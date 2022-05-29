@@ -2,14 +2,13 @@
     import {onMount} from 'svelte';
     import Button from 'sveltestrap/src/Button.svelte';
     const delay = ms => new Promise(res => setTimeout(res,ms));
-    let covid = [];
     let n = [];
     let myChart;
     let Ri = [];
     let iD = [];
     let y=[];
     let stats=[];
-    async function getCovid(){
+    async function getStats(){
         console.log("Fetching covid data...");
         const res = await fetch("https://nfl-team-stats.p.rapidapi.com/v1/nfl-stats/teams/receiving-stats/offense/2019", {
             "method" : "GET",
@@ -54,7 +53,7 @@
             },
             xAxis: {
                 title: {
-                    text: "País-Año",
+                    text: "Nombres",
                 },
                 categories: n,
             },
@@ -92,7 +91,7 @@
        
        
     }
-    onMount(getCovid);
+    onMount(getStats);
 </script>
 
 <svelte:head>
@@ -113,7 +112,6 @@
         <figure class="highcharts-figure">
             <div id="container"></div>
             <p class="highcharts-description">
-              Grafico acerca de los datos del Carbón
             </p>
         </figure>  
     </main>

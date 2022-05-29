@@ -51735,7 +51735,7 @@ var app = (function () {
     const { console: console_1$6 } = globals;
     const file$7 = "src\\front\\javlarparFront\\externalAPI2.svelte";
 
-    // (111:4) <Button id='back' outline color="secondary" onclick="window.location.href='#/info'">
+    // (110:4) <Button id='back' outline color="secondary" onclick="window.location.href='#/info'">
     function create_default_slot$3(ctx) {
     	let t;
 
@@ -51755,7 +51755,7 @@ var app = (function () {
     		block,
     		id: create_default_slot$3.name,
     		type: "slot",
-    		source: "(111:4) <Button id='back' outline color=\\\"secondary\\\" onclick=\\\"window.location.href='#/info'\\\">",
+    		source: "(110:4) <Button id='back' outline color=\\\"secondary\\\" onclick=\\\"window.location.href='#/info'\\\">",
     		ctx
     	});
 
@@ -51822,29 +51822,28 @@ var app = (function () {
     			div0 = element$1("div");
     			t4 = space();
     			p = element$1("p");
-    			p.textContent = "Grafico acerca de los datos del Carbón";
     			if (!src_url_equal(script0.src, script0_src_value = "https://code.highcharts.com/highcharts.js")) attr_dev(script0, "src", script0_src_value);
-    			add_location(script0, file$7, 98, 4, 2799);
+    			add_location(script0, file$7, 97, 4, 2777);
     			if (!src_url_equal(script1.src, script1_src_value = "https://code.highcharts.com/modules/series-label.js")) attr_dev(script1, "src", script1_src_value);
-    			add_location(script1, file$7, 99, 4, 2870);
+    			add_location(script1, file$7, 98, 4, 2848);
     			if (!src_url_equal(script2.src, script2_src_value = "https://code.highcharts.com/modules/exporting.js")) attr_dev(script2, "src", script2_src_value);
-    			add_location(script2, file$7, 100, 4, 2951);
+    			add_location(script2, file$7, 99, 4, 2929);
     			if (!src_url_equal(script3.src, script3_src_value = "https://code.highcharts.com/modules/export-data.js")) attr_dev(script3, "src", script3_src_value);
-    			add_location(script3, file$7, 101, 4, 3029);
+    			add_location(script3, file$7, 100, 4, 3007);
     			if (!src_url_equal(script4.src, script4_src_value = "https://code.highcharts.com/modules/accessibility.js")) attr_dev(script4, "src", script4_src_value);
-    			add_location(script4, file$7, 102, 4, 3109);
-    			add_location(br0, file$7, 108, 4, 3259);
-    			add_location(br1, file$7, 109, 4, 3269);
+    			add_location(script4, file$7, 101, 4, 3087);
+    			add_location(br0, file$7, 107, 4, 3237);
+    			add_location(br1, file$7, 108, 4, 3247);
     			attr_dev(div0, "id", "container");
     			attr_dev(div0, "class", "svelte-1kzummw");
-    			add_location(div0, file$7, 113, 12, 3473);
+    			add_location(div0, file$7, 112, 12, 3451);
     			attr_dev(p, "class", "highcharts-description");
-    			add_location(p, file$7, 114, 12, 3513);
+    			add_location(p, file$7, 113, 12, 3491);
     			attr_dev(figure, "class", "highcharts-figure svelte-1kzummw");
-    			add_location(figure, file$7, 112, 8, 3425);
+    			add_location(figure, file$7, 111, 8, 3403);
     			set_style(div1, "margin", "auto");
-    			add_location(div1, file$7, 111, 8, 3388);
-    			add_location(main, file$7, 107, 0, 3239);
+    			add_location(div1, file$7, 110, 8, 3366);
+    			add_location(main, file$7, 106, 0, 3217);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -51878,7 +51877,7 @@ var app = (function () {
     		p: function update(ctx, [dirty]) {
     			const button_changes = {};
 
-    			if (dirty & /*$$scope*/ 1024) {
+    			if (dirty & /*$$scope*/ 512) {
     				button_changes.$$scope = { dirty, ctx };
     			}
 
@@ -51922,7 +51921,6 @@ var app = (function () {
     	let { $$slots: slots = {}, $$scope } = $$props;
     	validate_slots('ExternalAPI2', slots, []);
     	const delay = ms => new Promise(res => setTimeout(res, ms));
-    	let covid = [];
     	let n = [];
     	let myChart;
     	let Ri = [];
@@ -51930,7 +51928,7 @@ var app = (function () {
     	let y = [];
     	let stats = [];
 
-    	async function getCovid() {
+    	async function getStats() {
     		console.log("Fetching covid data...");
 
     		const res = await fetch("https://nfl-team-stats.p.rapidapi.com/v1/nfl-stats/teams/receiving-stats/offense/2019", {
@@ -51966,7 +51964,7 @@ var app = (function () {
     			subtitle: { text: 'Biblioteca: Highcharts' },
     			yAxis: { title: { text: 'Valor' } },
     			xAxis: {
-    				title: { text: "País-Año" },
+    				title: { text: "Nombres" },
     				categories: n
     			},
     			legend: {
@@ -51992,7 +51990,7 @@ var app = (function () {
     		});
     	}
 
-    	onMount(getCovid);
+    	onMount(getStats);
     	const writable_props = [];
 
     	Object.keys($$props).forEach(key => {
@@ -52003,19 +52001,17 @@ var app = (function () {
     		onMount,
     		Button,
     		delay,
-    		covid,
     		n,
     		myChart,
     		Ri,
     		iD,
     		y,
     		stats,
-    		getCovid,
+    		getStats,
     		loadGraph
     	});
 
     	$$self.$inject_state = $$props => {
-    		if ('covid' in $$props) covid = $$props.covid;
     		if ('n' in $$props) n = $$props.n;
     		if ('myChart' in $$props) myChart = $$props.myChart;
     		if ('Ri' in $$props) Ri = $$props.Ri;
