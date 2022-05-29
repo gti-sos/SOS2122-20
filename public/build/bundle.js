@@ -1,5 +1,5 @@
 
-(function(l, r) { if (!l || l.getElementById('livereloadscript')) return; r = l.createElement('script'); r.async = 1; r.src = '//' + (self.location.host || 'localhost').split(':')[0] + ':35730/livereload.js?snipver=1'; r.id = 'livereloadscript'; l.getElementsByTagName('head')[0].appendChild(r) })(self.document);
+(function(l, r) { if (!l || l.getElementById('livereloadscript')) return; r = l.createElement('script'); r.async = 1; r.src = '//' + (self.location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1'; r.id = 'livereloadscript'; l.getElementsByTagName('head')[0].appendChild(r) })(self.document);
 var app = (function () {
     'use strict';
 
@@ -13337,7 +13337,7 @@ var app = (function () {
       return a - b;
     }
 
-    function area$4(ring) {
+    function area$3(ring) {
       var i = 0, n = ring.length, area = ring[n - 1][1] * ring[0][0] - ring[n - 1][0] * ring[0][1];
       while (++i < n) area += ring[i - 1][1] * ring[i][0] - ring[i - 1][0] * ring[i][1];
       return area;
@@ -13429,7 +13429,7 @@ var app = (function () {
 
         isorings(values, value, function(ring) {
           smooth(ring, values, value);
-          if (area$4(ring) > 0) polygons.push([ring]);
+          if (area$3(ring) > 0) polygons.push([ring]);
           else holes.push(ring);
         });
 
@@ -15631,7 +15631,7 @@ var app = (function () {
       lambda0$2 = lambda, cosPhi0$1 = cosPhi, sinPhi0$1 = sinPhi;
     }
 
-    function area$3(object) {
+    function area$2(object) {
       areaSum$1.reset();
       geoStream(object, areaStream$1);
       return areaSum$1 * 2;
@@ -19796,7 +19796,7 @@ var app = (function () {
       return resquarify;
     })(phi);
 
-    function area$2(polygon) {
+    function area$1(polygon) {
       var i = -1,
           n = polygon.length,
           a,
@@ -23027,7 +23027,7 @@ var app = (function () {
       return line;
     }
 
-    function area$1() {
+    function area() {
       var x0 = x$1,
           x1 = null,
           y0 = constant$2(0),
@@ -23267,7 +23267,7 @@ var app = (function () {
     }
 
     function areaRadial() {
-      var a = area$1().curve(curveRadialLinear),
+      var a = area().curve(curveRadialLinear),
           c = a.curve,
           x0 = a.lineX0,
           x1 = a.lineX1,
@@ -26153,7 +26153,7 @@ var app = (function () {
         precisionFixed: precisionFixed,
         precisionPrefix: precisionPrefix,
         precisionRound: precisionRound,
-        geoArea: area$3,
+        geoArea: area$2,
         geoBounds: bounds,
         geoCentroid: centroid$1,
         geoCircle: circle$2,
@@ -26245,7 +26245,7 @@ var app = (function () {
         piecewise: piecewise,
         quantize: quantize$1,
         path: path,
-        polygonArea: area$2,
+        polygonArea: area$1,
         polygonCentroid: centroid,
         polygonHull: hull,
         polygonContains: contains,
@@ -26379,7 +26379,7 @@ var app = (function () {
         get event () { return event; },
         customEvent: customEvent,
         arc: arc,
-        area: area$1,
+        area: area,
         line: line,
         pie: pie,
         areaRadial: areaRadial,
@@ -39526,7 +39526,7 @@ var app = (function () {
     const { console: console_1$h } = globals;
     const file$j = "src\\front\\GroupGraph.svelte";
 
-    // (212:2) <Button outline color="/#/info" href="/">
+    // (197:2) <Button outline color="/#/info" href="/">
     function create_default_slot$c(ctx) {
     	let t;
 
@@ -39546,7 +39546,7 @@ var app = (function () {
     		block,
     		id: create_default_slot$c.name,
     		type: "slot",
-    		source: "(212:2) <Button outline color=\\\"/#/info\\\" href=\\\"/\\\">",
+    		source: "(197:2) <Button outline color=\\\"/#/info\\\" href=\\\"/\\\">",
     		ctx
     	});
 
@@ -39603,22 +39603,22 @@ var app = (function () {
     			script3 = element$1("script");
     			script4 = element$1("script");
     			attr_dev(div, "id", "container");
-    			add_location(div, file$j, 207, 6, 6151);
+    			add_location(div, file$j, 192, 6, 5835);
     			attr_dev(p, "class", "highcharts-description");
-    			add_location(p, file$j, 208, 6, 6185);
+    			add_location(p, file$j, 193, 6, 5869);
     			attr_dev(figure, "class", "highcharts-figure");
-    			add_location(figure, file$j, 206, 2, 6109);
-    			add_location(main, file$j, 204, 0, 6097);
+    			add_location(figure, file$j, 191, 2, 5793);
+    			add_location(main, file$j, 189, 0, 5781);
     			if (!src_url_equal(script0.src, script0_src_value = "https://code.highcharts.com/highcharts.js")) attr_dev(script0, "src", script0_src_value);
-    			add_location(script0, file$j, 217, 2, 6338);
+    			add_location(script0, file$j, 202, 2, 6022);
     			if (!src_url_equal(script1.src, script1_src_value = "https://code.highcharts.com/modules/series-label.js")) attr_dev(script1, "src", script1_src_value);
-    			add_location(script1, file$j, 218, 2, 6407);
+    			add_location(script1, file$j, 203, 2, 6091);
     			if (!src_url_equal(script2.src, script2_src_value = "https://code.highcharts.com/modules/exporting.js")) attr_dev(script2, "src", script2_src_value);
-    			add_location(script2, file$j, 219, 2, 6486);
+    			add_location(script2, file$j, 204, 2, 6170);
     			if (!src_url_equal(script3.src, script3_src_value = "https://code.highcharts.com/modules/export-data.js")) attr_dev(script3, "src", script3_src_value);
-    			add_location(script3, file$j, 220, 2, 6562);
+    			add_location(script3, file$j, 205, 2, 6246);
     			if (!src_url_equal(script4.src, script4_src_value = "https://code.highcharts.com/modules/accessibility.js")) attr_dev(script4, "src", script4_src_value);
-    			add_location(script4, file$j, 221, 2, 6640);
+    			add_location(script4, file$j, 206, 2, 6324);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -39647,7 +39647,7 @@ var app = (function () {
     		p: function update(ctx, [dirty]) {
     			const button_changes = {};
 
-    			if (dirty & /*$$scope*/ 524288) {
+    			if (dirty & /*$$scope*/ 131072) {
     				button_changes.$$scope = { dirty, ctx };
     			}
 
@@ -39715,9 +39715,7 @@ var app = (function () {
     		}
     	}
 
-    	//marsaamar1 APi ----------------------------------------------------
     	let country_date1 = [];
-
     	let prod = [];
     	let AbsC = [];
     	let RelC = [];
@@ -39750,49 +39748,36 @@ var app = (function () {
     	}
 
     	//-----------------------------------------
-    	let apiData = [];
+    	let country_date2 = [];
 
-    	const delay = ms => new Promise(res => setTimeout(res, ms));
+    	let bui = [];
+    	let graz = [];
+    	let crop = [];
 
     	async function getLandusageStats() {
-    		const res = await fetch("/api/v1/landusage-stats");
+    		const loaData = await fetch("/api/v1/landusage-stats/loadInitialData");
 
-    		if (res.ok) {
-    			const json = await res.json();
-    			console.log("Estadisticas: " + JSON.stringify(json));
-    			apiData = json;
-    			guarda1(json);
-    			console.log("cargando el grafo con los datos nuevos" + apiData);
+    		if (loaData.ok) {
+    			const res = await fetch("/api/v1/landusage-stats");
+    			console.log(res);
 
-    			//loadGraph();
-    			await delay(1000);
+    			if (res.ok) {
+    				const data = await res.json();
+    				console.log("Estadísticas recibidas: " + data.length);
 
-    			loadGraph();
+    				data.forEach(stat => {
+    					country_date2.push(stat.country + " " + stat.year);
+    					bui.push(stat["built_area"]);
+    					graz.push(stat["grazing_area"]);
+    					crop.push(stat["cropland_area"]);
+    				});
+
+    				loadGraph();
+    			} else {
+    				console.log("Error cargando los datos");
+    			}
     		} else {
-    			console.log("Error in request");
-    			await delay(1000);
-    			loadGraph();
-    		}
-    	}
-
-    	let b = [];
-    	let ga = [];
-    	let ca = [];
-
-    	async function guarda1(json) {
-    		for (let i = 0; i < json.length; i++) {
-    			let aux = [];
-    			aux.push(json[i].year);
-    			aux.push(json[i].built - area);
-    			b.push(aux);
-    			aux = [];
-    			aux.push(json[i].year);
-    			aux.push(json[i].grazing - area);
-    			ga.push(aux);
-    			aux = [];
-    			aux.push(json[i].year);
-    			aux.push(json[i].cropland - area);
-    			ca.push(aux);
+    			console.log("Error cargando los datos iniciales");
     		}
     	}
 
@@ -39805,7 +39790,7 @@ var app = (function () {
     			xAxis: {
     				accessibility: {
     					title: { text: 'año' },
-    					labels: country_date.concat(country_date1)
+    					labels: country_date.concat(country_date1 && country_date2)
     				}
     			},
     			legend: {
@@ -39847,17 +39832,17 @@ var app = (function () {
     				{
     					type: 'area',
     					name: 'Built area',
-    					data: b
+    					data: bui
     				},
     				{
     					type: 'area',
     					name: 'grazing-area',
-    					data: ga
+    					data: graz
     				},
     				{
     					type: 'area',
     					name: 'cropland-area',
-    					data: ca
+    					data: crop
     				}
     			],
     			responsive: {
@@ -39900,13 +39885,11 @@ var app = (function () {
     		AbsC,
     		RelC,
     		getProductionStats,
-    		apiData,
-    		delay,
+    		country_date2,
+    		bui,
+    		graz,
+    		crop,
     		getLandusageStats,
-    		b,
-    		ga,
-    		ca,
-    		guarda1,
     		loadGraph
     	});
 
@@ -39920,10 +39903,10 @@ var app = (function () {
     		if ('prod' in $$props) prod = $$props.prod;
     		if ('AbsC' in $$props) AbsC = $$props.AbsC;
     		if ('RelC' in $$props) RelC = $$props.RelC;
-    		if ('apiData' in $$props) apiData = $$props.apiData;
-    		if ('b' in $$props) b = $$props.b;
-    		if ('ga' in $$props) ga = $$props.ga;
-    		if ('ca' in $$props) ca = $$props.ca;
+    		if ('country_date2' in $$props) country_date2 = $$props.country_date2;
+    		if ('bui' in $$props) bui = $$props.bui;
+    		if ('graz' in $$props) graz = $$props.graz;
+    		if ('crop' in $$props) crop = $$props.crop;
     	};
 
     	if ($$props && "$$inject" in $$props) {

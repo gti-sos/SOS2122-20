@@ -24,7 +24,7 @@
           console.log("Error cargando los datos");
       }
   }
-  //marsaamar1 APi ----------------------------------------------------
+  
   let country_date1= [];
   let prod = [];
   let AbsC = [];
@@ -52,45 +52,30 @@
           }
   }
   //-----------------------------------------
-  let apiData = [];
-  const delay = ms => new Promise(res => setTimeout(res, ms));
+  let country_date2= [];
+  let bui = [];
+  let graz = [];
+  let crop = [];
   async function getLandusageStats(){
-      
-      const res = await fetch("/api/v1/landusage-stats");
-      if (res.ok){
-          const json = await res.json();
-          console.log("Estadisticas: "+JSON.stringify(json));
-          apiData = json;
-          guarda1(json);
-          console.log("cargando el grafo con los datos nuevos"+apiData);
-          //loadGraph();
-          await delay(1000);
-          loadGraph();
-         
-      }else{
-          console.log("Error in request");
-          await delay(1000);
-          loadGraph();
-      }
-  }
-  let b = [];
-  let ga = [];
-  let ca = [];
-  async function guarda1(json){
-      for(let i = 0; i<json.length; i++){
-              let aux = [];
-              aux.push(json[i].year);
-              aux.push(json[i].built-area);
-              b.push(aux);
-              aux = [];
-              aux.push(json[i].year);
-              aux.push(json[i].grazing-area);
-              ga.push(aux);
-              
-              aux = [];
-              aux.push(json[i].year);
-              aux.push(json[i].cropland-area);
-              ca.push(aux);
+      const loaData = await fetch("/api/v1/landusage-stats/loadInitialData");
+      if (loaData.ok) {
+          const res = await fetch("/api/v1/landusage-stats");
+          console.log(res);
+          if (res.ok) {
+              const data = await res.json();
+              console.log("Estadísticas recibidas: " + data.length);
+              data.forEach((stat) => {
+                  country_date2.push(stat.country + " " + stat.year);
+                  bui.push(stat["built_area"]);
+                  graz.push(stat["grazing_area"]);
+                  crop.push(stat["cropland_area"]);             
+              });
+              loadGraph();
+          } else {
+              console.log("Error cargando los datos");
+          }
+      } else {
+              console.log("Error cargando los datos iniciales");
           }
   }
   async function loadGraph(){
@@ -110,9 +95,9 @@
           xAxis: {
               accessibility: {
                   title :{
-                      text:'año'
+                      text:'año',
                   },
-                  labels: country_date.concat(country_date1)
+                  labels: country_date.concat(country_date1 &&country_date2)
                   
                   
               
@@ -166,17 +151,17 @@
               {
                   type:'area',
                   name: 'Built area',
-                  data: b
+                  data: bui
               },
               {
                   type:'area',
                   name: 'grazing-area',
-                  data: ga
+                  data: graz
               },
               {
                   type:'area',
                   name:'cropland-area',
-                  data: ca
+                  data: crop
               }
           
           ],
