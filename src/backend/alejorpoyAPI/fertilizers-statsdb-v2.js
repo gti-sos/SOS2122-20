@@ -211,7 +211,7 @@ module.exports.register = (app) => {
                 else{
                     if(docs==0){
                         console.log("prueba");
-                        return res.sendStatus(404);
+                        return res.sendStatus(404,"NOT FOUND");
                     }
                     else{
                         return res.sendStatus(200);
