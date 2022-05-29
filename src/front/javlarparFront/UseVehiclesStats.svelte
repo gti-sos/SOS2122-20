@@ -68,8 +68,8 @@
                     },
                     {
                         label: "Vehículos de pasajeros en uso",
-                        backgroundColor: "B695C0",
-                        borderColor: "B695C0",
+                        backgroundColor: "#FFFF00",
+                        borderColor: "#FFFF00",
                         data: use_pass,
                     },
                     {

@@ -48995,17 +48995,17 @@ var app = (function () {
     			t4 = space();
     			canvas = element$1("canvas");
     			if (!src_url_equal(script.src, script_src_value = "https://cdn.jsdelivr.net/npm/chart.js")) attr_dev(script, "src", script_src_value);
-    			add_location(script, file$a, 116, 4, 4308);
+    			add_location(script, file$a, 116, 4, 4310);
     			attr_dev(h2, "class", "svelte-6teu96");
-    			add_location(h2, file$a, 122, 4, 4439);
+    			add_location(h2, file$a, 122, 4, 4441);
     			attr_dev(a, "href", "/#/info");
     			attr_dev(a, "class", "btn btn-primary btn-lg active");
     			attr_dev(a, "role", "button");
     			attr_dev(a, "aria-pressed", "true");
-    			add_location(a, file$a, 123, 4, 4506);
+    			add_location(a, file$a, 123, 4, 4508);
     			attr_dev(canvas, "id", "myChart");
-    			add_location(canvas, file$a, 125, 4, 4614);
-    			add_location(main, file$a, 121, 0, 4427);
+    			add_location(canvas, file$a, 125, 4, 4616);
+    			add_location(main, file$a, 121, 0, 4429);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -49122,8 +49122,8 @@ var app = (function () {
     						},
     						{
     							label: "Vehículos de pasajeros en uso",
-    							backgroundColor: "B695C0",
-    							borderColor: "B695C0",
+    							backgroundColor: "#FFFF00",
+    							borderColor: "#FFFF00",
     							data: use_pass
     						},
     						{
@@ -49249,17 +49249,17 @@ var app = (function () {
     			t4 = space();
     			canvas = element$1("canvas");
     			if (!src_url_equal(script.src, script_src_value = "https://cdn.jsdelivr.net/npm/chart.js")) attr_dev(script, "src", script_src_value);
-    			add_location(script, file$9, 110, 4, 4108);
+    			add_location(script, file$9, 111, 4, 4184);
     			attr_dev(h2, "class", "svelte-6teu96");
-    			add_location(h2, file$9, 116, 4, 4239);
+    			add_location(h2, file$9, 117, 4, 4315);
     			attr_dev(a, "href", "/#/info");
     			attr_dev(a, "class", "btn btn-primary btn-lg active");
     			attr_dev(a, "role", "button");
     			attr_dev(a, "aria-pressed", "true");
-    			add_location(a, file$9, 117, 4, 4304);
+    			add_location(a, file$9, 118, 4, 4380);
     			attr_dev(canvas, "id", "myChart");
-    			add_location(canvas, file$9, 119, 4, 4412);
-    			add_location(main, file$9, 115, 0, 4227);
+    			add_location(canvas, file$9, 120, 4, 4488);
+    			add_location(main, file$9, 116, 0, 4303);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -49320,7 +49320,7 @@ var app = (function () {
     	async function getData() {
     		console.log("Fetching stats....");
     		const res = await fetch("/api/v1/agriculturalproduction-stats");
-    		const res1 = await fetch("/remoteAPI2");
+    		const res1 = await fetch("https://sos2122-24.herokuapp.com/api/v2/pneumonia-stats");
 
     		if (res.ok && res1.ok) {
     			const data = await res.json();
@@ -49357,6 +49357,7 @@ var app = (function () {
     			console.log("Error cargando los datos");
     		}
 
+    		await delay(1000);
     		loadGraph();
     		console.log("Comprobando");
     	}
@@ -51735,7 +51736,7 @@ var app = (function () {
     const { console: console_1$6 } = globals;
     const file$7 = "src\\front\\javlarparFront\\externalAPI2.svelte";
 
-    // (110:4) <Button id='back' outline color="secondary" onclick="window.location.href='#/info'">
+    // (111:4) <Button id='back' outline color="secondary" onclick="window.location.href='#/info'">
     function create_default_slot$3(ctx) {
     	let t;
 
@@ -51755,7 +51756,7 @@ var app = (function () {
     		block,
     		id: create_default_slot$3.name,
     		type: "slot",
-    		source: "(110:4) <Button id='back' outline color=\\\"secondary\\\" onclick=\\\"window.location.href='#/info'\\\">",
+    		source: "(111:4) <Button id='back' outline color=\\\"secondary\\\" onclick=\\\"window.location.href='#/info'\\\">",
     		ctx
     	});
 
@@ -51823,27 +51824,27 @@ var app = (function () {
     			t4 = space();
     			p = element$1("p");
     			if (!src_url_equal(script0.src, script0_src_value = "https://code.highcharts.com/highcharts.js")) attr_dev(script0, "src", script0_src_value);
-    			add_location(script0, file$7, 97, 4, 2777);
+    			add_location(script0, file$7, 98, 4, 2804);
     			if (!src_url_equal(script1.src, script1_src_value = "https://code.highcharts.com/modules/series-label.js")) attr_dev(script1, "src", script1_src_value);
-    			add_location(script1, file$7, 98, 4, 2848);
+    			add_location(script1, file$7, 99, 4, 2875);
     			if (!src_url_equal(script2.src, script2_src_value = "https://code.highcharts.com/modules/exporting.js")) attr_dev(script2, "src", script2_src_value);
-    			add_location(script2, file$7, 99, 4, 2929);
+    			add_location(script2, file$7, 100, 4, 2956);
     			if (!src_url_equal(script3.src, script3_src_value = "https://code.highcharts.com/modules/export-data.js")) attr_dev(script3, "src", script3_src_value);
-    			add_location(script3, file$7, 100, 4, 3007);
+    			add_location(script3, file$7, 101, 4, 3034);
     			if (!src_url_equal(script4.src, script4_src_value = "https://code.highcharts.com/modules/accessibility.js")) attr_dev(script4, "src", script4_src_value);
-    			add_location(script4, file$7, 101, 4, 3087);
-    			add_location(br0, file$7, 107, 4, 3237);
-    			add_location(br1, file$7, 108, 4, 3247);
+    			add_location(script4, file$7, 102, 4, 3114);
+    			add_location(br0, file$7, 108, 4, 3264);
+    			add_location(br1, file$7, 109, 4, 3274);
     			attr_dev(div0, "id", "container");
     			attr_dev(div0, "class", "svelte-1kzummw");
-    			add_location(div0, file$7, 112, 12, 3451);
+    			add_location(div0, file$7, 113, 12, 3478);
     			attr_dev(p, "class", "highcharts-description");
-    			add_location(p, file$7, 113, 12, 3491);
+    			add_location(p, file$7, 114, 12, 3518);
     			attr_dev(figure, "class", "highcharts-figure svelte-1kzummw");
-    			add_location(figure, file$7, 111, 8, 3403);
+    			add_location(figure, file$7, 112, 8, 3430);
     			set_style(div1, "margin", "auto");
-    			add_location(div1, file$7, 110, 8, 3366);
-    			add_location(main, file$7, 106, 0, 3217);
+    			add_location(div1, file$7, 111, 8, 3393);
+    			add_location(main, file$7, 107, 0, 3244);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -51953,6 +51954,7 @@ var app = (function () {
     			console.log("Error");
     		}
 
+    		await delay(500);
     		loadGraph();
     		console.log("Comprobando");
     	}

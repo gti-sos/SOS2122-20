@@ -32,6 +32,7 @@
         else{
             console.log("Error");
         }
+        await delay(500);
         loadGraph();
         console.log("Comprobando");
     }
