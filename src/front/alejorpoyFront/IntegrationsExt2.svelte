@@ -51,7 +51,7 @@
        async function loadGraph(){
         Highcharts.chart('container', {
             chart: {
-                type: 'line'
+                type: 'spline'
             },
             title: {
                 text: 'Datos sobre el carbón'

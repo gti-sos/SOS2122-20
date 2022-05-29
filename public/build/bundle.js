@@ -1,5 +1,5 @@
 
-(function(l, r) { if (!l || l.getElementById('livereloadscript')) return; r = l.createElement('script'); r.async = 1; r.src = '//' + (self.location.host || 'localhost').split(':')[0] + ':35730/livereload.js?snipver=1'; r.id = 'livereloadscript'; l.getElementsByTagName('head')[0].appendChild(r) })(self.document);
+(function(l, r) { if (!l || l.getElementById('livereloadscript')) return; r = l.createElement('script'); r.async = 1; r.src = '//' + (self.location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1'; r.id = 'livereloadscript'; l.getElementsByTagName('head')[0].appendChild(r) })(self.document);
 var app = (function () {
     'use strict';
 
@@ -38142,10 +38142,10 @@ var app = (function () {
     			create_component(button.$$.fragment);
     			attr_dev(link, "rel", "stylesheet");
     			attr_dev(link, "href", "./c3/c3.css");
-    			add_location(link, file$o, 93, 8, 3086);
+    			add_location(link, file$o, 93, 8, 3084);
     			attr_dev(div, "id", "chart");
-    			add_location(div, file$o, 99, 12, 3190);
-    			add_location(main, file$o, 97, 4, 3164);
+    			add_location(div, file$o, 99, 12, 3188);
+    			add_location(main, file$o, 97, 4, 3162);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -38267,7 +38267,7 @@ var app = (function () {
     					ages_fifty_seventy,
     					ages_zero_fifty
     				],
-    				type: 'spline'
+    				type: 'step'
     			},
     			axis: {
     				x: { type: 'category', categories: country }
@@ -38400,10 +38400,10 @@ var app = (function () {
     			create_component(button.$$.fragment);
     			attr_dev(link, "rel", "stylesheet");
     			attr_dev(link, "href", "./c3/c3.css");
-    			add_location(link, file$n, 93, 8, 3034);
+    			add_location(link, file$n, 93, 8, 3033);
     			attr_dev(div, "id", "chart");
-    			add_location(div, file$n, 99, 12, 3138);
-    			add_location(main, file$n, 97, 4, 3112);
+    			add_location(div, file$n, 99, 12, 3137);
+    			add_location(main, file$n, 97, 4, 3111);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -38525,7 +38525,7 @@ var app = (function () {
     					percapita,
     					currentprices
     				],
-    				type: 'spline'
+    				type: 'donut'
     			},
     			axis: {
     				x: { type: 'category', categories: country }
@@ -38924,27 +38924,27 @@ var app = (function () {
     			p = element$1("p");
     			p.textContent = "Grafico acerca de los datos del Carbón";
     			if (!src_url_equal(script0.src, script0_src_value = "https://code.highcharts.com/highcharts.js")) attr_dev(script0, "src", script0_src_value);
-    			add_location(script0, file$l, 114, 4, 3507);
+    			add_location(script0, file$l, 114, 4, 3509);
     			if (!src_url_equal(script1.src, script1_src_value = "https://code.highcharts.com/modules/series-label.js")) attr_dev(script1, "src", script1_src_value);
-    			add_location(script1, file$l, 115, 4, 3578);
+    			add_location(script1, file$l, 115, 4, 3580);
     			if (!src_url_equal(script2.src, script2_src_value = "https://code.highcharts.com/modules/exporting.js")) attr_dev(script2, "src", script2_src_value);
-    			add_location(script2, file$l, 116, 4, 3659);
+    			add_location(script2, file$l, 116, 4, 3661);
     			if (!src_url_equal(script3.src, script3_src_value = "https://code.highcharts.com/modules/export-data.js")) attr_dev(script3, "src", script3_src_value);
-    			add_location(script3, file$l, 117, 4, 3737);
+    			add_location(script3, file$l, 117, 4, 3739);
     			if (!src_url_equal(script4.src, script4_src_value = "https://code.highcharts.com/modules/accessibility.js")) attr_dev(script4, "src", script4_src_value);
-    			add_location(script4, file$l, 118, 4, 3817);
-    			add_location(br0, file$l, 124, 4, 3967);
-    			add_location(br1, file$l, 125, 4, 3977);
+    			add_location(script4, file$l, 118, 4, 3819);
+    			add_location(br0, file$l, 124, 4, 3969);
+    			add_location(br1, file$l, 125, 4, 3979);
     			attr_dev(div0, "id", "container");
     			attr_dev(div0, "class", "svelte-1kzummw");
-    			add_location(div0, file$l, 129, 12, 4191);
+    			add_location(div0, file$l, 129, 12, 4193);
     			attr_dev(p, "class", "highcharts-description");
-    			add_location(p, file$l, 130, 12, 4231);
+    			add_location(p, file$l, 130, 12, 4233);
     			attr_dev(figure, "class", "highcharts-figure svelte-1kzummw");
-    			add_location(figure, file$l, 128, 8, 4143);
+    			add_location(figure, file$l, 128, 8, 4145);
     			set_style(div1, "margin", "auto");
-    			add_location(div1, file$l, 127, 8, 4106);
-    			add_location(main, file$l, 123, 0, 3947);
+    			add_location(div1, file$l, 127, 8, 4108);
+    			add_location(main, file$l, 123, 0, 3949);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -39070,7 +39070,7 @@ var app = (function () {
 
     	async function loadGraph() {
     		Highcharts.chart('container', {
-    			chart: { type: 'line' },
+    			chart: { type: 'spline' },
     			title: { text: 'Datos sobre el carbón' },
     			subtitle: { text: 'Biblioteca: Highcharts' },
     			yAxis: { title: { text: 'Valor' } },

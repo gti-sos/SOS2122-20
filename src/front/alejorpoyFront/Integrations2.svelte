@@ -74,7 +74,7 @@
            currentprices,
            
         ],
-        type: 'spline'
+        type: 'donut'
     },
     axis:{
         x:{

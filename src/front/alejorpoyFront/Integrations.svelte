@@ -74,7 +74,7 @@
            ages_zero_fifty,
            
         ],
-        type: 'spline'
+        type: 'step'
     },
     axis:{
         x:{
