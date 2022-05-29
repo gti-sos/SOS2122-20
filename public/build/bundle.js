@@ -39603,22 +39603,22 @@ var app = (function () {
     			script3 = element$1("script");
     			script4 = element$1("script");
     			attr_dev(div, "id", "container");
-    			add_location(div, file$j, 160, 6, 4296);
+    			add_location(div, file$j, 160, 6, 4295);
     			attr_dev(p, "class", "highcharts-description");
-    			add_location(p, file$j, 161, 6, 4330);
+    			add_location(p, file$j, 161, 6, 4329);
     			attr_dev(figure, "class", "highcharts-figure");
-    			add_location(figure, file$j, 159, 2, 4254);
-    			add_location(main, file$j, 157, 0, 4242);
+    			add_location(figure, file$j, 159, 2, 4253);
+    			add_location(main, file$j, 157, 0, 4241);
     			if (!src_url_equal(script0.src, script0_src_value = "https://code.highcharts.com/highcharts.js")) attr_dev(script0, "src", script0_src_value);
-    			add_location(script0, file$j, 170, 2, 4483);
+    			add_location(script0, file$j, 170, 2, 4482);
     			if (!src_url_equal(script1.src, script1_src_value = "https://code.highcharts.com/modules/series-label.js")) attr_dev(script1, "src", script1_src_value);
-    			add_location(script1, file$j, 171, 2, 4552);
+    			add_location(script1, file$j, 171, 2, 4551);
     			if (!src_url_equal(script2.src, script2_src_value = "https://code.highcharts.com/modules/exporting.js")) attr_dev(script2, "src", script2_src_value);
-    			add_location(script2, file$j, 172, 2, 4631);
+    			add_location(script2, file$j, 172, 2, 4630);
     			if (!src_url_equal(script3.src, script3_src_value = "https://code.highcharts.com/modules/export-data.js")) attr_dev(script3, "src", script3_src_value);
-    			add_location(script3, file$j, 173, 2, 4707);
+    			add_location(script3, file$j, 173, 2, 4706);
     			if (!src_url_equal(script4.src, script4_src_value = "https://code.highcharts.com/modules/accessibility.js")) attr_dev(script4, "src", script4_src_value);
-    			add_location(script4, file$j, 174, 2, 4785);
+    			add_location(script4, file$j, 174, 2, 4784);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -39761,7 +39761,7 @@ var app = (function () {
     		}
 
     		Highcharts.chart('container', {
-    			chart: { type: 'area' },
+    			chart: { type: 'scatter' },
     			title: { text: 'Grafico Grupal' },
     			xAxis: {
     				categories: country_date,

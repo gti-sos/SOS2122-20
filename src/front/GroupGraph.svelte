@@ -68,7 +68,7 @@
 
   Highcharts.chart('container', {
     chart: {
-        type: 'area'
+        type: 'scatter'
     },
     title: {
         text: 'Grafico Grupal'
