@@ -20,7 +20,7 @@
         
         
     async function getData(){
-        const res = await fetch("https://sos2122-20.herokuapp.com/api/v1/landusage-stats");
+        const res = await fetch("/remoteAPIdanpucjim");
         const res1 = await fetch ("/CancerAPI");
 
         if(res.ok && res1.ok){
@@ -55,8 +55,7 @@
         else{
             console.log("Hubo un error cargando los datos");
         }
-        datafinal = [year,year1];
-        console.log(datafinal);
+        console.log(ages_fifty_seventy);
         await loadGraph();
         console.log("Comprobando");
     }
