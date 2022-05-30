@@ -30,6 +30,7 @@
                     <p> <a href="/#/landusage-stats/extAPI1"> API Textual Externa 2</a></p>
 
                     <h5 id="titulo">Graficas realizadas por Javier:</h5>
+                    <p> <a href="/#/agriculturalproduction-stats/chart2"> Gráfica Individual(Highcharts)</a></p>
                     <p> <a href="/#/agriculturalproduction-stats/chart"> Gráfica Individual(Chart.js)</a></p>
                     <p> <a href="/#/agriculturalproduction-stats/integracion1"> Gráfica Integrada API (Grupo 24)</a></p>
                     <p> <a href="/#/agriculturalproduction-stats/integracion2"> Gráfica Integrada API (Grupo 21)</a></p>

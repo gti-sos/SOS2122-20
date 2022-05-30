@@ -22,11 +22,11 @@
                 console.log("Estadísticas recibidas: "+stats.length);
                 //inicializamos los arrays para mostrar los datos
                 stats.forEach(stat => {
-                    country.push(stat.country+"-"+stat.year);
+                    country.push(stat.country+"-"+stat.year)
                     
-                    prod.push(stat["production"]);
-                    AbsC.push(stat["absolute_change"]);
-                    RelC.push(stat["relative_change"]);
+                    prod.push(stat["production"]).concat(prod);
+                    AbsC.push(stat["absolute_change"]).concat(AbsC);
+                    RelC.push(stat["relative_change"]).concat(RelC);
                     seventy.push(0);
                     fifty_seventy.push(0);
                     zero_fifty.push(0);

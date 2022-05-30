@@ -10,6 +10,7 @@
 	import IntegrationsExt2 from './alejorpoyFront/IntegrationsExt2.svelte';
 	import IntegrationsG from './Integrations.svelte';
 	import GroupGraph from './GroupGraph.svelte';
+	import GRaph2 from './javlarparFront/MyGraph2.svelte';
 	import MyGraph_javlarpar from './javlarparFront/MyGraph_javlarpar.svelte';
 
 	//import ContactsTable from './front/danpucjimFront/landusageTables.svelte';
@@ -50,6 +51,7 @@ import CaloryIntegration from './danpucjimFront/Integration2.svelte';
 	'/fertilizers-stats/integrationext2':IntegrationsExt2,
 	'/GroupGraph':GroupGraph,
 	'/agriculturalproduction-stats/chart':MyGraph_javlarpar,
+	'/agriculturalproduction-stats/chart2':GRaph2,
 	'/integrations':IntegrationsG,
 	//DANPUCJIM ROUTES
 	'/landusage-stats/:country/:year':EditLandusageStats,
