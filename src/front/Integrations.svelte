@@ -8,7 +8,7 @@
         <h2>Página con los enlaces a todas las Integraciones del Grupo</h2>
 
         <h5 id="titulo">Enlace a la gráfica grupal:</h5>
-        <li><a href="/#/GroupGraph">GRAFICA GRUPAL</a></li>
+        <li><a href="/#/analytics">GRAFICA GRUPAL</a></li>
 
         <ul></ul>
             <div class="row">

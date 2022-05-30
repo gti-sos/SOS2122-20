@@ -7230,12 +7230,15 @@ var app = (function () {
     	let t20;
     	let a4;
     	let t22;
-    	let ul5;
-    	let li7;
+    	let ul6;
+    	let li10;
     	let h54;
     	let t24;
+    	let ul5;
+    	let li7;
     	let a5;
     	let t26;
+<<<<<<< HEAD
     	let a6;
     	let t28;
     	let ul7;
@@ -7244,8 +7247,19 @@ var app = (function () {
     	let t30;
     	let ul6;
     	let li8;
+=======
+    	let li8;
+    	let a6;
+    	let t28;
+    	let li9;
+>>>>>>> 54f830d59a7ee9de1d1e052cc4e109b06d06103a
     	let a7;
+    	let t30;
+    	let ul8;
+    	let li14;
+    	let h55;
     	let t32;
+<<<<<<< HEAD
     	let li9;
     	let a8;
     	let t34;
@@ -7265,6 +7279,17 @@ var app = (function () {
     	let t42;
     	let li14;
     	let a12;
+=======
+    	let ul7;
+    	let li11;
+    	let a8;
+    	let t34;
+    	let li12;
+    	let a9;
+    	let t36;
+    	let li13;
+    	let a10;
+>>>>>>> 54f830d59a7ee9de1d1e052cc4e109b06d06103a
     	let current;
 
     	nav = new Nav({
@@ -7327,14 +7352,17 @@ var app = (function () {
     			a4 = element$1("a");
     			a4.textContent = "http://sos2122-20.herokuapp.com";
     			t22 = space();
+    			ul6 = element$1("ul");
+    			li10 = element$1("li");
+    			h54 = element$1("h5");
+    			h54.textContent = "APIs:";
+    			t24 = space();
     			ul5 = element$1("ul");
     			li7 = element$1("li");
-    			h54 = element$1("h5");
-    			h54.textContent = "URL:";
-    			t24 = space();
     			a5 = element$1("a");
-    			a5.textContent = "vídeo Alejandro.";
+    			a5.textContent = "https://sos2122-20.herokuapp.com/api/v1/landusage-stats/docs (developed by Daniel Puche Jiménez)";
     			t26 = space();
+<<<<<<< HEAD
     			a6 = element$1("a");
     			a6.textContent = "vídeo Javier.";
     			t28 = space();
@@ -7373,6 +7401,33 @@ var app = (function () {
     			li14 = element$1("li");
     			a12 = element$1("a");
     			a12.textContent = "agriculturalprodductions-stats(developed by Javier Lara Parrilla)";
+=======
+    			li8 = element$1("li");
+    			a6 = element$1("a");
+    			a6.textContent = "https://sos2122-20.herokuapp.com/api/v1/fertilizers-stats/docs  (developed by Alejandro Jorge Poyuelo)";
+    			t28 = space();
+    			li9 = element$1("li");
+    			a7 = element$1("a");
+    			a7.textContent = "https://sos2122-20.herokuapp.com/api/v1/agriculturalproduction-stats/docs (developed by Javier Lara Parrilla)";
+    			t30 = space();
+    			ul8 = element$1("ul");
+    			li14 = element$1("li");
+    			h55 = element$1("h5");
+    			h55.textContent = "Frontends:";
+    			t32 = space();
+    			ul7 = element$1("ul");
+    			li11 = element$1("li");
+    			a8 = element$1("a");
+    			a8.textContent = "landusage-stats(developed by Daniel Puche Jiménez)";
+    			t34 = space();
+    			li12 = element$1("li");
+    			a9 = element$1("a");
+    			a9.textContent = "fertilizers-stats(developed by Alejandro Jorge Poyuelo)";
+    			t36 = space();
+    			li13 = element$1("li");
+    			a10 = element$1("a");
+    			a10.textContent = "agriculturalprodductions-stats(developed by Javier Lara Parrilla)";
+>>>>>>> 54f830d59a7ee9de1d1e052cc4e109b06d06103a
     			document.title = "SOS2122-20";
     			attr_dev(meta, "name", "robots");
     			attr_dev(meta, "content", "noindex nofollow");
@@ -7407,6 +7462,7 @@ var app = (function () {
     			add_location(li6, file$s, 42, 8, 1264);
     			add_location(ul4, file$s, 41, 4, 1250);
     			add_location(h54, file$s, 52, 12, 1470);
+<<<<<<< HEAD
     			attr_dev(a5, "href", "https://youtu.be/yYeE_bQhu1E");
     			add_location(a5, file$s, 53, 12, 1498);
     			attr_dev(a6, "href", "https://youtu.be/2vTt-HzGPwg");
@@ -7439,6 +7495,33 @@ var app = (function () {
     			add_location(ul8, file$s, 74, 12, 2504);
     			add_location(li15, file$s, 72, 8, 2452);
     			add_location(ul9, file$s, 71, 4, 2438);
+=======
+    			attr_dev(a5, "href", "https://sos2122-20.herokuapp.com/api/v1/landusage-stats/docs");
+    			add_location(a5, file$s, 54, 20, 1525);
+    			add_location(li7, file$s, 54, 16, 1521);
+    			attr_dev(a6, "href", "https://sos2122-20.herokuapp.com/api/v1/fertilizers-stats/docs ");
+    			add_location(a6, file$s, 55, 20, 1723);
+    			add_location(li8, file$s, 55, 16, 1719);
+    			attr_dev(a7, "href", "https://sos2122-20.herokuapp.com/api/v1/agriculturalproduction-stats/docs");
+    			add_location(a7, file$s, 56, 20, 1930);
+    			add_location(li9, file$s, 56, 16, 1926);
+    			add_location(ul5, file$s, 53, 12, 1499);
+    			add_location(li10, file$s, 51, 8, 1452);
+    			add_location(ul6, file$s, 50, 4, 1438);
+    			add_location(h55, file$s, 63, 12, 2217);
+    			attr_dev(a8, "href", "/#/landusage-stats");
+    			add_location(a8, file$s, 65, 20, 2277);
+    			add_location(li11, file$s, 65, 16, 2273);
+    			attr_dev(a9, "href", "/#/fertilizers-stats");
+    			add_location(a9, file$s, 66, 20, 2387);
+    			add_location(li12, file$s, 66, 16, 2383);
+    			attr_dev(a10, "href", "/#/agriculturalproduction-stats");
+    			add_location(a10, file$s, 67, 20, 2504);
+    			add_location(li13, file$s, 67, 16, 2500);
+    			add_location(ul7, file$s, 64, 12, 2251);
+    			add_location(li14, file$s, 62, 8, 2199);
+    			add_location(ul8, file$s, 61, 4, 2185);
+>>>>>>> 54f830d59a7ee9de1d1e052cc4e109b06d06103a
     			add_location(main, file$s, 10, 0, 229);
     		},
     		l: function claim(nodes) {
@@ -7484,11 +7567,14 @@ var app = (function () {
     			append_dev(li6, t20);
     			append_dev(li6, a4);
     			append_dev(main, t22);
-    			append_dev(main, ul5);
+    			append_dev(main, ul6);
+    			append_dev(ul6, li10);
+    			append_dev(li10, h54);
+    			append_dev(li10, t24);
+    			append_dev(li10, ul5);
     			append_dev(ul5, li7);
-    			append_dev(li7, h54);
-    			append_dev(li7, t24);
     			append_dev(li7, a5);
+<<<<<<< HEAD
     			append_dev(li7, t26);
     			append_dev(li7, a6);
     			append_dev(main, t28);
@@ -7519,6 +7605,28 @@ var app = (function () {
     			append_dev(ul8, t42);
     			append_dev(ul8, li14);
     			append_dev(li14, a12);
+=======
+    			append_dev(ul5, t26);
+    			append_dev(ul5, li8);
+    			append_dev(li8, a6);
+    			append_dev(ul5, t28);
+    			append_dev(ul5, li9);
+    			append_dev(li9, a7);
+    			append_dev(main, t30);
+    			append_dev(main, ul8);
+    			append_dev(ul8, li14);
+    			append_dev(li14, h55);
+    			append_dev(li14, t32);
+    			append_dev(li14, ul7);
+    			append_dev(ul7, li11);
+    			append_dev(li11, a8);
+    			append_dev(ul7, t34);
+    			append_dev(ul7, li12);
+    			append_dev(li12, a9);
+    			append_dev(ul7, t36);
+    			append_dev(ul7, li13);
+    			append_dev(li13, a10);
+>>>>>>> 54f830d59a7ee9de1d1e052cc4e109b06d06103a
     			current = true;
     		},
     		p: function update(ctx, [dirty]) {
@@ -7588,7 +7696,11 @@ var app = (function () {
 
     /* src\front\alejorpoyFront\MyGraph.svelte generated by Svelte v3.46.6 */
 
+<<<<<<< HEAD
     const { console: console_1$o } = globals;
+=======
+    const { console: console_1$n } = globals;
+>>>>>>> 54f830d59a7ee9de1d1e052cc4e109b06d06103a
     const file$r = "src\\front\\alejorpoyFront\\MyGraph.svelte";
 
     // (104:4) <Button on:click="{pop}">
@@ -37876,7 +37988,11 @@ var app = (function () {
 
     /* src\front\alejorpoyFront\MyGraph2.svelte generated by Svelte v3.46.6 */
 
+<<<<<<< HEAD
     const { console: console_1$n } = globals;
+=======
+    const { console: console_1$m } = globals;
+>>>>>>> 54f830d59a7ee9de1d1e052cc4e109b06d06103a
     const file$q = "src\\front\\alejorpoyFront\\MyGraph2.svelte";
 
     // (84:8) <Button on:click="{pop}">
@@ -38104,7 +38220,11 @@ var app = (function () {
 
     /* src\front\alejorpoyFront\Integrations.svelte generated by Svelte v3.46.6 */
 
+<<<<<<< HEAD
     const { console: console_1$m } = globals;
+=======
+    const { console: console_1$l } = globals;
+>>>>>>> 54f830d59a7ee9de1d1e052cc4e109b06d06103a
     const file$p = "src\\front\\alejorpoyFront\\Integrations.svelte";
 
     // (105:8) <Button on:click="{pop}">
@@ -38370,7 +38490,11 @@ var app = (function () {
 
     /* src\front\alejorpoyFront\Integrations2.svelte generated by Svelte v3.46.6 */
 
+<<<<<<< HEAD
     const { console: console_1$l } = globals;
+=======
+    const { console: console_1$k } = globals;
+>>>>>>> 54f830d59a7ee9de1d1e052cc4e109b06d06103a
     const file$o = "src\\front\\alejorpoyFront\\Integrations2.svelte";
 
     // (105:8) <Button on:click="{pop}">
@@ -38636,7 +38760,11 @@ var app = (function () {
 
     /* src\front\alejorpoyFront\IntegrationsExt.svelte generated by Svelte v3.46.6 */
 
+<<<<<<< HEAD
     const { console: console_1$k } = globals;
+=======
+    const { console: console_1$j } = globals;
+>>>>>>> 54f830d59a7ee9de1d1e052cc4e109b06d06103a
     const file$n = "src\\front\\alejorpoyFront\\IntegrationsExt.svelte";
 
     // (86:11) <Button on:click="{pop}">
@@ -38869,7 +38997,11 @@ var app = (function () {
 
     /* src\front\alejorpoyFront\IntegrationsExt2.svelte generated by Svelte v3.46.6 */
 
+<<<<<<< HEAD
     const { console: console_1$j } = globals;
+=======
+    const { console: console_1$i } = globals;
+>>>>>>> 54f830d59a7ee9de1d1e052cc4e109b06d06103a
     const file$m = "src\\front\\alejorpoyFront\\IntegrationsExt2.svelte";
 
     // (124:4) <Button on:click="{pop}">
@@ -39361,15 +39493,20 @@ var app = (function () {
     			t46 = space();
     			p16 = element$1("p");
     			a17 = element$1("a");
+<<<<<<< HEAD
     			a17.textContent = "Gráfica Integrada API Externa 1";
     			t48 = space();
     			p17 = element$1("p");
     			a18 = element$1("a");
     			a18.textContent = "Gráfica Integrada API Externa 2";
+=======
+    			a17.textContent = "Gráfica Integrada API Externa 2";
+>>>>>>> 54f830d59a7ee9de1d1e052cc4e109b06d06103a
     			add_location(h1, file$l, 6, 4, 50);
     			add_location(h2, file$l, 7, 8, 80);
     			attr_dev(h50, "id", "titulo");
     			add_location(h50, file$l, 9, 8, 159);
+<<<<<<< HEAD
     			attr_dev(a0, "href", "/#/GroupGraph");
     			add_location(a0, file$l, 10, 12, 221);
     			add_location(li, file$l, 10, 8, 217);
@@ -39438,6 +39575,73 @@ var app = (function () {
     			add_location(div0, file$l, 14, 16, 338);
     			attr_dev(div1, "class", "row");
     			add_location(div1, file$l, 13, 12, 303);
+=======
+    			attr_dev(a0, "href", "/#/analytics");
+    			add_location(a0, file$l, 10, 12, 221);
+    			add_location(li, file$l, 10, 8, 217);
+    			add_location(ul, file$l, 12, 8, 279);
+    			attr_dev(h51, "id", "titulo");
+    			add_location(h51, file$l, 15, 20, 378);
+    			attr_dev(a1, "href", "/#/fertilizers-stats/chart");
+    			add_location(a1, file$l, 16, 28, 463);
+    			add_location(p0, file$l, 16, 24, 459);
+    			attr_dev(a2, "href", "/#/fertilizers-stats/chart2");
+    			add_location(a2, file$l, 17, 28, 569);
+    			add_location(p1, file$l, 17, 24, 565);
+    			attr_dev(a3, "href", "/#/fertilizers-stats/integration");
+    			add_location(a3, file$l, 18, 28, 671);
+    			add_location(p2, file$l, 18, 24, 667);
+    			attr_dev(a4, "href", "/#/fertilizers-stats/integration2");
+    			add_location(a4, file$l, 19, 28, 785);
+    			add_location(p3, file$l, 19, 24, 781);
+    			attr_dev(a5, "href", "/#/fertilizers-stats/integrationext");
+    			add_location(a5, file$l, 20, 28, 900);
+    			add_location(p4, file$l, 20, 24, 896);
+    			attr_dev(a6, "href", "/#/fertilizers-stats/integrationext2");
+    			add_location(a6, file$l, 21, 28, 1016);
+    			add_location(p5, file$l, 21, 24, 1012);
+    			attr_dev(h52, "id", "titulo");
+    			add_location(h52, file$l, 23, 20, 1127);
+    			attr_dev(a7, "href", "/#/landusage-stats/chart");
+    			add_location(a7, file$l, 24, 24, 1205);
+    			add_location(p6, file$l, 24, 20, 1201);
+    			attr_dev(a8, "href", "/#/landusage-stats/chart2");
+    			add_location(a8, file$l, 25, 24, 1305);
+    			add_location(p7, file$l, 25, 20, 1301);
+    			attr_dev(a9, "href", "/#/landusage-stats/Integration1");
+    			add_location(a9, file$l, 26, 24, 1405);
+    			add_location(p8, file$l, 26, 20, 1401);
+    			attr_dev(a10, "href", "/#/landusage-stats/Integration2");
+    			add_location(a10, file$l, 27, 24, 1514);
+    			add_location(p9, file$l, 27, 20, 1510);
+    			attr_dev(a11, "href", "/#/landusage-stats/extAPI");
+    			add_location(a11, file$l, 28, 24, 1628);
+    			add_location(p10, file$l, 28, 20, 1624);
+    			attr_dev(a12, "href", "/#/landusage-stats/extAPI1");
+    			add_location(a12, file$l, 29, 24, 1720);
+    			add_location(p11, file$l, 29, 20, 1716);
+    			attr_dev(h53, "id", "titulo");
+    			add_location(h53, file$l, 31, 20, 1811);
+    			attr_dev(a13, "href", "/#/agriculturalproduction-stats/chart");
+    			add_location(a13, file$l, 32, 24, 1889);
+    			add_location(p12, file$l, 32, 20, 1885);
+    			attr_dev(a14, "href", "/#/agriculturalproduction-stats/integracion1");
+    			add_location(a14, file$l, 33, 24, 2000);
+    			add_location(p13, file$l, 33, 20, 1996);
+    			attr_dev(a15, "href", "/#/agriculturalproduction-stats/integracion2");
+    			add_location(a15, file$l, 34, 24, 2122);
+    			add_location(p14, file$l, 34, 20, 2118);
+    			attr_dev(a16, "href", "/#/agriculturalproduction-stats/externalAPI1");
+    			add_location(a16, file$l, 35, 24, 2244);
+    			add_location(p15, file$l, 35, 20, 2240);
+    			attr_dev(a17, "href", "/#/agriculturalproduction-stats/externalAPI2");
+    			add_location(a17, file$l, 36, 24, 2365);
+    			add_location(p16, file$l, 36, 20, 2361);
+    			attr_dev(div0, "class", "col-4");
+    			add_location(div0, file$l, 14, 16, 337);
+    			attr_dev(div1, "class", "row");
+    			add_location(div1, file$l, 13, 12, 302);
+>>>>>>> 54f830d59a7ee9de1d1e052cc4e109b06d06103a
     			add_location(body, file$l, 5, 4, 38);
     			add_location(main, file$l, 4, 0, 25);
     		},
@@ -39567,7 +39771,11 @@ var app = (function () {
 
     /* src\front\GroupGraph.svelte generated by Svelte v3.46.6 */
 
+<<<<<<< HEAD
     const { console: console_1$i } = globals;
+=======
+    const { console: console_1$h } = globals;
+>>>>>>> 54f830d59a7ee9de1d1e052cc4e109b06d06103a
     const file$k = "src\\front\\GroupGraph.svelte";
 
     // (165:2) <Button outline color="/#/info" href="/">
@@ -39909,6 +40117,7 @@ var app = (function () {
     			tagName: "GroupGraph",
     			options,
     			id: create_fragment$k.name
+<<<<<<< HEAD
     		});
     	}
     }
@@ -40173,6 +40382,8 @@ var app = (function () {
     			tagName: "MyGraph2",
     			options,
     			id: create_fragment$j.name
+=======
+>>>>>>> 54f830d59a7ee9de1d1e052cc4e109b06d06103a
     		});
     	}
     }
@@ -40180,7 +40391,7 @@ var app = (function () {
     /* src\front\javlarparFront\MyGraph_javlarpar.svelte generated by Svelte v3.46.6 */
 
     const { console: console_1$g, document: document_1$3 } = globals;
-    const file$i = "src\\front\\javlarparFront\\MyGraph_javlarpar.svelte";
+    const file$j = "src\\front\\javlarparFront\\MyGraph_javlarpar.svelte";
 
     // (84:11) <Button color="outline-dark" on:click={function (){              window.location.href = `/#/agriculturalproduction-stats`                 }}>
     function create_default_slot$b(ctx) {
@@ -40209,7 +40420,7 @@ var app = (function () {
     	return block;
     }
 
-    function create_fragment$i(ctx) {
+    function create_fragment$j(ctx) {
     	let script;
     	let script_src_value;
     	let t0;
@@ -40255,13 +40466,13 @@ var app = (function () {
     			t6 = space();
     			create_component(button.$$.fragment);
     			if (!src_url_equal(script.src, script_src_value = "https://cdn.jsdelivr.net/npm/chart.js")) attr_dev(script, "src", script_src_value);
-    			add_location(script, file$i, 71, 8, 2574);
-    			add_location(h4, file$i, 79, 12, 2745);
-    			add_location(div, file$i, 80, 12, 2810);
+    			add_location(script, file$j, 71, 8, 2574);
+    			add_location(h4, file$j, 79, 12, 2745);
+    			add_location(div, file$j, 80, 12, 2810);
     			attr_dev(canvas, "id", "myGraph");
-    			add_location(canvas, file$i, 81, 11, 2834);
-    			add_location(h8, file$i, 82, 11, 2870);
-    			add_location(main, file$i, 78, 4, 2725);
+    			add_location(canvas, file$j, 81, 11, 2834);
+    			add_location(h8, file$j, 82, 11, 2870);
+    			add_location(main, file$j, 78, 4, 2725);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -40316,7 +40527,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_fragment$i.name,
+    		id: create_fragment$j.name,
     		type: "component",
     		source: "",
     		ctx
@@ -40325,7 +40536,7 @@ var app = (function () {
     	return block;
     }
 
-    function instance$i($$self, $$props, $$invalidate) {
+    function instance$j($$self, $$props, $$invalidate) {
     	let { $$slots: slots = {}, $$scope } = $$props;
     	validate_slots('MyGraph_javlarpar', slots, []);
     	const delay = ms => new Promise(res => setTimeout(res, ms));
@@ -40435,11 +40646,174 @@ var app = (function () {
     class MyGraph_javlarpar extends SvelteComponentDev {
     	constructor(options) {
     		super(options);
-    		init$1(this, options, instance$i, create_fragment$i, safe_not_equal, {});
+    		init$1(this, options, instance$j, create_fragment$j, safe_not_equal, {});
 
     		dispatch_dev("SvelteRegisterComponent", {
     			component: this,
     			tagName: "MyGraph_javlarpar",
+    			options,
+    			id: create_fragment$j.name
+    		});
+    	}
+    }
+
+    /* src\front\Videos.svelte generated by Svelte v3.46.6 */
+
+    const file$i = "src\\front\\Videos.svelte";
+
+    function create_fragment$i(ctx) {
+    	let main;
+    	let body;
+    	let h1;
+    	let t1;
+    	let h2;
+    	let t3;
+    	let ul;
+    	let t4;
+    	let div1;
+    	let div0;
+    	let h50;
+    	let t6;
+    	let p0;
+    	let a0;
+    	let t8;
+    	let h51;
+    	let t10;
+    	let p1;
+    	let a1;
+    	let t12;
+    	let h52;
+    	let t14;
+    	let p2;
+    	let a2;
+
+    	const block = {
+    		c: function create() {
+    			main = element$1("main");
+    			body = element$1("body");
+    			h1 = element$1("h1");
+    			h1.textContent = "SOS2122-20";
+    			t1 = space();
+    			h2 = element$1("h2");
+    			h2.textContent = "Página con los enlaces de los vídeos del Grupo";
+    			t3 = space();
+    			ul = element$1("ul");
+    			t4 = space();
+    			div1 = element$1("div");
+    			div0 = element$1("div");
+    			h50 = element$1("h5");
+    			h50.textContent = "Video realizado por Alejandro:";
+    			t6 = space();
+    			p0 = element$1("p");
+    			a0 = element$1("a");
+    			a0.textContent = "Video";
+    			t8 = space();
+    			h51 = element$1("h5");
+    			h51.textContent = "Video realizado por Javier:";
+    			t10 = space();
+    			p1 = element$1("p");
+    			a1 = element$1("a");
+    			a1.textContent = "Video";
+    			t12 = space();
+    			h52 = element$1("h5");
+    			h52.textContent = "Video realizado por Daniel:";
+    			t14 = space();
+    			p2 = element$1("p");
+    			a2 = element$1("a");
+    			a2.textContent = "Video";
+    			add_location(h1, file$i, 6, 4, 50);
+    			add_location(h2, file$i, 7, 8, 80);
+    			add_location(ul, file$i, 9, 8, 147);
+    			attr_dev(h50, "id", "titulo");
+    			add_location(h50, file$i, 12, 20, 246);
+    			attr_dev(a0, "href", "https://youtu.be/yYeE_bQhu1E");
+    			add_location(a0, file$i, 13, 28, 327);
+    			add_location(p0, file$i, 13, 24, 323);
+    			attr_dev(h51, "id", "titulo");
+    			add_location(h51, file$i, 16, 20, 425);
+    			attr_dev(a1, "href", "https://youtu.be/2vTt-HzGPwg");
+    			add_location(a1, file$i, 17, 24, 499);
+    			add_location(p1, file$i, 17, 20, 495);
+    			attr_dev(h52, "id", "titulo");
+    			add_location(h52, file$i, 20, 20, 596);
+    			attr_dev(a2, "href", "https://www.youtube.com/watch?v=q6DkFMLCE_4");
+    			add_location(a2, file$i, 21, 24, 670);
+    			add_location(p2, file$i, 21, 20, 666);
+    			attr_dev(div0, "class", "col-4");
+    			add_location(div0, file$i, 11, 16, 205);
+    			attr_dev(div1, "class", "row");
+    			add_location(div1, file$i, 10, 12, 170);
+    			add_location(body, file$i, 5, 4, 38);
+    			add_location(main, file$i, 4, 0, 25);
+    		},
+    		l: function claim(nodes) {
+    			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, main, anchor);
+    			append_dev(main, body);
+    			append_dev(body, h1);
+    			append_dev(body, t1);
+    			append_dev(body, h2);
+    			append_dev(body, t3);
+    			append_dev(body, ul);
+    			append_dev(body, t4);
+    			append_dev(body, div1);
+    			append_dev(div1, div0);
+    			append_dev(div0, h50);
+    			append_dev(div0, t6);
+    			append_dev(div0, p0);
+    			append_dev(p0, a0);
+    			append_dev(div0, t8);
+    			append_dev(div0, h51);
+    			append_dev(div0, t10);
+    			append_dev(div0, p1);
+    			append_dev(p1, a1);
+    			append_dev(div0, t12);
+    			append_dev(div0, h52);
+    			append_dev(div0, t14);
+    			append_dev(div0, p2);
+    			append_dev(p2, a2);
+    		},
+    		p: noop$4,
+    		i: noop$4,
+    		o: noop$4,
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(main);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_fragment$i.name,
+    		type: "component",
+    		source: "",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    function instance$i($$self, $$props) {
+    	let { $$slots: slots = {}, $$scope } = $$props;
+    	validate_slots('Videos', slots, []);
+    	const writable_props = [];
+
+    	Object.keys($$props).forEach(key => {
+    		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== '$$' && key !== 'slot') console.warn(`<Videos> was created with unknown prop '${key}'`);
+    	});
+
+    	return [];
+    }
+
+    class Videos extends SvelteComponentDev {
+    	constructor(options) {
+    		super(options);
+    		init$1(this, options, instance$i, create_fragment$i, safe_not_equal, {});
+
+    		dispatch_dev("SvelteRegisterComponent", {
+    			component: this,
+    			tagName: "Videos",
     			options,
     			id: create_fragment$i.name
     		});
@@ -52130,19 +52504,19 @@ var app = (function () {
     			attr_dev(a2, "class", "svelte-121fned");
     			add_location(a2, file$8, 35, 16, 1202);
     			add_location(h42, file$8, 34, 12, 1180);
-    			attr_dev(a3, "href", "/#/GroupGraph");
+    			attr_dev(a3, "href", "/#/analytics");
     			attr_dev(a3, "class", "svelte-121fned");
     			add_location(a3, file$8, 39, 16, 1354);
     			add_location(h43, file$8, 38, 12, 1332);
     			attr_dev(a4, "href", "/#/integrations");
     			attr_dev(a4, "class", "svelte-121fned");
-    			add_location(a4, file$8, 42, 16, 1453);
-    			add_location(h44, file$8, 41, 12, 1431);
+    			add_location(a4, file$8, 42, 16, 1452);
+    			add_location(h44, file$8, 41, 12, 1430);
     			attr_dev(a5, "href", "http://github.com/gti-sos/SOS2122-20");
     			attr_dev(a5, "class", "svelte-121fned");
-    			add_location(a5, file$8, 46, 29, 1598);
+    			add_location(a5, file$8, 46, 29, 1597);
     			attr_dev(h45, "class", "mt-4 mb-4");
-    			add_location(h45, file$8, 45, 12, 1545);
+    			add_location(h45, file$8, 45, 12, 1544);
     			attr_dev(div, "class", "text-center");
     			add_location(div, file$8, 19, 8, 666);
     			add_location(main, file$8, 10, 4, 305);
@@ -55313,7 +55687,11 @@ var app = (function () {
     		c: function create() {
     			main = element$1("main");
     			create_component(router.$$.fragment);
+<<<<<<< HEAD
     			add_location(main, file, 107, 0, 3984);
+=======
+    			add_location(main, file, 107, 0, 3936);
+>>>>>>> 54f830d59a7ee9de1d1e052cc4e109b06d06103a
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -55361,13 +55739,14 @@ var app = (function () {
     		'/fertilizers-stats': FertilizersTable,
     		'/agriculturalproduction-stats': ProductionTable,
     		'/info': Info,
+    		'/about': Videos,
     		'/fertilizers-stats/chart': MyGraph,
     		'/fertilizers-stats/chart2': MyGraph2$1,
     		'/fertilizers-stats/integration': Integrations$1,
     		'/fertilizers-stats/integration2': Integrations2,
     		'/fertilizers-stats/integrationext': IntegrationsExt,
     		'/fertilizers-stats/integrationext2': IntegrationsExt2,
-    		'/GroupGraph': GroupGraph,
+    		'/analytics': GroupGraph,
     		'/agriculturalproduction-stats/chart': MyGraph_javlarpar,
     		'/agriculturalproduction-stats/chart2': MyGraph2,
     		'/integrations': Integrations,
@@ -55408,6 +55787,7 @@ var app = (function () {
     		GroupGraph,
     		GRaph2: MyGraph2,
     		MyGraph_javlarpar,
+    		Videos,
     		landusage_charts: Landusage_charts,
     		FertilizersTables: FertilizersTable,
     		LandusageTables,
